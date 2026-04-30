@@ -39,4 +39,6 @@ jobs:
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "Auto-update events"
           git pull --rebase origin main
-          git push origin main
+          git pull --rebase origin main
+          git push origin main origin main
+
