@@ -38,4 +38,5 @@ jobs:
           git add events.json
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "Auto-update events"
-          git push
+          git pull --rebase origin main
+          git push origin main
