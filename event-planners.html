@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Restoration & Preservation — The Thames Club</title>
+<title>Event Planners — The Thames Club</title>
 <meta name="description" content="The Thames Club, New London, Connecticut. Founded 1869. Connecticut's oldest private social club.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
@@ -230,43 +230,28 @@ table.data-table td{padding:14px 16px;border-bottom:1px solid rgba(166,137,74,.0
 table.data-table tr:last-child td{border-bottom:none}
 @media(max-width:768px){.two-col,.three-col,.stat-grid{grid-template-columns:1fr}}
 /* unified site nav + footer */
-
-/* ── UNIFIED NAV v2 ── */
 .site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
-.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
-.site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
-.site-shell-links{display:flex;gap:4px;align-items:center}
-.site-shell-links > a,
-.site-shell-links > .nav-dd > .nav-dd-trigger{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:rgba(244,237,216,.72);text-decoration:none;padding:7px 11px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap;cursor:pointer;background:none;border:none}
-.site-shell-links > a:hover,
-.site-shell-links > .nav-dd > .nav-dd-trigger:hover{color:#f4edd8;background:rgba(166,137,74,.08)}
-.site-shell-links > a.active{color:#c9a96e}
-.nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}
-.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
-/* Dropdowns */
-.nav-dd{position:relative}
-.nav-dd-trigger{display:flex;align-items:center;gap:4px}
-.nav-dd-trigger::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.6}
-.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}
-.nav-dd{position:relative}
-.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}
-.nav-dd-menu a{display:block;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:rgba(244,237,216,.65);text-decoration:none;padding:9px 14px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap}
-.nav-dd-menu a:hover{color:#f4edd8;background:rgba(166,137,74,.1)}
-.nav-dd-menu .dd-divider{height:1px;background:rgba(166,137,74,.12);margin:4px 0}
-/* Mobile */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-hamburger.open span:nth-child(2){opacity:0}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.nav-mobile{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}
-.nav-mobile a,.nav-mobile span.mob-section{font-family:'Inter',system-ui,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:13px 24px;border-bottom:1px solid rgba(166,137,74,.08);text-decoration:none;display:block;transition:color .2s}
-.nav-mobile a:hover{color:#f4edd8}
-.nav-mobile span.mob-section{font-size:9px;color:#a6894a;padding:14px 24px 6px;border-bottom:none}
-.nav-mobile.open{display:flex}
+.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.site-shell-nav .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
+.site-shell-nav .site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
+.site-shell-nav .site-shell-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.site-shell-nav .site-shell-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-nav .site-shell-links a:hover{color:#f4edd8}
+.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
+.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
+.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
+.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
+.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+@media(max-width:900px){
+  .site-shell-nav .site-shell-inner{align-items:flex-start}
+}
+.nav-dd{position:relative}.nav-dd-trigger{display:flex;align-items:center;gap:4px;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.75);padding:7px 11px;border-radius:4px;cursor:pointer;background:none;border:none;white-space:nowrap;transition:color .15s,background .15s}.nav-dd-trigger::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.6}.nav-dd-trigger:hover{color:#f4edd8;background:rgba(166,137,74,.08)}.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}.nav-dd-menu a{display:block;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.65);text-decoration:none;padding:9px 14px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap}.nav-dd-menu a:hover{color:#f4edd8;background:rgba(166,137,74,.1)}.dd-divider{height:1px;background:rgba(166,137,74,.12);margin:4px 0}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}.nav-mobile a,.nav-mobile span.mob-section{font-family:'Inter',system-ui,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:13px 24px;border-bottom:1px solid rgba(166,137,74,.08);text-decoration:none;display:block;transition:color .2s}.nav-mobile a:hover{color:#f4edd8}.nav-mobile span.mob-section{font-size:9px;color:#a6894a;padding:14px 24px 6px;border-bottom:none}.nav-mobile.open{display:flex}
 @media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
 @media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
+.nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
 
 </style>
 </head>
@@ -274,37 +259,17 @@ table.data-table tr:last-child td{border-bottom:none}
 
 <nav class="site-shell-nav">
   <div class="site-shell-inner">
-    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London · Est. 1869</small></a>
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London &middot; Est. 1869</small></a>
     <div class="site-shell-links">
       <a href="dining.html">Dining</a>
-      <div class="nav-dd">
-        <span class="nav-dd-trigger">Events</span>
-        <div class="nav-dd-menu">
-          <a href="events.html">Events calendar</a>
-          <a href="event-rooms.html">Event rooms</a>
-          <a href="event-planners.html">Private events</a>
-        </div>
-      </div>
+      <div class="nav-dd"><span class="nav-dd-trigger">Events</span><div class="nav-dd-menu"><a href="events.html">Events calendar</a><a href="event-rooms.html">Event rooms</a><a href="event-planners.html">Private events</a></div></div>
       <a href="above-below.html">Above &amp; Below</a>
-      <div class="nav-dd">
-        <span class="nav-dd-trigger">About</span>
-        <div class="nav-dd-menu">
-          <a href="history.html">History</a>
-          <a href="restoration.html">Restoration</a>
-          <a href="pierson-gallery.html">Pierson Gallery</a>
-          <div class="dd-divider"></div>
-          <a href="gallery.html">Photo gallery</a>
-          <a href="bowling.html">Duckpin bowling</a>
-          <a href="community.html">Community</a>
-        </div>
-      </div>
+      <div class="nav-dd"><span class="nav-dd-trigger">About</span><div class="nav-dd-menu"><a href="history.html">History</a><a href="restoration.html">Restoration</a><a href="pierson-gallery.html">Pierson Gallery</a><div class="dd-divider"></div><a href="gallery.html">Photo gallery</a><a href="bowling.html">Duckpin bowling</a><a href="community.html">Community</a></div></div>
       <a href="membership.html">Membership</a>
       <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
       <a href="visit.html" class="nav-cta">Visit</a>
     </div>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-mobile" id="nav-mobile">
     <a href="dining.html">Dining</a>
@@ -323,38 +288,16 @@ table.data-table tr:last-child td{border-bottom:none}
     <a href="membership.html">Membership</a>
       <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
     <a href="visit.html">Visit</a>
-    <a href="visit.html">Plan a visit →</a>
   </div>
 </nav>
-<script>
-(function(){
-  var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');
-  if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}
-  // Dropdown: click to open, click elsewhere to close
-  document.querySelectorAll('.nav-dd').forEach(function(dd){
-    var trigger=dd.querySelector('.nav-dd-trigger');
-    var menu=dd.querySelector('.nav-dd-menu');
-    if(!trigger||!menu)return;
-    trigger.addEventListener('click',function(e){
-      e.stopPropagation();
-      var isOpen=menu.style.display==='block';
-      document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});
-      menu.style.display=isOpen?'none':'block';
-    });
-  });
-  document.addEventListener('click',function(){
-    document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});
-  });
-})();
-</script>
 
 
 <section class="page-hero">
   <div class="hbg"></div>
   <div class="w">
     <span class="eyebrow">The Thames Club · New London</span>
-    <h1>Restoration &amp;<br>Preservation</h1>
-    <p class="deck">The Thames Club is not merely maintaining an old building. It is preserving a lived house — one that has held meals, arguments, welcomes, and civic memory for generations — and preparing it for the next.</p>
+    <h1>Plan Your<br>Event Here</h1>
+    <p class="deck">A venue with genuine character — historic rooms, working duckpin lanes, full dining service, and a house that has hosted New London's best occasions since 1869.</p>
   </div>
 </section>
 
@@ -362,81 +305,110 @@ table.data-table tr:last-child td{border-bottom:none}
   <div class="w">
     <div class="two-col">
       <div>
-        <span class="sec-label-d">Stewardship</span>
-        <h2 class="serif-dk">Places endure<br>because people<br>decide they will.</h2>
-        <p class="prose-dk">The current restoration effort reflects a simple conviction: places like this do not remain alive by sentiment alone. They endure because people decide, deliberately and together, to care for them.</p>
-        <p class="prose-dk" style="margin-top:16px">Work should be honest, quiet, and well judged. The point is not to over-restore the house into something theatrical, but to stabilize and improve it in a way that respects its age, use, and accumulated character.</p>
-        <p class="prose-dk" style="margin-top:16px">Since 1869, the Thames Club has continued without interruption. Its home, listed on the National Register of Historic Places, is now the focus of careful preservation and renewal — supported in part by the Thames Preservation Society, a nonprofit organization dedicated to its long-term stewardship.</p>
+        <span class="sec-label-d">Why the Thames Club</span>
+        <h2 class="serif-dk">Not a venue.<br>A house.</h2>
+        <p class="prose-dk">Event planners who bring clients to the Thames Club once tend to come back. The rooms are real — not converted conference space. The service is personal. The food is made in the kitchen, not trucked in. And the address at 290 State Street carries a history that no new venue can replicate.</p>
+        <p class="prose-dk" style="margin-top:16px">We work with outside event planners for weddings, corporate dinners, fundraisers, receptions, and private occasions. The Club's staff handles catering coordination, room setup, and on-site service.</p>
       </div>
-      <img src="images/restoration_01.jpg" alt="The Thames Club historic building, Stewardship section" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+      <img src="images/event-planners_01.jpg" alt="Bridal party limousine exit at The Thames Club" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
     </div>
   </div>
 </section>
 
 <section class="sw">
   <div class="w">
-    <span class="sec-label">Current Work</span>
-    <h2 class="serif">Top floor<br>restoration.</h2>
-    <p class="prose" style="margin-top:16px;margin-bottom:48px">The top floor is the clearest visible expression of the Club's current preservation work. As it is stabilized and brought forward, it also becomes a way of thinking about the house's next chapter.</p>
-    <div class="three-col">
-      <div class="card">
-        <h3>Before</h3>
-        <p>Pre-restoration conditions — the top floor as it was received. Structural assessment, documentation, and planning.</p>
-        <img src="images/restoration_02.jpg" alt="Top floor before restoration — pre-restoration conditions" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
-      </div>
-      <div class="card">
-        <h3>During</h3>
-        <p>Framing, stabilization, repair, and utilities. Work in progress — the house being cared for by people who take it seriously.</p>
-        <img src="images/restoration_03.jpg" alt="Top floor during restoration — framing and stabilization work in progress" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
-      </div>
-      <div class="card">
-        <h3>Future Vision</h3>
-        <p>Cultural spaces, the Dr. Anne B. Pierson Gallery, and rooms that will serve the Club's next generation of members.</p>
-        <img src="images/restoration_04.jpg" alt="Top floor future vision — cultural spaces and the Dr. Anne B. Pierson Gallery" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
-      </div>
+    <span class="sec-label">Room Comparison</span>
+    <h2 class="serif">The spaces at a glance.</h2>
+    <div style="overflow-x:auto;margin-top:40px">
+      <table class="data-table" style="min-width:600px">
+        <thead>
+          <tr>
+            <th>Room</th>
+            <th>Seated Dinner</th>
+            <th>Reception</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--cream)">Main Dining Room</strong></td>
+            <td>Up to 60</td>
+            <td>Up to 90</td>
+            <td>Formal dinners, galas, receptions</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--cream)">Library / Salon</strong></td>
+            <td>Up to 20</td>
+            <td>Up to 35</td>
+            <td>Board dinners, cocktail receptions</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--cream)">Hunt Room</strong></td>
+            <td>—</td>
+            <td>Up to 25</td>
+            <td>Pre-dinner cocktails, small meetings</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--cream)">Basement Pub &amp; Lanes</strong></td>
+            <td>—</td>
+            <td>Up to 50</td>
+            <td>Unique gatherings, duckpin bowling</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--cream)">Full House</strong></td>
+            <td>Up to 100</td>
+            <td>Up to 150</td>
+            <td>Weddings, large receptions</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
 <section class="sc">
   <div class="w">
-    <span class="sec-label-d">Preservation Timeline</span>
-    <h2 class="serif-dk">156 years<br>of continuity.</h2>
-    <div style="margin-top:40px;display:grid;gap:0">
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(166,137,74,.15)">
-        <span style="font-family:var(--display);font-size:22px;font-weight:600;color:var(--gold);line-height:1">1869</span>
-        <p class="prose-dk" style="max-width:none;font-size:14px">Club founded. February 8, 1869 — merchants, sea captains, physicians, and civic leaders gathering above the river.</p>
+    <span class="sec-label-d">Dining Support</span>
+    <h2 class="serif-dk">The kitchen<br>is part of the event.</h2>
+    <div class="three-col" style="margin-top:40px">
+      <div class="card-lt">
+        <h3>Catering</h3>
+        <p>Full-service catering from the Club kitchen. Menus designed around the event — seated dinners, cocktail receptions, buffets, and passed hors d'oeuvres.</p>
       </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(166,137,74,.15)">
-        <span style="font-family:var(--display);font-size:22px;font-weight:600;color:var(--gold);line-height:1">1905</span>
-        <p class="prose-dk" style="max-width:none;font-size:14px">The Club moves into its State Street building — the house that would serve members for over a century.</p>
+      <div class="card-lt">
+        <h3>Bar Service</h3>
+        <p>Full bar service available for private events. Cash bar, hosted bar, or wine service with dinner. The Club is licensed for all.</p>
       </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(166,137,74,.15)">
-        <span style="font-family:var(--display);font-size:22px;font-weight:600;color:var(--gold);line-height:1">Post-War</span>
-        <p class="prose-dk" style="max-width:none;font-size:14px">Deepening ties to the submarine community as Electric Boat expands and the naval presence in the region grows.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(166,137,74,.15)">
-        <span style="font-family:var(--display);font-size:22px;font-weight:600;color:var(--gold);line-height:1">2024</span>
-        <p class="prose-dk" style="max-width:none;font-size:14px">Since 1869, the Thames Club has continued without interruption. Its home, listed on the National Register of Historic Places, is now the focus of careful preservation and renewal — supported in part by the Thames Preservation Society, a nonprofit organization dedicated to its long-term stewardship.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:120px 1fr;gap:24px;padding:20px 0">
-        <span style="font-family:var(--display);font-size:22px;font-weight:600;color:var(--gold);line-height:1">2025–26</span>
-        <p class="prose-dk" style="max-width:none;font-size:14px">Top floor restoration advances. The Dr. Anne B. Pierson Gallery takes shape. The house prepares for its next century.</p>
+      <div class="card-lt">
+        <h3>Setup &amp; Service</h3>
+        <p>The Club handles table setup, linen, service staff, and breakdown. Planners coordinate directly with Club management for timeline and logistics.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sw">
+<section class="sd">
   <div class="w">
-    <span class="sec-label">Support the Work</span>
-    <h2 class="serif">How to help<br>preserve our piece of history.</h2>
-    <p class="prose" style="margin-top:16px">The restoration is supported by member contributions, 
-	the Thames Preservation Society, donations, and the leadership of those who understand what places like this are worth. If you would like to contribute to the preservation effort, contact Club leadership directly.</p>
-    <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap">
-      <a href="tel:9592642733" class="cta-btn">Call 959-264-2733</a>
-      <a href="mailto:thamesclub.nl@gmail.com" class="cta-btn">Email Club Leadership</a>
-      <a href="pierson-gallery.html" class="cta-btn">Dr. Pierson Gallery →</a>
+    <span class="sec-label">Contact &amp; Inquiry</span>
+    <h2 class="serif">Let's talk<br>about your event.</h2>
+    <p class="prose" style="margin-top:16px">To check availability, discuss room options, or get pricing information, contact Club management directly. We respond promptly and work with planners at every stage of the process.</p>
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:600px">
+      <div class="card" style="padding:24px">
+        <h3 style="font-size:18px;margin-bottom:8px">Phone</h3>
+        <p><a href="tel:9592642733" style="color:var(--gold-b)">959-264-2733</a></p>
+      </div>
+      <div class="card" style="padding:24px">
+        <h3 style="font-size:18px;margin-bottom:8px">Email</h3>
+        <p><a href="mailto:thamesclub.nl@gmail.com" style="color:var(--gold-b)">thamesclub.nl@gmail.com</a></p>
+      </div>
+      <div class="card" style="padding:24px">
+        <h3 style="font-size:18px;margin-bottom:8px">Address</h3>
+        <p style="color:var(--cream-dim)">290 State Street<br>New London, CT 06320</p>
+      </div>
+      <div class="card" style="padding:24px">
+        <h3 style="font-size:18px;margin-bottom:8px">Rooms</h3>
+        <p><a href="event-rooms.html" style="color:var(--gold-b)">View all rooms →</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -447,15 +419,31 @@ table.data-table tr:last-child td{border-bottom:none}
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320</div>
+        290 State Street · New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+      </div>
     </div>
     <div class="site-shell-foot-links">
-      <a href="index.html">Home</a> <a href="restoration.html">Restoration</a> <a href="pierson-gallery.html">Pierson Gallery</a> <a href="community.html">Community</a> <a href="publications.html">Publications</a> <a href="membership.html">Membership</a>
-      <a href="reciprocal-clubs.html">Reciprocal Clubs</a> <a href="visit.html">Visit</a>
- 
+      <a href="index.html">Home</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="community.html">Community</a>
+      <a href="publications.html">Publications</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
     </div>
   </div>
 </footer>
 
+<script>
+
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('up',window.scrollY>40);
+});
+</script>
+<script>
+(function(){var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}document.querySelectorAll('.nav-dd').forEach(function(dd){var trigger=dd.querySelector('.nav-dd-trigger'),menu=dd.querySelector('.nav-dd-menu');if(!trigger||!menu)return;trigger.addEventListener('click',function(e){e.stopPropagation();var isOpen=menu.style.display==='block';document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});menu.style.display=isOpen?'none':'block';});});document.addEventListener('click',function(){document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});});})();
+</script>
 </body>
 </html>

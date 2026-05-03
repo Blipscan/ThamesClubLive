@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surface & Pressure — Issue 001</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c1c2e;--deep:#07101a;--cream:#f4edd8;--cream-d:#e8dfc8;
+  --gold:#a6894a;--gold-b:#c9a96e;--gold-m:rgba(166,137,74,.4);
+  --ink:#1c1c1c;--ink-m:#5a5a5a;--ink-l:#888;
+  --w92:rgba(244,237,216,.92);--w70:rgba(244,237,216,.70);
+  --w55:rgba(244,237,216,.55);--w42:rgba(244,237,216,.42);
+  --w35:rgba(244,237,216,.35);
+  --serif:'Libre Baskerville',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --max:760px;--max-w:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,28,46,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,137,74,.12)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--max-w);margin:0 auto}
+.nav-brand{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--w92);text-decoration:none;line-height:1.25}
+.nav-brand span{display:block;font-size:9.5px;font-weight:400;letter-spacing:.26em;color:var(--w55);margin-top:1px}
+.nav-r{display:flex;gap:26px;align-items:center}
+.nav-r a{font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--w70);text-decoration:none}
+.nav-r a:hover{color:var(--w92)}
+.nav-cta{padding:8px 20px!important;border:1px solid var(--gold);border-radius:2px;color:var(--w92)!important}
+
+/* COVER */
+.cover{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--navy);color:var(--cream);padding-bottom:90px}
+.cover-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,28,46,.5),rgba(12,28,46,.3) 40%,rgba(12,28,46,.88)),url('images/sp-cover.jpg') center/cover}
+.cover-tex{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(166,137,74,.4) 80px,rgba(166,137,74,.4) 81px),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(166,137,74,.4) 80px,rgba(166,137,74,.4) 81px)}
+.cover-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 80%,rgba(166,137,74,.06) 0%,transparent 50%),radial-gradient(ellipse at 75% 20%,rgba(166,137,74,.04) 0%,transparent 50%)}
+.cover-content{position:relative;z-index:2;padding:0 28px;max-width:var(--max-w);margin:0 auto}
+.cover-pub{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.cover h1{font-family:var(--display);font-size:clamp(42px,5.8vw,72px);font-weight:700;line-height:.96;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+.cover-issue{font-family:var(--sans);font-size:12px;letter-spacing:.20em;text-transform:uppercase;color:var(--w55);margin-bottom:28px}
+.cover-sub{font-size:21px;line-height:1.6;color:var(--w70);max-width:560px}
+
+/* LAYOUT */
+.w{max-width:var(--max-w);margin:0 auto;padding:0 28px}
+.wn{max-width:var(--max);margin:0 auto;padding:0 28px}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-m),transparent);margin:0 auto;max-width:var(--max)}
+.lab{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+
+/* ARTICLES */
+article{padding:72px 0}
+.a-head{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);font-weight:700;line-height:1.12;margin:0 0 8px}
+.a-sub{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-l);margin:0 0 28px}
+.prose{font-size:18.5px;line-height:1.82;color:var(--ink-m);max-width:var(--max)}
+.prose p+p{margin-top:20px}
+.prose .drop:first-letter{float:left;font-family:var(--display);font-size:64px;line-height:.8;padding:4px 10px 0 0;font-weight:700;color:var(--ink)}
+
+/* PULL QUOTE */
+.pull{margin:40px 0;padding:28px 0 28px 28px;border-left:2px solid var(--gold);font-family:var(--display);font-size:21px;font-style:italic;line-height:1.55;color:var(--ink);max-width:600px}
+
+/* DARK SECTION */
+.dark{background:var(--navy);color:var(--cream)}
+.dark .lab{color:var(--gold)}
+.dark .a-head{color:var(--cream)}
+.dark .a-sub{color:var(--w42)}
+.dark .prose{color:var(--w70)}
+.dark .pull{border-color:var(--gold);color:var(--w92)}
+
+/* IMAGES */
+.photo{margin:40px 0;overflow:hidden}
+.photo img{width:100%;height:auto;display:block}
+.photo-cap{font-family:var(--sans);font-size:10px;color:var(--ink-l);letter-spacing:.05em;margin-top:10px}
+.dark .photo-cap{color:var(--w42)}
+
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:40px 0}
+.grid-2 img{width:100%;height:280px;object-fit:cover;display:block}
+.grid-4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:40px 0}
+.grid-4 img{width:100%;height:220px;object-fit:cover;display:block}
+
+/* BEFORE/AFTER */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0;overflow:hidden}
+.ba-panel{position:relative}
+.ba-panel img{width:100%;height:300px;object-fit:cover;display:block}
+.ba-label{position:absolute;bottom:12px;left:12px;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:white;background:rgba(0,0,0,.55);padding:5px 10px;backdrop-filter:blur(4px)}
+
+/* FOOTER */
+footer{background:var(--navy);color:var(--w70);border-top:1px solid rgba(166,137,74,.25);padding:52px 0 60px}
+.foot-g{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:start;max-width:var(--max-w);margin:0 auto;padding:0 28px}
+.foot-brand{font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w92);margin-bottom:16px}
+.foot-info{font-family:var(--sans);font-size:13px;line-height:1.85}
+.foot-info a{color:var(--gold-b);text-decoration:none}
+.foot-nav{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.foot-nav a{font-family:var(--sans);font-size:10.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--w70);text-decoration:none}
+.foot-nav a:hover{color:var(--w92)}
+.foot-copy{margin-top:44px;padding-top:22px;border-top:1px solid rgba(166,137,74,.12);font-family:var(--sans);font-size:11px;color:var(--w35);max-width:var(--max-w);margin-left:auto;margin-right:auto;padding-left:28px}
+
+/* SECTION INDICATOR */
+.sec-nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:6px;opacity:0;transition:opacity .4s}
+.sec-nav.visible{opacity:1}
+.sec-nav a{display:block;width:8px;height:8px;border-radius:50%;background:rgba(166,137,74,.25);transition:background .3s,transform .3s;position:relative}
+.sec-nav a.active{background:var(--gold);transform:scale(1.3)}
+.sec-nav a:hover{background:rgba(166,137,74,.6)}
+.sec-nav .sec-tip{position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--sans);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(12,28,46,.92);padding:5px 10px;border-radius:3px;pointer-events:none;opacity:0;transition:opacity .2s}
+.sec-nav a:hover .sec-tip{opacity:1}
+
+/* BACK TO TOP */
+.btt{position:fixed;bottom:28px;right:24px;z-index:100;width:40px;height:40px;border-radius:50%;background:rgba(12,28,46,.85);border:1px solid rgba(166,137,74,.3);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .3s,border-color .2s;backdrop-filter:blur(8px);text-decoration:none}
+.btt.visible{opacity:1}
+.btt:hover{border-color:var(--gold)}
+.btt svg{width:16px;height:16px}
+
+@media(max-width:860px){
+  .nav-r a:not(.nav-cta){display:none}
+  .grid-2,.grid-4,.ba{grid-template-columns:1fr}
+  .grid-2 img,.grid-4 img{height:auto}
+  .ba-panel img{height:220px}
+  .sec-nav{display:none}
+  .foot-g{grid-template-columns:1fr}
+  .foot-nav{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav"><div class="nav-in">
+  <a href="index.html" class="nav-brand">Surface & Pressure<span>Issue 001</span></a>
+  <div class="nav-r">
+    <a href="#work">The Work</a>
+    <a href="#job">The Job</a>
+    <a href="#surfaces">Surfaces</a>
+    <a href="#equipment">Equipment</a>
+    <a href="#field">Field Notes</a>
+  </div>
+</div></nav>
+
+<!-- COVER -->
+<div id="cover" style="max-width:900px;margin:60px auto 0;padding:0;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
+  <img src="images/sp-cover.jpg" alt="Surface & Pressure — Issue 001" style="width:100%;height:auto;display:block">
+</div>
+
+<!-- THE WORK RIGHT NOW -->
+<article id="work"><div class="wn">
+  <div class="lab">Opening</div>
+  <h2 class="a-head">The Work Right Now</h2>
+  <div class="a-sub">What hasn't changed — and what has</div>
+
+  <div class="prose">
+    <p class="drop">The work is there. That hasn't changed.</p>
+
+    <p>What has changed is everything around it. Residential clients are more price-aware. Commercial contracts are tighter. Equipment costs are up. Labor is inconsistent.</p>
+
+    <p>Yet the surfaces remain. Concrete still darkens. Wood still grays. Siding still streaks. The physics haven't changed. Water under pressure still does what it has always done. What's shifted is the margin around the work — the space between doing the job and making the job pay.</p>
+  </div>
+
+  <div class="photo">
+    <img alt="Pressure washing concrete surface" src="images/sp-work.jpg">
+  </div>
+
+  <div class="prose">
+    <p>This issue is about the reality of the trade right now. Not the aspirational version. Not the social media highlight reel. The actual conditions on the ground — what's working, what's failing, what experienced operators are adjusting.</p>
+  </div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- THE JOB -->
+<article id="job"><div class="wn">
+  <div class="lab">The Job</div>
+  <h2 class="a-head">A Driveway That Should Have Been Simple</h2>
+  <div class="a-sub">Old concrete, oil stains, uneven results</div>
+
+  <div class="prose">
+    <p class="drop">Old concrete. Oil stains. Expected easy. Became uneven.</p>
+
+    <p>Surface history mattered more than surface condition. Multiple passes improved the result but did not equalize it. The stains had been there long enough to alter the concrete itself — not just discolor it, but change its porosity, its texture, its willingness to release what it had absorbed.</p>
+  </div>
+
+  <div class="grid-2">
+    <img alt="Driveway before cleaning" src="images/sp-driveway-before.jpg">
+    <img alt="Driveway after cleaning" src="images/sp-driveway-after.jpg">
+  </div>
+
+  <div class="prose">
+    <p>The lesson is familiar to anyone who's been at this long enough: the job you quote is not always the job you get. The surface tells you one thing from ten feet away and something else entirely when the wand is in your hand.</p>
+  </div>
+
+  <div class="pull">You learn to read a surface the way a mechanic listens to an engine — not just what's wrong, but how long it's been wrong.</div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- SURFACES -->
+<article class="dark" id="surfaces"><div class="wn">
+  <div class="lab">Surfaces</div>
+  <h2 class="a-head">What Each Material Asks For</h2>
+  <div class="a-sub">Wood, concrete, brick, and siding</div>
+
+  <div class="prose">
+    <p class="drop">Wood, concrete, brick, and siding all respond differently now. Technique matters more than pressure.</p>
+
+    <p>The operators who last are the ones who learned that a surface is not a problem to be solved with force. It's a material with a history, a grain, a tolerance. Concrete forgives. Wood remembers. Brick endures but stains unevenly. Vinyl siding looks clean until the angle changes.</p>
+  </div>
+
+  <div class="grid-4">
+    <img alt="Wood deck surface" src="images/sp-surface-wood.jpg">
+    <img alt="Concrete surface" src="images/sp-surface-concrete.jpg">
+    <img alt="Brick surface" src="images/sp-surface-brick.jpg">
+    <img alt="Vinyl siding" src="images/sp-surface-siding.jpg">
+  </div>
+
+  <div class="prose">
+    <p>Each material asks for something different. The professional knows what that is before the trigger is pulled.</p>
+  </div>
+</div></article>
+
+<!-- EQUIPMENT -->
+<article id="equipment"><div class="wn">
+  <div class="lab">Equipment</div>
+  <h2 class="a-head">Equipment Reality</h2>
+  <div class="a-sub">What lasts, what breaks, what matters</div>
+
+  <div class="prose">
+    <p class="drop">Mid-range units dominate. Repairs are constant. Reliability matters more than peak performance.</p>
+
+    <p>The Instagram setup — matching hose reels, custom skids, chrome fittings — that's aspirational. The working rig is patched, taped where it needs to be, and starts every morning because someone maintains it like their livelihood depends on it. Because it does.</p>
+  </div>
+
+  <div class="photo">
+    <img alt="Pressure washing equipment" src="images/sp-equipment.jpg">
+  </div>
+
+  <div class="pull">The best rig is the one that starts every morning and finishes every job. Everything else is decoration.</div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- CHEMISTRY -->
+<article class="dark" id="chemistry"><div class="wn">
+  <div class="lab">Chemistry</div>
+  <h2 class="a-head">What's in the Tank</h2>
+  <div class="a-sub">Sodium hypochlorite, mix ratios, and environmental pressure</div>
+
+  <div class="prose">
+    <p class="drop">Sodium hypochlorite remains dominant. Mix ratios shift more frequently. Environmental pressure is increasing.</p>
+
+    <p>The chemistry hasn't changed as much as the conversation around it. Clients ask what you're spraying. Neighbors watch. Municipalities are paying closer attention. The operator who can explain what's in the tank — and why — has an advantage the old guard never needed.</p>
+  </div>
+
+  <div class="photo">
+    <img alt="Chemical mixing and application" src="images/sp-chemistry.jpg">
+    <div class="photo-cap">Mix ratios vary by surface, temperature, and dwell time. There is no universal formula.</div>
+  </div>
+</div></article>
+
+<!-- BEFORE / AFTER -->
+<article id="results"><div class="wn">
+  <div class="lab">Results</div>
+  <h2 class="a-head">Before / After</h2>
+  <div class="a-sub">The work speaks</div>
+
+  <div class="ba">
+    <div class="ba-panel"><img alt="Before cleaning" src="images/sp-ba-before1.jpg"><span class="ba-label">Before</span></div>
+    <div class="ba-panel"><img alt="After cleaning" src="images/sp-ba-after1.jpg"><span class="ba-label">After</span></div>
+  </div>
+
+  <div class="ba">
+    <div class="ba-panel"><img alt="Before cleaning" src="images/sp-ba-before2.jpg"><span class="ba-label">Before</span></div>
+    <div class="ba-panel"><img alt="After cleaning" src="images/sp-ba-after2.jpg"><span class="ba-label">After</span></div>
+  </div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- FIELD NOTES -->
+<article class="dark" id="field"><div class="wn">
+  <div class="lab">Field Notes</div>
+  <h2 class="a-head">From the Ground</h2>
+  <div class="a-sub">What operators are seeing right now</div>
+
+  <div class="prose">
+    <p>Customers ask more questions. Scheduling gaps appear. Repeat clients remain stable. Pricing resistance is increasing.</p>
+
+    <p>The operators who are thriving share a few traits: they answer the phone, they show up on time, they explain the work before they do it, and they follow up after. None of that requires a better pump or a newer truck. It requires attention.</p>
+
+    <p>The ones who are struggling are usually chasing volume over value — more jobs, lower prices, faster turnarounds. The math doesn't hold. It never has.</p>
+  </div>
+
+  <div class="pull" style="border-color:var(--gold);color:var(--w92)">The difference between a trade and a hustle is whether you're still doing it in five years.</div>
+</div></article>
+
+<!-- WHERE IT'S GOING -->
+<article id="future"><div class="wn">
+  <div class="lab">Outlook</div>
+  <h2 class="a-head">Where the Business Is Going</h2>
+  <div class="a-sub">Specialization, standards, survival</div>
+
+  <div class="prose">
+    <p class="drop">More specialization. Less general work. Higher expectations.</p>
+
+    <p>The generalist pressure washer — the truck-and-a-dream operator who does driveways Monday, roofs Tuesday, fleet washing Wednesday — is being squeezed out. Not by regulation or competition, but by the market itself. Customers are choosing specialists. Insurance companies are demanding documentation. The bar is rising.</p>
+
+    <p>The work remains. The difference is who adapts.</p>
+  </div>
+</div></article>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-g">
+    <div>
+      <div class="foot-brand">Surface & Pressure</div>
+      <div class="foot-info">
+        A trade publication for the pressure washing industry.<br>
+        Issue 001 — 2026<br><br>
+        <a href="mailto:editor@surfaceandpressure.com">editor@surfaceandpressure.com</a>
+      </div>
+    </div>
+    <div class="foot-nav">
+      <a href="#cover">Cover</a>
+      <a href="#work">The Work</a>
+      <a href="#job">The Job</a>
+      <a href="#surfaces">Surfaces</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#chemistry">Chemistry</a>
+      <a href="#results">Before / After</a>
+      <a href="#field">Field Notes</a>
+      <a href="#future">Outlook</a>
+    </div>
+  </div>
+  <div class="foot-copy">© 2026 Surface & Pressure. All rights reserved.</div>
+</footer>
+
+<!-- Section indicator -->
+<nav class="sec-nav" id="sec-nav">
+  <a href="#cover"><span class="sec-tip">Cover</span></a>
+  <a href="#work"><span class="sec-tip">The Work</span></a>
+  <a href="#job"><span class="sec-tip">The Job</span></a>
+  <a href="#surfaces"><span class="sec-tip">Surfaces</span></a>
+  <a href="#equipment"><span class="sec-tip">Equipment</span></a>
+  <a href="#chemistry"><span class="sec-tip">Chemistry</span></a>
+  <a href="#results"><span class="sec-tip">Before / After</span></a>
+  <a href="#field"><span class="sec-tip">Field Notes</span></a>
+  <a href="#future"><span class="sec-tip">Outlook</span></a>
+</nav>
+
+<!-- Back to top -->
+<a class="btt" href="#cover" id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</a>
+
+<script>
+(function(){
+  var sections = ['cover','work','job','surfaces','equipment','chemistry','results','field','future'];
+  var dots = document.querySelectorAll('#sec-nav a');
+  var secNav = document.getElementById('sec-nav');
+  var btt = document.getElementById('btt');
+  function update(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var vh = window.innerHeight;
+    var pastCover = scrollY > vh * 0.5;
+    secNav.classList.toggle('visible', pastCover);
+    btt.classList.toggle('visible', pastCover);
+    var active = 0;
+    for(var i = 0; i < sections.length; i++){
+      var el = document.getElementById(sections[i]);
+      if(el && el.getBoundingClientRect().top < vh * 0.4) active = i;
+    }
+    dots.forEach(function(d,j){ d.classList.toggle('active', j === active); });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+</body>
+</html>

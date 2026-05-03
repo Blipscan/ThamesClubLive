@@ -1,92 +1,470 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dining — The Thames Club</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#07101a;
-      --blue:#0c1c2e;
-      --cream:#f4edd8;
-      --gold:#c9a96e;
-      --muted:rgba(244,237,216,.72);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      min-height:100vh;
-      background:
-        radial-gradient(circle at 20% 85%, rgba(201,169,110,.15), transparent 34%),
-        linear-gradient(180deg,var(--navy),var(--blue));
-      color:var(--cream);
-      font-family:'Libre Baskerville', Georgia, serif;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:32px;
-    }
-    .card{
-      max-width:760px;
-      border:1px solid rgba(201,169,110,.35);
-      padding:64px 48px;
-      background:rgba(7,16,26,.58);
-      box-shadow:0 30px 80px rgba(0,0,0,.35);
-    }
-    .eyebrow{
-      font-size:10px;
-      letter-spacing:.32em;
-      text-transform:uppercase;
-      color:var(--gold);
-      margin-bottom:22px;
-      font-weight:700;
-    }
-    h1{
-      font-family:'Cormorant Garamond', Georgia, serif;
-      font-size:clamp(56px,9vw,96px);
-      line-height:.88;
-      text-transform:uppercase;
-      letter-spacing:.03em;
-      margin-bottom:24px;
-    }
-    .rule{
-      width:120px;
-      height:1px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent);
-      margin:0 auto 28px;
-    }
-    p{
-      font-size:17px;
-      line-height:1.8;
-      color:var(--muted);
-      max-width:560px;
-      margin:0 auto;
-    }
-    .home{
-      display:inline-block;
-      margin-top:34px;
-      padding:12px 24px;
-      border:1px solid rgba(201,169,110,.48);
-      color:var(--cream);
-      text-decoration:none;
-      font-size:10px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-    }
-    .home:hover{background:rgba(201,169,110,.12)}
-  a{color:inherit;text-decoration:none}
-a:hover{color:#c9a96e}
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Reciprocal Clubs — The Thames Club</title>
+<meta content="The Thames Club's network of reciprocal private clubs across the United States and around the world. New London, Connecticut · Founded 1869." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Libre Baskerville',Georgia,serif;background:#07101a;color:#e8dfc8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:root{
+  --deep:#07101a;--navy:#0c1c2e;--mid:#0e1c2c;
+  --cream:#f4edd8;--cream-d:#e8dfc8;--cream-dim:#a89e87;
+  --gold:#a6894a;--gold-b:#c9a96e;--gold-dim:rgba(166,137,74,.25);
+  --ink:#1a1208;--serif:'Libre Baskerville',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;--max:1120px;
+}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+.w{max-width:var(--max);margin:0 auto;padding:0 44px}
+.lab{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;display:block;margin-bottom:14px}
+.lab-g{color:var(--gold-b)}.lab-d{color:#8a6835}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+
+/* HERO */
+.hero{min-height:62vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--deep);padding-bottom:90px;padding-top:140px}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 90%,rgba(166,137,74,.07) 0%,transparent 40%),radial-gradient(ellipse at 85% 10%,rgba(166,137,74,.04) 0%,transparent 38%)}
+.hgrid{position:absolute;inset:0;opacity:.028;background-image:repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(166,137,74,.5) 80px,rgba(166,137,74,.5) 81px),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(166,137,74,.5) 80px,rgba(166,137,74,.5) 81px)}
+.hcon{position:relative;z-index:2}
+.hey{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-b);margin-bottom:20px}
+.hey::before{content:'';width:28px;height:1px;background:var(--gold-dim);flex-shrink:0}
+h1{font-family:var(--display);font-size:clamp(50px,7.8vw,100px);font-weight:700;line-height:.88;letter-spacing:.02em;text-transform:uppercase;color:var(--cream);margin-bottom:28px}
+h1 em{font-style:italic;color:rgba(244,237,216,.6)}
+.hsub{font-family:var(--display);font-size:clamp(15px,1.8vw,21px);font-style:italic;line-height:1.7;color:rgba(232,223,200,.7);max-width:620px;margin-bottom:52px}
+.hfacts{display:grid;grid-template-columns:repeat(4,auto);gap:42px;border-top:1px solid rgba(166,137,74,.12);padding-top:28px;font-family:var(--serif);font-size:12px;color:rgba(232,223,200,.65);line-height:1.88}
+.hfacts strong{display:block;font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.hfacts a:hover{color:rgba(232,223,200,.88)}
+
+section{padding:96px 0}
+.sc{background:var(--cream);color:var(--ink)}.scd{background:#ede4cf;color:var(--ink)}
+.sd{background:var(--deep)}.sm{background:var(--mid)}.sn{background:var(--navy)}
+
+.hxl{font-family:var(--display);font-size:clamp(34px,5vw,66px);font-weight:700;line-height:.96;letter-spacing:.01em;margin-bottom:22px}
+.hxl em{font-style:italic}.hxl.cr{color:var(--cream)}.hxl.nk{color:var(--ink)}
+.bt{font-size:17px;line-height:1.88;max-width:640px}
+.bt.dk{color:rgba(232,223,200,.72)}
+.bt p+p{margin-top:17px}
+.bt a{color:var(--gold-b);border-bottom:1px solid rgba(201,169,110,.25);transition:border-color .2s}
+.bt a:hover{border-color:var(--gold-b)}
+
+.btn{display:inline-block;font-family:var(--serif);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px 30px;border-radius:1px;transition:all .2s}
+.bg{border:1px solid var(--gold);color:var(--cream-d)}.bg:hover{background:rgba(166,137,74,.13);border-color:var(--gold-b)}
+.bh{border:1px solid rgba(232,223,200,.18);color:var(--cream-dim)}.bh:hover{border-color:rgba(232,223,200,.75);color:var(--cream)}
+.btns{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
+
+.r{opacity:0;transform:translateY(16px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)}
+.r.in{opacity:1;transform:none}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.17s}.r.d3{transition-delay:.26s}
+
+/* ROSTER */
+.roster-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;border-bottom:1px solid rgba(166,137,74,.18);padding-bottom:18px;margin-bottom:38px}
+.roster-head .hxl{margin:0}
+.roster-count{font-family:var(--serif);font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-bottom:8px}
+.roster-cols{column-count:2;column-gap:64px}
+@media(max-width:780px){.roster-cols{column-count:1}}
+.club-block{break-inside:avoid;margin-bottom:32px;display:block}
+.club-state{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:.05em;color:var(--gold-b);text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(166,137,74,.13)}
+.club-row{display:grid;grid-template-columns:1fr auto;column-gap:14px;row-gap:1px;align-items:baseline;padding:9px 0;border-bottom:1px solid rgba(166,137,74,.06);font-family:var(--serif);transition:background .15s}
+.club-row:not(.no-link):hover{background:rgba(166,137,74,.04)}
+.club-row.no-link{cursor:default}
+.club-name{font-family:var(--display);font-size:17.5px;font-weight:500;color:var(--cream-d);line-height:1.3;display:flex;align-items:baseline;gap:7px}
+.club-row:not(.no-link):hover .club-name{color:var(--cream)}
+.club-name .ext{font-size:11px;color:var(--gold-b);opacity:.45;transition:opacity .2s,transform .2s;display:inline-block}
+.club-row:not(.no-link):hover .club-name .ext{opacity:.95;transform:translate(2px,-2px)}
+.club-city{font-family:var(--serif);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.66;text-align:right;font-style:normal}
+.club-row.no-link .club-name{color:rgba(232,223,200,.55)}
+.club-row.no-link .club-city{opacity:.4}
+
+.intl-block{break-inside:avoid;margin-bottom:32px}
+
+/* INTRO CARD */
+.intro-card{background:rgba(166,137,74,.05);border:1px solid rgba(166,137,74,.16);padding:36px 40px;margin-top:32px}
+.intro-card h3{font-family:var(--display);font-size:23px;font-weight:600;color:var(--cream);margin-bottom:14px;line-height:1.3}
+.intro-card p{font-family:var(--serif);font-size:14.5px;line-height:1.78;color:rgba(232,223,200,.78);max-width:620px}
+.intro-card p+p{margin-top:14px}
+.intro-card a{color:var(--gold-b);border-bottom:1px solid rgba(201,169,110,.32)}
+.intro-card a:hover{color:var(--cream);border-color:var(--cream)}
+
+/* NOTES / FOOTNOTE */
+.notes{font-family:var(--serif);font-size:12.5px;line-height:1.78;color:rgba(232,223,200,.55);max-width:760px}
+.notes p+p{margin-top:13px}
+.notes ul{list-style:none;margin:14px 0 18px;padding-left:0}
+.notes li{padding:5px 0 5px 22px;position:relative;color:rgba(232,223,200,.62)}
+.notes li::before{content:'·';position:absolute;left:8px;color:var(--gold-b);font-weight:700}
+.notes em{font-style:italic;color:rgba(232,223,200,.74)}
+.notes-head{font-family:var(--display);font-size:24px;font-weight:600;color:var(--gold-b);margin-bottom:12px;letter-spacing:.02em}
+
+@media(max-width:920px){
+  .nl a:not(.nc){display:none}
+  .hfacts{grid-template-columns:1fr 1fr;gap:22px}
+  .roster-head{grid-template-columns:1fr;gap:6px}
+  .roster-count{padding-bottom:0}
+  .w{padding:0 20px}.nav-in{padding:12px 20px}
+  section{padding:60px 0} h1{font-size:44px}
+  .intro-card{padding:28px 24px}
+}
+
+/* unified site nav + footer */
+.site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
+.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.site-shell-nav .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
+.site-shell-nav .site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
+.site-shell-nav .site-shell-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.site-shell-nav .site-shell-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none;padding:7px 11px;border-radius:4px;transition:color .15s,background .15s}
+.site-shell-nav .site-shell-links a:not(.nav-cta):hover{color:#f4edd8;background:rgba(166,137,74,.08)}
+.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
+.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
+.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
+.site-shell-footer .site-shell-foot-copy a{color:rgba(244,237,216,.85);border-bottom:1px solid rgba(166,137,74,.3)}
+.site-shell-footer .site-shell-foot-copy a:hover{color:#f4edd8;border-color:#c9a96e}
+.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
+.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-footer .site-shell-foot-links a:hover{color:#f4edd8}
+@media(max-width:900px){
+  .site-shell-nav .site-shell-inner{align-items:flex-start}
+  .site-shell-nav .site-shell-links{gap:10px 12px}
+}
+.nav-dd{position:relative}.nav-dd-trigger{display:flex;align-items:center;gap:4px;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.75);padding:7px 11px;border-radius:4px;cursor:pointer;background:none;border:none;white-space:nowrap;transition:color .15s,background .15s}.nav-dd-trigger::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.6}.nav-dd-trigger:hover{color:#f4edd8;background:rgba(166,137,74,.08)}.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}.nav-dd-menu a{display:block;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.65);text-decoration:none;padding:9px 14px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap}.nav-dd-menu a:hover{color:#f4edd8;background:rgba(166,137,74,.1)}.dd-divider{height:1px;background:rgba(166,137,74,.12);margin:4px 0}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}.nav-mobile a,.nav-mobile span.mob-section{font-family:'Inter',system-ui,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:13px 24px;border-bottom:1px solid rgba(166,137,74,.08);text-decoration:none;display:block;transition:color .2s}.nav-mobile a:hover{color:#f4edd8}.nav-mobile span.mob-section{font-size:9px;color:#a6894a;padding:14px 24px 6px;border-bottom:none}.nav-mobile.open{display:flex}
+@media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
+@media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
+.nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
+
 </style>
 </head>
 <body>
-  <main class="card">
-    <div class="eyebrow">The Thames Club · New London</div>
-    <h1>Dining</h1>
-    <div class="rule"></div>
-    <p>Our dining page is being prepared. Please check back soon for menus, hours, and upcoming member dining evenings.</p>
-    <a class="home" href="index.html">Return Home</a>
-  </main>
+
+<nav class="site-shell-nav">
+  <div class="site-shell-inner">
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London &middot; Est. 1869</small></a>
+    <div class="site-shell-links">
+      <a href="dining.html">Dining</a>
+      <div class="nav-dd"><span class="nav-dd-trigger">Events</span><div class="nav-dd-menu"><a href="events.html">Events calendar</a><a href="event-rooms.html">Event rooms</a><a href="event-planners.html">Private events</a></div></div>
+      <a href="above-below.html">Above &amp; Below</a>
+      <div class="nav-dd"><span class="nav-dd-trigger">About</span><div class="nav-dd-menu"><a href="history.html">History</a><a href="restoration.html">Restoration</a><a href="pierson-gallery.html">Pierson Gallery</a><div class="dd-divider"></div><a href="gallery.html">Photo gallery</a><a href="bowling.html">Duckpin bowling</a><a href="community.html">Community</a></div></div>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html" class="nav-cta">Visit</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="dining.html">Dining</a>
+    <span class="mob-section">Events</span>
+    <a href="events.html">Events calendar</a>
+    <a href="event-rooms.html">Event rooms</a>
+    <a href="event-planners.html">Private events</a>
+    <a href="above-below.html">Above &amp; Below</a>
+    <span class="mob-section">About</span>
+    <a href="history.html">History</a>
+    <a href="restoration.html">Restoration</a>
+    <a href="pierson-gallery.html">Pierson Gallery</a>
+    <a href="gallery.html">Photo gallery</a>
+    <a href="bowling.html">Duckpin bowling</a>
+    <a href="community.html">Community</a>
+    <a href="membership.html">Membership</a>
+    <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+    <a href="visit.html">Visit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero sd" id="top">
+<div class="hbg"></div><div class="hgrid"></div>
+<div class="w hcon">
+<p class="hey">A network of private clubs &middot; Worldwide reciprocity</p>
+<h1>Reciprocal <em>Clubs</em></h1>
+<p class="hsub">More than fifty private clubs across the United States and abroad welcome Thames Club members on introduction. Call the office for a letter before you go.</p>
+<div class="hfacts">
+<div><strong>United States</strong>46 clubs · 22 states &amp; DC</div>
+<div><strong>International</strong>6 clubs · 4 countries</div>
+<div><strong>Office</strong><a href="tel:9592642733">(959) 264-2733</a><br/>Ask for Jennifer</div>
+<div><strong>Email</strong><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
+</div>
+</div>
+</section>
+
+<!-- INTRO / HOW IT WORKS -->
+<section class="sd" id="intro">
+<div class="w">
+<div class="r">
+<span class="lab lab-g">Visiting another member club</span>
+<h2 class="hxl cr">A letter, a phone call, a welcome.</h2>
+<div class="bt dk">
+<p>Each of the clubs below has a reciprocal arrangement with The Thames Club. Most welcome members for dining, lodging, or short visits — terms vary by club, and many require an introduction letter from our office before you arrive. We're glad to make the call.</p>
+<p>Reach out at least a few days before you travel. We'll confirm the club is expecting you, send a letter on Thames Club letterhead if needed, and pass along anything useful — dress code, lunch hours, whether they take walk-ins.</p>
+</div>
+<div class="intro-card r d1">
+<h3>Request an introduction letter</h3>
+<p>Call <a href="tel:9592642733">(959) 264-2733</a> and ask for Jennifer at the Club office, or email <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a>. Please include the club name, the dates of your visit, and the names of anyone traveling with you.</p>
+<p>If you're not sure whether a particular club is on the list, just ask — reciprocity arrangements change, and the office tracks updates as they happen.</p>
+<div class="btns">
+<a class="btn bg" href="tel:9592642733">Call the Club</a>
+<a class="btn bh" href="mailto:thamesclub.nl@gmail.com">Send a note</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- US ROSTER -->
+<section class="sd" id="united-states">
+<div class="w">
+<div class="r">
+<div class="roster-head">
+<h2 class="hxl cr">United <em>States</em></h2>
+<span class="roster-count">46 clubs &middot; 22 states &amp; DC</span>
+</div>
+
+<div class="roster-cols">
+
+<div class="club-block">
+<h3 class="club-state">Alabama</h3>
+<a class="club-row" href="https://www.theclubinc.org/" target="_blank" rel="noopener"><span class="club-name">The Club <span class="ext">↗</span></span><span class="club-city">Birmingham</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">California</h3>
+<a class="club-row" href="https://marinesmemorial.org/" target="_blank" rel="noopener"><span class="club-name">Marines' Memorial Club <span class="ext">↗</span></span><span class="club-city">San Francisco</span></a>
+<a class="club-row" href="https://balboabayclub.com/" target="_blank" rel="noopener"><span class="club-name">The Balboa Bay Club <span class="ext">↗</span></span><span class="club-city">Newport Beach</span></a>
+<a class="club-row" href="https://www.uclubsf.org/" target="_blank" rel="noopener"><span class="club-name">University Club of San Francisco <span class="ext">↗</span></span><span class="club-city">San Francisco</span></a>
+<a class="club-row" href="https://www.towercluboxnard.com/" target="_blank" rel="noopener"><span class="club-name">The Tower Club <span class="ext">↗</span></span><span class="club-city">Oxnard</span></a>
+<a class="club-row" href="https://www.santabarbaraclub.org/" target="_blank" rel="noopener"><span class="club-name">Santa Barbara Club <span class="ext">↗</span></span><span class="club-city">Santa Barbara</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Connecticut</h3>
+<a class="club-row" href="https://www.essexyc.org/" target="_blank" rel="noopener"><span class="club-name">Essex Yacht Club <span class="ext">↗</span></span><span class="club-city">Essex</span></a>
+<a class="club-row" href="https://hartfordclub.com/" target="_blank" rel="noopener"><span class="club-name">The Hartford Club <span class="ext">↗</span></span><span class="club-city">Hartford</span></a>
+<a class="club-row" href="https://www.elmcityclub.com/" target="_blank" rel="noopener"><span class="club-name">The Elm City Club <span class="ext">↗</span></span><span class="club-city">New Haven</span></a>
+<a class="club-row" href="https://shyc.us/" target="_blank" rel="noopener"><span class="club-name">Stonington Harbor Yacht Club <span class="ext">↗</span></span><span class="club-city">Stonington</span></a>
+<a class="club-row" href="https://www.morys1849.org/" target="_blank" rel="noopener"><span class="club-name">The Mory's Association <span class="ext">↗</span></span><span class="club-city">New Haven</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Florida</h3>
+<a class="club-row" href="https://www.efyc.com/" target="_blank" rel="noopener"><span class="club-name">Epping Forest Yacht Club <span class="ext">↗</span></span><span class="club-city">Jacksonville</span></a>
+<a class="club-row" href="https://www.jaxriverclub.com/" target="_blank" rel="noopener"><span class="club-name">The River Club <span class="ext">↗</span></span><span class="club-city">Jacksonville</span></a>
+<a class="club-row" href="https://www.uclubtampa.com/" target="_blank" rel="noopener"><span class="club-name">University Club of Tampa <span class="ext">↗</span></span><span class="club-city">Tampa</span></a>
+<a class="club-row" href="https://www.govclub.com/" target="_blank" rel="noopener"><span class="club-name">The Governors Club <span class="ext">↗</span></span><span class="club-city">Tallahassee</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Georgia</h3>
+<a class="club-row" href="https://pinnacleclubaugusta.com/" target="_blank" rel="noopener"><span class="club-name">The Pinnacle Club <span class="ext">↗</span></span><span class="club-city">Augusta</span></a>
+<a class="club-row" href="https://www.georgianclub.com/" target="_blank" rel="noopener"><span class="club-name">The Georgian Club <span class="ext">↗</span></span><span class="club-city">Atlanta</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Idaho</h3>
+<a class="club-row" href="https://aridclub.org/" target="_blank" rel="noopener"><span class="club-name">Arid Club <span class="ext">↗</span></span><span class="club-city">Boise</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Illinois</h3>
+<a class="club-row" href="https://www.michiganshores.org/" target="_blank" rel="noopener"><span class="club-name">Michigan Shores Club <span class="ext">↗</span></span><span class="club-city">Wilmette</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Indiana</h3>
+<a class="club-row" href="https://columbia-club.org/" target="_blank" rel="noopener"><span class="club-name">The Columbia Club <span class="ext">↗</span></span><span class="club-city">Indianapolis</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Iowa</h3>
+<a class="club-row" href="https://www.theoutingclub.com/" target="_blank" rel="noopener"><span class="club-name">The Outing Club <span class="ext">↗</span></span><span class="club-city">Davenport</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Maine</h3>
+<a class="club-row" href="https://cumberlandclub.org/" target="_blank" rel="noopener"><span class="club-name">The Cumberland Club <span class="ext">↗</span></span><span class="club-city">Portland</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Massachusetts</h3>
+<a class="club-row" href="https://www.harvardclub.com/" target="_blank" rel="noopener"><span class="club-name">The Harvard Club of Boston <span class="ext">↗</span></span><span class="club-city">Boston</span></a>
+<a class="club-row" href="https://www.uclub.org/" target="_blank" rel="noopener"><span class="club-name">University Club of Boston <span class="ext">↗</span></span><span class="club-city">Boston</span></a>
+<a class="club-row" href="https://www.wamsuttaclub.club/" target="_blank" rel="noopener"><span class="club-name">The Wamsutta Club <span class="ext">↗</span></span><span class="club-city">New Bedford</span></a>
+<a class="club-row" href="https://www.worcclub.org/" target="_blank" rel="noopener"><span class="club-name">The Worcester Club <span class="ext">↗</span></span><span class="club-city">Worcester</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Minnesota</h3>
+<a class="club-row" href="https://www.universityclubofstpaul.com/" target="_blank" rel="noopener"><span class="club-name">University Club of St. Paul <span class="ext">↗</span></span><span class="club-city">St. Paul</span></a>
+<a class="club-row" href="https://kitchigammiclub.com/" target="_blank" rel="noopener"><span class="club-name">Kitchi Gammi Club <span class="ext">↗</span></span><span class="club-city">Duluth</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Mississippi</h3>
+<a class="club-row" href="https://www.capitalclubms.com/" target="_blank" rel="noopener"><span class="club-name">The Capital Club <span class="ext">↗</span></span><span class="club-city">Jackson</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Missouri</h3>
+<a class="club-row" href="https://www.thecarriageclub.com/" target="_blank" rel="noopener"><span class="club-name">Carriage Club <span class="ext">↗</span></span><span class="club-city">Kansas City</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">New Jersey</h3>
+<a class="club-row" href="https://www.parkavenueclub.com/" target="_blank" rel="noopener"><span class="club-name">The Park Avenue Club <span class="ext">↗</span></span><span class="club-city">Florham Park</span></a>
+<a class="club-row" href="https://www.morristownclub.net/" target="_blank" rel="noopener"><span class="club-name">The Morristown Club <span class="ext">↗</span></span><span class="club-city">Morristown</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">New York</h3>
+<a class="club-row" href="https://www.thedta.com/" target="_blank" rel="noopener"><span class="club-name">Downtown Association <span class="ext">↗</span></span><span class="club-city">New York</span></a>
+<a class="club-row" href="https://www.fortschuylerclub.com/" target="_blank" rel="noopener"><span class="club-name">The Fort Schuyler Club <span class="ext">↗</span></span><span class="club-city">Utica</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Ohio</h3>
+<a class="club-row" href="https://accolumbus.com/" target="_blank" rel="noopener"><span class="club-name">The Athletic Club of Columbus <span class="ext">↗</span></span><span class="club-city">Columbus</span></a>
+<a class="club-row" href="https://theunionclub.org/" target="_blank" rel="noopener"><span class="club-name">The Union Club <span class="ext">↗</span></span><span class="club-city">Cleveland</span></a>
+<a class="club-row" href="https://www.uclubcincinnati.com/" target="_blank" rel="noopener"><span class="club-name">The University Club of Cincinnati <span class="ext">↗</span></span><span class="club-city">Cincinnati</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Oklahoma</h3>
+<a class="club-row" href="https://beaconclub.com/" target="_blank" rel="noopener"><span class="club-name">Beacon Club <span class="ext">↗</span></span><span class="club-city">Oklahoma City</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Pennsylvania</h3>
+<a class="club-row" href="https://rcop.com/" target="_blank" rel="noopener"><span class="club-name">The Racquet Club of Philadelphia <span class="ext">↗</span></span><span class="club-city">Philadelphia</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Rhode Island</h3>
+<a class="club-row" href="https://www.hopeclub.com/" target="_blank" rel="noopener"><span class="club-name">The Hope Club <span class="ext">↗</span></span><span class="club-city">Providence</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">South Carolina</h3>
+<a class="club-row" href="https://www.greenboundaryclub.com/" target="_blank" rel="noopener"><span class="club-name">Green Boundary Club <span class="ext">↗</span></span><span class="club-city">Aiken</span></a>
+<a class="club-row" href="https://www.cityclubofrockhill.com/" target="_blank" rel="noopener"><span class="club-name">The City Club of Rock Hill <span class="ext">↗</span></span><span class="club-city">Rock Hill</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Tennessee</h3>
+<a class="club-row" href="https://www.ucmem.com/" target="_blank" rel="noopener"><span class="club-name">The University Club of Memphis <span class="ext">↗</span></span><span class="club-city">Memphis</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">Texas</h3>
+<a class="club-row" href="https://www.fortworthclub.com/" target="_blank" rel="noopener"><span class="club-name">The Fort Worth Club <span class="ext">↗</span></span><span class="club-city">Fort Worth</span></a>
+</div>
+
+<div class="club-block">
+<h3 class="club-state">District of Columbia</h3>
+<a class="club-row" href="https://www.armynavyclub.org/" target="_blank" rel="noopener"><span class="club-name">The Army &amp; Navy Club <span class="ext">↗</span></span><span class="club-city">Washington</span></a>
+<a class="club-row" href="https://www.georgetownclub.org/" target="_blank" rel="noopener"><span class="club-name">The Georgetown Club <span class="ext">↗</span></span><span class="club-city">Washington</span></a>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- INTERNATIONAL ROSTER -->
+<section class="sm" id="international">
+<div class="w">
+<div class="r">
+<div class="roster-head">
+<h2 class="hxl cr">International</h2>
+<span class="roster-count">6 clubs &middot; 4 countries</span>
+</div>
+
+<div class="roster-cols">
+
+<div class="intl-block">
+<h3 class="club-state">Australia</h3>
+<a class="club-row" href="https://www.publicschoolsclub.com.au/" target="_blank" rel="noopener"><span class="club-name">Public Schools Club <span class="ext">↗</span></span><span class="club-city">Adelaide</span></a>
+</div>
+
+<div class="intl-block">
+<h3 class="club-state">Canada</h3>
+<a class="club-row" href="https://www.thehamiltonclub.com/" target="_blank" rel="noopener"><span class="club-name">The Hamilton Club <span class="ext">↗</span></span><span class="club-city">Hamilton, ON</span></a>
+<a class="club-row" href="https://thebrantfordclub.com/" target="_blank" rel="noopener"><span class="club-name">The Brantford Club <span class="ext">↗</span></span><span class="club-city">Brantford, ON</span></a>
+<a class="club-row" href="https://www.thenationalclub.com/" target="_blank" rel="noopener"><span class="club-name">The National Club <span class="ext">↗</span></span><span class="club-city">Toronto, ON</span></a>
+</div>
+
+<div class="intl-block">
+<h3 class="club-state">Germany</h3>
+<a class="club-row" href="https://www.ueberseeclub.de/" target="_blank" rel="noopener"><span class="club-name">Der Übersee-Club <span class="ext">↗</span></span><span class="club-city">Hamburg</span></a>
+</div>
+
+<div class="intl-block">
+<h3 class="club-state">Indonesia</h3>
+<a class="club-row" href="https://www.mercantileathletic.club/" target="_blank" rel="noopener"><span class="club-name">Mercantile Athletic Club <span class="ext">↗</span></span><span class="club-city">Jakarta</span></a>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- VERIFICATION FOOTNOTE -->
+<section class="sd" id="notes">
+<div class="w">
+<div class="r">
+<span class="lab lab-g">About this directory</span>
+<h2 class="notes-head">Last reviewed April 27, 2026.</h2>
+<div class="notes">
+<p>This directory was reviewed in spring 2026. The clubs below have been removed from previous editions of the list — five after this review (closures or mergers since the prior printing), five flagged earlier and still pending office confirmation:</p>
+<ul>
+<li><em>University Club of Phoenix</em> — permanently closed June 2025.</li>
+<li><em>The Quinnipiac Club</em>, New Haven — merged with the Graduate Club in 2012 to form The Elm City Club; the Church Street building has been sold.</li>
+<li><em>Sangamo Club</em>, Springfield IL — closed June 2023 after 133 years.</li>
+<li><em>The Beacon Club</em>, Kalamazoo MI — closed 2019; the building is now a public restaurant.</li>
+<li><em>University Club of Albany</em> — closed 2022 after 121 years.</li>
+<li><em>Corpus Christi Town Club</em>, <em>University Club of Orlando</em>, <em>University Club of Mizzou (MU)</em> — appear to have closed; pending office confirmation.</li>
+<li><em>Soundview Club</em> and <em>India House</em> — verification signals were weak; pending office confirmation.</li>
+</ul>
+<p>Reciprocity arrangements and operating status change. If you have firsthand information about any of these clubs — or about any club you believe should be on the list — please call <a href="tel:9592642733" style="color:var(--gold-b);border-bottom:1px solid rgba(201,169,110,.3)">(959) 264-2733</a> or write to <a href="mailto:thamesclub.nl@gmail.com" style="color:var(--gold-b);border-bottom:1px solid rgba(201,169,110,.3)">thamesclub.nl@gmail.com</a>.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-shell-footer">
+  <div class="site-shell-foot-inner">
+    <div>
+      <div class="site-shell-foot-brand">The Thames Club</div>
+      <div class="site-shell-foot-copy">
+        290 State Street &middot; New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> &middot; (959) 264-2733
+      </div>
+    </div>
+    <div class="site-shell-foot-links">
+      <a href="index.html">Home</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="community.html">Community</a>
+      <a href="publications.html">Publications</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}
+}),{threshold:.05,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.r').forEach(el=>ro.observe(el));
+</script>
+<script>
+(function(){var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}document.querySelectorAll('.nav-dd').forEach(function(dd){var trigger=dd.querySelector('.nav-dd-trigger'),menu=dd.querySelector('.nav-dd-menu');if(!trigger||!menu)return;trigger.addEventListener('click',function(e){e.stopPropagation();var isOpen=menu.style.display==='block';document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});menu.style.display=isOpen?'none':'block';});});document.addEventListener('click',function(){document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});});})();
+</script>
 </body>
 </html>
-

@@ -1,19 +1,305 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>The Thames Club</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>The Thames Club — New London, Connecticut</title>
+<meta content="Connecticut's oldest private social club. Founded February 8, 1869. For the people who make this corner of New England work." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Libre Baskerville',Georgia,serif;background:#07101a;color:#e8dfc8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:root{
+  --deep:#07101a;--navy:#0c1c2e;--mid:#0e1c2c;
+  --cream:#f4edd8;--cream-d:#e8dfc8;--cream-dim:#a89e87;
+  --gold:#a6894a;--gold-b:#c9a96e;--gold-dim:rgba(166,137,74,.25);
+  --ink:#1a1208;--serif:'Libre Baskerville',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;--max:1120px;
+}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+.w{max-width:var(--max);margin:0 auto;padding:0 44px}
+.lab{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;display:block;margin-bottom:14px}
+.lab-g{color:var(--gold-b)}.lab-d{color:#8a6835}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+
+/* NAV — now with logo */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(7,16,26,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(166,137,74,.08);transition:border-color .5s}
+nav.up{border-bottom-color:rgba(166,137,74,.22)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 44px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-logo{height:36px;width:auto;opacity:.88}
+.brand-text{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,237,216,.85);line-height:1.2}
+.brand-text small{display:block;font-size:8px;font-weight:400;letter-spacing:.28em;color:var(--gold);margin-top:2px;font-family:var(--serif)}
+.nl{display:flex;gap:22px;align-items:center}
+.nl a{font-family:var(--serif);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.75);transition:color .2s}
+.nl a:hover{color:rgba(232,223,200,.9)}
+.nc{padding:8px 18px!important;border:1px solid rgba(166,137,74,.28);color:rgba(232,223,200,.76)!important;transition:border-color .2s,color .2s!important}
+.nc:hover{border-color:var(--gold)!important;color:var(--cream)!important}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--deep);padding-bottom:90px}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 90%,rgba(166,137,74,.07) 0%,transparent 40%),radial-gradient(ellipse at 85% 10%,rgba(166,137,74,.04) 0%,transparent 38%)}
+.hgrid{position:absolute;inset:0;opacity:.028;background-image:repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(166,137,74,.5) 80px,rgba(166,137,74,.5) 81px),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(166,137,74,.5) 80px,rgba(166,137,74,.5) 81px)}
+.hdraw{position:absolute;top:11%;left:50%;transform:translateX(-50%);width:min(900px,90%);max-height:56vh;object-fit:contain;z-index:1;filter:invert(1);mix-blend-mode:screen;opacity:.38;pointer-events:none}
+.hcon{position:relative;z-index:2}
+.hey{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-b);margin-bottom:20px}
+.hey::before{content:'';width:28px;height:1px;background:var(--gold-dim);flex-shrink:0}
+h1{font-family:var(--display);font-size:clamp(50px,7.8vw,100px);font-weight:700;line-height:.88;letter-spacing:.02em;text-transform:uppercase;color:var(--cream);margin-bottom:28px}
+h1 em{font-style:italic;color:rgba(244,237,216,.6)}
+.hsub{font-family:var(--display);font-size:clamp(15px,1.8vw,21px);font-style:italic;line-height:1.7;color:rgba(232,223,200,.7);max-width:560px;margin-bottom:52px}
+.hfacts{display:grid;grid-template-columns:repeat(4,auto);gap:42px;border-top:1px solid rgba(166,137,74,.12);padding-top:28px;font-family:var(--serif);font-size:12px;color:rgba(232,223,200,.65);line-height:1.88}
+.hfacts strong{display:block;font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.hfacts a:hover{color:rgba(232,223,200,.88)}
+
+section{padding:96px 0}
+.sc{background:var(--cream);color:var(--ink)}.scd{background:#ede4cf;color:var(--ink)}
+.sd{background:var(--deep)}.sm{background:var(--mid)}.sn{background:var(--navy)}
+.sw{background:#0b0906}
+
+.hxl{font-family:var(--display);font-size:clamp(34px,5vw,66px);font-weight:700;line-height:.96;letter-spacing:.01em;margin-bottom:22px}
+.hxl em{font-style:italic}.hxl.cr{color:var(--cream)}.hxl.nk{color:var(--ink)}
+.bt{font-size:17px;line-height:1.88;max-width:600px}
+.bt.dk{color:rgba(232,223,200,.64)}.bt.lt{color:rgba(26,18,8,.7)}
+.bt p+p{margin-top:17px}
+.pull{font-family:var(--display);font-size:clamp(16px,1.9vw,22px);font-style:italic;line-height:1.62;max-width:540px;margin-top:24px;padding-left:20px;border-left:2px solid var(--gold-dim)}
+.pull.dk{color:rgba(232,223,200,.55)}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
+.g2c{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
+.g21{display:grid;grid-template-columns:1.3fr .7fr;gap:68px;align-items:center}
+.g12{display:grid;grid-template-columns:.72fr 1.28fr;gap:68px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+.ph{overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 7s ease}
+.ph:hover img{transform:scale(1.025)}
+.cap{font-family:var(--serif);font-size:9px;letter-spacing:.13em;text-transform:uppercase;padding-top:9px}
+.cap.dk{color:rgba(232,223,200,.22)}.cap.lt{color:rgba(26,18,8,.28)}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid;border-bottom:1px solid;margin:42px 0}
+.stats.dk{border-color:rgba(166,137,74,.11)}.stats.lt{border-color:rgba(138,110,53,.14)}
+.stat{padding:28px 0;text-align:center;border-right:1px solid}
+.stats.dk .stat{border-color:rgba(166,137,74,.07)}.stats.lt .stat{border-color:rgba(138,110,53,.09)}
+.stat:last-child{border-right:none}
+.sn2{font-family:var(--display);font-size:clamp(38px,5vw,60px);font-style:italic;line-height:1;display:block;margin-bottom:5px}
+.stats.dk .sn2{color:var(--gold-b)}.stats.lt .sn2{color:#8a6835}
+.sl{font-family:var(--serif);font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+.stats.dk .sl{color:rgba(232,223,200,.55)}.stats.lt .sl{color:rgba(26,18,8,.32)}
+
+/* EVENT CARDS */
+.evcard{background:rgba(166,137,74,.05);border:1px solid rgba(166,137,74,.15);overflow:hidden}
+.evcard-img{overflow:hidden}
+.evcard-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 6s ease}
+.evcard:hover .evcard-img img{transform:scale(1.05)}
+.evcard-body{padding:20px}
+.evcard-date{font-family:var(--serif);font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block}
+.evcard-title{font-family:var(--display);font-size:19px;font-weight:700;color:var(--cream);margin-bottom:7px;line-height:1.2}
+.evcard-desc{font-family:var(--serif);font-size:12.5px;line-height:1.7;color:rgba(232,223,200,.65)}
+
+/* ENTERTAINER */
+.ent{display:flex;gap:16px;align-items:start;padding:20px;background:rgba(166,137,74,.06);border:1px solid rgba(166,137,74,.14)}
+.ent-photo{width:72px;height:72px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.ent-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ent-name{font-family:var(--display);font-size:17px;font-weight:700;color:var(--cream);margin-bottom:3px}
+.ent-role{font-family:var(--serif);font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block}
+.ent-desc{font-family:var(--serif);font-size:12px;line-height:1.68;color:rgba(232,223,200,.75)}
+
+.ev{display:grid;grid-template-columns:155px 1fr auto;gap:15px;align-items:baseline;padding:17px 0;border-bottom:1px solid}
+.ev.lt{border-color:rgba(138,110,53,.11)}.ev.dk{border-color:rgba(166,137,74,.09)}
+.ew{font-family:var(--serif);font-size:11.5px}
+.ev.lt .ew{color:rgba(26,18,8,.36)}.ev.dk .ew{color:rgba(232,223,200,.55)}
+.en{font-family:var(--display);font-size:18px;font-weight:600}
+.ev.lt .en{color:var(--ink)}.ev.dk .en{color:var(--cream)}
+.et{font-family:var(--serif);font-size:8.5px;letter-spacing:.15em;text-transform:uppercase}
+.ev.lt .et{color:#8a6835;opacity:.75}.ev.dk .et{color:var(--gold);opacity:.62}
+
+.cd{padding:36px}
+.cg{background:rgba(166,137,74,.07);border:1px solid rgba(166,137,74,.17)}
+.cg h3{font-family:var(--display);font-size:23px;font-weight:700;color:var(--cream);margin-bottom:11px}
+.cg p{font-size:14.5px;line-height:1.76;color:rgba(232,223,200,.54);margin-bottom:20px}
+.cn{background:var(--navy)}
+.cn h3{font-family:var(--display);font-size:22px;font-weight:700;color:var(--cream);margin-bottom:11px}
+.cn p{font-size:14.5px;line-height:1.76;color:rgba(232,223,200,.58)}.cn p+p{margin-top:11px}
+
+.btn{display:inline-block;font-family:var(--serif);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px 30px;border-radius:1px;transition:all .2s}
+.bg{border:1px solid var(--gold);color:var(--cream-d)}.bg:hover{background:rgba(166,137,74,.13);border-color:var(--gold-b)}
+.bh{border:1px solid rgba(232,223,200,.18);color:var(--cream-dim)}.bh:hover{border-color:rgba(232,223,200,.75);color:var(--cream)}
+.bi{border:1px solid rgba(26,18,8,.2);color:var(--ink)}.bi:hover{border-color:rgba(26,18,8,.5)}
+.btns{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
+
+.inf{font-family:var(--serif);font-size:13px;line-height:2;color:rgba(232,223,200,.65)}
+.inf strong{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-top:15px;margin-bottom:2px}
+.inf strong:first-child{margin-top:0}
+.inf a{color:var(--gold-b)}.inf a:hover{opacity:.72}
+.dr{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid rgba(166,137,74,.09);font-family:var(--serif);font-size:13px}
+.dc{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);padding-top:2px}
+.dv{color:rgba(232,223,200,.76)}
+
+.r{opacity:0;transform:translateY(16px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1)}
+.r.in{opacity:1;transform:none}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.17s}.r.d3{transition-delay:.26s}
+
+/* FOOTER — with logo */
+footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:54px 0 68px}
+.fg{display:grid;grid-template-columns:1.4fr .6fr;gap:40px}
+.foot-logo{height:48px;width:auto;opacity:.55;margin-bottom:14px;display:block}
+.fn{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.fn a{font-family:var(--serif);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(232,223,200,.55);transition:color .2s}
+.fn a:hover{color:rgba(232,223,200,.8)}
+.fc{margin-top:44px;padding-top:20px;border-top:1px solid rgba(166,137,74,.07);font-family:var(--serif);font-size:10px;letter-spacing:.05em;color:rgba(232,223,200,.5)}
+
+@media(max-width:920px){
+  .nl a:not(.nc){display:none}
+  .g2,.g2c,.g21,.g12,.g3,.g4{grid-template-columns:1fr}
+  .hfacts{grid-template-columns:1fr 1fr;gap:22px}
+  .stats{grid-template-columns:1fr;border:none}
+  .stat{border:none;border-bottom:1px solid rgba(166,137,74,.09);padding:18px 0;text-align:left}
+  .ev{grid-template-columns:1fr;gap:3px}
+  .fg{grid-template-columns:1fr}.fn{align-items:flex-start;margin-top:26px}
+  .w{padding:0 20px}.nav-in{padding:12px 20px}
+  section{padding:60px 0} h1{font-size:44px}
+}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}
+.mobile-menu a{font-family:var(--serif);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:14px 24px;border-bottom:1px solid rgba(166,137,74,.08);transition:color .2s}
+.mobile-menu a:hover{color:var(--cream)}
+.mobile-menu.open{display:flex}
+@media(max-width:920px){
+  .hamburger{display:flex}
+  .nl{display:none!important}
+}
+@media(min-width:921px){
+  .hamburger{display:none!important}
+  .mobile-menu{display:none!important}
+}
+
+/* unified site nav + footer */
+.site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
+.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.site-shell-nav .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
+.site-shell-nav .site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
+.site-shell-nav .site-shell-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.site-shell-nav .site-shell-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-nav .site-shell-links a:hover{color:#f4edd8}
+.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
+.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
+.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
+.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
+.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+@media(max-width:900px){
+  .site-shell-nav .site-shell-inner{align-items:flex-start}
+  .site-shell-nav .site-shell-links{gap:10px 12px}
+}
+.nav-dd{position:relative}.nav-dd-trigger{display:flex;align-items:center;gap:4px;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.75);padding:7px 11px;border-radius:4px;cursor:pointer;background:none;border:none;white-space:nowrap;transition:color .15s,background .15s}.nav-dd-trigger::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.6}.nav-dd-trigger:hover{color:#f4edd8;background:rgba(166,137,74,.08)}.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}.nav-dd-menu a{display:block;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.65);text-decoration:none;padding:9px 14px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap}.nav-dd-menu a:hover{color:#f4edd8;background:rgba(166,137,74,.1)}.dd-divider{height:1px;background:rgba(166,137,74,.12);margin:4px 0}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav-hamburger.open span:nth-child(2){opacity:0}.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}.nav-mobile a,.nav-mobile span.mob-section{font-family:'Inter',system-ui,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:13px 24px;border-bottom:1px solid rgba(166,137,74,.08);text-decoration:none;display:block;transition:color .2s}.nav-mobile a:hover{color:#f4edd8}.nav-mobile span.mob-section{font-size:9px;color:#a6894a;padding:14px 24px 6px;border-bottom:none}.nav-mobile.open{display:flex}
+@media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
+@media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
+.nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
+
+</style>
 </head>
-<body style="margin:0;min-height:100vh;background:#07101a;color:#f4edd8;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center;text-align:center;">
-  <main>
-    <h1 style="font-size:64px;">The Thames Club</h1>
-    <p>New London · Established 1869</p>
-    <p>Connecticut’s oldest private social club.</p>
-    <p>
-      <a href="events.html" style="color:#c9a96e;">Events</a> ·
-      <a href="dining.html" style="color:#c9a96e;">Dining</a>
-    </p>
-  </main>
+<body>
+<!-- NAV with TC duck logo -->
+
+<nav class="site-shell-nav">
+  <div class="site-shell-inner">
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London &middot; Est. 1869</small></a>
+    <div class="site-shell-links">
+      <a href="dining.html">Dining</a>
+      <div class="nav-dd"><span class="nav-dd-trigger">Events</span><div class="nav-dd-menu"><a href="events.html">Events calendar</a><a href="event-rooms.html">Event rooms</a><a href="event-planners.html">Private events</a></div></div>
+      <a href="above-below.html">Above &amp; Below</a>
+      <div class="nav-dd"><span class="nav-dd-trigger">About</span><div class="nav-dd-menu"><a href="history.html">History</a><a href="restoration.html">Restoration</a><a href="pierson-gallery.html">Pierson Gallery</a><div class="dd-divider"></div><a href="gallery.html">Photo gallery</a><a href="bowling.html">Duckpin bowling</a><a href="community.html">Community</a></div></div>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html" class="nav-cta">Visit</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="dining.html">Dining</a>
+    <span class="mob-section">Events</span>
+    <a href="events.html">Events calendar</a>
+    <a href="event-rooms.html">Event rooms</a>
+    <a href="event-planners.html">Private events</a>
+    <a href="above-below.html">Above &amp; Below</a>
+    <span class="mob-section">About</span>
+    <a href="history.html">History</a>
+    <a href="restoration.html">Restoration</a>
+    <a href="pierson-gallery.html">Pierson Gallery</a>
+    <a href="gallery.html">Photo gallery</a>
+    <a href="bowling.html">Duckpin bowling</a>
+    <a href="community.html">Community</a>
+    <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+    <a href="visit.html">Visit</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero sd" id="top" style="padding-bottom:90px">
+<div class="hbg"></div><div class="hgrid"></div>
+<img alt="The Thames Club" class="hdraw" src="images/index_01.jpg"/>
+<div class="w hcon">
+<p class="hey">Founded February 8, 1869 — New London, Connecticut</p>
+<h1>The Thames<br/><em>Club</em></h1>
+<p class="hsub">A gathering place on the river since eighteen sixty-nine. Merchants and sea captains. Physicians, lawyers, educators, and civic leaders. Engineers and executives. Those who teach, heal, build, serve, and give back. The work changes. The room endures.</p>
+<div class="hfacts">
+<div><strong>Address</strong>290 State Street<br/>New London, CT 06320</div>
+<div><strong>Lunch</strong>Wed BYO · 12–2 pm</div>
+<div><strong>Dinner</strong>Thursdays · 5 pm</div>
+<div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br/><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-shell-footer">
+  <div class="site-shell-foot-inner">
+    <div>
+      <div class="site-shell-foot-brand">The Thames Club</div>
+      <div class="site-shell-foot-copy">
+        290 State Street · New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+      </div>
+    </div>
+    <div class="site-shell-foot-links">
+      <a href="index.html">Home</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="community.html">Community</a>
+      <a href="publications.html">Publications</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('up', window.scrollY > 40);
+});
+document.querySelectorAll('.r').forEach(el => {
+  new IntersectionObserver(([e]) => e.isIntersecting && e.target.classList.add('in'), {threshold:.12}).observe(el);
+});
+</script>
+<script>
+(function(){var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}document.querySelectorAll('.nav-dd').forEach(function(dd){var trigger=dd.querySelector('.nav-dd-trigger'),menu=dd.querySelector('.nav-dd-menu');if(!trigger||!menu)return;trigger.addEventListener('click',function(e){e.stopPropagation();var isOpen=menu.style.display==='block';document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});menu.style.display=isOpen?'none':'block';});});document.addEventListener('click',function(){document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});});})();
+</script>
 </body>
 </html>
-

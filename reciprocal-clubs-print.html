@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Reciprocal Clubs Directory — The Thames Club</title>
+<style>
+@page {
+  size: Letter;
+  margin: 0.55in 0.55in 0.55in 0.55in;
+  @bottom-center {
+    content: "The Thames Club  ·  290 State Street  ·  New London, CT 06320  ·  (959) 264-2733  ·  thamesclub.nl@gmail.com";
+    font-family: "Times New Roman", Times, serif;
+    font-size: 8.5pt;
+    color: #6b6356;
+  }
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 8.5pt;
+    color: #6b6356;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #ffffff;
+  color: #1a1208;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.cover {
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 9.5in;
+  text-align: center;
+}
+
+.cover-top {
+  margin-top: 1.2in;
+}
+
+.cover-eyebrow {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 9pt;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #8a6835;
+  margin-bottom: 0.45in;
+}
+
+.cover-rule {
+  width: 90px;
+  height: 1px;
+  background: #b8924a;
+  margin: 0 auto 0.45in;
+}
+
+.cover-title {
+  font-family: "Cormorant Garamond", "Goudy Old Style", "Times New Roman", Times, serif;
+  font-size: 56pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: #0c1c2e;
+  margin-bottom: 0.25in;
+}
+
+.cover-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: #6b5a3a;
+}
+
+.cover-subtitle {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 16pt;
+  font-style: italic;
+  color: #4a4133;
+  max-width: 4.5in;
+  margin: 0 auto 0.6in;
+  line-height: 1.5;
+}
+
+.cover-stats {
+  display: flex;
+  justify-content: center;
+  gap: 0.55in;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 9.5pt;
+  color: #4a4133;
+  border-top: 1px solid #d6c9a8;
+  border-bottom: 1px solid #d6c9a8;
+  padding: 0.22in 0;
+  max-width: 5.5in;
+  margin: 0 auto;
+}
+
+.cover-stats div {
+  text-align: center;
+}
+
+.cover-stats strong {
+  display: block;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b8924a;
+  margin-bottom: 4pt;
+}
+
+.cover-bottom {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 9pt;
+  color: #6b6356;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cover-bottom-brand {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 14pt;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #0c1c2e;
+  margin-bottom: 6pt;
+  font-weight: 600;
+}
+
+.cover-bottom-address {
+  font-style: italic;
+  font-size: 10pt;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #4a4133;
+  font-family: "Cormorant Garamond", Times, serif;
+  margin-top: 4pt;
+}
+
+/* Intro page */
+.intro-page {
+  page-break-after: always;
+  padding-top: 0.2in;
+}
+
+.intro-eyebrow {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b8924a;
+  margin-bottom: 0.18in;
+}
+
+.intro-h2 {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 30pt;
+  font-weight: 600;
+  line-height: 1;
+  color: #0c1c2e;
+  margin-bottom: 0.28in;
+  letter-spacing: 0.01em;
+}
+
+.intro-h2 em {
+  font-style: italic;
+  color: #6b5a3a;
+}
+
+.intro-body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 11pt;
+  line-height: 1.6;
+  color: #2a2418;
+  max-width: 5.6in;
+  margin-bottom: 0.18in;
+}
+
+.intro-body p + p {
+  margin-top: 0.14in;
+}
+
+.intro-card {
+  border: 1px solid #d6c9a8;
+  background: #f8f3e6;
+  padding: 0.32in 0.36in;
+  margin-top: 0.36in;
+  max-width: 6.2in;
+}
+
+.intro-card h3 {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 16pt;
+  font-weight: 600;
+  color: #0c1c2e;
+  margin-bottom: 0.12in;
+}
+
+.intro-card p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: #2a2418;
+  margin-bottom: 0.1in;
+}
+
+.intro-card p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-card strong {
+  color: #8a6835;
+  font-weight: 700;
+}
+
+/* Roster pages */
+.roster-section {
+  margin-bottom: 0.3in;
+}
+
+.roster-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1.5px solid #b8924a;
+  padding-bottom: 0.08in;
+  margin-bottom: 0.18in;
+  page-break-after: avoid;
+}
+
+.roster-section-title {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #0c1c2e;
+}
+
+.roster-section-title em {
+  font-style: italic;
+  color: #6b5a3a;
+}
+
+.roster-section-count {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #b8924a;
+}
+
+.roster-cols {
+  column-count: 2;
+  column-gap: 0.42in;
+  column-rule: 0.5px solid #e6dac0;
+}
+
+.state-block {
+  break-inside: avoid;
+  margin-bottom: 0.22in;
+}
+
+.state-name {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 13pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #0c1c2e;
+  margin-bottom: 0.06in;
+  padding-bottom: 0.03in;
+  border-bottom: 0.5px solid #d6c9a8;
+}
+
+.club-entry {
+  margin-bottom: 0.09in;
+  break-inside: avoid;
+}
+
+.club-entry-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.08in;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.club-entry-name {
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: #1a1208;
+  flex: 1;
+}
+
+.club-entry-city {
+  font-size: 9pt;
+  font-style: italic;
+  color: #6b5a3a;
+  white-space: nowrap;
+}
+
+.club-entry-url {
+  display: block;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 9pt;
+  color: #b8924a;
+  margin-top: 1pt;
+  margin-left: 0;
+  word-break: break-all;
+  line-height: 1.3;
+}
+
+/* Notes page */
+.notes-page {
+  page-break-before: always;
+  padding-top: 0.2in;
+}
+
+.notes-eyebrow {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b8924a;
+  margin-bottom: 0.16in;
+}
+
+.notes-h2 {
+  font-family: "Cormorant Garamond", "Goudy Old Style", Times, serif;
+  font-size: 26pt;
+  font-weight: 600;
+  line-height: 1;
+  color: #0c1c2e;
+  margin-bottom: 0.24in;
+  letter-spacing: 0.01em;
+}
+
+.notes-body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10.5pt;
+  line-height: 1.62;
+  color: #2a2418;
+  max-width: 6.2in;
+}
+
+.notes-body p + p {
+  margin-top: 0.13in;
+}
+
+.notes-body ul {
+  list-style: none;
+  margin: 0.14in 0;
+  padding-left: 0;
+}
+
+.notes-body li {
+  padding: 4pt 0 4pt 0.18in;
+  position: relative;
+  color: #2a2418;
+  font-size: 10pt;
+  line-height: 1.55;
+}
+
+.notes-body li::before {
+  content: "·";
+  position: absolute;
+  left: 0.06in;
+  color: #b8924a;
+  font-weight: 700;
+}
+
+.notes-body em {
+  font-style: italic;
+  color: #1a1208;
+  font-weight: 600;
+}
+
+.notes-disclaimer {
+  margin-top: 0.36in;
+  padding-top: 0.18in;
+  border-top: 1px solid #d6c9a8;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 9pt;
+  font-style: italic;
+  color: #6b6356;
+  line-height: 1.55;
+  max-width: 6.2in;
+}
+
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-eyebrow">A Network of Private Clubs &mdash; Worldwide</div>
+    <div class="cover-rule"></div>
+    <h1 class="cover-title">Reciprocal <em>Clubs</em></h1>
+    <p class="cover-subtitle">More than fifty private clubs across the United States and abroad welcome Thames Club members on introduction.</p>
+    <div class="cover-stats">
+      <div><strong>United States</strong>46 clubs<br/>22 states &amp; DC</div>
+      <div><strong>International</strong>6 clubs<br/>4 countries</div>
+      <div><strong>Reviewed</strong>April 27, 2026</div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-bottom-brand">The Thames Club</div>
+    Founded February 8, 1869
+    <div class="cover-bottom-address">290 State Street &middot; New London, Connecticut</div>
+  </div>
+</div>
+
+<!-- INTRO PAGE -->
+<div class="intro-page">
+  <div class="intro-eyebrow">Visiting another member club</div>
+  <h2 class="intro-h2">A letter, a phone call, a welcome.</h2>
+  <div class="intro-body">
+    <p>Each of the clubs that follows has a reciprocal arrangement with The Thames Club. Most welcome members for dining, lodging, or short visits &mdash; terms vary by club, and many require an introduction letter from our office before you arrive. We are glad to make the call.</p>
+    <p>Reach out at least a few days before you travel. We will confirm the club is expecting you, send a letter on Thames Club letterhead if needed, and pass along anything useful &mdash; dress code, lunch hours, whether they take walk-ins.</p>
+  </div>
+  <div class="intro-card">
+    <h3>Request an introduction letter</h3>
+    <p>Call <strong>(959) 264&#8209;2733</strong> and ask for Jennifer at the Club office, or email <strong>thamesclub.nl@gmail.com</strong>. Please include the club name, the dates of your visit, and the names of anyone traveling with you.</p>
+    <p>If you are not sure whether a particular club is on the list, just ask &mdash; reciprocity arrangements change, and the office tracks updates as they happen.</p>
+  </div>
+</div>
+
+<!-- US ROSTER -->
+<section class="roster-section">
+  <div class="roster-section-head">
+    <h2 class="roster-section-title">United <em>States</em></h2>
+    <span class="roster-section-count">46 clubs &middot; 22 states &amp; DC</span>
+  </div>
+  <div class="roster-cols">
+
+    <div class="state-block">
+      <div class="state-name">Alabama</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Club</span><span class="club-entry-city">Birmingham</span></div>
+        <span class="club-entry-url">www.theclubinc.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">California</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Marines' Memorial Club</span><span class="club-entry-city">San Francisco</span></div>
+        <span class="club-entry-url">marinesmemorial.org</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Balboa Bay Club</span><span class="club-entry-city">Newport Beach</span></div>
+        <span class="club-entry-url">balboabayclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">University Club of San Francisco</span><span class="club-entry-city">San Francisco</span></div>
+        <span class="club-entry-url">www.uclubsf.org</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Tower Club</span><span class="club-entry-city">Oxnard</span></div>
+        <span class="club-entry-url">www.towercluboxnard.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Santa Barbara Club</span><span class="club-entry-city">Santa Barbara</span></div>
+        <span class="club-entry-url">www.santabarbaraclub.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Connecticut</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Essex Yacht Club</span><span class="club-entry-city">Essex</span></div>
+        <span class="club-entry-url">www.essexyc.org</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Hartford Club</span><span class="club-entry-city">Hartford</span></div>
+        <span class="club-entry-url">hartfordclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Elm City Club</span><span class="club-entry-city">New Haven</span></div>
+        <span class="club-entry-url">www.elmcityclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Stonington Harbor Yacht Club</span><span class="club-entry-city">Stonington</span></div>
+        <span class="club-entry-url">shyc.us</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Mory's Association</span><span class="club-entry-city">New Haven</span></div>
+        <span class="club-entry-url">www.morys1849.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Florida</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Epping Forest Yacht Club</span><span class="club-entry-city">Jacksonville</span></div>
+        <span class="club-entry-url">www.efyc.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The River Club</span><span class="club-entry-city">Jacksonville</span></div>
+        <span class="club-entry-url">www.jaxriverclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">University Club of Tampa</span><span class="club-entry-city">Tampa</span></div>
+        <span class="club-entry-url">www.uclubtampa.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Governors Club</span><span class="club-entry-city">Tallahassee</span></div>
+        <span class="club-entry-url">www.govclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Georgia</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Pinnacle Club</span><span class="club-entry-city">Augusta</span></div>
+        <span class="club-entry-url">pinnacleclubaugusta.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Georgian Club</span><span class="club-entry-city">Atlanta</span></div>
+        <span class="club-entry-url">www.georgianclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Idaho</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Arid Club</span><span class="club-entry-city">Boise</span></div>
+        <span class="club-entry-url">aridclub.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Illinois</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Michigan Shores Club</span><span class="club-entry-city">Wilmette</span></div>
+        <span class="club-entry-url">www.michiganshores.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Indiana</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Columbia Club</span><span class="club-entry-city">Indianapolis</span></div>
+        <span class="club-entry-url">columbia-club.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Iowa</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Outing Club</span><span class="club-entry-city">Davenport</span></div>
+        <span class="club-entry-url">www.theoutingclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Maine</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Cumberland Club</span><span class="club-entry-city">Portland</span></div>
+        <span class="club-entry-url">cumberlandclub.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Massachusetts</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Harvard Club of Boston</span><span class="club-entry-city">Boston</span></div>
+        <span class="club-entry-url">www.harvardclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">University Club of Boston</span><span class="club-entry-city">Boston</span></div>
+        <span class="club-entry-url">www.uclub.org</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Wamsutta Club</span><span class="club-entry-city">New Bedford</span></div>
+        <span class="club-entry-url">www.wamsuttaclub.club</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Worcester Club</span><span class="club-entry-city">Worcester</span></div>
+        <span class="club-entry-url">www.worcclub.org</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Minnesota</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">University Club of St. Paul</span><span class="club-entry-city">St. Paul</span></div>
+        <span class="club-entry-url">www.universityclubofstpaul.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Kitchi Gammi Club</span><span class="club-entry-city">Duluth</span></div>
+        <span class="club-entry-url">kitchigammiclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Mississippi</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Capital Club</span><span class="club-entry-city">Jackson</span></div>
+        <span class="club-entry-url">www.capitalclubms.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Missouri</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Carriage Club</span><span class="club-entry-city">Kansas City</span></div>
+        <span class="club-entry-url">www.thecarriageclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">New Jersey</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Park Avenue Club</span><span class="club-entry-city">Florham Park</span></div>
+        <span class="club-entry-url">www.parkavenueclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Morristown Club</span><span class="club-entry-city">Morristown</span></div>
+        <span class="club-entry-url">www.morristownclub.net</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">New York</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Downtown Association</span><span class="club-entry-city">New York</span></div>
+        <span class="club-entry-url">www.thedta.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Fort Schuyler Club</span><span class="club-entry-city">Utica</span></div>
+        <span class="club-entry-url">www.fortschuylerclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Ohio</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Athletic Club of Columbus</span><span class="club-entry-city">Columbus</span></div>
+        <span class="club-entry-url">accolumbus.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Union Club</span><span class="club-entry-city">Cleveland</span></div>
+        <span class="club-entry-url">theunionclub.org</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The University Club of Cincinnati</span><span class="club-entry-city">Cincinnati</span></div>
+        <span class="club-entry-url">www.uclubcincinnati.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Oklahoma</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Beacon Club</span><span class="club-entry-city">Oklahoma City</span></div>
+        <span class="club-entry-url">beaconclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Pennsylvania</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Racquet Club of Philadelphia</span><span class="club-entry-city">Philadelphia</span></div>
+        <span class="club-entry-url">rcop.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Rhode Island</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Hope Club</span><span class="club-entry-city">Providence</span></div>
+        <span class="club-entry-url">www.hopeclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">South Carolina</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Green Boundary Club</span><span class="club-entry-city">Aiken</span></div>
+        <span class="club-entry-url">www.greenboundaryclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The City Club of Rock Hill</span><span class="club-entry-city">Rock Hill</span></div>
+        <span class="club-entry-url">www.cityclubofrockhill.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Tennessee</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The University Club of Memphis</span><span class="club-entry-city">Memphis</span></div>
+        <span class="club-entry-url">www.ucmem.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Texas</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Fort Worth Club</span><span class="club-entry-city">Fort Worth</span></div>
+        <span class="club-entry-url">www.fortworthclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">District of Columbia</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Army &amp; Navy Club</span><span class="club-entry-city">Washington</span></div>
+        <span class="club-entry-url">www.armynavyclub.org</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Georgetown Club</span><span class="club-entry-city">Washington</span></div>
+        <span class="club-entry-url">www.georgetownclub.org</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTERNATIONAL ROSTER -->
+<section class="roster-section">
+  <div class="roster-section-head">
+    <h2 class="roster-section-title">International</h2>
+    <span class="roster-section-count">6 clubs &middot; 4 countries</span>
+  </div>
+  <div class="roster-cols">
+
+    <div class="state-block">
+      <div class="state-name">Australia</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Public Schools Club</span><span class="club-entry-city">Adelaide</span></div>
+        <span class="club-entry-url">www.publicschoolsclub.com.au</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Canada</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Hamilton Club</span><span class="club-entry-city">Hamilton, ON</span></div>
+        <span class="club-entry-url">www.thehamiltonclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The Brantford Club</span><span class="club-entry-city">Brantford, ON</span></div>
+        <span class="club-entry-url">thebrantfordclub.com</span>
+      </div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">The National Club</span><span class="club-entry-city">Toronto, ON</span></div>
+        <span class="club-entry-url">www.thenationalclub.com</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Germany</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Der Übersee-Club</span><span class="club-entry-city">Hamburg</span></div>
+        <span class="club-entry-url">www.ueberseeclub.de</span>
+      </div>
+    </div>
+
+    <div class="state-block">
+      <div class="state-name">Indonesia</div>
+      <div class="club-entry">
+        <div class="club-entry-line"><span class="club-entry-name">Mercantile Athletic Club</span><span class="club-entry-city">Jakarta</span></div>
+        <span class="club-entry-url">www.mercantileathletic.club</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NOTES PAGE -->
+<div class="notes-page">
+  <div class="notes-eyebrow">About this directory</div>
+  <h2 class="notes-h2">Last reviewed April 27, 2026.</h2>
+  <div class="notes-body">
+    <p>This directory was reviewed in spring 2026. The clubs below have been removed from previous editions of the list &mdash; five after this review (closures or mergers since the prior printing), five flagged earlier and still pending office confirmation:</p>
+    <ul>
+      <li><em>University Club of Phoenix</em> &mdash; permanently closed June 2025.</li>
+      <li><em>The Quinnipiac Club</em>, New Haven &mdash; merged with the Graduate Club in 2012 to form The Elm City Club; the Church Street building has been sold.</li>
+      <li><em>Sangamo Club</em>, Springfield IL &mdash; closed June 2023 after 133 years.</li>
+      <li><em>The Beacon Club</em>, Kalamazoo MI &mdash; closed 2019; the building is now a public restaurant.</li>
+      <li><em>University Club of Albany</em> &mdash; closed 2022 after 121 years.</li>
+      <li><em>Corpus Christi Town Club</em>, <em>University Club of Orlando</em>, <em>University Club of Mizzou (MU)</em> &mdash; appear to have closed; pending office confirmation.</li>
+      <li><em>Soundview Club</em> and <em>India House</em> &mdash; verification signals were weak; pending office confirmation.</li>
+    </ul>
+    <p>Reciprocity arrangements and operating status change. If you have firsthand information about any of these clubs &mdash; or about any club you believe should be on the list &mdash; please call the Club office at (959) 264&#8209;2733 or write to thamesclub.nl@gmail.com.</p>
+  </div>
+  <div class="notes-disclaimer">
+    Web addresses listed in this directory were verified during the April 2026 review. Reciprocity terms, hours of service, dress codes, and lodging availability vary by club and change without notice. Always call ahead, and request an introduction letter from the Thames Club office before your visit.
+  </div>
+</div>
+
+</body>
+</html>

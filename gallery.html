@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery — The Thames Club</title>
+<meta name="description" content="The Thames Club, New London, Connecticut. Founded 1869. Connecticut's oldest private social club.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Libre Baskerville',Georgia,serif;background:#07101a;color:#e8dfc8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:root{
+  --deep:#07101a;--navy:#0c1c2e;--mid:#0e1c2c;
+  --cream:#f4edd8;--cream-d:#e8dfc8;--cream-dim:#a89e87;
+  --gold:#a6894a;--gold-b:#c9a96e;--gold-dim:rgba(166,137,74,.25);
+  --ink:#1a1208;--serif:'Libre Baskerville',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;--max:1120px;
+}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.02}
+.w{max-width:var(--max);margin:0 auto;padding:0 44px}
+
+/* SITE SHELL NAV */
+.site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
+.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
+.site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
+.site-shell-links{display:flex;gap:4px;align-items:center}
+.site-shell-links > a,
+.site-shell-links > .nav-dd > .nav-dd-trigger{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:rgba(244,237,216,.72);text-decoration:none;padding:7px 11px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap;cursor:pointer;background:none;border:none}
+.site-shell-links > a:hover,.site-shell-links > .nav-dd > .nav-dd-trigger:hover{color:#f4edd8;background:rgba(166,137,74,.08)}
+.site-shell-links > a.active{color:#c9a96e}
+.nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}
+.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
+.nav-dd{position:relative}
+.nav-dd-trigger{display:flex;align-items:center;gap:4px}
+.nav-dd-trigger::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.6}
+.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}
+.nav-dd{position:relative}
+.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}
+.nav-dd-menu a{display:block;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:rgba(244,237,216,.65);text-decoration:none;padding:9px 14px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap}
+.nav-dd-menu a:hover{color:#f4edd8;background:rgba(166,137,74,.1)}
+.nav-dd-menu .dd-divider{height:1px;background:rgba(166,137,74,.12);margin:4px 0}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}
+.nav-mobile a,.nav-mobile span.mob-section{font-family:'Inter',system-ui,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:13px 24px;border-bottom:1px solid rgba(166,137,74,.08);text-decoration:none;display:block;transition:color .2s}
+.nav-mobile a:hover{color:#f4edd8}
+.nav-mobile span.mob-section{font-size:9px;color:#a6894a;padding:14px 24px 6px;border-bottom:none}
+.nav-mobile.open{display:flex}
+.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
+.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
+.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
+.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
+.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-footer .site-shell-foot-links a:hover{color:#f4edd8}
+@media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
+@media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
+
+/* PAGE HERO */
+.page-hero{min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--deep);padding-bottom:72px;padding-top:120px}
+.page-hero .hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 90%,rgba(166,137,74,.07) 0%,transparent 40%),radial-gradient(ellipse at 85% 10%,rgba(166,137,74,.04) 0%,transparent 38%)}
+.page-hero .w{position:relative;z-index:2}
+.page-hero .eyebrow{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-b);margin-bottom:18px;display:block}
+.page-hero h1{font-family:var(--display);font-size:clamp(42px,7vw,88px);font-weight:600;line-height:.95;letter-spacing:-.01em;color:var(--cream);margin-bottom:22px}
+.page-hero .deck{font-family:var(--serif);font-size:15px;line-height:1.7;color:var(--cream-dim);max-width:560px}
+
+/* SHARED SECTION */
+.sc{background:var(--cream);color:var(--ink);padding:88px 0}
+.sw{background:#0a1520;padding:88px 0}
+.sd{background:var(--deep);padding:88px 0}
+.gold-rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:48px 0}
+.sec-label{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-b);display:block;margin-bottom:16px}
+.sec-label-d{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#8a6835;display:block;margin-bottom:16px}
+h2.serif{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weight:600;line-height:1;letter-spacing:-.01em;color:var(--cream);margin-bottom:24px}
+h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weight:600;line-height:1;letter-spacing:-.01em;color:var(--navy);margin-bottom:24px}
+.prose{font-family:var(--serif);font-size:15px;line-height:1.8;color:var(--cream-dim);max-width:640px}
+.prose-dk{font-family:var(--serif);font-size:15px;line-height:1.8;color:#4a3f2e;max-width:640px}
+.cta-btn{display:inline-block;font-family:var(--serif);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:14px 28px;border:1px solid rgba(166,137,74,.4);color:var(--cream);border-radius:4px;transition:border-color .2s,color .2s;margin-top:24px}
+.cta-btn:hover{border-color:var(--gold);color:var(--cream-d)}
+.cta-btn-dk{display:inline-block;font-family:var(--serif);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:14px 28px;border:1px solid rgba(12,28,46,.3);color:var(--navy);border-radius:4px;transition:all .2s;margin-top:24px}
+.cta-btn-dk:hover{border-color:var(--navy);background:var(--navy);color:var(--cream)}
+
+/* FILTER TABS */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:48px;padding-bottom:20px;border-bottom:1px solid rgba(166,137,74,.12)}
+.ftab{font-family:var(--serif);font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:9px 18px;border:1px solid rgba(166,137,74,.2);color:rgba(232,223,200,.5);cursor:pointer;transition:all .2s;background:none}
+.ftab:hover{border-color:rgba(166,137,74,.5);color:rgba(232,223,200,.85)}
+.ftab.active{border-color:var(--gold);color:var(--cream);background:rgba(166,137,74,.08)}
+
+/* GALLERY GRID */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.gallery-grid.two-up{grid-template-columns:repeat(2,1fr)}
+.gitem{position:relative;overflow:hidden;cursor:pointer;background:rgba(255,255,255,.03)}
+.gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease}
+.gitem:hover img{transform:scale(1.04)}
+.gitem-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 14px;background:linear-gradient(transparent,rgba(7,16,26,.82));opacity:0;transition:opacity .3s}
+.gitem:hover .gitem-cap{opacity:1}
+.gitem-cap span{font-family:var(--serif);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,237,216,.85);display:block}
+.gitem-cap small{font-family:var(--serif);font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-b);margin-top:3px;display:block}
+
+/* TALL / WIDE VARIANTS */
+.gitem.tall{grid-row:span 2}
+.gitem.wide{grid-column:span 2}
+.gitem .ratio-sq{aspect-ratio:1/1}
+.gitem .ratio-land{aspect-ratio:4/3}
+.gitem .ratio-port{aspect-ratio:3/4}
+.gitem .ratio-tall{aspect-ratio:2/3}
+.gitem img.fill{width:100%;height:100%;object-fit:cover;display:block}
+
+/* PHOTO PLACEHOLDER (remove when real photos added) */
+.ph-block{background:rgba(255,255,255,.04);border:1px dashed rgba(166,137,74,.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
+.ph-label{font-family:var(--serif);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-dim);opacity:.5;text-align:center;line-height:1.6}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:9000;background:rgba(7,16,26,.96);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lb-img{max-width:90vw;max-height:85vh;object-fit:contain;display:block}
+.lb-close{position:absolute;top:20px;right:28px;font-family:var(--serif);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,223,200,.5);cursor:pointer;transition:color .2s;background:none;border:none}
+.lb-close:hover{color:var(--cream)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--display);font-size:28px;color:rgba(232,223,200,.4);cursor:pointer;transition:color .2s;background:none;border:none;padding:8px 16px}
+.lb-nav:hover{color:var(--cream)}
+.lb-prev{left:20px}.lb-next{right:20px}
+.lb-info{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);text-align:center}
+.lb-info span{font-family:var(--serif);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(232,223,200,.55)}
+.lb-info small{display:block;font-size:8.5px;letter-spacing:.1em;color:var(--gold-b);margin-top:4px}
+
+/* FEATURED ROW */
+.featured-row{display:grid;grid-template-columns:2fr 1fr;gap:3px;margin-bottom:3px}
+.featured-row .gitem img{height:520px}
+.featured-row .side-stack{display:grid;gap:3px}
+.featured-row .side-stack .gitem img{height:257px}
+
+@media(max-width:768px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gitem.wide{grid-column:span 1}
+  .gitem.tall{grid-row:span 1}
+  .featured-row{grid-template-columns:1fr}
+  .featured-row .gitem img,.featured-row .side-stack .gitem img{height:260px}
+  .filter-bar{gap:6px}
+  .ftab{font-size:8.5px;padding:7px 12px}
+  .w{padding:0 20px}
+}
+
+</style>
+</head>
+<body>
+
+<nav class="site-shell-nav">
+  <div class="site-shell-inner">
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London · Est. 1869</small></a>
+    <div class="site-shell-links">
+      <a href="dining.html">Dining</a>
+      <div class="nav-dd">
+        <span class="nav-dd-trigger">Events</span>
+        <div class="nav-dd-menu">
+          <a href="events.html">Events calendar</a>
+          <a href="event-rooms.html">Event rooms</a>
+          <a href="event-planners.html">Private events</a>
+        </div>
+      </div>
+      <a href="above-below.html">Above &amp; Below</a>
+      <div class="nav-dd">
+        <span class="nav-dd-trigger">About</span>
+        <div class="nav-dd-menu">
+          <a href="history.html">History</a>
+          <a href="restoration.html">Restoration</a>
+          <a href="pierson-gallery.html">Pierson Gallery</a>
+          <div class="dd-divider"></div>
+          <a href="gallery.html">Photo gallery</a>
+          <a href="bowling.html">Duckpin bowling</a>
+          <a href="community.html">Community</a>
+        </div>
+      </div>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html" class="nav-cta">Visit</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="dining.html">Dining</a>
+    <span class="mob-section">Events</span>
+    <a href="events.html">Events calendar</a>
+    <a href="event-rooms.html">Event rooms</a>
+    <a href="event-planners.html">Private events</a>
+    <a href="above-below.html">Above &amp; Below</a>
+    <span class="mob-section">About</span>
+    <a href="history.html">History</a>
+    <a href="restoration.html">Restoration</a>
+    <a href="pierson-gallery.html">Pierson Gallery</a>
+    <a href="gallery.html">Photo gallery</a>
+    <a href="bowling.html">Duckpin bowling</a>
+    <a href="community.html">Community</a>
+    <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+    <a href="visit.html">Visit</a>
+    <a href="visit.html">Plan a visit →</a>
+  </div>
+</nav>
+<script>
+(function(){
+  var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');
+  if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}
+  // Dropdown: click to open, click elsewhere to close
+  document.querySelectorAll('.nav-dd').forEach(function(dd){
+    var trigger=dd.querySelector('.nav-dd-trigger');
+    var menu=dd.querySelector('.nav-dd-menu');
+    if(!trigger||!menu)return;
+    trigger.addEventListener('click',function(e){
+      e.stopPropagation();
+      var isOpen=menu.style.display==='block';
+      document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});
+      menu.style.display=isOpen?'none':'block';
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});
+  });
+})();
+</script>
+
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hbg"></div>
+  <div class="w">
+    <span class="eyebrow">The Thames Club · New London</span>
+    <h1>The Club<br>in Photographs</h1>
+    <p class="deck">155 years of a house in use. The dining room, the lanes, the bar, the rooms — and the people who have made them matter.</p>
+  </div>
+</section>
+
+
+<!-- FEATURED GALLERY -->
+<section class="sd">
+  <div class="w">
+    <span class="sec-label">The House</span>
+    <h2 class="serif">290 State Street.</h2>
+    <p class="prose" style="margin-top:16px;margin-bottom:40px">The Thames Club building has stood on State Street since 1905. Listed on the National Register of Historic Places, it has held continuous social life for over a century — meals, ceremonies, elections, and ordinary Tuesday evenings.</p>
+
+    <!-- Featured layout: 1 large + 2 stacked -->
+    <div class="featured-row">
+      <div class="gitem" onclick="openLightbox(0)" data-cat="house">
+        <!-- Replace src with base64 or relative path to exterior photo -->
+<img src="images/gallery_01.png" alt="The Thames Club — 290 State Street" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease">
+        <div class="gitem-cap">
+          <span>290 State Street</span>
+          <small>Exterior · New London, CT</small>
+        </div>
+      </div>
+      <div class="side-stack">
+        <div class="gitem" onclick="openLightbox(1)" data-cat="house">
+<div style="height:257px;overflow:hidden"><img src="images/gallery_02.png" alt="The Entry Hall" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
+          <div class="gitem-cap">
+            <span>The Entry</span>
+            <small>Interior · Ground Floor</small>
+          </div>
+        </div>
+        <div class="gitem" onclick="openLightbox(2)" data-cat="house">
+<div style="height:257px;overflow:hidden"><img src="images/gallery_03.png" alt="The Thames Club building" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 6s ease"></div>
+          <div class="gitem-cap">
+            <span>290 State Street</span>
+            <small>Exterior · Spring</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-up grid -->
+    <div class="gallery-grid" style="margin-top:3px">
+      <div class="gitem" onclick="openLightbox(3)" data-cat="house">
+        <img src="images/gallery_04.png" alt="cc4b86fb f05d 4ab1 9750 b9a3747e5254" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>c. Early 20th Century</span>
+          <small>Archive · Exterior</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(4)" data-cat="house">
+        <img src="images/gallery_05.png" alt="fa08a36b 8074 4e14 95a8 cb4ce8d4dfa2" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>State Street</span>
+          <small>Exterior · New London</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(5)" data-cat="house">
+        <img src="images/gallery_06.png" alt="f31f74b6 8b3f 4f3f 90ef 4318d1e78f61" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Architectural Detail</span>
+          <small>Exterior · Historic</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DINING & SOCIAL ROOMS -->
+<section class="sc">
+  <div class="w">
+    <span class="sec-label-d">The Rooms</span>
+    <h2 class="serif-dk">Where members<br>gather.</h2>
+    <p class="prose-dk" style="margin-top:16px;margin-bottom:40px">The dining room, the bar, the library — rooms that have been in continuous use since the Club moved to State Street. Worn in the right places, cared for in the right ways.</p>
+
+    <div class="gallery-grid" style="margin-bottom:3px">
+      <div class="gitem wide" onclick="openLightbox(6)" data-cat="rooms">
+<img src="images/gallery_07.png" alt="" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease">
+        <div class="gitem-cap">
+          <span>The Dining Room</span>
+          <small>Interior · Main Floor</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(7)" data-cat="rooms">
+        <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_08.png" alt="The Bar" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
+        <div class="gitem-cap">
+          <span>The Bar</span>
+          <small>Interior · Social Room</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gitem" onclick="openLightbox(8)" data-cat="rooms">
+        <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_09.jpg" alt="String quartet performing at the Thames Club" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
+        <div class="gitem-cap">
+          <span>Live Music</span>
+          <small>Interior · The Room</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(9)" data-cat="rooms">
+        <div class="ph-block" style="aspect-ratio:4/3">
+          <span class="ph-label">Library or reading room</span>
+        </div>
+        <div class="gitem-cap">
+          <span>The Library</span>
+          <small>Interior · Upper Floor</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(10)" data-cat="rooms">
+        <div class="ph-block" style="aspect-ratio:4/3">
+          <span class="ph-label">Private dining room<br>or event space</span>
+        </div>
+        <div class="gitem-cap">
+          <span>Private Dining</span>
+          <small>Interior · Event Room</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EVENTS & SOCIAL LIFE -->
+<section class="sw">
+  <div class="w">
+    <span class="sec-label">Events &amp; Members</span>
+    <h2 class="serif">The life of<br>the house.</h2>
+    <p class="prose" style="margin-top:16px;margin-bottom:40px">Dinners, ceremonies, league nights, banquets — the recurring occasions that give a private club its character over time.</p>
+
+    <div class="gallery-grid">
+      <div class="gitem" onclick="openLightbox(11)" data-cat="events">
+        <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_10.jpg" alt="New London Ledge Light" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
+        <div class="gitem-cap">
+          <span>New London Ledge Light</span>
+          <small>Community · Thames River</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(12)" data-cat="events">
+        <img src="images/gallery_11.jpg" alt="IMG 20200306 192956" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Members' Reception</span>
+          <small>Events · Social Room</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(13)" data-cat="events">
+        <img src="images/gallery_12.png" alt="file 000000007a1c71fdbf05fb3e1c0a5d3a" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Recognition Evening</span>
+          <small>Events · Annual</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(14)" data-cat="events">
+        <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_13.png" alt="Seasonal celebration at the Thames Club" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
+        <div class="gitem-cap">
+          <span>Holiday Celebration</span>
+          <small>Events · Seasonal</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(15)" data-cat="events">
+        <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_14.jpg" alt="Speaker Evening at the Thames Club" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
+        <div class="gitem-cap">
+          <span>Speaker Evening</span>
+          <small>Events · Cultural</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(16)" data-cat="events">
+        <img src="images/gallery_15.jpg" alt="dredil 400" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Members at the Club</span>
+          <small>Daily Life · Social</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BOWLING -->
+<section class="sd">
+  <div class="w">
+    <span class="sec-label">Duckpin Bowling</span>
+    <h2 class="serif">Below the<br>silhouette wall.</h2>
+    <p class="prose" style="margin-top:16px;margin-bottom:40px">Two lanes in the basement, built by Electric Boat craftsmen. Tuesday, Wednesday, and Thursday league nights, five-thirty onwards. A game that has never produced a perfect score in recorded history.</p>
+
+    <div class="gallery-grid">
+      <div class="gitem wide" onclick="openLightbox(17)" data-cat="bowling">
+        <img src="images/gallery_16.jpg" alt="20260204 185830" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>The Lanes</span>
+          <small>Lower Level · Duckpin</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(18)" data-cat="bowling">
+        <img src="images/gallery_17.jpg" alt="20250718 133235" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>The Pin Setter</span>
+          <small>Lower Level · Mechanical</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(19)" data-cat="bowling">
+        <img src="images/gallery_18.png" alt="e3681fa6 b859 4d91 9175 7387180a8f23" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>League Night</span>
+          <small>Bowling · Tuesday–Thursday</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(20)" data-cat="bowling">
+        <img src="images/gallery_19.jpg" alt="20250624 132903" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Equipment</span>
+          <small>Bowling · Detail</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RESTORATION -->
+<section class="sc">
+  <div class="w">
+    <span class="sec-label-d">Restoration</span>
+    <h2 class="serif-dk">The house<br>coming forward.</h2>
+    <p class="prose-dk" style="margin-top:16px;margin-bottom:40px">Documentation of the ongoing preservation effort — the top floor, the fabric of the building, and the labor of those who are bringing it forward.</p>
+
+    <div class="gallery-grid">
+      <div class="gitem" onclick="openLightbox(21)" data-cat="restoration">
+        <img src="images/gallery_20.png" alt="file 00000000a77471f5b17a5f885b660e42" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Before</span>
+          <small>Top Floor · Pre-Restoration</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(22)" data-cat="restoration">
+        <img src="images/gallery_21.jpg" alt="20260123 113916" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>During</span>
+          <small>Top Floor · In Progress</small>
+        </div>
+      </div>
+      <div class="gitem" onclick="openLightbox(23)" data-cat="restoration">
+        <img src="images/gallery_22.jpg" alt="file 00000000311871f8891fe727de58d12c (2)" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
+        <div class="gitem-cap">
+          <span>Original Detail</span>
+          <small>Interior · Historic Fabric</small>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <a href="restoration.html" class="cta-btn-dk">Restoration Progress →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="sw">
+  <div class="w" style="text-align:center">
+    <span class="sec-label" style="justify-content:center;display:block">Membership</span>
+    <h2 class="serif">Become part<br>of the picture.</h2>
+    <p class="prose" style="margin-top:16px;margin:16px auto 0;text-align:center">The Thames Club has been a private gathering place for New London's civic community since 1869. Membership inquiries are welcome.</p>
+    <div style="margin-top:32px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+      <a href="membership.html" class="cta-btn">Membership Information</a>
+      <a href="visit.html" class="cta-btn">Plan a Visit</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()">Close ✕</button>
+  <button class="lb-nav lb-prev" onclick="event.stopPropagation();lbStep(-1)">‹</button>
+  <img class="lb-img" id="lb-img" src="images/gallery_23.jpg" alt="20220222 154907 resized (1)  AIE">
+  <button class="lb-nav lb-next" onclick="event.stopPropagation();lbStep(1)">›</button>
+  <div class="lb-info">
+    <span id="lb-title"></span>
+    <small id="lb-caption"></small>
+  </div>
+</div>
+
+
+<footer class="site-shell-footer">
+  <div class="site-shell-foot-inner">
+    <div>
+      <div class="site-shell-foot-brand">The Thames Club</div>
+      <div class="site-shell-foot-copy">
+        290 State Street · New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+      </div>
+    </div>
+    <div class="site-shell-foot-links">
+      <a href="index.html">Home</a>
+      <a href="dining.html">Dining</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
+    </div>
+  </div>
+</footer>
+
+// Lightbox data — populate when real photos are added
+const photos = [
+  {src:'images/gallery_24.png', title:'290 State Street', cap:'Exterior · New London, CT'},
+  {src:'images/gallery_25.png', title:'The Entry', cap:'Interior · Ground Floor'},
+  {src:'images/gallery_26.jpg', title:'290 State Street', cap:'Interior · Historic Detail'},
+  {src:'images/gallery_27.png', title:'The Dining Room', cap:'Interior · Main Floor'},
+  {src:'images/gallery_28.png', title:'The Bar', cap:'Interior · Social Room'},
+  {src:'images/gallery_29.jpg', title:'Live Music', cap:'Interior · Ground Floor'},
+  {src:'images/gallery_30.jpg', title:'New London Ledge Light', cap:'Events · Dining Room'},
+  {src:'images/gallery_31.png', title:'Holiday Celebration', cap:'Events · Seasonal'},
+  {src:'images/gallery_32.png', title:'Speaker Evening', cap:'Events · Cultural'},
+];
+
+let current = 0;
+function openLightbox(i){
+  current = i;
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lb-img');
+  if(photos[i].src){
+    img.src = photos[i].src;
+    img.style.display='block';
+  } else {
+    img.style.display='none';
+  }
+  document.getElementById('lb-title').textContent = photos[i].title;
+  document.getElementById('lb-caption').textContent = photos[i].cap;
+  lb.classList.add('open');
+}
+function closeLightbox(e){
+  if(!e || e.target===document.getElementById('lightbox')||e.target.classList.contains('lb-close')){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+}
+function lbStep(d){
+  current = (current + d + photos.length) % photos.length;
+  openLightbox(current);
+}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('lightbox').style.display==='flex'){
+    if(e.key==='ArrowRight') lbStep(1);
+    if(e.key==='ArrowLeft') lbStep(-1);
+    if(e.key==='Escape') closeLightbox();
+  }
+});
+</script>
+
+</body>
+</html>

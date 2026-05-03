@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above & Beyond — Issue 2 | Thames Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --deep-navy: #091422;
+    --gold: #c9a84c;
+    --gold-light: #e4c97e;
+    --gold-pale: #f5e9c8;
+    --cream: #faf7f0;
+    --warm-white: #f9f6ef;
+    --text-dark: #1a1a1a;
+    --text-mid: #3a3530;
+    --rule: #c9a84c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 120% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(201,168,76,0.03) 80px,
+        rgba(201,168,76,0.03) 81px
+      );
+    pointer-events: none;
+  }
+
+  .masthead-top {
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-top span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.7);
+    text-transform: uppercase;
+  }
+
+  .masthead-body {
+    padding: 48px 40px 44px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pub-name {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0.85;
+  }
+
+  .issue-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(38px, 6vw, 64px);
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .issue-title em {
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    display: block;
+    margin-top: 4px;
+  }
+
+  .gold-rule {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 22px auto;
+    opacity: 0.6;
+  }
+
+  .gold-rule-wide {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+
+  .deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2.5vw, 21px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    max-width: 640px;
+    margin: 0 auto 24px;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+  }
+
+  .issue-meta {
+    font-family: 'Cormorant SC', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: rgba(201,168,76,0.55);
+    text-transform: uppercase;
+  }
+
+  /* ── CONTENTS NAV ── */
+  .contents-strip {
+    background: var(--deep-navy);
+    border-top: 1px solid rgba(201,168,76,0.25);
+    border-bottom: 3px solid var(--gold);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contents-strip a {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.75);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .contents-strip a:hover { color: var(--gold-light); }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 60px 0 52px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.4), transparent);
+  }
+
+  .section-headline {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .section-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .body-text p {
+    margin-bottom: 22px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    font-weight: 400;
+  }
+
+  .body-text p:last-child { margin-bottom: 0; }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    margin: 36px 0 36px 24px;
+    padding: 12px 0 12px 28px;
+  }
+
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(19px, 2.8vw, 24px);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0 0 10px !important;
+  }
+
+  .pull-quote cite {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* ── STAT BOX ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    margin: 36px 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    overflow: hidden;
+  }
+
+  .stat-cell {
+    background: var(--warm-white);
+    padding: 24px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .stat-cell:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+
+  /* ── SIDEBAR / CALLOUT ── */
+  .callout {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .callout::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .callout-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .callout h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+
+  .callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 14px;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    text-align: center;
+    padding: 10px 0;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 0.5em;
+    opacity: 0.5;
+  }
+
+  /* ── PHOTO PLACEHOLDER ── */
+  .photo-frame {
+    border: 1px solid rgba(201,168,76,0.3);
+    margin: 32px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    display: block;
+  }
+
+  .photo-caption {
+    background: var(--navy);
+    padding: 10px 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(201,168,76,0.7);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── EDITOR'S LETTER ── */
+  .editors-letter {
+    background: var(--warm-white);
+    border-top: 3px solid var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 72px;
+    font-weight: 600;
+    color: var(--navy);
+    float: left;
+    line-height: 0.8;
+    margin: 8px 14px 0 0;
+    padding-bottom: 4px;
+  }
+
+  /* ── SIGNATURE ── */
+  .signature {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .signature-name {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--navy);
+    font-style: normal;
+    display: block;
+    margin-top: 6px;
+  }
+
+  .signature-title {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.06em;
+    display: block;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    padding: 44px 40px 36px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+
+  .footer-name {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .footer-address {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .footer-copy {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    color: rgba(201,168,76,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-rule {
+    width: 60px;
+    height: 1px;
+    background: rgba(201,168,76,0.3);
+    margin: 20px auto;
+  }
+
+  /* ── ORNAMENT ── */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 20px;
+    margin: 10px 0;
+    letter-spacing: 1em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .masthead-top { padding: 12px 20px; }
+    .masthead-body { padding: 36px 20px 32px; }
+    .contents-strip { padding: 12px 20px; gap: 18px; }
+    .container { padding: 0 20px; }
+    .section { padding: 44px 0 36px; }
+    .pull-quote { margin-left: 0; }
+    .callout { padding: 24px 22px; }
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .drop-cap::first-letter { font-size: 52px; margin: 5px 10px 0 0; }
+  }
+
+  @media print {
+    .contents-strip { display: none; }
+    .section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- MASTHEAD -->
+<!-- ══════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Thames Club · Est. 1869</span>
+    <span>290 State Street · New London, Connecticut</span>
+    <span>Issue 2 · Spring 2026</span>
+  </div>
+  <div class="masthead-body">
+    <div class="pub-name">Above &amp; Beyond</div>
+    <h1 class="issue-title">
+      Power at the Water's Edge
+      <em>Energy, Security, and the View From the Thames</em>
+    </h1>
+    <div class="gold-rule"></div>
+    <p class="deck">From a nuclear plant fifty years in service to turbines rising off Block Island, southeastern Connecticut sits at the center of America's energy future — and its defense.</p>
+    <div class="gold-rule-wide"></div>
+    <div style="height: 20px;"></div>
+    <span class="issue-meta">A Publication of the Thames Club &nbsp;·&nbsp; Global Table Media LLC</span>
+  </div>
+</header>
+
+<!-- CONTENTS STRIP -->
+<nav class="contents-strip">
+  <a href="#letter">Editor's Letter</a>
+  <a href="#millstone">Millstone at 50</a>
+  <a href="#wind">Revolution Wind</a>
+  <a href="#conflict">The Conflict Context</a>
+  <a href="#boats">The Boats</a>
+  <a href="#grid">The Grid Question</a>
+  <a href="#perspective">In Perspective</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- EDITOR'S LETTER -->
+<!-- ══════════════════════════════════════════ -->
+<section class="editors-letter" id="letter">
+<div class="container">
+<div class="section" style="border: none;">
+
+  <div class="section-label">Editor's Letter</div>
+
+  <div class="body-text drop-cap">
+
+    <p>There is a particular quality of attention that comes with living close to things that matter. Not the anxious, headline-scanning attention of the news cycle — but the slower, more considered awareness that comes from watching the same stretch of river for years, from knowing the shift schedules at the base and the contract cycles at the shipyard. Southeastern Connecticut has always been that kind of place. What happens here is not incidental to national events. It is, in many respects, the mechanism by which those events are managed.</p>
+
+    <p>This issue of Above &amp; Beyond takes up energy and security — not as abstractions, but as they exist on the ground and in the water around us. The Millstone Nuclear Power Station in Waterford celebrated its fiftieth anniversary last September. Revolution Wind, after a year of legal battles with the federal government, came online in March. Three Virginia-class submarines built a short walk from here were commissioned in the past twelve months. A fourth is due on April 25th. A Columbia-class ballistic missile submarine bearing the name USS Groton has been ordered. The world, it seems, has decided that this region's work remains essential.</p>
+
+    <p>Our membership spans this world in full. Some of you work at Electric Boat or Millstone or the submarine base; others came to the Club through the port, the law, the trades, the academy, the state agencies, or simply through decades of living in this region. The perspectives around any given table at 290 State Street on any given evening are rarely identical — and that, by long tradition, is precisely the point. Energy security touches everyone differently depending on where you sit: ratepayer, engineer, fisherman, sailor, landlord, employer. The Club has never asked its members to agree. It has asked them to listen. Above &amp; Beyond is produced in that same spirit.</p>
+
+    <p>We hope this issue is worth the conversation it starts.</p>
+
+  </div>
+
+  <div class="signature">
+    <span>With warm regards,</span>
+    <span class="signature-name">The Editors</span>
+    <span class="signature-title">Above &amp; Beyond · Thames Club</span>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- MILLSTONE AT 50 -->
+<!-- ══════════════════════════════════════════ -->
+<div id="millstone">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Feature</div>
+  <h2 class="section-headline">Fifty Years of Quiet Power</h2>
+  <div class="section-subhead">Millstone Nuclear Power Station and the case for continuity</div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <span class="stat-number">50</span>
+      <span class="stat-label">Years in service</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">~⅓</span>
+      <span class="stat-label">of CT electricity generated</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">2M</span>
+      <span class="stat-label">Homes supplied</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">1,400</span>
+      <span class="stat-label">Employees on site</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">$1B</span>
+      <span class="stat-label">Dominion investment planned</span>
+    </div>
+  </div>
+
+  <div class="body-text">
+
+    <p>On September 29, 2025, Dominion Energy gathered hundreds of current and retired employees at the Millstone Nuclear Power Station in Waterford to mark a milestone that many in the industry would have considered unlikely even a decade ago: fifty years of continuous operation, no shutdown in sight. Governor Ned Lamont attended and, in remarks notable for their directness, said he would put his chips on nuclear. "I just think it's going to be a big piece of our state and the region's future for the next fifty years."</p>
+
+    <p>That is not a modest statement. It implies continuity through whatever storms — political, economic, climatic — the next half-century will produce. And it comes at a moment when Connecticut is negotiating the terms of that continuity with unusual seriousness. The state's existing power purchase agreement with Dominion, locked in at 4.9 cents per kilowatt-hour after legislators were warned that the alternative was closure, expires in 2029. Negotiations for an extension are underway. The General Assembly has passed legislation requiring at least two other New England states to co-sign any new deal to distribute the cost.</p>
+
+    <p>The stakes are not difficult to understand. Millstone's Unit 2 and Unit 3 together generate roughly one-third of all electricity produced within Connecticut — virtually all of it carbon-free. The plant's 500-acre site along Long Island Sound uses the Sound itself as cooling water for its pressurized water reactors, a design feature that has served the facility through five decades of operation. When the original Unit 1 was decommissioned in 1998, Units 2 and 3 — built by Combustion Engineering and Westinghouse respectively and sold to Dominion in 2000 — continued without interruption.</p>
+
+    <div class="pull-quote">
+      <p>"Given the roughly 1,400 outstanding employees we have here, we're an economic engine as well as an electric hub."</p>
+      <cite>Bob Blue, CEO, Dominion Energy — Millstone 50th Anniversary, September 2025</cite>
+    </div>
+
+    <p>Dominion has signaled clearly that it intends to stay. The company has announced approximately $1 billion in capital investment over the next decade, covering safety systems, equipment upgrades, and the long-term work required to support a license extension application. Governor Lamont has gone further, floating the possibility of small modular reactors on the existing Millstone footprint — a concept the NRC would need to evaluate, but one that the state has been developing regulatory frameworks to accommodate since lifting its moratorium on new nuclear construction in 2022.</p>
+
+    <p>For Thames Club members with connections to Millstone — through employment, contracting, or simply through the regional economy that the plant sustains — the anniversary marked something more than the passage of time. It marked a decision, renewed year by year, that this particular kind of power generation remains worth the care it requires. Connecticut's Department of Energy and Environmental Protection held its first public information session on new nuclear options in December 2025. The conversation about Millstone's next fifty years has already begun.</p>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">On the Record</div>
+    <h3>The Spent Fuel Question</h3>
+    <p>One issue at Millstone that warrants candor: as of 2021, approximately 2,441 metric tons of spent uranium fuel were held on site — at Millstone and the former Connecticut Yankee Nuclear Power Plant in Haddam — with no federal repository available to accept it. The planned national repository remains stalled. The fuel will stay where it is, under hardened storage, for an indeterminate period. Dominion manages this reality under strict NRC oversight. It is a known limitation of the technology, not a concealed one. Any serious conversation about nuclear's future in Connecticut includes this fact.</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- REVOLUTION WIND -->
+<!-- ══════════════════════════════════════════ -->
+<div id="wind">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Energy</div>
+  <h2 class="section-headline">The Revolution, Finally Turning</h2>
+  <div class="section-subhead">Revolution Wind comes online — after everything the federal government could throw at it</div>
+
+  <div class="body-text">
+
+    <p>On a Friday evening in mid-March 2026, Revolution Wind sent electricity to the New England grid for the first time. Governor Lamont gathered officials at New London's State Pier six days later to mark the occasion. "This was pretty tricky going back over the last year," he said. "It was on again, off again, on again, off again with the federal government. We weren't always sure we'd be able to get this over the finish line."</p>
+
+    <p>The understatement was considerable. Revolution Wind — a 704-megawatt offshore project developed by Ørsted and Global Infrastructure Partners' Skyborn Renewables, located fifteen nautical miles southeast of Point Judith, Rhode Island — is America's first multi-state offshore wind project, serving both Connecticut (304 MW) and Rhode Island (400 MW). The project broke ground in 2023. It has spent the better part of eighteen months in federal court.</p>
+
+    <p>The Trump administration issued a stop-work order in August 2025, when the project was 80 percent complete, citing national security concerns related to radar interference with marine vessels. Ørsted sued. Connecticut and Rhode Island sued. A federal judge ruled in September 2025 that the government had failed to articulate any factual basis for the order, and that administration officials had been vocal in their opposition to offshore wind for reasons unrelated to national security. Work resumed. In December 2025, a second stop-work order was issued, this time covering five offshore wind farms including Revolution Wind, Vineyard Wind, Sunrise Wind, Empire Wind, and Coastal Virginia Offshore Wind. Another lawsuit. Another injunction granted in January 2026. By March, the turbines were turning.</p>
+
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <span class="stat-number">704</span>
+      <span class="stat-label">Megawatts total capacity</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">65</span>
+      <span class="stat-label">Turbines (11 MW each)</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">350K+</span>
+      <span class="stat-label">Homes to be powered</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">$300M+</span>
+      <span class="stat-label">State Pier investment</span>
+    </div>
+  </div>
+
+  <div class="body-text">
+
+    <p>Revolution Wind is built on 65 Siemens Gamesa turbines, each rated at 11 megawatts, connected by subsea inter-array cables and two offshore substations. Power reaches shore through a submarine transmission system that makes landfall at Quonset Business Park in North Kingstown, Rhode Island. From there, underground cable runs to a new substation adjacent to the Rhode Island Energy Davisville facility and onto the regional grid. Full project completion, including all 65 turbines, is expected later in 2026.</p>
+
+    <p>The project's New London connection is direct. State Pier — redeveloped at a cost exceeding $300 million — served as the primary assembly site for Revolution Wind's turbine components and foundations. The pier assembled components for SouthFork Wind as well, and continues work through the end of 2027 on Sunrise Wind, the New York project. Whether additional wind projects will follow depends on federal policy that, at this writing, remains deeply uncertain. The Trump administration's January 2025 executive order halting new offshore wind permitting remains in effect. The tax credits that once made offshore wind financeable have been eliminated by legislation. What comes next for new development off the New England coast is, as Connecticut Port Authority Executive Director Michael O'Connor put it, unclear.</p>
+
+    <p>What is clear is that Revolution Wind is here, producing roughly 2.5 percent of New England's electric supply. Connecticut's energy commissioner, Katie Dykes, noted at the March ceremony that ratepayers would save hundreds of millions of dollars annually over the project's 20-year fixed-price power purchase agreements. Given electricity prices in Connecticut — among the highest in the nation — that saving is not academic.</p>
+
+  </div>
+
+  <div class="pull-quote">
+    <p>"As we've seen from the harsh winter we've had, and the impacts to fossil fuel prices as a result of the Iran war, having diverse sources of stable, reliable power that both states can count on matters enormously."</p>
+    <cite>Katie Dykes, Commissioner, Connecticut DEEP — March 2026</cite>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">The New London Factor</div>
+    <h3>State Pier and What It Built</h3>
+    <p>The redevelopment of New London State Pier into a regional offshore wind hub was not a foregone conclusion. It required a $100-million-plus public investment, years of coordination between the Connecticut Port Authority, state agencies, and Ørsted, and a willingness to bet that the offshore wind industry would arrive on schedule. It has. The pier has now assembled turbines for two completed offshore wind projects. Its future depends on whether the federal posture toward new offshore permitting changes — a question that will be answered in Washington, not New London. What cannot be undone is the infrastructure itself: a deepwater pier, crane capacity, and staging area that did not exist a decade ago.</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE CONFLICT CONTEXT -->
+<!-- ══════════════════════════════════════════ -->
+<div id="conflict">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Global Context</div>
+  <h2 class="section-headline">The World the Grid Has to Weather</h2>
+  <div class="section-subhead">Energy security as national security — the view from 2026</div>
+
+  <div class="body-text">
+
+    <p>Energy security is not a new concept. But the past two years have given it a specificity that policy discussions rarely achieve. The war in Ukraine, now in its fourth year, has restructured European energy markets in ways that continue to ripple through global natural gas prices. The Iran war — and the word "war" is no longer a journalistic embellishment — has disrupted shipping routes and driven fossil fuel price volatility to levels that reached American utility bills this winter. When Connecticut's energy commissioner invoked those impacts at the Revolution Wind ceremony in March, she was not speaking in abstractions.</p>
+
+    <p>The United States' response to Russian nuclear posturing in the summer of 2025 put submarine deployments briefly in the headlines in a way they rarely are. President Trump announced that he had ordered two nuclear submarines to position in "appropriate regions" in response to comments by former Russian President Medvedev. The statement required considerable unpacking — all U.S. submarines are nuclear-powered; only fourteen Ohio-class ballistic missile submarines carry nuclear weapons — and CSIS analysts quickly noted that the U.S. already maintains deployed submarines capable of striking Russia as a matter of continuous deterrence. The announcement was read as rhetorical signaling as much as operational repositioning. But it brought the word "submarine" into the news cycle in a way that clarified, for many Americans, what the Navy actually does and where it actually does it.</p>
+
+    <p>For members of the Thames Club, this is not an unfamiliar connection. The relationship between this region, the submarine force, and national security has been continuous since the Cold War. What has changed is the degree to which the energy dimension of that security has become visible. A grid dependent on imported fossil fuel is a grid with an Achilles heel. A grid that includes nuclear generation and offshore wind is a grid that has diversified its exposure. These are not separate conversations.</p>
+
+    <div class="pull-quote">
+      <p>As of 2025, the United States operates 71 submarines — all nuclear-powered — making it the largest undersea force in the world.</p>
+      <cite>Arms Control Association · Federation of American Scientists · Al Jazeera, August 2025</cite>
+    </div>
+
+    <p>Connecticut's electricity prices, routinely among the highest in the nation, are in part a function of the region's dependence on natural gas for power generation. That dependence has a geopolitical component that is increasingly difficult to ignore. Every megawatt of carbon-free generation — from Millstone, from Revolution Wind, from the modest but growing fleet of Connecticut solar installations — reduces the exposure of New England ratepayers to the market consequences of events in the Strait of Hormuz or the Black Sea. Energy diversity, in this environment, is not merely an environmental policy. It is a resilience policy.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE BOATS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="boats">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">The Submarine Force</div>
+  <h2 class="section-headline">Boats Built Here, Deployed Everywhere</h2>
+  <div class="section-subhead">What has come out of Groton in the past twelve months — and what is coming</div>
+
+  <div class="body-text">
+
+    <p>The commissioning record of the past year is worth pausing on. In April 2025, USS Iowa (SSN-797), the 24th Virginia-class fast-attack submarine, was commissioned at Naval Submarine Base New London in Groton. In March 2026, USS Massachusetts (SSN-798) was commissioned in Boston — its future home port, Groton. On April 25, 2026, USS Idaho (SSN-799) is scheduled for commissioning, again at Subase New London. The submarine was delivered to the Navy in December 2025 following sea trials; its first reactor startup was July 4, 2025, and the crew moved aboard in August. These are not routine events. These are the operational product of a sustained industrial effort centered in this region.</p>
+
+    <p>General Dynamics Electric Boat — with facilities in Groton and at Quonset Point, Rhode Island — built each of these vessels under the long-standing teaming arrangement with HII Newport News Shipbuilding that has produced all Virginia-class submarines since the program's inception in the early 2000s. USS Idaho is the eighth Block IV Virginia-class submarine. Block IV emphasizes extended deployments and reduced maintenance intervals — design choices that reflect the operational demands being placed on the fleet in a period of intensifying great-power competition.</p>
+
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <span class="stat-number">26</span>
+      <span class="stat-label">Virginia-class boats built to date</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">71</span>
+      <span class="stat-label">U.S. Navy submarines total</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">14</span>
+      <span class="stat-label">Ohio-class ballistic missile subs</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">35</span>
+      <span class="stat-label">Years before refueling required</span>
+    </div>
+  </div>
+
+  <div class="body-text">
+
+    <p>Beyond the Virginia class, the Columbia class has begun to take shape. USS District of Columbia, the lead boat, is in final stages; USS Wisconsin follows. In 2025, the Navy announced USS Groton (SSBN-828) as the third Columbia-class ballistic missile submarine — named, deliberately, for the Connecticut city that has defined American submarine construction for the better part of a century. The boat is expected to be built with the same modular production approach as its predecessors, with major supermodules fabricated at Quonset Point and final integration at Electric Boat in Groton. Each Columbia-class submarine carries sixteen Trident II D5LE ballistic missiles and provides the sea-based leg of the United States' nuclear triad.</p>
+
+    <p>The naming of USS Groton matters beyond ceremony. It is an acknowledgment that the industrial and human infrastructure concentrated between the Thames River and Narragansett Bay is not a Cold War artifact. It is an active, essential, expanding component of American national defense. The FY2026 Navy budget requests over $10.5 billion in Columbia-class procurement funding — a figure that reflects both the urgency of replacing aging Ohio-class submarines and the reality that building them costs what it costs, particularly when the industrial base has been challenged to maintain production cadence through a period of workforce and supply chain pressure.</p>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Nuclear Power Beneath and Above</div>
+    <h3>A Note on What "Nuclear" Means Here</h3>
+    <p>When President Trump invoked "nuclear submarines" in his exchange with Medvedev last summer, the CSIS analysts who responded made a point worth repeating: all U.S. Navy submarines are nuclear-powered. The reactor that drives USS Iowa through the water is the same technology, at a different scale, that heats homes across Connecticut through the grid that Millstone supplies. The nuclear submarine force and the nuclear power industry share a technical lineage, a regional workforce, and — in Groton and Waterford — a geographic proximity that is no accident. The Navy's submarine propulsion program has trained generations of engineers who went on to careers at commercial nuclear plants. The overlap is direct and deep.</p>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE GRID QUESTION -->
+<!-- ══════════════════════════════════════════ -->
+<div id="grid">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Policy & Infrastructure</div>
+  <h2 class="section-headline">What the Grid Needs to Be</h2>
+  <div class="section-subhead">Connecticut's energy future in the balance between competing imperatives</div>
+
+  <div class="body-text">
+
+    <p>Connecticut has set a target of 100 percent zero-carbon electricity. The state's Integrated Resources Plan, developed by the Department of Energy and Environmental Protection, identifies the path: sustained reliance on Millstone, continued buildout of offshore wind, expanded energy storage, and demand management. The IRP notes that Eversource and United Illuminating were already, as of 2021, on pace to deliver 92 percent clean electricity by 2025 through existing contracts for nuclear and renewable generation. Reaching 100 percent requires more.</p>
+
+    <p>The offshore wind piece has become considerably more complicated under the current federal administration. Revolution Wind survived. The future pipeline of new projects has been effectively halted by the January 2025 executive order freezing new offshore permitting, the elimination of federal production tax credits for wind, and the stop-work orders that, even when overturned by courts, chilled developer confidence and financing. TotalEnergies, a major developer, announced in late 2025 that it was withdrawing from planned New England offshore wind projects — news that Connecticut's energy commissioner called "disappointing" at the Revolution Wind celebration. The pipeline that was meant to follow Revolution Wind is, at present, uncertain.</p>
+
+    <p>Nuclear fills the gap, but only if the negotiation succeeds. Governor Lamont's ambitions for small modular reactors at Millstone are real but depend on NRC approval timelines that are measured in years, not months. The more immediate question is whether the existing Millstone contract is extended, on what terms, and whether two other New England states agree to share the cost as the legislation requires. New Hampshire and Massachusetts have their own energy politics. The negotiation is complicated.</p>
+
+    <div class="pull-quote">
+      <p>"Connecticut currently has one nuclear power plant — Millstone. It produces enough power for about 2 million homes. The meeting comes amid continued uncertainty over offshore wind and as the state faces some of the highest electricity rates in the nation."</p>
+      <cite>Connecticut Public Radio · December 2025</cite>
+    </div>
+
+    <p>What emerges from this moment, if things go reasonably well, is a grid that combines a large baseload nuclear facility with existing and potentially new offshore wind, backed by growing storage capacity and anchored by a transmission system that is being upgraded to handle intermittent renewable sources. It is not a simple or cheap grid to build. But southeastern Connecticut — with Millstone in Waterford, Revolution Wind's onshore infrastructure in New London, the engineering talent at Electric Boat and throughout the regional economy, and a workforce that has been navigating complex energy and defense systems for generations — is as well-positioned to navigate that transition as any region in the country.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- IN PERSPECTIVE -->
+<!-- ══════════════════════════════════════════ -->
+<div id="perspective">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Closing</div>
+  <h2 class="section-headline">In Perspective</h2>
+  <div class="section-subhead">Where very different experiences meet the same set of facts</div>
+
+  <div class="body-text">
+
+    <p>The Thames Club sits on State Street in New London, a few hundred yards from a working waterfront that connects to the Sound, to the Atlantic, and through the Sound to the offshore turbines of Revolution Wind and the deep-water patrol routes of the submarine force. Across the river, at any given moment, there are men and women working on the vessels that will spend the next thirty years beneath the ocean's surface, ensuring — through the logic of deterrence that the nuclear age established — that the political conflicts of the surface world do not reach their worst conclusions.</p>
+
+    <p>Millstone, four miles west along the shoreline in Waterford, has been doing its own form of continuous, quiet work since 1975. The plant does not announce itself. It does not make news except when negotiations approach or when the anniversary of a milestone invites reflection. It simply runs — producing approximately one-third of Connecticut's electricity, day and night, in all seasons, through everything the world has thrown at the region in the past half-century.</p>
+
+    <p>Revolution Wind's turbines, now turning, will be visible on clear days from some points on the Rhode Island coast. They will not be visible from New London. But their output flows through the same grid, to the same homes and businesses and industrial facilities, that Millstone has supplied for fifty years. In the context of what is happening in Ukraine, in the Strait of Hormuz, in the tense arithmetic of deployed submarine forces and strategic nuclear postures, the addition of stable, fixed-price offshore wind generation to New England's mix is not a small thing. It is, in its way, another form of security.</p>
+
+    <p>The Thames Club has never been a place where everyone agrees. It has been a place where people with genuinely different stakes in the same community — different jobs, different histories, different ideas about what the next fifty years should look like — share a room and, when the occasion calls for it, a serious conversation. Energy security is that kind of occasion. The nuclear engineer and the fisherman, the developer and the ratepayer, the submariner and the environmental planner: they do not see Revolution Wind or Millstone's license renewal from the same angle. Above &amp; Beyond does not ask them to. It asks only that the facts be on the table, and that the conversation proceed from there — as it has, by the Club's tradition, for a very long time.</p>
+
+  </div>
+
+  <div class="ornament">· · ·</div>
+
+  <div style="margin-top: 36px; padding: 28px; border: 1px solid rgba(201,168,76,0.3); background: var(--warm-white);">
+    <div class="section-label" style="margin-bottom: 16px;">Sources & Verification</div>
+    <div class="body-text" style="font-size: 14px; color: #888;">
+      <p style="font-size: 14px; line-height: 1.65; margin-bottom: 14px;">All figures and events in this issue are drawn from verified reporting: CT Mirror, CT News Junkie, Connecticut Public Radio, WFSB, WBUR, Army Recognition, National Today (Boston), CSIS, Al Jazeera, Wikipedia (Revolution Wind, Millstone), Bureau of Ocean Energy Management, and Ørsted's project documentation. Commissioning dates for USS Iowa, USS Massachusetts, and USS Idaho are confirmed. The USS Groton Columbia-class naming is confirmed. Revolution Wind powering-on is confirmed (March 14, 2026). Millstone 50th anniversary event confirmed (September 29, 2025).</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-name">The Thames Club</div>
+  <div class="footer-address">
+    290 State Street · New London, Connecticut 06320<br>
+    Established 1869
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer-copy">
+    Above &amp; Beyond is produced pro bono by Global Table Media LLC for the Thames Club membership.<br>
+    Issue 2 · Spring 2026 &nbsp;·&nbsp; © 2026 Global Table Media LLC
+  </div>
+</footer>
+
+</body>
+</html>

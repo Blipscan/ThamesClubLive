@@ -1,122 +1,233 @@
-﻿<!DOCTYPE html>
-<!-- saved from url=(0076)file:///C:/Users/super/Dropbox/Publishing/BusinessDocs/submarineland-v2.html -->
+<!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Submarineland â€” A Guide to Landing Here and Living Well</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./Submarineland â€” A Guide to Landing Here and Living Well_files/css2" rel="stylesheet">
+<title>Submarineland — Above &amp; Below Special Edition | The Thames Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0d1f2d;
-    --deep: #071520;
-    --steel: #1e3a4f;
-    --gold: #b8922a;
-    --gold-l: #d4a843;
+    --navy: #0d1b2a;
+    --navy-mid: #162032;
+    --navy-light: #1e2e42;
     --cream: #f5f0e8;
-    --warm: #ede8df;
-    --ink: #1c1c1a;
-    --muted: #7a756e;
-    --rule: rgba(184,146,42,0.25);
-    --col: 680px;
+    --cream-warm: #ede8dc;
+    --gold: #c8a84b;
+    --gold-light: #d4b96a;
+    --gold-pale: #e8d9a8;
+    --white: #ffffff;
+    --text-body: #2a2a2a;
+    --rule: #c8a84b;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  html { font-size: 16px; }
+
   body {
     background: var(--cream);
-    color: var(--ink);
-    font-family: 'Libre Baskerville', Georgia, serif;
-    font-size: 17px;
-    line-height: 1.75;
+    color: var(--text-body);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
   }
 
-  /* â”€â”€ COVER â”€â”€ */
+  /* ── COVER ── */
   .cover {
-    background: var(--deep);
-    color: var(--cream);
-    min-height: 92vh;
+    background: var(--navy);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 60px;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 60px 40px;
   }
 
-  .cover-texture {
+  .cover-top-rule {
     position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 30%, rgba(14,42,64,0.9) 0%, transparent 70%),
-      radial-gradient(ellipse 100% 80% at 10% 80%, rgba(7,21,32,0.8) 0%, transparent 60%),
-      linear-gradient(160deg, #0d1f2d 0%, #071520 40%, #0a1a28 100%);
-  }
-
-  .cover-graphic {
-    position: absolute;
+    top: 48px;
     left: 50%;
-    top: 36%;
-    transform: translate(-50%, -50%);
-    width: 720px;
-    height: 720px;
-    overflow: visible;
-    pointer-events: none;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 680px;
+    text-align: center;
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
   }
 
-  /* Pulsing rings â€” animate outward from sub center */
-  .pulse-ring {
-    fill: none;
-    stroke: #c9a84c;
-    stroke-width: 1.1;
-    opacity: 0;
-    animation: sonar-pulse 7s ease-out infinite;
-  }
-  .pulse-ring:nth-child(1) { animation-delay: 0s; }
-  .pulse-ring:nth-child(2) { animation-delay: 0.9s; }
-  .pulse-ring:nth-child(3) { animation-delay: 1.8s; }
-  .pulse-ring:nth-child(4) { animation-delay: 2.7s; }
-  .pulse-ring:nth-child(5) { animation-delay: 3.6s; }
-
-  @keyframes sonar-pulse {
-    0%   { opacity: 0;    stroke-width: 2; }
-    6%   { opacity: 0.55; stroke-width: 1.2; }
-    50%  { opacity: 0.15; stroke-width: 0.8; }
-    100% { opacity: 0;    stroke-width: 0.3; }
+  .cover-top-rule::before,
+  .cover-top-rule::after {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 12px;
+    opacity: 0.6;
   }
 
-  /* Crosshairs */
-  .cross-line {
-    stroke: #b8922a;
-    stroke-width: 0.5;
-    opacity: 0.18;
+  .sub-drawing {
+    width: 320px;
+    max-width: 80vw;
+    opacity: 0.52;
+    mix-blend-mode: screen;
+    margin-bottom: 48px;
+    margin-top: 20px;
   }
 
-  /* Submarine silhouette */
-  .sub-hull {
-    fill: none;
-    stroke: #c9a84c;
-    stroke-width: 1.4;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    opacity: 0.55;
-  }
-  .sub-detail {
-    fill: none;
-    stroke: #c9a84c;
-    stroke-width: 0.9;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    opacity: 0.4;
+  .cover-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-align: center;
   }
 
-  .cover-content { position: relative; z-index: 2; max-width: 780px; }
+  .cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.8rem, 10vw, 7.5rem);
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    line-height: 0.92;
+    text-align: center;
+    margin-bottom: 24px;
+  }
 
-  .pub-tag {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 5px;
+  .cover-rule {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+    opacity: 0.7;
+  }
+
+  .cover-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold-light);
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .cover-location {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .cover-bottom {
+    position: absolute;
+    bottom: 48px;
+    text-align: center;
+    color: rgba(255,255,255,0.3);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 80px 48px;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 60px 28px; }
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.35;
+  }
+
+  .section-numeral {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  h2.section-title em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .section-deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #6b5e3e;
+    margin-bottom: 36px;
+    line-height: 1.5;
+  }
+
+  /* ── OPENING ESSAY ── */
+  .opening-block {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 72px 60px;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .opening-block { padding: 52px 28px; }
+  }
+
+  .opening-block .opening-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 28px;
@@ -124,1000 +235,904 @@
     align-items: center;
     gap: 14px;
   }
-  .pub-tag::before {
+
+  .opening-block .opening-label::after {
     content: '';
-    display: block;
-    width: 32px;
+    flex: 1;
     height: 1px;
     background: var(--gold);
+    opacity: 0.3;
   }
 
-  .cover h1 {
+  .opening-block p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 7vw, 86px);
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
     font-weight: 300;
-    line-height: 1.0;
-    letter-spacing: -1px;
-    color: #f0e8d4;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.9);
+    margin-bottom: 1.4em;
+  }
+
+  .opening-block p:last-child { margin-bottom: 0; }
+
+  /* ── BODY TEXT ── */
+  .prose p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: #2a2416;
+    margin-bottom: 1.4em;
+  }
+
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 28px;
+    margin: 48px 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.85rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* ── DATA TABLE ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 40px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+  }
+
+  .data-table th {
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    padding: 10px 14px;
+    text-align: left;
+    border: none;
+  }
+
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(200,168,75,0.15);
+    color: var(--text-body);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .data-table tr:nth-child(even) td {
+    background: rgba(200,168,75,0.04);
+  }
+
+  .data-table td:first-child {
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  /* ── STAT BLOCKS ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    margin: 40px 0;
+    background: rgba(200,168,75,0.2);
+  }
+
+  .stat-block {
+    background: var(--cream-warm);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── PLACE CARDS ── */
+  .place-list { margin: 40px 0; }
+
+  .place-card {
+    border-top: 1px solid rgba(200,168,75,0.3);
+    padding: 28px 0;
+  }
+
+  .place-card:last-child {
+    border-bottom: 1px solid rgba(200,168,75,0.3);
+  }
+
+  .place-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 3px;
+  }
+
+  .place-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .place-card .prose p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* ── NEIGHBORHOOD CARDS ── */
+  .neighborhood-card {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 36px 40px;
+    margin-bottom: 3px;
+  }
+
+  @media (max-width: 640px) {
+    .neighborhood-card { padding: 28px 20px; }
+  }
+
+  .neighborhood-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .neighborhood-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+
+  .neighborhood-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.85);
+  }
+
+  /* ── LAW SECTION ── */
+  .law-block {
+    background: #0d1b2a;
+    color: var(--cream);
+    padding: 56px 60px;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 640px) {
+    .law-block { padding: 40px 24px; }
+  }
+
+  .law-block h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    margin-top: 36px;
+    border-bottom: 1px solid rgba(200,168,75,0.2);
+    padding-bottom: 10px;
+  }
+
+  .law-block h3:first-of-type { margin-top: 0; }
+
+  .law-block p, .law-block li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(245,240,232,0.85);
+    margin-bottom: 1em;
+  }
+
+  .law-block ul {
+    padding-left: 20px;
+    margin-bottom: 1.2em;
+  }
+
+  .law-block .law-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .law-block .law-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.3;
+  }
+
+  .law-block .warning-box {
+    border: 1px solid rgba(200,168,75,0.4);
+    padding: 20px 24px;
+    margin: 20px 0;
+    background: rgba(200,168,75,0.05);
+  }
+
+  .law-block .warning-box p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: var(--gold-pale);
+  }
+
+  /* ── REFERENCE TABLE ── */
+  .ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(200,168,75,0.2);
+    margin: 28px 0;
+  }
+
+  @media (max-width: 500px) {
+    .ref-grid { grid-template-columns: 1fr; }
+  }
+
+  .ref-cell {
+    background: rgba(13,27,42,0.95);
+    padding: 18px 20px;
+  }
+
+  .ref-cell .ref-org {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .ref-cell .ref-contact {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(245,240,232,0.85);
+    line-height: 1.5;
+  }
+
+  .ref-cell .ref-contact a {
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+
+  /* ── DIVIDERS ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 72px 0 64px;
+    padding: 0 48px;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.25;
+  }
+
+  .section-divider-ornament {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+  }
+
+  .thick-divider {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+    opacity: 0.3;
+    margin: 0;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    padding: 64px 48px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--white);
+    letter-spacing: 0.05em;
     margin-bottom: 6px;
   }
-  .cover h1 em { font-style: italic; color: var(--gold-l); }
 
-  .cover-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(18px, 2.5vw, 26px);
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(240,232,212,0.65);
-    margin-bottom: 40px;
-    letter-spacing: 0.3px;
-  }
-
-  .cover-rule {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, rgba(184,146,42,0.5), transparent);
+  .footer-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
     margin-bottom: 28px;
   }
 
-  .cover-meta {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(240,232,212,0.35);
-    display: flex;
-    gap: 28px;
-  }
-
-  /* â”€â”€ ARTICLE BODY â”€â”€ */
-  .article {
-    max-width: var(--col);
-    margin: 0 auto;
-    padding: 80px 32px 100px;
-  }
-
-  .lede {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.65;
-    color: #2a2a28;
-    margin-bottom: 36px;
-    padding-bottom: 36px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .lede::first-letter {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 78px;
-    font-weight: 600;
-    line-height: 0.78;
-    float: left;
-    margin-right: 8px;
-    margin-top: 8px;
-    color: var(--navy);
-  }
-
-  .section-head {
-    margin: 60px 0 28px;
-    padding-top: 60px;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  .section-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 2px;
-    padding-top: 6px;
-    flex-shrink: 0;
-  }
-  .section-head h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 4vw, 40px);
-    font-weight: 300;
-    line-height: 1.15;
-    color: var(--navy);
-    letter-spacing: -0.5px;
-  }
-  .section-head h2 em { font-style: italic; }
-
-  p { margin-bottom: 22px; color: #2c2a25; }
-  p + p { text-indent: 1.5em; }
-  p + p.no-indent { text-indent: 0; }
-
-  /* Pull quote */
-  .pullquote {
-    margin: 48px -48px;
-    padding: 36px 48px;
-    background: var(--navy);
-    color: var(--cream);
-    position: relative;
-  }
-  .pullquote::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
+  .footer-rule {
+    width: 60px;
+    height: 1px;
     background: var(--gold);
+    margin: 0 auto 28px;
+    opacity: 0.4;
   }
-  .pullquote p {
+
+  .footer-address {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 24px;
+    font-size: 1rem;
     font-weight: 300;
-    font-style: italic;
-    line-height: 1.45;
-    color: #f0e8d4;
-    margin: 0;
-    text-indent: 0 !important;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.8;
   }
-  .pullquote p + p { text-indent: 0 !important; }
 
-  /* Neighborhood cards */
-  .neighborhood-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin: 36px 0;
+  .footer-address a {
+    color: var(--gold-light);
+    text-decoration: none;
   }
-  .n-card {
-    background: var(--warm);
-    padding: 28px 24px;
-    border-top: 3px solid transparent;
-    transition: border-color 0.2s;
-  }
-  .n-card:hover { border-color: var(--gold); }
-  .n-card.featured { grid-column: span 2; background: var(--navy); color: var(--cream); }
-  .n-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-  .n-card.featured .n-name { color: var(--gold-l); }
-  .n-tag { font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
-  .n-card.featured .n-tag { color: rgba(212,168,67,0.7); }
-  .n-desc { font-size: 14px; line-height: 1.6; color: #4a4540; margin: 0; text-indent: 0 !important; }
-  .n-card.featured .n-desc { color: rgba(245,240,232,0.75); }
 
-  /* Info blocks */
-  .info-block {
-    background: var(--warm);
-    border-left: 3px solid var(--gold);
-    padding: 24px 28px;
-    margin: 36px 0;
-  }
-  .info-block-title { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-  .info-block p { font-size: 15px; line-height: 1.65; margin-bottom: 10px; text-indent: 0 !important; color: #3a3530; }
-  .info-block p:last-child { margin-bottom: 0; }
-  .info-block a { color: var(--navy); }
+  /* ── UTILITIES ── */
+  .mt-lg { margin-top: 56px; }
+  .mt-md { margin-top: 36px; }
+  .text-center { text-align: center; }
 
-  /* Fact list */
-  .fact-list { list-style: none; margin: 28px 0; border-top: 1px solid var(--rule); }
-  .fact-list li { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 13px 0; border-bottom: 1px solid rgba(184,146,42,0.1); font-size: 15px; line-height: 1.5; }
-  .fact-label { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); padding-top: 2px; }
-
-  /* Dining list */
-  .dining-list { list-style: none; margin: 0; }
-  .dining-list li { padding: 16px 0; border-bottom: 1px solid rgba(184,146,42,0.12); }
-  .dining-list li:last-child { border-bottom: none; }
-  .d-name { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
-  .d-loc { font-family: 'Source Sans 3', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
-  .d-note { font-size: 14px; line-height: 1.55; color: var(--muted); margin: 0; text-indent: 0 !important; }
-
-  /* Law section â€” special styling */
-  .law-subsection {
-    margin: 44px 0 12px;
-    padding-top: 28px;
-    border-top: 1px solid rgba(184,146,42,0.15);
-  }
-  .law-subsection-title {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 9px;
+  strong {
     font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 18px;
-  }
-
-  /* Law rule items */
-  .law-rule {
-    margin: 20px 0;
-    padding: 18px 22px;
-    background: var(--warm);
-    border-left: 2px solid var(--gold);
-  }
-  .law-rule-head {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
     color: var(--navy);
-    margin-bottom: 8px;
-  }
-  .law-rule p {
-    font-size: 14.5px;
-    line-height: 1.65;
-    margin-bottom: 0;
-    color: #3a3530;
-    text-indent: 0 !important;
   }
 
-  /* Penalty callout */
-  .penalty-box {
-    background: var(--navy);
-    color: var(--cream);
-    padding: 20px 24px;
-    margin: 28px 0;
-    border-left: 3px solid var(--gold);
+  .law-block strong {
+    color: var(--gold-pale);
   }
-  .penalty-box-title {
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-  .penalty-box p { font-size: 14px; color: rgba(245,240,232,0.85); margin-bottom: 6px; text-indent: 0 !important; }
-  .penalty-box p:last-child { margin-bottom: 0; }
 
-  /* Species grid */
-  .species-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    margin: 28px 0;
-  }
-  .species-card {
-    background: var(--warm);
-    padding: 18px 20px;
-    border-top: 2px solid transparent;
-  }
-  .species-card:hover { border-color: var(--gold); }
-  .species-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
-  .species-status { font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; display: block; }
-  .species-note { font-size: 13px; line-height: 1.55; color: #4a4540; margin: 0; text-indent: 0 !important; }
 
-  /* Fishing table */
-  .fish-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
-  .fish-table th { font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: left; }
-  .fish-table td { padding: 10px 10px; border-bottom: 1px solid rgba(184,146,42,0.08); color: #3a3530; vertical-align: top; }
-  .fish-table tr:last-child td { border-bottom: none; }
-  .fish-table .restricted { color: #8b3a3a; font-style: italic; }
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(13,27,42,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,168,75,.18)}
+.site-nav .nav-in{max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-nav .brand{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.site-nav .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.site-nav .nav-links a{font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,.76);text-decoration:none}
 
-  /* Warning block */
-  .warning-block {
-    border: 1px solid rgba(139,58,58,0.3);
-    background: rgba(139,58,58,0.04);
-    border-left: 3px solid #8b3a3a;
-    padding: 20px 24px;
-    margin: 28px 0;
-  }
-  .warning-block p { font-size: 14.5px; color: #3a2020; text-indent: 0 !important; margin-bottom: 6px; }
-  .warning-block p:last-child { margin-bottom: 0; }
-  .warning-title { font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #8b3a3a; margin-bottom: 10px; }
 
-  /* Contacts block */
-  .contacts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 28px 0; }
-  .contact-item { background: var(--warm); padding: 14px 18px; }
-  .contact-label { font-family: 'Source Sans 3', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
-  .contact-info { font-size: 13px; color: #3a3530; line-height: 1.5; }
+/* unified site nav + footer */
+.site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
+.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.site-shell-nav .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
+.site-shell-nav .site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
+.site-shell-nav .site-shell-links{display:flex;gap:14px 16px;flex-wrap:wrap;align-items:center}
+.site-shell-nav .site-shell-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-nav .site-shell-links a:hover{color:#f4edd8}
+.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
+.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
+.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
+.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
+.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+@media(max-width:900px){
+  .site-shell-nav .site-shell-inner{align-items:flex-start}
+  .site-shell-nav .site-shell-links{gap:10px 12px}
+}
 
-  /* Ornament */
-  .ornament { text-align: center; margin: 48px 0; color: var(--gold); font-size: 20px; letter-spacing: 12px; opacity: 0.5; }
-
-  /* Closing */
-  .closing { margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--rule); text-align: center; }
-  .closing p { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: var(--navy); margin-bottom: 0; text-indent: 0; }
-  .closing-mark { display: inline-block; width: 40px; height: 1px; background: var(--gold); margin: 24px auto 16px; }
-  .closing-sig { font-family: 'Source Sans 3', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--muted); }
-
-  /* Footer */
-  .footer-bar { background: var(--navy); color: rgba(245,240,232,0.4); text-align: center; padding: 28px; font-family: 'Source Sans 3', sans-serif; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    .cover { padding: 36px 28px; min-height: 80vh; }
-    .article { padding: 48px 20px 72px; }
-    .pullquote { margin: 36px 0; }
-    .neighborhood-grid, .species-grid, .contacts-grid { grid-template-columns: 1fr; }
-    .n-card.featured { grid-column: span 1; }
-    .fact-list li { grid-template-columns: 1fr; gap: 4px; }
-  }
-a{color:inherit;text-decoration:none}
-a:hover{color:#c9a96e}
 </style>
 </head>
 <body>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â• COVER â•â•â•â•â•â•â•â•â•â•â• -->
-<div class="cover">
-  <svg class="cover-graphic" viewBox="-360 -360 720 720">
 
-    <!-- Crosshairs -->
-    <line class="cross-line" x1="0" y1="-360" x2="0" y2="360"></line>
-    <line class="cross-line" x1="-360" y1="0" x2="360" y2="0"></line>
-    <line class="cross-line" x1="-255" y1="-255" x2="255" y2="255" opacity="0.09"></line>
-    <line class="cross-line" x1="255" y1="-255" x2="-255" y2="255" opacity="0.09"></line>
-
-    <!-- Range tick marks -->
-    <line class="cross-line" x1="-4" y1="-90" x2="4" y2="-90" opacity="0.3"></line>
-    <line class="cross-line" x1="-4" y1="-170" x2="4" y2="-170" opacity="0.3"></line>
-    <line class="cross-line" x1="-4" y1="-260" x2="4" y2="-260" opacity="0.3"></line>
-    <line class="cross-line" x1="-4" y1="-340" x2="4" y2="-340" opacity="0.3"></line>
-
-    <!-- Pulsing rings â€” centered on sub -->
-    <circle class="pulse-ring" cx="0" cy="0" r="90"></circle>
-    <circle class="pulse-ring" cx="0" cy="0" r="170"></circle>
-    <circle class="pulse-ring" cx="0" cy="0" r="260"></circle>
-    <circle class="pulse-ring" cx="0" cy="0" r="340"></circle>
-    <circle class="pulse-ring" cx="0" cy="0" r="340"></circle>
-
-    <!-- â”€â”€ SUBMARINE SILHOUETTE (profile, bow-left, centered at 0,0) â”€â”€ -->
-    <!-- Main pressure hull â€” long elliptical body -->
-    <path class="sub-hull" d="
-      M -155, 0
-      C -155,-28  -130,-42  -90,-44
-      L  100,-44
-      C  130,-44  155,-32  160,-14
-      C  165,  0  155, 22  130, 30
-      C  110, 36   80, 38   50, 38
-      L -60,  38
-      C -100, 38 -140, 28 -155,  0
-      Z
-    "></path>
-
-    <!-- Bow cap â€” rounded nose -->
-    <path class="sub-hull" d="
-      M -155, 0
-      C -168,-12 -168, 12 -155, 0
-    "></path>
-
-    <!-- Stern â€” tapered tail with cruciform fins -->
-    <!-- Horizontal stern plane (port) -->
-    <path class="sub-detail" d="M 130,10 L 175,28 L 170,36 L 130,24 Z"></path>
-    <!-- Horizontal stern plane (starboard, implied by profile â€” smaller) -->
-    <path class="sub-detail" d="M 128,8  L 165,-10 L 160,-18 L 126,-4 Z"></path>
-
-    <!-- Rudder / vertical fin at stern -->
-    <path class="sub-detail" d="
-      M 140,-44
-      L 158,-80
-      L 165,-80
-      L 148,-44
-      Z
-    "></path>
-
-    <!-- Sail (conning tower) -->
-    <path class="sub-hull" d="
-      M  -30,-44
-      L  -28,-88
-      C  -28,-96  -18,-100  -8,-100
-      L   28,-100
-      C   38,-100  46,-96   46,-88
-      L   44,-44
-      Z
-    "></path>
-
-    <!-- Sail â€” periscope / mast -->
-    <line class="sub-detail" x1="-10" y1="-100" x2="-10" y2="-126"></line>
-    <line class="sub-detail" x1="-10" y1="-126" x2="8" y2="-126"></line>
-    <!-- Second mast -->
-    <line class="sub-detail" x1="18" y1="-100" x2="18" y2="-118"></line>
-    <line class="sub-detail" x1="18" y1="-118" x2="32" y2="-118"></line>
-
-    <!-- Sail fairwater planes -->
-    <path class="sub-detail" d="M -28,-72 L -58,-60 L -58,-54 L -28,-64 Z"></path>
-    <path class="sub-detail" d="M  44,-72 L  72,-60 L  72,-54 L  44,-64 Z"></path>
-
-    <!-- Hull detail lines â€” limber holes / ballast tank vents -->
-    <line class="sub-detail" x1="-100" y1="38" x2="-95" y2="44" opacity="0.3"></line>
-    <line class="sub-detail" x1="-70" y1="38" x2="-65" y2="46" opacity="0.3"></line>
-    <line class="sub-detail" x1="-40" y1="38" x2="-35" y2="47" opacity="0.3"></line>
-    <line class="sub-detail" x1="-10" y1="38" x2="-5" y2="47" opacity="0.3"></line>
-    <line class="sub-detail" x1=" 20" y1="38" x2=" 25" y2="47" opacity="0.3"></line>
-    <line class="sub-detail" x1=" 50" y1="37" x2=" 55" y2="45" opacity="0.3"></line>
-    <line class="sub-detail" x1=" 80" y1="34" x2=" 84" y2="42" opacity="0.3"></line>
-
-    <!-- Waterline â€” faint dashed -->
-    <line class="sub-detail" x1="-165" y1="0" x2="165" y2="0" stroke-dasharray="8 6" opacity="0.18"></line>
-
-  </svg>
-  <div class="cover-texture"></div>
-  <div class="cover-content">
-    <div class="pub-tag">Above &amp; Below &nbsp;Â·&nbsp; Thames Club &nbsp;Â·&nbsp; New London, Connecticut</div>
-    <h1><em>Submarineland</em></h1>
-    <div class="cover-sub">Everything worth knowing about landing here and living well</div>
-    <div class="cover-rule"></div>
-    <div class="cover-meta">
-      <span>Southeastern Connecticut</span>
-      <span>A Field Guide for Newcomers</span>
-      <span>Spring 2026</span>
+<nav id="nav" class="site-shell-nav">
+  <div class="site-shell-inner">
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London · Est. 1869</small></a>
+    <div class="site-shell-links">
+      <a href="above-below.html">Above &amp; Below</a>
+      <a href="room.html">The Room</a>
+      <a href="history.html">History</a>
+      <a href="events.html">Events</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="community.html">Community</a>
+      <a href="publications.html">Publications</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
     </div>
+  </div>
+</nav>
+
+
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-top-rule">Above &amp; Below &nbsp;·&nbsp; Thames Club &nbsp;·&nbsp; Special Edition</div>
+
+  <svg class="sub-drawing" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="160" cy="148" rx="108" ry="110" stroke="white" stroke-width="1.5" fill="none"/>
+    <ellipse cx="160" cy="148" rx="88" ry="90" stroke="white" stroke-width="1" fill="none"/>
+    <ellipse cx="160" cy="148" rx="72" ry="74" stroke="white" stroke-width="0.6" fill="none" opacity="0.6"/>
+    <ellipse cx="160" cy="148" rx="54" ry="56" stroke="white" stroke-width="0.5" fill="none" opacity="0.45"/>
+    <ellipse cx="160" cy="148" rx="36" ry="38" stroke="white" stroke-width="0.5" fill="none" opacity="0.35"/>
+    <circle cx="160" cy="148" r="16" stroke="white" stroke-width="1" fill="none"/>
+    <circle cx="160" cy="148" r="6" stroke="white" stroke-width="0.8" fill="none"/>
+    <circle cx="160" cy="128" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
+    <circle cx="176" cy="138" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
+    <circle cx="176" cy="158" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
+    <circle cx="160" cy="168" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
+    <circle cx="144" cy="158" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
+    <circle cx="144" cy="138" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
+    <rect x="148" y="30" width="24" height="48" rx="4" stroke="white" stroke-width="1.2" fill="none"/>
+    <rect x="153" y="22" width="14" height="14" rx="2" stroke="white" stroke-width="0.8" fill="none"/>
+    <line x1="158" y1="22" x2="158" y2="10" stroke="white" stroke-width="0.7"/>
+    <line x1="162" y1="22" x2="162" y2="8" stroke="white" stroke-width="0.7"/>
+    <line x1="166" y1="22" x2="166" y2="12" stroke="white" stroke-width="0.7"/>
+    <circle cx="158" cy="9" r="2" stroke="white" stroke-width="0.6" fill="none"/>
+    <circle cx="162" cy="7" r="2" stroke="white" stroke-width="0.6" fill="none"/>
+    <line x1="268" y1="148" x2="310" y2="138" stroke="white" stroke-width="1.2"/>
+    <line x1="268" y1="148" x2="310" y2="158" stroke="white" stroke-width="0.7" opacity="0.5"/>
+    <line x1="52" y1="148" x2="10" y2="138" stroke="white" stroke-width="1.2"/>
+    <line x1="52" y1="148" x2="10" y2="158" stroke="white" stroke-width="0.7" opacity="0.5"/>
+    <line x1="160" y1="38" x2="160" y2="50" stroke="white" stroke-width="0.6" opacity="0.5"/>
+    <line x1="160" y1="246" x2="160" y2="258" stroke="white" stroke-width="0.6" opacity="0.5"/>
+    <line x1="220" y1="65" x2="214" y2="72" stroke="white" stroke-width="0.5" opacity="0.4"/>
+    <line x1="254" y1="98" x2="246" y2="103" stroke="white" stroke-width="0.5" opacity="0.4"/>
+    <line x1="100" y1="65" x2="106" y2="72" stroke="white" stroke-width="0.5" opacity="0.4"/>
+    <line x1="66" y1="98" x2="74" y2="103" stroke="white" stroke-width="0.5" opacity="0.4"/>
+    <line x1="220" y1="231" x2="214" y2="224" stroke="white" stroke-width="0.5" opacity="0.4"/>
+    <line x1="100" y1="231" x2="106" y2="224" stroke="white" stroke-width="0.5" opacity="0.4"/>
+    <line x1="160" y1="58" x2="160" y2="88" stroke="white" stroke-width="0.4" opacity="0.3"/>
+    <line x1="160" y1="208" x2="160" y2="238" stroke="white" stroke-width="0.4" opacity="0.3"/>
+    <line x1="72" y1="148" x2="102" y2="148" stroke="white" stroke-width="0.4" opacity="0.3"/>
+    <line x1="218" y1="148" x2="248" y2="148" stroke="white" stroke-width="0.4" opacity="0.3"/>
+  </svg>
+
+  <div class="cover-eyebrow">Special Edition &nbsp;·&nbsp; Spring 2026</div>
+  <div class="cover-title">Submarine<br>land</div>
+  <div class="cover-rule"></div>
+  <div class="cover-subtitle">A Field Guide for Newcomers</div>
+  <div class="cover-location">Everything worth knowing about landing here and living well<br>Southeastern Connecticut</div>
+  <div class="cover-bottom">Above &amp; Below &nbsp;·&nbsp; Thames Club, New London &nbsp;·&nbsp; Est. 1869</div>
+</div>
+
+<!-- OPENING ESSAY -->
+<div class="opening-block">
+  <div style="max-width:680px; margin:0 auto;">
+    <div class="opening-label">Introduction</div>
+    <p>Nobody tells you what it's actually like. You accepted the offer — Electric Boat, the sub base, a design contract, a transfer — and now you're pointing a moving truck toward a corner of New England that most Americans can't find on a map. Southeastern Connecticut. The Thames River. The place where the world's most sophisticated weapons are built quietly, a few miles from a lobster shack where the Wi-Fi password is written on a chalkboard.</p>
+    <p>Welcome. You are going to be fine.</p>
+    <p>This region rewards the curious and confounds the impatient. It is not Boston. It is not Providence. It operates on its own internal logic, shaped by three centuries of maritime industry, two of the country's oldest military installations, and a coastline that has an opinion about everything. The people who stay — and most do — tend to describe a specific moment when they understood they'd arrived somewhere real.</p>
+    <p>This guide exists to speed that moment along. It covers the geography, the neighborhoods, the work, the food, and the things that will surprise you — including the legal landscape, which differs from most of the country in ways that will matter to you within days of arrival. Read the whole thing. The section on Connecticut law is not optional.</p>
   </div>
 </div>
 
+<div class="thick-divider"></div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â• ARTICLE â•â•â•â•â•â•â•â•â•â•â• -->
-<div class="article">
+<!-- I. THE LAY OF THE LAND -->
+<div class="page">
+  <div class="section-label"><span class="section-numeral">I</span> Geography</div>
+  <h2 class="section-title">The Lay of the Land —<br><em>What You're Actually Looking At</em></h2>
+  <p class="section-deck">The geography matters because it dictates everything else.</p>
 
-  <p class="lede">Nobody tells you what it's actually like. You accepted the offer â€” Electric Boat, the sub base, a design contract, a transfer â€” and now you're pointing a moving truck toward a corner of New England that most Americans can't find on a map. Southeastern Connecticut. The Thames River. The place where the world's most sophisticated weapons are built quietly, a few miles from a lobster shack where the Wi-Fi password is written on a chalkboard. Welcome. You are going to be fine.</p>
-
-  <p>This region rewards the curious and confounds the impatient. It is not Boston. It is not Providence. It operates on its own internal logic, shaped by three centuries of maritime industry, two of the country's oldest military installations, and a coastline that has an opinion about everything. The people who stay â€” and most do â€” tend to describe a specific moment when they understood they'd arrived somewhere real.</p>
-
-  <p>This guide exists to speed that moment along. It covers the geography, the neighborhoods, the work, the food, and the things that will surprise you â€” including the legal landscape, which differs from most of the country in ways that will matter to you within days of arrival. Read the whole thing. The section on Connecticut law is not optional.</p>
-
-
-  <!-- â”€â”€ SECTION 1 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">I</span>
-    <h2>The Lay of the Land â€” <em>What You're Actually Looking At</em></h2>
+  <div class="prose">
+    <p>The Thames River runs north to south, bisecting the region, with New London on the west bank and Groton on the east. Those two miles of water — crossed by the Gold Star Memorial Bridge on I-95 — represent the central axis of your new life. Electric Boat's shipyard sits in Groton. Naval Submarine Base New London (which is, confusingly, in Groton) sits in Groton. EB's design and engineering offices are in New London. The Thames Club, Connecticut's oldest private social club, is in New London, at 290 State Street, a few blocks from the waterfront.</p>
+    <p>Understanding this east-west split is your first local knowledge test. When someone says "across the river," they mean it literally and it happens twenty times a day. The Gold Star Bridge is not optional — it is the central fact of regional commuting — and the interchange at Exit 84/85 will defeat your GPS at least once. Memorize it during daylight before you need it in the dark.</p>
+    <p>Radiating outward, the region unfolds in distinct layers. Immediately south, the Thames meets Long Island Sound. To the east, the shoreline runs through Mystic, Noank, and Stonington before crossing into Rhode Island. To the west, Waterford and East Lyme lead toward Old Lyme and the Connecticut River valley. Each of these places has a personality. Together they form what the tourism boards call "Mystic Country" — a name that undersells it considerably.</p>
+    <p>New London's Amtrak station is an asset most newcomers undervalue. It is a direct Acela-accessible stop: two and a half hours to New York Penn Station, two hours to South Station in Boston. For people maintaining relationships in those cities, or whose families are considering visits, this is not a minor convenience. It is a meaningful quality-of-life factor when accepting an offer in this region.</p>
   </div>
 
-  <p>The geography matters because it dictates everything else. The Thames River runs north to south, bisecting the region, with New London on the west bank and Groton on the east. Those two miles of water â€” crossed by the Gold Star Memorial Bridge on I-95 â€” represent the central axis of your new life. Electric Boat's shipyard sits in Groton. Naval Submarine Base New London (which is, confusingly, in Groton) sits in Groton. EB's design and engineering offices are in New London. The Thames Club, the oldest social institution in the city, is in New London, at 290 State Street, a few blocks from the waterfront.</p>
-
-  <p>Understanding this east-west split is your first local knowledge test. When someone says "across the river," they mean it literally and it happens twenty times a day. The Gold Star Bridge is not optional â€” it is the central fact of regional commuting â€” and the interchange at Exit 84/85 will defeat your GPS at least once. Memorize it during daylight before you need it in the dark.</p>
-
-  <p>Radiating outward, the region unfolds in distinct layers. Immediately south, the Thames meets Long Island Sound. To the east, the shoreline runs through Mystic, Noank, and Stonington before crossing into Rhode Island. To the west, Waterford and East Lyme lead toward Old Lyme and the Connecticut River valley. Each of these places has a personality. Together they form what the tourism boards call "Mystic Country" â€” a name that undersells it considerably.</p>
-
-  <p>New London's Amtrak station is an asset most newcomers undervalue. It is a direct Acela-accessible stop: two and a half hours to New York Penn Station, two hours to South Station in Boston. For people maintaining relationships in those cities, or whose families are considering visits, this is not a minor convenience. It is a meaningful quality-of-life factor when accepting an offer in this region.</p>
-
-  <div class="info-block">
-    <div class="info-block-title">The Numbers</div>
-    <p><strong>Electric Boat</strong> currently employs approximately 24,000 people across its Connecticut and Rhode Island operations, with more than 15,000 in Connecticut. The company is targeting peak employment of 33,000 â€” levels not seen since the Reagan-era submarine boom â€” and plans to hire 8,000 new employees in 2026 alone.</p>
-    <p><strong>Naval Submarine Base New London</strong> (Groton) supports more than 21 attack submarines and approximately 9,000 military and civilian personnel across more than 40 tenant commands.</p>
-    <p><strong>Pfizer</strong> operates a major global research and development campus in Groton, making the region one of the denser concentrations of technical employment in all of New England.</p>
-  </div>
-
-
-  <!-- â”€â”€ SECTION 2 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">II</span>
-    <h2>Where to Live â€” <em>A Candid Tour of Your Options</em></h2>
-  </div>
-
-  <p>The housing market here has tightened considerably as EB's hiring surge has brought thousands of new residents. Average single-family home prices in Groton run around $380,000 â€” roughly $170,000 below the national average, and dramatically below comparable defense-industry hubs near Newport News or San Diego. That said, mid-range inventory is constrained, and anything decent within a ten-minute commute of the shipyard moves quickly. Start looking before you accept the offer, not after.</p>
-
-  <p>One thing the housing section of every other relocation guide omits: most new arrivals rent for at least the first year. Rental inventory in this region is tighter than purchase inventory and moving fast. One-bedroom apartments in Groton near EB run $1,400â€“$1,900 per month. Two-bedrooms in the $1,800â€“$2,600 range depending on location. Mystic-area rentals carry a premium; East Lyme and Waterford offer better rental value for the commute distance. Begin your search early and use local property management companies in addition to the national platforms â€” the best rentals in small coastal towns rarely reach Zillow before they're gone.</p>
-
-  <div class="neighborhood-grid">
-    <div class="n-card featured">
-      <span class="n-tag">Best Overall Â· EB Engineers Â· Navy Families Â· Aspirational for Year One</span>
-      <div class="n-name">Mystic</div>
-      <p class="n-desc">Technically a village split between the towns of Groton and Stonington, Mystic punches well above its weight in every category â€” schools, restaurants, walkability, charm, and the kind of neighbors who sail on weekends. Twenty minutes from EB and ten minutes from everything worth doing. Real estate is the most expensive in the region. Most new hires cannot afford Mystic in year one. That is the honest answer. Rent somewhere cheaper, get oriented, and revisit after your first raise. The New York Times named The Shipwright's Daughter here among America's 50 best restaurants in 2024. The drawbridge is worth seeing at dusk.</p>
+  <div class="stat-grid mt-lg">
+    <div class="stat-block">
+      <span class="stat-number">24,000</span>
+      <span class="stat-label">EB Employees Today</span>
     </div>
-    <div class="n-card">
-      <span class="n-tag">Best Value Â· Families Â· Five Minutes to the Yard</span>
-      <div class="n-name">Groton</div>
-      <p class="n-desc">Dense suburban feel with strong public schools (A- on Niche), most residents own rather than rent, and you are five minutes from the yard. The village of Noank â€” accessible from Groton â€” is one of the most beautiful small harbors in New England. The tradeoff: "Groton" encompasses everything from the base perimeter to Mystic, so neighborhood variation is significant. Look hard at specific pockets. The stretch near Eastern Point Beach and the areas close to Fort Griswold are the most desirable. Avoid the blocks immediately adjacent to I-95 interchanges.</p>
+    <div class="stat-block">
+      <span class="stat-number">33,000</span>
+      <span class="stat-label">Target Workforce</span>
     </div>
-    <div class="n-card">
-      <span class="n-tag">Best Schools Â· Quiet Â· True Value</span>
-      <div class="n-name">East Lyme / Niantic</div>
-      <p class="n-desc">Consistently rated the top place to live in New London County. Excellent schools, low crime, a real boardwalk in Niantic village, and Crescent Beach for summer. Twenty-five minutes from EB and the sub base. Slightly removed from the social core of the region, but the schools, the beach, and the quiet make it the right call for families who want to optimize for home life rather than proximity to the waterfront bar scene. Rentals here offer better value relative to comparable quality in Groton proper.</p>
+    <div class="stat-block">
+      <span class="stat-number">8,000</span>
+      <span class="stat-label">New Hires in 2026</span>
     </div>
-    <div class="n-card">
-      <span class="n-tag">Character Â· Historic Â· No Chain Anything</span>
-      <div class="n-name">Stonington Borough</div>
-      <p class="n-desc">A narrow stone-and-clapboard peninsula jutting into the Sound, lined with Federal-era homes and a working lobster fleet. The most atmospheric address in southeastern Connecticut. Stonington is where you live if you want to feel like you actually moved to New England rather than just relocated for work. Dog Watch CafÃ©. The Breakwater. The Lighthouse Museum. Walking distance to all of it. Expensive for square footage, invaluable for place. Not for people who need a garage or a yard. Very much for people who walk to get coffee and know their neighbors' names within a month.</p>
-    </div>
-    <div class="n-card">
-      <span class="n-tag">Urban Â· Affordable Â· Underestimated</span>
-      <div class="n-name">New London</div>
-      <p class="n-desc">The city proper is undervalued and underestimated by people who drive through on I-95 and form an opinion. Historic architecture, the Garde Arts Center, the Amtrak station (direct to New York and Boston), waterfront access, and a food and arts scene that keeps expanding. The Pequot Avenue corridor and the neighborhoods near Connecticut College are the places to look. More diverse than the suburbs, more interesting than its reputation suggests, and noticeably cheaper than Groton for comparable space. Excellent for EB design office employees who prefer walking to their office to commuting across the bridge.</p>
-    </div>
-    <div class="n-card">
-      <span class="n-tag">Hidden Gem Â· Harbor Life Â· No Inventory</span>
-      <div class="n-name">Noank</div>
-      <p class="n-desc">A village within Groton that locals guard like a secret. Compact, tight-knit, physically beautiful â€” Victorian cottages on steep lanes above a working harbor. Abbott's Lobster in the Rough and Ford's Lobster are here. You sit on the dock, there is no Wi-Fi, you pay cash, and nothing in your previous life has prepared you for how good a lobster roll can be. Inventory in Noank is essentially zero at any given moment. When something comes up, it goes immediately. Best approach: make friends with someone who already lives there.</p>
+    <div class="stat-block">
+      <span class="stat-number">9,000</span>
+      <span class="stat-label">SUBASE Personnel</span>
     </div>
   </div>
 
-  <div class="pullquote">
+  <div class="prose mt-md">
+    <p>Electric Boat currently employs approximately 24,000 people across its Connecticut and Rhode Island operations, with more than 15,000 in Connecticut. The company is targeting peak employment of 33,000 — levels not seen since the Reagan-era submarine boom — and plans to hire 8,000 new employees in 2026 alone. Naval Submarine Base New London supports more than 21 attack submarines and approximately 9,000 military and civilian personnel across more than 40 tenant commands. Pfizer operates a major global research and development campus in Groton, making the region one of the denser concentrations of technical employment in all of New England.</p>
+  </div>
+</div>
+
+<div class="section-divider"><span class="section-divider-ornament">· · ·</span></div>
+
+<!-- II. WHERE TO LIVE -->
+<div class="page" style="padding-top:0;">
+  <div class="section-label"><span class="section-numeral">II</span> Neighborhoods</div>
+  <h2 class="section-title">Where to Live —<br><em>A Candid Tour of Your Options</em></h2>
+  <p class="section-deck">The housing market has tightened considerably as EB's hiring surge has brought thousands of new residents.</p>
+
+  <div class="prose">
+    <p>Average single-family home prices in Groton run around $380,000 — well below comparable defense-industry hubs near Newport News or San Diego, and competitive with the broader New England market. That said, mid-range inventory is constrained, and anything decent within a ten-minute commute of the shipyard moves quickly. Start looking before you accept the offer, not after.</p>
+    <p>Most new arrivals rent for at least the first year. One-bedroom apartments in Groton near EB run $1,400–$1,900 per month. Two-bedrooms in the $1,800–$2,600 range. Mystic-area rentals carry a premium; East Lyme and Waterford offer better rental value for the commute distance. Begin your search early and use local property management companies in addition to the national platforms — the best rentals in small coastal towns rarely reach Zillow before they're gone.</p>
+  </div>
+</div>
+
+<!-- Neighborhood cards -->
+<div style="max-width:780px; margin:0 auto; padding: 0 48px;">
+
+  <div class="neighborhood-card">
+    <div class="neighborhood-tag">Best Overall · EB Engineers · Navy Families</div>
+    <div class="neighborhood-name">Mystic</div>
+    <p>Technically a village split between the towns of Groton and Stonington, Mystic punches well above its weight in every category — schools, restaurants, walkability, charm, and the kind of neighbors who sail on weekends. Twenty minutes from EB and ten minutes from everything worth doing. Real estate is the most expensive in the region. Most new hires cannot afford Mystic in year one. That is the honest answer. Rent somewhere cheaper, get oriented, and revisit after your first raise. <em>The New York Times</em> named The Shipwright's Daughter here among America's 50 best restaurants in 2024. The drawbridge is worth seeing at dusk.</p>
+  </div>
+
+  <div class="neighborhood-card" style="background: var(--navy-light);">
+    <div class="neighborhood-tag">Best Value · Families · Five Minutes to the Yard</div>
+    <div class="neighborhood-name">Groton</div>
+    <p>Dense suburban feel with strong public schools (A- on Niche), most residents own rather than rent, and you are five minutes from the yard. The village of Noank — accessible from Groton — is one of the most beautiful small harbors in New England. The tradeoff: "Groton" encompasses everything from the base perimeter to Mystic, so neighborhood variation is significant. The stretch near Eastern Point Beach and the areas close to Fort Griswold are the most desirable. Avoid the blocks immediately adjacent to I-95 interchanges.</p>
+  </div>
+
+  <div class="neighborhood-card">
+    <div class="neighborhood-tag">Best Schools · Quiet · True Value</div>
+    <div class="neighborhood-name">East Lyme / Niantic</div>
+    <p>Consistently rated the top place to live in New London County. Excellent schools, low crime, a real boardwalk in Niantic village, and Crescent Beach for summer. Twenty-five minutes from EB and the sub base. Slightly removed from the social core of the region, but the schools, the beach, and the quiet make it the right call for families who want to optimize for home life rather than proximity to the waterfront bar scene.</p>
+  </div>
+
+  <div class="neighborhood-card" style="background: var(--navy-light);">
+    <div class="neighborhood-tag">Character · Historic · No Chain Anything</div>
+    <div class="neighborhood-name">Stonington Borough</div>
+    <p>A narrow stone-and-clapboard peninsula jutting into the Sound, lined with Federal-era homes and a working lobster fleet. The most atmospheric address in southeastern Connecticut. Stonington is where you live if you want to feel like you actually moved to New England rather than just relocated for work. Dog Watch Café. The Breakwater. The Lighthouse Museum. Walking distance to all of it. Very much for people who walk to get coffee and know their neighbors' names within a month.</p>
+  </div>
+
+  <div class="neighborhood-card">
+    <div class="neighborhood-tag">Urban · Affordable · Underestimated</div>
+    <div class="neighborhood-name">New London</div>
+    <p>The city proper is undervalued and underestimated by people who drive through on I-95 and form an opinion. Historic architecture, the Garde Arts Center, the Amtrak station (direct to New York and Boston), waterfront access, and a food and arts scene that keeps expanding. The Pequot Avenue corridor and the neighborhoods near Connecticut College are the places to look. Noticeably cheaper than Groton for comparable space. Excellent for EB design office employees who prefer walking to their office to commuting across the bridge.</p>
+  </div>
+
+  <div class="neighborhood-card" style="background: var(--navy-light);">
+    <div class="neighborhood-tag">Hidden Gem · Harbor Life · No Inventory</div>
+    <div class="neighborhood-name">Noank</div>
+    <p>A village within Groton that locals guard like a secret. Compact, tight-knit, physically beautiful — Victorian cottages on steep lanes above a working harbor. Abbott's Lobster in the Rough and Ford's Lobster are here. You sit on the dock, there is no Wi-Fi, you pay cash, and nothing in your previous life has prepared you for how good a lobster roll can be. Inventory in Noank is essentially zero at any given moment. When something comes up, it goes immediately.</p>
+  </div>
+
+  <!-- HINTERLANDS HEADER -->
+  <div style="padding: 48px 40px 12px; background: var(--navy);">
+    <div style="font-family:'Inter',sans-serif; font-size:0.58rem; font-weight:500; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); opacity:0.7;">The Hinterlands — Inland &amp; Up the River</div>
+  </div>
+  <div style="background: var(--navy); padding: 0 40px 32px;">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:300; line-height:1.75; color:rgba(245,240,232,0.7); max-width:640px;">The coastal towns get all the attention. The inland options get all the space — and in some cases, all the value. These four are within 30 minutes of both the yard and the base and largely unknown to newcomers who arrive with their eyes fixed on the water.</p>
+  </div>
+
+  <div class="neighborhood-card">
+    <div class="neighborhood-tag">The Rose of New England · Affordable · Genuinely Interesting</div>
+    <div class="neighborhood-name">Norwich</div>
+    <p>Norwich is a city that knows its own history and is not finished with it. Founded in 1659, it sits where three rivers — the Yantic, the Shetucket, and the Thames — converge, and the architecture reflects every era of its ambition: colonial greens, Federal-period merchant houses, Victorian mill buildings being converted into lofts, a downtown that a national publication recently compared, not entirely unfairly, to Stars Hollow. It is 25 minutes from the yard via Route 12. Median home prices sit around $250,000 — the most affordable option in this guide by a wide margin — with genuine Victorian stock available at prices that would be unthinkable anywhere near the coast. The food scene is better than it has any right to be, the Slater Memorial Museum on the Norwich Free Academy campus is one of the finest small art museums in New England, and Mohegan Park gives the city 380 acres of woodland trails and a rose garden. Norwich is a city on the way up, which means it rewards the people who arrive before the work is finished rather than after.</p>
+  </div>
+
+  <div class="neighborhood-card" style="background: var(--navy-light);">
+    <div class="neighborhood-tag">Thames River · Rural · Strong Schools · EB Favorite</div>
+    <div class="neighborhood-name">Ledyard / Gales Ferry</div>
+    <p>Ledyard is the town; Gales Ferry is the village along the Thames that most people mean when they say it. Wooded roads, homes set well back from the street, a river with boat access and no coastal premium attached to it — it is the kind of place where EB engineers have been quietly landing for decades because it gives them everything they want without the price tag that comes with Mystic or Noank. The Harvard-Yale Regatta is rowed on the Thames here every June, which tells you something about the river's character and the community's relationship to it. Schools are rated B+ by Niche. Median home price around $395,000. The small commercial strip on Route 12 — Fireside Brick Oven, a diner, an artisan burger place with a dog-friendly patio — is unpretentious in exactly the right way. Twenty minutes to the yard, less if you know the back roads.</p>
+  </div>
+
+  <div class="neighborhood-card">
+    <div class="neighborhood-tag">Affordable · Quiet · Tribal Land Context</div>
+    <div class="neighborhood-name">Montville / Uncasville</div>
+    <p>Montville is the town; Uncasville is the village most people navigate to when they're heading to Mohegan Sun, which sits on the Mohegan Tribe's sovereign land within the town's borders. That adjacency is either a selling point or a reason to look elsewhere, depending on your priorities — the arena books national acts and the resort dining has improved substantially, but the surrounding residential areas are entirely separate in character from the casino complex. Quiet, affordable (median prices well below the regional average), and 20 minutes from the base. Not a destination choice, but a practical one for people who want space, low taxes relative to neighboring towns, and a commute that doesn't require the Gold Star Bridge.</p>
+  </div>
+
+  <div class="neighborhood-card" style="background: var(--navy-light);">
+    <div class="neighborhood-tag">Deep Country · Horse Properties · True Quiet</div>
+    <div class="neighborhood-name">North Stonington / Voluntown</div>
+    <p>This is the option for people who want to actually live in rural New England rather than a suburb of it. North Stonington and the Voluntown corridor sit at the edge of the Pachaug State Forest — Connecticut's largest — and the landscape is stone walls, hardwood ridgelines, farm stands, and roads that Google Maps still gets wrong. Horse properties, genuine acreage, and a pace of life that has not been updated since approximately 1987, which is part of the appeal. The commute to the base runs 25 to 30 minutes on Route 2; it requires no interstate. Almost no newcomers discover this corner of the region in their first year. The ones who do tend to stay for decades.</p>
+  </div>
+
+</div>
+
+<div style="max-width:780px; margin:0 auto; padding:0 48px;">
+  <div class="pull-quote" style="margin-top:56px;">
     <p>Young engineers come from across the country to work at Electric Boat. Then they discover the coast. The question changes from where to work to where to stay.</p>
   </div>
+</div>
 
+<div class="section-divider"><span class="section-divider-ornament">· · ·</span></div>
 
-  <!-- â”€â”€ SECTION 3 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">III</span>
-    <h2>The Work â€” <em>What Electric Boat Actually Is Right Now</em></h2>
+<!-- III. THE WORK -->
+<div class="page" style="padding-top:0;">
+  <div class="section-label"><span class="section-numeral">III</span> Electric Boat</div>
+  <h2 class="section-title">The Work —<br><em>What Electric Boat Actually Is Right Now</em></h2>
+  <p class="section-deck">A once-in-a-generation expansion. That is not marketing language.</p>
+
+  <div class="prose">
+    <p>Electric Boat has been building submarines since 1899, but what is happening right now is categorically different from any prior era. The United States Navy has committed to a program to build dozens of Columbia-class and Virginia-class submarines simultaneously, the largest and most expensive weapons platforms ever constructed. The Columbia-class boats — 560 feet long, nuclear-armed ballistic missile submarines — cost more than $9 billion each and take 84 months to build. EB is the lead yard. The Navy wants them faster. That means hiring, training, and retaining skilled workers at a pace that has, by the company's own accounting, exceeded World War II levels in recent years.</p>
+    <p>EB hired 5,300 people in 2023, more than 4,100 in 2024, and is targeting 8,000 new hires in 2026. The 89% retention rate for new recruits stands in stark contrast to other major shipyards where first-year turnover exceeds 50%.</p>
+    <p>What the press releases do not say: EB has a culture of long hours, particularly during crunch periods on program milestones. New hires often describe the first twelve to eighteen months as more demanding than the job description suggested. The Groton shipyard and the New London design center are culturally different workplaces — the trades and the engineers inhabit distinct worlds with different daily rhythms. If your role requires a security clearance, clearance processing for sensitive compartmented access can delay your actual start date by months. Understand this before you sign.</p>
   </div>
 
-  <p>Electric Boat has been building submarines since 1899, but what is happening right now is categorically different from any prior era. The company describes it as a "once-in-a-generation expansion," and that is not marketing language. It is a description of national security policy becoming a local hiring blitz.</p>
+  <table class="data-table mt-lg">
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Current workforce</td><td>~24,000 in CT and RI; 15,000+ in Connecticut</td></tr>
+      <tr><td>Target workforce</td><td>33,000 — Reagan-era levels, expected by end of decade</td></tr>
+      <tr><td>2026 hiring goal</td><td>8,000 new employees (2,500 Groton trades; 1,000 engineering/design)</td></tr>
+      <tr><td>Primary programs</td><td>Virginia-class (37% revenue); Columbia-class (36% revenue)</td></tr>
+      <tr><td>Columbia contract</td><td>12 boats through 2040; Pentagon's single highest priority procurement</td></tr>
+      <tr><td>Retention rate</td><td>89% of new recruits — among the highest in US shipbuilding</td></tr>
+    </tbody>
+  </table>
+</div>
 
-  <p>The math is straightforward: the United States Navy has committed to a program to build dozens of Columbia-class and Virginia-class submarines simultaneously, the largest and most expensive weapons platforms ever constructed. The Columbia-class boats â€” 560 feet long, nuclear-armed ballistic missile submarines â€” cost more than $9 billion each and take 84 months to build. EB is the lead yard. The Navy wants them faster. That means hiring, training, and retaining skilled workers at a pace that has, by the company's own accounting, exceeded World War II levels in recent years.</p>
+<div class="section-divider"><span class="section-divider-ornament">· · ·</span></div>
 
-  <p>EB hired 5,300 people in 2023, more than 4,100 in 2024, and is targeting 8,000 new hires in 2026. The company currently employs 24,000 and is aiming for 33,000 â€” peak Cold War numbers. The 89% retention rate for new recruits stands in stark contrast to other major shipyards where first-year turnover exceeds 50%.</p>
+<!-- IV. EATING & DRINKING -->
+<div class="page" style="padding-top:0;">
+  <div class="section-label"><span class="section-numeral">IV</span> Food &amp; Drink</div>
+  <h2 class="section-title">Eating &amp; Drinking —<br><em>What the Region Does Exceptionally Well</em></h2>
+  <p class="section-deck">The baseline — fresh lobster, oysters, steamers, chowder — is among the best in the country. The ceiling is higher than most newcomers expect.</p>
 
-  <p>What this means practically: if you are arriving at EB, you are arriving at an organization in genuine expansion, with all the opportunities and growing pains that entails. Training pipelines are being built in real time. Career progression is faster than it would be at a stable employer. Pay has risen sharply since the pandemic and continues to increase as competition for skilled trades and engineering talent intensifies.</p>
-
-  <p>What the press releases do not say: EB has a culture of long hours, particularly during crunch periods on program milestones. New hires often describe the first twelve to eighteen months as more demanding than the job description suggested. The Groton shipyard and the New London design center are culturally different workplaces â€” the trades and the engineers inhabit distinct worlds with different daily rhythms, and assuming one experience reflects the other will mislead you. If your role requires a security clearance, understand the timeline: clearance processing for sensitive compartmented access can delay your actual start date by months, and for family members with significant international ties, the process is more complicated and the outcome less certain. Understand this before you sign.</p>
-
-  <ul class="fact-list">
-    <li><span class="fact-label">Current workforce</span><span>~24,000 in CT and RI; 15,000+ in Connecticut</span></li>
-    <li><span class="fact-label">Target workforce</span><span>33,000 â€” Reagan-era levels, expected by end of decade</span></li>
-    <li><span class="fact-label">2026 hiring goal</span><span>8,000 new employees (2,500 Groton trades; 1,000 engineering/design)</span></li>
-    <li><span class="fact-label">Primary programs</span><span>Virginia-class attack submarines (37% revenue); Columbia-class ballistic missile submarines (36% revenue)</span></li>
-    <li><span class="fact-label">Columbia contract</span><span>12 boats to be delivered through 2040; Pentagon's single highest priority procurement</span></li>
-    <li><span class="fact-label">Retention rate</span><span>89% of new recruits retained â€” among the highest in US shipbuilding</span></li>
-  </ul>
-
-
-  <!-- â”€â”€ SECTION 4 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">IV</span>
-    <h2>Eating &amp; Drinking â€” <em>What the Region Does Exceptionally Well</em></h2>
+  <div class="prose">
+    <p>The region's best restaurants are concentrated in the Mystic-Noank-Stonington corridor. New London's dining scene is expanding and improving, but it has not yet caught up with its ambitions. Groton proper is workmanlike rather than destination-worthy except for a handful of specific places. Go where the food is, not where the commute is convenient.</p>
+    <p>One note on drinking that properly belongs in the next section: Connecticut banned happy hours in 1984. There are no drink specials tied to the time of day. Asking for the happy hour menu will mark you immediately and permanently as someone who just arrived. Bars close at 1 a.m. weeknights, 2 a.m. weekends. Package stores are open on Sundays.</p>
   </div>
 
-  <p>Southeastern Connecticut has a food culture built on a foundation of exceptional seafood and sustained by the steady influx of educated, curious professionals who want more than chain restaurants. The baseline â€” fresh lobster, oysters, steamers, fish and chips, chowder â€” is among the best in the country. The ceiling is higher than most newcomers expect.</p>
-
-  <p>A word on expectations: the region's best restaurants are concentrated in the Mystic-Noank-Stonington corridor. New London's dining scene is expanding and improving, but it has not yet caught up with its ambitions. Groton proper is workmanlike rather than destination-worthy except for a handful of specific places. Go where the food is, not where the commute is convenient.</p>
-
-  <ul class="dining-list">
-    <li>
-      <div class="d-name">The Shipwright's Daughter</div>
-      <span class="d-loc">Mystic Â· New York Times Top 50, 2024 Â· James Beard Northeast 2024</span>
-      <p class="d-note">Chef David Standridge's seafood-forward restaurant in the Whaler's Inn. Roasted oysters, undervalued local species prepared with precision, a wine program that earns attention. The national press got here first; reserve well in advance. Worth it.</p>
-    </li>
-    <li>
-      <div class="d-name">Abbott's Lobster in the Rough</div>
-      <span class="d-loc">Noank Â· Cash only Â· BYOB Â· Seasonal (Mayâ€“Labor Day)</span>
-      <p class="d-note">The dock, the paper plates, the plastic bibs, the cold Narragansett. Connecticut-style hot lobster roll â€” butter, not mayo â€” done the way it was meant to be done. One of the great casual meals in New England. BYOB means stop at the package store; Saturdays only, not Sunday. Bring cash.</p>
-    </li>
-    <li>
-      <div class="d-name">Captain Scott's Lobster Dock</div>
-      <span class="d-loc">New London Â· Thames River Â· Year-round</span>
-      <p class="d-note">Credited as the birthplace of the hot Connecticut-style lobster roll. On the Thames, looking west across the docks. Homemade clam fritters, proper New England chowder. Year-round, which matters when Abbott's closes for winter and you still need a lobster roll in February.</p>
-    </li>
-    <li>
-      <div class="d-name">On the Waterfront</div>
-      <span class="d-loc">New London Â· Thames River Â· Family-run</span>
-      <p class="d-note">Panoramic Thames views, large dining room, outdoor patio in season. Chef Anthony Schiavone, family-owned and operated. The kind of room worth having in your rotation for the view alone; the kitchen has grown into matching it.</p>
-    </li>
-    <li>
-      <div class="d-name">Blue Duck Bar &amp; Kitchen</div>
-      <span class="d-loc">New London Â· Downtown</span>
-      <p class="d-note">The best gastropub in New London, with a serious local beer selection, thoughtful menu, and the atmosphere of a place that actually knows what it is. Popular with the Garde Arts crowd before shows. Worth having on your regular list.</p>
-    </li>
-    <li>
-      <div class="d-name">Paul's Pasta Shop</div>
-      <span class="d-loc">Groton Â· Locals only</span>
-      <p class="d-note">Fresh pasta made in-house, Italian that doesn't perform being Italian. Ask anyone at EB where they go for pasta and this is the answer. Small, unpretentious, consistently excellent. No reservations; arrive early or wait.</p>
-    </li>
-    <li>
-      <div class="d-name">Dog Watch CafÃ©</div>
-      <span class="d-loc">Stonington &amp; Mystic Â· Waterfront</span>
-      <p class="d-note">Dockside outdoor tables, local seafood, rotating craft beers, sunset views across Stonington Harbor. The Stonington location is where locals go to decompress on a Friday evening. The Mystic location is where you take visitors. Both work.</p>
-    </li>
-    <li>
-      <div class="d-name">Jasmine Thai</div>
-      <span class="d-loc">New London Â· Bank Street</span>
-      <p class="d-note">Among the most reliably excellent Thai restaurants in Connecticut. Worth the drive from anywhere in the region.</p>
-    </li>
-    <li>
-      <div class="d-name">Tony D's</div>
-      <span class="d-loc">New London Â· Downtown Â· Since 1999</span>
-      <p class="d-note">A warm, brick-walled Italian institution near the Garde Arts Center. Family-run, consistent, good for pre-theater dinner. The kind of neighborhood restaurant that makes a city feel like home after about the third visit.</p>
-    </li>
-  </ul>
-
-  <div class="info-block">
-    <div class="info-block-title">The Thames Club â€” 290 State Street</div>
-    <p>Founded in 1869, the Thames Club is New London's oldest private social institution and one of the oldest in Connecticut. If you've come here to build something â€” a career, a life, a community â€” this is where you come to belong. Dining, private events, and the duckpin bowling lanes (authentic, two lanes, entirely irreplaceable). The membership spans Electric Boat engineers, naval officers, local professionals, and everyone who has decided to take this place seriously. Inquire at <a href="file:///C:/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="becad6dfd3dbcdddd2cbdc90d0d2fed9d3dfd7d290ddd1d3">[email&nbsp;protected]</a> or (959) 264-2733.</p>
-  </div>
-
-  <p>One note on drinking that properly belongs in the next section but is relevant here: Connecticut banned happy hours in 1984. There are no drink specials tied to the time of day. Asking for the happy hour menu will mark you immediately and permanently as someone who just arrived. Bars close at 1 a.m. weeknights, 2 a.m. weekends. Package stores are closed on Sundays. Read Section VII before your first Friday night out.</p>
-
-
-  <!-- â”€â”€ SECTION 5 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">V</span>
-    <h2>Getting Out â€” <em>What to Do When You're Not Working</em></h2>
-  </div>
-
-  <p>The outdoors here is excellent and underused by newcomers who haven't yet learned to read the calendar. The key insight: southeastern Connecticut is a three-season destination that behaves like a year-round one if you're willing to dress for it and if you know where the hunting, fishing, and wildlife laws apply â€” which they do, actively and specifically. Section VII covers what you need to know before you put a line in the water or a bow in your hands.</p>
-
-  <p><strong>On the water.</strong> Long Island Sound is accessible from multiple points along the coast, and the Thames is navigable by kayak, canoe, or motorboat. The local sailing culture is deep â€” the area's racing history connects directly to the America's Cup era â€” and several active yacht clubs offer membership to newcomers. Block Island is a 70-minute ferry ride from New London, one of the more under-appreciated summer day trips on the East Coast. Fishers Island is accessible from New London and Groton, equally underrated and considerably less crowded.</p>
-
-  <p><strong>Mystic Seaport Museum</strong> is the largest maritime museum in the country and contains the only surviving wooden whaling ship, the Charles W. Morgan. This is not a tourist trap â€” it is a serious institution, and if you work in submarine construction you will find its conversations about what it means to build ships in America unusually resonant.</p>
-
-  <p><strong>The USS Nautilus and Submarine Force Museum</strong> in Groton tells the complete history of American submarine development, from the Civil War-era hand-cranked Hunley to the nuclear boats being built across the road. Free admission. The Nautilus â€” the world's first nuclear-powered submarine, launched here in 1954 â€” is open for self-guided tours. If you are new to this world, start here.</p>
-
-  <p><strong>Fort Griswold Battlefield State Park</strong> in Groton preserves the site of one of the Revolutionary War's most consequential and tragic engagements. The memorial tower offers the best views of the Thames and the Sound.</p>
-
-  <p><strong>The Garde Arts Center</strong> on State Street in New London is a restored 1926 movie palace that books touring theater, dance, music, and film. The building alone is worth seeing. If you are moving to New London and have not put the Garde on your regular calendar, you have missed the point of living there.</p>
-
-  <p><strong>Foxwoods and Mohegan Sun</strong> are both within 20 minutes inland â€” resort casinos operated by the Mashantucket Pequot and Mohegan tribes respectively. The food and entertainment at both have improved substantially. Mohegan Sun Arena books national acts consistently and is the most practical option for live music in a region where large-venue concerts otherwise require a trip to Hartford or Providence.</p>
-
-  <p><strong>New London's Sailfest</strong> each July is the city's signature summer event â€” a weekend of free live music, an artisan market, food, and what is generally acknowledged to be an exceptional fireworks show over the Thames. This is when the region feels like it knows exactly what it has.</p>
-
-  <div class="ornament">Â· Â· Â·</div>
-
-
-  <!-- â”€â”€ SECTION 6 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">VI</span>
-    <h2>Things Nobody Tells You â€” <em>The Honest Version</em></h2>
-  </div>
-
-  <p><strong>The commute is real and it costs time.</strong> I-95 through New London and Groton is a 1950s-era highway carrying double its designed capacity. The Gold Star Bridge approaches and the Exit 84/85 interchange area are among Connecticut's documented high-accident zones. Rear-end collisions at highway speeds are the dominant crash type on this corridor. Drive defensively. Leave more following distance than feels natural. The commute is not long in miles â€” it is occasionally long in patience.</p>
-
-  <p><strong>Connecticut winters are not what most of the country experiences.</strong> Southeastern Connecticut sits at the intersection of cold fronts from the north and moisture off the Sound, which produces ice events that highway infrastructure was not designed to handle. All-season tires are inadequate for February conditions on rural roads. Heating costs are real: budget $300â€“$600 per month for combined utilities during heating season in a standard single-family home, more in older construction with oil heat. This is not a footnote â€” it affects monthly finances materially.</p>
-
-  <p><strong>Mystic is not a town.</strong> It is a village that spans the border of Groton and Stonington, has no independent municipal government, and will confound anyone trying to look up its school district, zip code, or tax rate. Half of it is in the Groton school system; the other half is Stonington. Know which side of the river you're on before you make a real estate decision.</p>
-
-  <p><strong>Package stores are closed on Sundays.</strong> Grocery stores do not sell wine or spirits. These are state laws, not local preferences. If you need a bottle of wine for Sunday dinner, buy it Saturday. This will feel like an inconvenience exactly once; after that it becomes reflex. Bars and restaurants serve on Sundays; you just cannot bring the bottle home.</p>
-
-  <p><strong>The ferry is underused by newcomers.</strong> Cross Sound Ferry runs from New London to Orient Point (Long Island). Block Island Ferry runs from New London as well. This is a legitimate way to spend a Saturday and most new arrivals don't discover it for months.</p>
-
-  <p><strong>Connecticut income and property taxes are significant.</strong> State income tax runs from 3% to 6.99% depending on bracket. Property tax is set at the municipal level via mill rate, and the difference between a Groton mill rate and a Stonington Borough rate on equivalent property can be several thousand dollars annually. Run the full financial math before assuming the lower housing cost makes this comparable to your previous location on a take-home basis.</p>
-
-  <p><strong>The region's character rewards patience.</strong> Southeastern Connecticut is not a place that announces itself. The people who grow the best oysters, build the most interesting boats, and cook the best food are not on social media. Ask around. Go back to the same places. Locals remember people who come back. The institutions that connect people â€” the Thames Club, the yacht clubs, the Garde, the farmers markets â€” are worth finding early. The people who become rooted here almost always trace it back to a place they kept going back to.</p>
-
-  <p><strong>Connecticut law will surprise you.</strong> The next section is not supplementary reading. It contains information that will affect you within the first week if you own firearms, fish, hunt, or simply drive. Read it before you unpack.</p>
-
-
-  <!-- â”€â”€ SECTION 7 â”€â”€ -->
-  <div class="section-head">
-    <span class="section-number">VII</span>
-    <h2>The Ground Rules â€” <em>What Connecticut Expects of You Legally</em></h2>
-  </div>
-
-  <p>Connecticut is not a frontier state. It is a small, dense, well-regulated New England jurisdiction with a legislature that has been actively tightening its laws for decades. If you are coming from Texas, Florida, Arizona, the rural South, or anywhere the default assumption is "it's probably fine," several things here will surprise you. The laws are real, they are enforced, and the penalties are not theoretical.</p>
-
-  <p>This section covers firearms, the Castle Doctrine, driving, drinking, fishing, hunting, and protected wildlife. None of it is legal advice. All of it is accurate as of this writing. Consult an attorney for anything that actually matters.</p>
-
-  <!-- FIREARMS -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Firearms</div>
-  </div>
-
-  <div class="warning-block">
-    <div class="warning-title">Read This First</div>
-    <p><strong>Your out-of-state carry permit is invalid in Connecticut.</strong> Connecticut does not honor concealed carry permits from any other state â€” not Texas, not Florida, not Virginia, not any state. Carrying on an out-of-state permit in Connecticut is a Class E felony. People with security clearances have had serious career consequences from this mistake. Do not assume it will be fine while you sort out paperwork.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Getting a Connecticut Permit</div>
-    <p>The process is two-step. Step one: apply at your local issuing authority (chief of police or selectman). Step two: apply at the state level through DESPP after receiving local approval. Requirements include a state-approved firearms safety course completed within the past two years (including live-fire and instruction in Connecticut's storage and carry laws), a clean criminal record, no domestic violence history, no involuntary psychiatric commitment, and age 21+ for handguns. Connecticut is technically "May Issue" but court precedent has made it functionally "Shall Issue" â€” if you meet the requirements, they must approve you. Non-residents holding a valid CCW from their home state can apply for a Connecticut non-resident permit by mail through DESPP.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">What You Cannot Own</div>
-    <p>Connecticut bans defined assault weapons (specific semiautomatic variants by name and by feature combination), magazines holding more than 10 rounds, ghost guns, bump stocks, and undetectable firearms. Pre-2013 large-capacity magazines were required to be registered with DESPP by January 1, 2014 to be grandfathered. Unregistered LCMs are illegal regardless of when acquired. <strong>Servicemember note:</strong> if you arrived in Connecticut after January 1, 2024, in lawful possession of LCMs acquired legally in your previous state, you have 90 days from arrival to declare possession to DESPP. Miss that window and you are in violation.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Where You Cannot Carry â€” Even With a Valid Connecticut Permit</div>
-    <p>State parks and state forests: your Connecticut Pistol Permit does not authorize carry in any state park or forest. DEEP regulations prohibit all weapon carrying except as specifically authorized. This applies to Bluff Point, Rocky Neck, Haley Farm, Harkness Memorial, and every other state-managed outdoor space you will use regularly. EB's shipyard and SUBASE are federal property governed by federal rules entirely separate from state permit law. Schools and their grounds: state and federal law both apply. Any business posting "No Firearms" signage: Connecticut does not have full state preemption, and the posted sign carries legal weight.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Secure Storage â€” Not Optional</div>
-    <p>Connecticut requires that all firearms accessible by any minor under 18, any resident prohibited from possessing firearms, or any person determined to pose a risk of harm be stored securely â€” locked container, gun safe, or trigger lock. This is not the old rule that applied only to loaded firearms. It applies to all firearms. If teenagers visit or live in your home, and a firearm is accessible to them without breaking something, you may be in violation. This is a criminal offense.</p>
-  </div>
-
-  <!-- CASTLE DOCTRINE -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Castle Doctrine &amp; Self-Defense</div>
-  </div>
-
-  <p>Connecticut has the Castle Doctrine. Connecticut does <em>not</em> have Stand Your Ground. These are different laws, and confusing them can be catastrophic.</p>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Castle Doctrine â€” What CT Has</div>
-    <p>Inside your home or your place of work, you have no duty to retreat before using force, including deadly force, to defend yourself or another person. If someone forces their way in unlawfully, you are justified in using reasonable force to stop them. Deadly force is justified if you reasonably believe the intruder is about to commit a crime of violence, arson, or forcible unlawful entry. Connecticut also extends this no-retreat rule to your workplace â€” if you are attacked in your office or place of business, you do not have to retreat. This is broader protection than in some other duty-to-retreat states.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Duty to Retreat â€” What CT Requires Outside the Home</div>
-    <p>Outside your home and workplace, Connecticut law requires you to retreat to a place of complete safety before using deadly force â€” if you can do so safely. Connecticut is one of eleven states that maintain this traditional duty. If you use deadly force in public and a safe retreat was available, you may face criminal prosecution even if you reasonably feared for your safety. This is not the law in most of the country. Florida, Texas, and most Southern and Western states have Stand Your Ground, which removes the duty to retreat in public. Connecticut does not. Proposals to change this have failed repeatedly in the legislature.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Proportionality and Warning Shots</div>
-    <p>Connecticut courts require that force used be proportional to the threat. There is no "imperfect self-defense" doctrine â€” if the prosecutor argues you used more force than necessary, the self-defense claim fails entirely. Never fire a warning shot in Connecticut. It is treated as use of deadly force and the full justification standard for deadly force applies.</p>
-  </div>
-
-  <!-- DRIVING -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Driving</div>
-  </div>
-
-  <p>I-95 through southeastern Connecticut is not a highway built for the volume it carries. It was designed in the 1950s for a fraction of its current load and now handles approximately 150,000 vehicles daily. Connecticut had 103,124 total crashes statewide in 2024; the 2023 data shows nearly 34,000 people treated in emergency departments, 942 hospitalizations, and 289 fatalities from motor vehicle crashes. The section between Exits 84 and 85 in New London â€” your likely daily route â€” is a documented high-hazard zone. The Route 2/SR 617 interchange in Stonington produces injuries at a disproportionately high rate relative to total accident volume. Drive as if you know this.</p>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Your Phone Goes in the Cradle</div>
-    <p>No handheld cell phones while operating a motor vehicle â€” not at a red light, not in stop-and-go traffic, not while temporarily stopped for any reason while the vehicle is on a public road. Hands-free only: mounted device, Bluetooth, or steering wheel controls. A phone held to your ear on speakerphone is not hands-free. Fines: $200 first offense, $375 second, $625 third and beyond. Work zone violations double the fine. Under 18: no phone at all, not even hands-free.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Move Over â€” Mandatory</div>
-    <p>When any emergency vehicle, police cruiser, fire engine, EMS unit, or DOT vehicle is stopped on the shoulder with lights activated, you must move to the adjacent lane or significantly reduce your speed if a lane change is not safely possible. This is a primary offense â€” police can and do stop you for it alone. It is enforced actively after incidents where emergency workers have been struck on Connecticut highways.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">School Bus â€” Full Stop in All Directions</div>
-    <p>When a school bus is stopped with red lights flashing and stop arm extended, every vehicle in every direction must stop â€” including vehicles heading the opposite way on an undivided road. Unless there is a physical median barrier, you stop. This is not the rule everywhere; it is the rule here. First offense: $450. Bus cameras generate enforceable tickets without a witnessing officer.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Register Your Vehicle Within 60 Days</div>
-    <p>New residents must register their vehicles and obtain a Connecticut driver's license within 60 days of establishing residency. Registration requires Connecticut insurance (out-of-state policies do not qualify), the title, and a Connecticut address. A Connecticut license requires passing a vision test, written test, and road test if you have not held a Connecticut license in the past two years. DMV appointments book out significantly. Schedule on arrival, not at day 55.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Alcohol in the Vehicle â€” This One Surprises Everyone</div>
-    <p>Connecticut does not have a blanket open container law. In most states â€” 40 of them â€” it is illegal for any occupant to have an open container of alcohol in a moving vehicle. In Connecticut, that is not the rule. <strong>The driver may not drink while operating the vehicle.</strong> Any amount, any road type. Class C misdemeanor: up to $500 fine and up to 3 months in jail. <strong>Passengers who are 21 or older may legally possess and consume open alcoholic beverages in a moving vehicle.</strong> This is the actual law. Connecticut's DOT has tried to change it for nearly two decades; the legislature keeps declining. The complications: any driver under 21 faces a mandatory 60-day license suspension if an officer finds any alcohol â€” opened or sealed â€” anywhere in the car. Social Host Law applies if minors are present. Any accident with open containers present creates civil liability exposure regardless of whether the driver was drinking.</p>
-  </div>
-
-  <!-- OUI -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">OUI â€” Operating Under the Influence</div>
-  </div>
-
-  <p>Connecticut calls it OUI, not DUI. The legal threshold is 0.08% BAC for adults 21+, 0.04% for commercial drivers, and 0.02% for anyone under 21 â€” effectively zero tolerance. You can also be arrested and convicted on behavioral evidence alone, without reaching the limit, if the officer's observations are sufficient to establish appreciable impairment.</p>
-
-  <div class="penalty-box">
-    <div class="penalty-box-title">OUI Penalties â€” First Offense</div>
-    <p>48 hours to 6 months in jail, or 6 months probation with 100 hours community service.</p>
-    <p>$500â€“$1,000 fine. 45-day license suspension â€” zero driving, no exceptions.</p>
-    <p>Mandatory ignition interlock device for one year after suspension ends. You pay installation and monthly monitoring fees.</p>
-    <p>BAC at 0.16% or higher: enhanced penalties at every offense level.</p>
-    <p>Second offense within 10 years: 120 days to 2 years in jail. Third offense: up to 3 years. Class D felony.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Impaired Driver Intervention Program â€” The First-Offense Path</div>
-    <p>First-time OUI offenders may qualify for IDIP: 10â€“15 alcohol intervention sessions plus fees and a victim impact panel. Successful completion results in dismissal of the OUI charge without a conviction. This is the path most first offenders take. It requires an attorney retained immediately after arrest. You have a narrow window to elect the program.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Do Not Refuse the Breathalyzer</div>
-    <p>By operating a vehicle in Connecticut, you have legally consented to BAC testing. Refusing results in immediate license seizure, a 45-day suspension, and a mandatory one-year ignition interlock requirement â€” longer than the IID requirement for a conviction. Your refusal is also admissible as evidence of consciousness of guilt at trial. Refusing does not prevent prosecution. It complicates it in every direction that matters.</p>
-  </div>
-
-  <div class="warning-block">
-    <div class="warning-title">Security Clearance</div>
-    <p>An OUI conviction creates a criminal record that appears in background investigations. A conviction â€” not an arrest, a conviction â€” can trigger administrative review of existing clearances at sensitive compartmented access levels. If you are arrested for OUI and you hold or are applying for a security clearance relevant to work at EB or SUBASE, consult an attorney before you do anything else. The IDIP diversion path exists specifically to keep a first offense off your permanent record.</p>
-  </div>
-
-  <!-- DRINKING LAWS -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Alcohol â€” Purchase, Service &amp; Social Host Law</div>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Happy Hours Are Illegal</div>
-    <p>Connecticut banned happy hours in 1984. It is illegal for any licensed establishment to offer discounted drinks during specific time windows, two-for-one offers, or drink specials tied to the clock. There is no happy hour menu. Asking for one identifies you as a newcomer and creates mild awkwardness for the bartender who has to explain this for the thousandth time. Adjusted expectation: Connecticut bars are simply priced at what they cost.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Hours and Retail Rules</div>
-    <p>Bars and restaurants: Mondayâ€“Thursday until 1 a.m.; Fridayâ€“Saturday until 2 a.m. Package stores (wine and spirits retail): Mondayâ€“Saturday 8 a.m.â€“10 p.m. <strong>Closed Sundays.</strong> Grocery stores sell beer only â€” not wine, not spirits. If you need wine for Sunday dinner, buy it Saturday. This adjustment happens faster than expected; it becomes reflex within a month.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Social Host Law</div>
-    <p>Connecticut makes it a Class A misdemeanor â€” up to $2,000 and one year in jail â€” to knowingly or recklessly permit a minor under 21 to possess alcohol or cannabis in your home or on your property. "Knowingly or recklessly" includes turning a blind eye. You do not have to have provided the substance. You just have to have known it was happening and failed to act. If you actually provided alcohol to the minor: Class E felony. Civil liability for injuries the minor subsequently causes layers on top of the criminal exposure. This law was expanded in 2021 to include cannabis as well. If you have teenagers, host parties, or are the responsible adult in any gathering with younger guests, know this law.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">BYOB</div>
-    <p>Restaurants without liquor licenses may allow patrons to bring their own alcohol. They cannot charge corkage fees. Several well-known local spots operate BYOB â€” Abbott's Lobster in the Rough, Ford's Lobster in Noank, and others. When a restaurant advertises BYOB, it means it. Stop at the package store first. Not on Sunday.</p>
-  </div>
-
-  <!-- FISHING -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Fishing</div>
-  </div>
-
-  <p>Southeastern Connecticut offers world-class fishing. The Thames River, Niantic River, Long Island Sound, Mystic Harbor, and the open Atlantic are all within minutes. Striped bass, bluefish, fluke, tautog, black sea bass, winter flounder, and blue crab are all here. So are the regulations, which are specific, frequently updated, and actively enforced. Buy your license and read the current rules every year â€” the regulations are available free on the DEEP website and on the FishBrain app, geo-referenced by waterbody.</p>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Two Separate Licenses</div>
-    <p><strong>Freshwater (Inland) License:</strong> required for anyone 16 or older fishing in inland waters (rivers, lakes, ponds above the tidal demarcation line). Residents: $32/year; non-residents: $63; ages 16â€“17: half price; residents 65 and older: free. A Trout and Salmon Stamp ($3â€“$5) is required additionally whenever you take trout or salmon or fish in any designated trout management area, including catch-and-release.<br><br>
-    <strong>Marine Waters Fishing License (Saltwater):</strong> required for anyone 16 or older fishing from shore or boat in the marine district, or landing marine fish in Connecticut from offshore. Same fee structure. Expires December 31 each year. Connecticut has reciprocity with Maine, Massachusetts, Rhode Island, and New York â€” a valid marine license from any of those states allows fishing in Connecticut's marine district and vice versa. <strong>Active military:</strong> purchase licenses at resident rates with proof of active duty status.</p>
-  </div>
-
-  <table class="fish-table">
-    <tbody><tr>
-      <th>Species</th>
-      <th>Size / Slot</th>
-      <th>Daily Limit</th>
-      <th>Season</th>
-    </tr>
-    <tr>
-      <td><strong>Striped Bass</strong></td>
-      <td>28 to under 31 inches (slot)</td>
-      <td>1 fish</td>
-      <td>May 1 â€“ Dec 15 (approx.)</td>
-    </tr>
-    <tr>
-      <td><strong>Bluefish</strong></td>
-      <td>No minimum</td>
-      <td>3 fish (5 on party/charter)</td>
-      <td>Year-round</td>
-    </tr>
-    <tr>
-      <td><strong>Fluke (Summer Flounder)</strong></td>
-      <td>19" (May 4â€“Aug 1); 19.5" (Aug 2â€“Oct 15)</td>
-      <td>3 fish</td>
-      <td>May 4 â€“ Oct 15</td>
-    </tr>
-    <tr>
-      <td><strong>Tautog (Blackfish)</strong></td>
-      <td>16 inches</td>
-      <td>2â€“3 fish (varies by period)</td>
-      <td>Multiple windows; closed spring spawning</td>
-    </tr>
-    <tr>
-      <td><strong>Black Sea Bass</strong></td>
-      <td>16 inches</td>
-      <td>5 fish</td>
-      <td>May 17â€“Jun 23; Jul 8â€“Nov 25</td>
-    </tr>
-    <tr>
-      <td><strong>Winter Flounder</strong></td>
-      <td>12 inches</td>
-      <td>2 fish</td>
-      <td>Apr 1 â€“ Dec 31</td>
-    </tr>
-    <tr>
-      <td><strong>Blue Crab</strong></td>
-      <td>5" hard shell; 3.5" soft shell</td>
-      <td>No limit (no egg-bearing females)</td>
-      <td>May 1 â€“ Nov 30</td>
-    </tr>
-    <tr>
-      <td><strong>Striped Bass (freshwater/Thames)</strong></td>
-      <td>28 to under 31 inch slot (same as marine)</td>
-      <td>1 fish</td>
-      <td>Tidal portions, year-round</td>
-    </tr>
-    <tr>
-      <td class="restricted"><strong>Sturgeon</strong></td>
-      <td class="restricted">â€”</td>
-      <td class="restricted">PROHIBITED</td>
-      <td class="restricted">All waters, all seasons</td>
-    </tr>
-    <tr>
-      <td class="restricted"><strong>River Herring (Alewife / Blueback)</strong></td>
-      <td class="restricted">â€”</td>
-      <td class="restricted">PROHIBITED</td>
-      <td class="restricted">All CT waters incl. Long Island Sound</td>
-    </tr>
-    <tr>
-      <td class="restricted"><strong>Atlantic Salmon</strong></td>
-      <td class="restricted">â€”</td>
-      <td class="restricted">PROHIBITED (stocked rivers excepted)</td>
-      <td class="restricted">Check DEEP annually</td>
-    </tr>
-  </tbody></table>
-
-  <p class="no-indent"><strong>Striped bass note:</strong> The slot limit applies regardless of where you caught the fish. If you took a 34-inch striper legally in another state's waters and bring it into Connecticut, that fish must now meet Connecticut regulations on arrival. The law follows the angler. <strong>When using bait, an inline circle hook is required for striped bass.</strong> This is not optional. Offset circle hooks are not compliant. Artificial lures are exempt.</p>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Recreational Lobster</div>
-    <p>A Personal Use Lobster License is required ($60/year). Allows up to 10 pots or SCUBA diving for personal use only. Minimum carapace length: 4.75 inches. V-notched or egg-bearing females cannot be possessed under any circumstances â€” possession of a V-notched lobster, even if you didn't catch it, is a violation. There is a seasonal closure in addition to size rules; verify with DEEP annually. Commercial lobster fishing is an entirely separate, far more involved federal and state process.</p>
-  </div>
-
-  <!-- HUNTING -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Hunting</div>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Licenses and Education</div>
-    <p>A Hunter Education Course is required before any first-time hunter purchases a license in Connecticut â€” not optional, not waived for experienced hunters from other states. Courses are available in-person and online through the Connecticut Hunter Education Program; the in-person component is mandatory. An Archery Permit requires proof of a Connecticut-approved bowhunting safety course; a prior license from another state is not sufficient. Minimum age to hunt with a firearm: 12 years old, with a licensed adult supervisor. <strong>Active military:</strong> purchase licenses at resident rates with proof of active duty status.</p>
-  </div>
-
-  <div class="law-rule">
-    <div class="law-rule-head">Key Rules â€” Know Before You Go</div>
-    <p><strong>Orange requirement:</strong> all firearms hunters must wear minimum 400 square inches of blaze orange or blaze pink above the waist, visible from all angles. Exception only for archery deer hunters hunting from a stand at least 10 feet high between November 20 and December 31.<br><br>
-    <strong>No natural deer urine:</strong> state regulation prohibits all use of natural deer urine-based attractants or scents. Artificial scents are permitted.<br><br>
-    <strong>24-hour reporting:</strong> all deer harvests must be reported via DEEP's website or by calling 1-877-337-4868 within 24 hours. A harvest tag must be attached to the deer before it is moved from the kill site. This is actively enforced.<br><br>
-    <strong>No dogs for deer:</strong> using dogs to hunt deer is prohibited in Connecticut.<br><br>
-    <strong>Sunday hunting (as of October 1, 2025):</strong> all legal game species are now open for hunting on Sundays on private land with written landowner permission, using any legal method for the current open season, except migratory birds. Hunting on Sundays is prohibited within 40 feet of any blazed public trail.<br><br>
-    <strong>Rifles:</strong> permitted for deer only on private land of 10+ contiguous acres. Not legal on state land for deer. A Revolver Deer Endorsement ($5) is required to hunt deer with a handgun. Possession of a firearm while archery hunting is prohibited â€” you cannot carry a sidearm during archery season.</p>
-  </div>
-
-  <ul class="fact-list">
-    <li><span class="fact-label">White-tailed Deer</span><span>Archery: mid-Sept through Nov; Muzzleloader: early Nov; Firearms: mid-Nov through mid-Dec; Late bow: through Dec 31. Bag limit: 1 antlered buck per season per permit.</span></li>
-    <li><span class="fact-label">Wild Turkey</span><span>Spring: late April through May 31 (primary). Youth spring: week before regular season. Bag limit: 5 bearded birds total across all seasons.</span></li>
-    <li><span class="fact-label">Black Bear</span><span>Limited controlled draw. November. Small number of permits. Apply separately.</span></li>
-    <li><span class="fact-label">Pheasant / Quail</span><span>Stocked by DEEP in designated WMAs. October seasons. Not wild-establishing populations; hunting depends on the stocking schedule.</span></li>
-    <li><span class="fact-label">Coyote / Fox (private land)</span><span>No closed season, no bag limit on private land. License required.</span></li>
-    <li><span class="fact-label">Waterfowl</span><span>Requires state Migratory Bird Conservation Stamp + federal Duck Stamp + HIP registration. Duck and goose seasons approximately Oct 26 â€“ Jan 31.</span></li>
-  </ul>
-
-  <!-- PROTECTED WILDLIFE -->
-  <div class="law-subsection">
-    <div class="law-subsection-title">Protected Species &amp; Wildlife Law</div>
-  </div>
-
-  <p>Two federal statutes apply broadly along the Connecticut coast and on the water, and their penalties are serious enough to mention before describing the wildlife itself.</p>
-
-  <div class="law-rule">
-    <div class="law-rule-head">The Federal Layer</div>
-    <p><strong>Migratory Bird Treaty Act (MBTA), 1918:</strong> prohibits taking, possessing, transporting, or harassing any migratory bird or its parts, nests, or eggs without a federal permit. Nearly every wild bird visible on or near the Connecticut coast â€” herons, egrets, osprey, terns, plovers, loons, cormorants, all waterfowl â€” is protected. You cannot legally keep a found egg, a found feather (with narrow exceptions for legally taken game birds), or disturb an active nest. Criminal penalties: up to $15,000 and six months per violation for misdemeanor takes; up to $50,000 and two years for felony violations.<br><br>
-    <strong>Bald and Golden Eagle Protection Act:</strong> first violation â€” taking, harassing, possessing, or disturbing a bald eagle or its nest â€” carries up to $100,000 fine and one year in prison. Second offense: up to $200,000 and two years. Federal crimes. Bald eagles nest along the Connecticut River and are increasingly documented in southeastern Connecticut. If you see a nest: maintain distance, do not post GPS coordinates publicly, do not bring dogs near it during nesting season.</p>
-  </div>
-
-  <div class="species-grid">
-    <div class="species-card">
-      <div class="species-name">Osprey (Fish Hawk)</div>
-      <span class="species-status">Protected â€” MBTA &amp; CT Gen. Stat. 26-92</span>
-      <p class="species-note">Abundant throughout the Thames, Niantic, and coastal waterways. During nesting season (late March through August), maintain at least 500 feet from any active nest. Osprey nest on channel markers, pilings, and utility poles throughout local waterways. If a pair nests on your dock piling, you cannot remove the nest during active season without a federal permit. Monofilament fishing line discarded overboard kills osprey chicks every year â€” most boat launches have monofilament recycling tubes; use them.</p>
+  <div class="place-list mt-lg">
+
+    <div class="place-card">
+      <div class="place-name">The Shipwright's Daughter</div>
+      <div class="place-meta">Mystic · New York Times Top 50, 2024 · James Beard Northeast 2024</div>
+      <div class="prose"><p>Chef David Standridge's seafood-forward restaurant in the Whaler's Inn. Roasted oysters, undervalued local species prepared with precision, a wine program that earns attention. The national press got here first; reserve well in advance. Worth it.</p></div>
     </div>
-    <div class="species-card">
-      <div class="species-name">Piping Plover</div>
-      <span class="species-status">Federally Threatened</span>
-      <p class="species-note">Nests on sandy beaches. Nesting areas are cordoned off April through August with posted signs and flagging. Entering a posted plover area is a federal violation. Their nests are invisible â€” a scrape in the sand with eggs that look like pebbles. The cordons exist because people step on them. Dogs must be leashed at beaches where plovers nest.</p>
+
+    <div class="place-card">
+      <div class="place-name">Abbott's Lobster in the Rough</div>
+      <div class="place-meta">Noank · Cash only · BYOB · Seasonal (May–Labor Day)</div>
+      <div class="prose"><p>The dock, the paper plates, the plastic bibs, the cold Narragansett. Connecticut-style hot lobster roll — butter, not mayo — done the way it was meant to be done. One of the great casual meals in New England. BYOB means stop at the package store. Bring cash.</p></div>
     </div>
-    <div class="species-card">
-      <div class="species-name">Sea Turtles (5 species)</div>
-      <span class="species-status">Federally Threatened or Endangered</span>
-      <p class="species-note">All five species occurring in Connecticut waters are protected under the ESA. Criminal fines up to $100,000 and up to one year per knowing violation. In fall, turtles become cold-stunned and wash onto beaches â€” incapacitated, not dead. Do not move them into the water (cold-stunned turtles drown). Do not handle them. Call DEEP Dispatch: 860-424-3333. Stay with the animal until responders arrive.</p>
+
+    <div class="place-card">
+      <div class="place-name">Captain Scott's Lobster Dock</div>
+      <div class="place-meta">New London · Thames River · Year-round</div>
+      <div class="prose"><p>Credited as the birthplace of the hot Connecticut-style lobster roll. On the Thames, looking west across the docks. Homemade clam fritters, proper New England chowder. Year-round, which matters when Abbott's closes for winter and you still need a lobster roll in February.</p></div>
     </div>
-    <div class="species-card">
-      <div class="species-name">Timber Rattlesnake</div>
-      <span class="species-status">State Endangered</span>
-      <p class="species-note">Small remnant population in eastern Connecticut woodlands. Not common near the coast, but present. Not aggressive. If you encounter one: leave it alone, do not handle it, do not kill it. Killing a timber rattlesnake is a state criminal offense. They are more afraid of you than you are of them.</p>
+
+    <div class="place-card">
+      <div class="place-name">On the Waterfront</div>
+      <div class="place-meta">New London · Thames River · Family-run</div>
+      <div class="prose"><p>Panoramic Thames views, large dining room, outdoor patio in season. Chef Anthony Schiavone, family-owned and operated. The kind of room worth having in your rotation for the view alone; the kitchen has grown into matching it.</p></div>
     </div>
-    <div class="species-card">
-      <div class="species-name">Least Tern</div>
-      <span class="species-status">State Threatened â€” MBTA Protected</span>
-      <p class="species-note">Colony nesters on sandy beaches and gravel rooftops. Same beach disturbance rules apply during nesting season. Colonies are staked and flagged by DEEP and Connecticut Audubon. Leave them alone. The birds will dive-bomb perceived intruders near the colony. That is a warning, not a suggestion.</p>
+
+    <div class="place-card">
+      <div class="place-name">Blue Duck Bar &amp; Kitchen</div>
+      <div class="place-meta">New London · Downtown</div>
+      <div class="prose"><p>The best gastropub in New London, with a serious local beer selection, thoughtful menu, and the atmosphere of a place that actually knows what it is. Popular with the Garde Arts crowd before shows. Worth having on your regular list.</p></div>
     </div>
-    <div class="species-card">
-      <div class="species-name">Bald Eagle</div>
-      <span class="species-status">Federal Eagle Protection Act</span>
-      <p class="species-note">Recovering population along the Connecticut River; increasing sightings in southeastern Connecticut. First violation of the Eagle Protection Act: up to $100,000 and one year in prison. Maintain distance from any nest. Do not photograph nests and post their locations publicly â€” the information draws harassment from people who do not know better, and the birds sometimes abandon productive nest sites as a result.</p>
+
+    <div class="place-card">
+      <div class="place-name">Paul's Pasta Shop</div>
+      <div class="place-meta">Groton · Locals only</div>
+      <div class="prose"><p>Fresh pasta made in-house, Italian that doesn't perform being Italian. Ask anyone at EB where they go for pasta and this is the answer. Small, unpretentious, consistently excellent. No reservations; arrive early or wait.</p></div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">Dog Watch Café</div>
+      <div class="place-meta">Stonington &amp; Mystic · Waterfront</div>
+      <div class="prose"><p>Dockside outdoor tables, local seafood, rotating craft beers, sunset views across Stonington Harbor. The Stonington location is where locals go to decompress on a Friday evening. The Mystic location is where you take visitors. Both work.</p></div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">Jasmine Thai</div>
+      <div class="place-meta">New London · Bank Street</div>
+      <div class="prose"><p>Among the most reliably excellent Thai restaurants in Connecticut. Worth the drive from anywhere in the region.</p></div>
+    </div>
+
+    <div class="place-card">
+      <div class="place-name">Tony D's</div>
+      <div class="place-meta">New London · Downtown · Since 1999</div>
+      <div class="prose"><p>A warm, brick-walled Italian institution near the Garde Arts Center. Family-run, consistent, good for pre-theater dinner. The kind of neighborhood restaurant that makes a city feel like home after about the third visit.</p></div>
+    </div>
+
+    <!-- Thames Club featured card -->
+    <div class="place-card" style="border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);">
+      <div class="place-name" style="color: var(--gold);">The Thames Club &nbsp;— 290 State Street 
+		  (Shameless Self Promotion)</div>
+      <div class="place-meta">Est. 1869 · Connecticut's Oldest Private Social Club · Third Oldest in New England </div>
+      <div class="prose"><p>If you've come here to build something — a career, a life, a community — this is where you come to belong. Dining, private events, and the duckpin bowling lanes (authentic, two lanes, entirely irreplaceable). The membership spans Electric Boat engineers, naval officers, local professionals, and 
+		  anyone who enjoys interesting company, classic architecture, having a 
+		  place to relax and entertain in the city. Inquire at <a href="mailto:thamesclub.nl@gmail.com" style="color:var(--gold);">thamesclub.nl@gmail.com</a> or (959) 264-2733.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-divider"><span class="section-divider-ornament">· · ·</span></div>
+
+<!-- V. GETTING OUT -->
+<div class="page" style="padding-top:0;">
+  <div class="section-label"><span class="section-numeral">V</span> Recreation</div>
+  <h2 class="section-title">Getting Out —<br><em>What to Do When You're Not Working</em></h2>
+  <p class="section-deck">The outdoors here is excellent and underused by newcomers who haven't yet learned to read the calendar.</p>
+
+  <div class="prose">
+    <p>Southeastern Connecticut is a three-season destination that behaves like a year-round one if you're willing to dress for it. The key insight: knowing where the hunting, fishing, and wildlife laws apply — which they do, actively and specifically — is prerequisite. Section VII covers what you need to know before you put a line in the water or a bow in your hands.</p>
+    <p>Long Island Sound is accessible from multiple points along the coast, and the Thames is navigable by kayak, canoe, or motorboat. The local sailing culture is deep — the area's racing history connects directly to the America's Cup era — and several active yacht clubs offer membership to newcomers. Block Island is a 70-minute ferry ride from New London, one of the more under-appreciated summer day trips on the East Coast.</p>
+    <p>Mystic Seaport Museum is the largest maritime museum in the country and contains the only surviving wooden whaling ship, the Charles W. Morgan. If you work in submarine construction you will find its conversations about what it means to build ships in America unusually resonant. The USS Nautilus and Submarine Force Museum in Groton tells the complete history of American submarine development — the Nautilus, the world's first nuclear-powered submarine launched here in 1954, is open for self-guided tours. Free admission. If you are new to this world, start here.</p>
+    <p>The Garde Arts Center on State Street in New London is a restored 1926 movie palace that books touring theater, dance, music, and film. If you are moving to New London and have not put the Garde on your regular calendar, you have missed the point of living there. Foxwoods and Mohegan Sun are both within 20 minutes inland. New London's Sailfest each July is the city's signature summer event — a weekend of free live music, an artisan market, and what is generally acknowledged to be an exceptional fireworks show over the Thames.</p>
+  </div>
+</div>
+
+<div class="section-divider"><span class="section-divider-ornament">· · ·</span></div>
+
+<!-- VI. THINGS NOBODY TELLS YOU -->
+<div class="page" style="padding-top:0;">
+  <div class="section-label"><span class="section-numeral">VI</span> Honest Notes</div>
+  <h2 class="section-title">Things Nobody Tells You —<br><em>The Honest Version</em></h2>
+
+  <div class="prose">
+    <p><strong>The commute is real and it costs time.</strong> I-95 through New London and Groton is a 1950s-era highway carrying double its designed capacity. The Gold Star Bridge approaches and the Exit 84/85 interchange are among Connecticut's documented high-accident zones. The commute is not long in miles — it is occasionally long in patience.</p>
+    <p><strong>Connecticut winters are not what most of the country experiences.</strong> Southeastern Connecticut sits at the intersection of cold fronts from the north and moisture off the Sound, which produces ice events that highway infrastructure was not designed to handle. All-season tires are inadequate for February conditions on rural roads. Budget $300–$600 per month for combined utilities during heating season.</p>
+    <p><strong>Mystic is not a town.</strong> It is a village that spans the border of Groton and Stonington, has no independent municipal government, and will confound anyone trying to look up its school district, zip code, or tax rate. Know which side of the river you're on before you make a real estate decision.</p>
+    <p><strong>Package stores are open on Sundays.</strong> Grocery stores do not sell wine or spirits. These are state laws, not local preferences.</p>
+    <p><strong>Connecticut income and property taxes are significant.</strong> State income tax runs from 3% to 6.99% depending on bracket. Property tax is set at the municipal level via mill rate, and the difference between a Groton mill rate and a Stonington Borough rate on equivalent property can be several thousand dollars annually. Run the full financial math before assuming the lower housing cost makes this comparable to your previous location.</p>
+    <p><strong>The region's character rewards patience.</strong> The people who grow the best oysters, build the most interesting boats, and cook the best food are not on social media. Ask around. Go back to the same places. Locals remember people who come back. The institutions that connect people — the Thames Club, the yacht clubs, the Garde, the farmers markets — are worth finding early. The people who become rooted here almost always trace it back to a place they kept going back to.</p>
+  </div>
+
+  <div class="pull-quote">
+    <p>Connecticut law will surprise you. The next section is not supplementary reading. It contains information that will affect you within the first week.</p>
+  </div>
+</div>
+
+<div class="thick-divider"></div>
+
+<!-- VII. THE GROUND RULES -->
+<div class="law-block">
+  <div style="max-width:680px; margin:0 auto;">
+    <div class="law-label"><span style="font-size:0.7rem; letter-spacing:0.1em; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400;">VII</span> Connecticut Law</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3rem); font-weight:300; color:var(--white); margin-bottom:12px; line-height:1.1;">The Ground Rules —</h2>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,3.5vw,2.2rem); font-weight:300; font-style:italic; color:var(--gold-light); margin-bottom:32px; line-height:1.1;">What Connecticut Expects of You Legally</h2>
+    <p>Connecticut is not a frontier state. It is a small, dense, well-regulated New England jurisdiction with a legislature that has been actively tightening its laws for decades. If you are coming from Texas, Florida, Arizona, the rural South, or anywhere the default assumption is "it's probably fine," several things here will surprise you. The laws are real, they are enforced, and the penalties are not theoretical. <em>None of this is legal advice. All of it is accurate as of this writing. Consult an attorney for anything that actually matters.</em></p>
+
+    <h3>Firearms</h3>
+    <div class="warning-box">
+      <p><strong>Your out-of-state carry permit is invalid in Connecticut.</strong> Connecticut does not honor concealed carry permits from any other state — not Texas, not Florida, not Virginia, not any state. Carrying on an out-of-state permit in Connecticut is a Class E felony. People with security clearances have had serious career consequences from this mistake.</p>
+    </div>
+    <p>The permit process is two-step: local issuing authority first, then the state level through DESPP. Requirements include a state-approved firearms safety course completed within the past two years, a clean record, and age 21+ for handguns. Connecticut is technically "May Issue" but court precedent has made it functionally "Shall Issue" — if you meet the requirements, they must approve you.</p>
+    <p>Connecticut bans defined assault weapons, magazines holding more than 10 rounds, ghost guns, and bump stocks. Pre-2013 large-capacity magazines were required to be registered with DESPP by January 1, 2014 to be grandfathered. If you arrived in Connecticut after January 1, 2024, in lawful possession of large-capacity magazines acquired legally in your previous state, contact DESPP promptly to determine your obligations under current state law — this area has specific and evolving requirements. Consult an attorney.</p>
+    <p>Your Connecticut Pistol Permit does not authorize carry in any state park or forest. This applies to Bluff Point, Rocky Neck, Haley Farm, Harkness Memorial, and every other state-managed outdoor space you will use regularly. Connecticut requires that all firearms accessible by any minor under 18 be stored securely — locked container, gun safe, or trigger lock. This is a criminal offense if violated.</p>
+
+    <h3>Castle Doctrine &amp; Self-Defense</h3>
+    <p>Connecticut has the Castle Doctrine. Connecticut does not have Stand Your Ground. These are different laws, and confusing them can be catastrophic.</p>
+    <p><strong>Inside your home or workplace:</strong> no duty to retreat before using force, including deadly force, to defend yourself. <strong>Outside your home:</strong> Connecticut law requires you to retreat to a place of complete safety before using deadly force — if you can do so safely. Connecticut is one of eleven states that maintain this traditional duty. Florida, Texas, and most Southern and Western states have Stand Your Ground. Connecticut does not.</p>
+    <p>Never fire a warning shot in Connecticut. It is treated as use of deadly force and the full justification standard applies.</p>
+
+    <h3>Driving</h3>
+    <p>No handheld cell phones while operating a motor vehicle — not at a red light, not in stop-and-go traffic, not while temporarily stopped. Hands-free only. Fines: $200 first offense, $375 second, $625 third. When any emergency vehicle is stopped with lights activated, move to the adjacent lane. When a school bus is stopped with red lights flashing and stop arm extended, every vehicle in every direction must stop. New residents must register vehicles and obtain a Connecticut license within 60 days of establishing residency.</p>
+    <p>Connecticut does not have a blanket open container law. Passengers who are 21+ may legally possess and consume open alcoholic beverages in a moving vehicle. The driver may not drink while operating. Any driver under 21 faces a mandatory 60-day license suspension if an officer finds any alcohol anywhere in the car.</p>
+
+    <h3>OUI — Operating Under the Influence</h3>
+    <p>Connecticut calls it OUI, not DUI. Legal threshold: 0.08% BAC for adults 21+, 0.04% for commercial drivers, 0.02% for under 21. First offense: 48 hours to 6 months in jail (or probation with 100 hours community service), $500–$1,000 fine, 45-day license suspension, mandatory ignition interlock device for one year. An OUI conviction creates a record that appears in background investigations and can trigger administrative review of security clearances. Do not refuse the breathalyzer — refusal results in longer suspension and is admissible as evidence of consciousness of guilt.</p>
+
+    <h3>Alcohol — Purchase &amp; Social Host Law</h3>
+    <p>Happy hours have been illegal in Connecticut since 1984. Bars close at 1 a.m. weeknights, 2 a.m. weekends. Package stores are open on Sundays. Grocery stores sell beer only — not wine, not spirits.</p>
+    <p>Connecticut makes it a Class A misdemeanor to knowingly or recklessly permit a minor under 21 to possess alcohol or cannabis in your home or on your property. If you provided alcohol to the minor: Class E felony. This law was expanded in 2021 to include cannabis.</p>
+
+    <h3>Fishing</h3>
+    <p>Two separate licenses: Freshwater (Inland) License for rivers and lakes, and a Marine Waters Fishing License for saltwater. Both required for anyone 16 or older. Connecticut has reciprocity with Maine, Massachusetts, Rhode Island, and New York. Key regulations: striped bass slot limit 28 to under 31 inches, 1 fish daily; circle hooks required for striped bass when using bait; sturgeon and river herring are prohibited entirely. A Personal Use Lobster License ($60/year) is required for recreational lobster; minimum carapace length 4.75 inches; V-notched females cannot be possessed under any circumstances.</p>
+
+    <h3>Hunting</h3>
+    <p>A Hunter Education Course is required before any first-time hunter purchases a license in Connecticut — not waived for experienced hunters from other states. All firearms hunters must wear minimum 400 square inches of blaze orange or blaze pink above the waist. All deer harvests must be reported within 24 hours. Sunday hunting on private land with written landowner permission is now permitted (as of October 1, 2025), except migratory birds and within 40 feet of any blazed public trail. Possession of a firearm while archery hunting is prohibited.</p>
+
+    <h3>Protected Wildlife</h3>
+    <p>The Migratory Bird Treaty Act prohibits taking, possessing, or harassing any migratory bird without a federal permit — criminal penalties up to $15,000 and six months per violation. Nearly every wild bird visible on the Connecticut coast is protected. Bald eagles nest along the Connecticut River with increasing sightings in southeastern Connecticut; first violation of the Eagle Protection Act carries up to $100,000 and one year in prison. Cold-stunned sea turtles washing onto beaches are incapacitated, not dead — do not move them into the water. Call DEEP Dispatch: 860-424-3333. Killing a timber rattlesnake is a state criminal offense.</p>
+
+    <h3>Cannabis — Federal Contractor Note</h3>
+    <p>Adult-use cannabis is legal in Connecticut for adults 21+. Federal contractor employees — the majority of EB's workforce — are subject to federal drug testing requirements regardless of Connecticut's legalization. Cannabis will cause you to fail a federal contractor drug test and can result in termination or clearance revocation. Connecticut's legalization does not change your federal contractor obligations.</p>
+
+    <div class="ref-grid" style="margin-top:40px;">
+      <div class="ref-cell">
+        <div class="ref-org">DEEP Dispatch — Wildlife</div>
+        <div class="ref-contact">860-424-3333</div>
+      </div>
+      <div class="ref-cell">
+        <div class="ref-org">DEEP Marine Fisheries</div>
+        <div class="ref-contact">860-434-6043<br><a href="mailto:deep.marine.fisheries@ct.gov">deep.marine.fisheries@ct.gov</a></div>
+      </div>
+      <div class="ref-cell">
+        <div class="ref-org">Online Licensing (Fish &amp; Hunt)</div>
+        <div class="ref-contact">portal.ct.gov/CTOutdoorLicenses</div>
+      </div>
+      <div class="ref-cell">
+        <div class="ref-org">DESPP — Firearms Licensing</div>
+        <div class="ref-contact">despp.ct.gov</div>
+      </div>
+      <div class="ref-cell">
+        <div class="ref-org">Connecticut DMV</div>
+        <div class="ref-contact">portal.ct.gov/dmv</div>
+      </div>
+      <div class="ref-cell">
+        <div class="ref-org">DEEP Inland Fisheries</div>
+        <div class="ref-contact">860-424-3474<br><a href="mailto:deep.inland.fisheries@ct.gov">deep.inland.fisheries@ct.gov</a></div>
+      </div>
+    </div>
+
+    <p style="margin-top:40px; font-style:italic; color:rgba(245,240,232,0.5); font-size:0.95rem;">The Thames runs to the sea. The boats go out and come back. The work matters — in ways that are unusual to live alongside, and worth taking the time to understand. You've landed somewhere real. Now you know the rules.</p>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer class="site-shell-footer">
+  <div class="site-shell-foot-inner">
+    <div>
+      <div class="site-shell-foot-brand">The Thames Club</div>
+      <div class="site-shell-foot-copy">
+        290 State Street · New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+      </div>
+    </div>
+    <div class="site-shell-foot-links">
+      <a href="index.html">Home</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="community.html">Community</a>
+      <a href="publications.html">Publications</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
     </div>
   </div>
+</footer>
 
-  <div class="info-block">
-    <div class="info-block-title">Cannabis â€” Federal Contractor Note</div>
-    <p>Adult-use cannabis is legal in Connecticut for adults 21 and older. You may possess up to 1.5 ounces in public and up to 5 ounces at home. What is not legal: smoking in vehicles or anywhere tobacco is prohibited, crossing state lines with cannabis (federal crime regardless of origin or destination state legality), or possessing cannabis on federal property including SUBASE and EB's shipyard.</p>
-    <p><strong>Federal contractor employees â€” which describes the majority of EB's workforce â€” are subject to federal drug testing requirements regardless of Connecticut's legalization.</strong> Cannabis will cause you to fail a federal contractor drug test. Cannabis use can disqualify you for security clearances and can result in termination or clearance revocation for existing holders. Connecticut's legalization does not change your federal contractor obligations. Understand your specific employment contract and clearance requirements before making any decisions.</p>
-  </div>
-
-  <div class="contacts-grid">
-    <div class="contact-item">
-      <div class="contact-label">DEEP Dispatch â€” Wildlife &amp; Emergencies</div>
-      <div class="contact-info">860-424-3333</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">DEEP Marine Fisheries</div>
-      <div class="contact-info">860-434-6043<br><a href="file:///C:/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9efafbfbeeb0f3ffecf7f0fbb0f8f7edf6fbecf7fbeddefdeab0f9f1e8">[email&nbsp;protected]</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">DEEP Inland Fisheries</div>
-      <div class="contact-info">860-424-3474<br><a href="file:///C:/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e286878792cc8b8c8e838c86cc848b918a87908b8791a28196cc858d94">[email&nbsp;protected]</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Online Licensing (Fishing &amp; Hunting)</div>
-      <div class="contact-info">portal.ct.gov/CTOutdoorLicenses</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">DESPP â€” Firearms Licensing</div>
-      <div class="contact-info">despp.ct.gov</div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Connecticut DMV</div>
-      <div class="contact-info">portal.ct.gov/dmv</div>
-    </div>
-  </div>
-
-
-  <!-- â”€â”€ CLOSING â”€â”€ -->
-  <div class="closing">
-    <p>The Thames runs to the sea. The boats go out and come back. The work matters â€” in ways that are unusual to live alongside, and worth taking the time to understand. You've landed somewhere real. Now you know the rules.</p>
-    <div class="closing-mark"></div>
-    <div class="closing-sig">Above &amp; Below &nbsp;Â·&nbsp; Thames Club, New London &nbsp;Â·&nbsp; 290 State Street &nbsp;Â·&nbsp; Est. 1869</div>
-  </div></div></body></html>
+</body></html>
