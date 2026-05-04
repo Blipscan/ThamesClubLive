@@ -1,116 +1,86 @@
 [
   {
-    "title": "Lobsta Lobsta Luncheon",
-    "date": "Friday, August 28, 2026",
-    "time": "11:30 AM",
-    "description": ""
-  },
-  {
-    "title": "Monthly Themed Luncheon",
-    "date": "Friday, July 24, 2026",
-    "time": "11:30 AM",
-    "description": ""
-  },
-  {
-    "title": "Trivia Game Night & Heavy Hors D'oeuvres",
-    "date": "Friday, June 12, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
-    "title": "TC group trip to Newport Flower Show",
-    "date": "Friday, June 19, 2026",
-    "time": "12:00 AM",
-    "description": ""
-  },
-  {
-    "title": "Monthly Themed Luncheon",
-    "date": "Friday, June 26, 2026",
-    "time": "11:30 AM",
-    "description": ""
-  },
-  {
-    "title": "First Friday (Luau)",
-    "date": "Friday, June 5, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
-    "title": "Monthly Themed Luncheon (Brunch theme)",
-    "date": "Friday, May 22, 2026",
-    "time": "11:30 AM",
-    "description": ""
-  },
-  {
-    "title": "Annual Duckpin Bowling Banquet",
-    "date": "Friday, May 29, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
     "title": "ECSO Meeting",
-    "date": "Friday, May 8, 2026",
+    "date": "2026-05-08",
+    "displayDate": "Friday, May 8, 2026",
     "time": "2:30 PM",
     "description": ""
   },
   {
-    "title": "Thames Club Annual Meeting",
-    "date": "Monday, May 11, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
-    "title": "Reserve Club for private party ( Polly Berg)",
-    "date": "Saturday, June 5, 2027",
-    "time": "12:00 AM",
-    "description": ""
-  },
-  {
-    "title": "Club Manager - Day Off",
-    "date": "Saturday, May 16, 2026",
-    "time": "12:00 AM",
-    "description": ""
-  },
-  {
-    "title": "Dinner & Close-up Magic Show with Todd Gipstein",
-    "date": "Saturday, May 16, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
     "title": "Private event-Church of the City",
-    "date": "Saturday, May 9, 2026",
+    "date": "2026-05-09",
+    "displayDate": "Saturday, May 9, 2026",
     "time": "12:00 AM",
     "description": ""
   },
   {
-    "title": "Pre-Performance Dinner for the Garde's Cinderella Ballet",
-    "date": "Thursday, May 14, 2026",
-    "time": "4:30 PM",
-    "description": ""
-  },
-  {
-    "title": "CT Storytellers Meeting",
-    "date": "Thursday, May 14, 2026",
-    "time": "9:30 AM",
-    "description": ""
-  },
-  {
-    "title": "CT Storytellers Meeting",
-    "date": "Thursday, May 21, 2026",
-    "time": "9:30 AM",
+    "title": "Thames Club Annual Meeting",
+    "date": "2026-05-11",
+    "displayDate": "Monday, May 11, 2026",
+    "time": "5:30 PM",
     "description": ""
   },
   {
     "title": "ECSO Board Meeting",
-    "date": "Tuesday, May 12, 2026",
+    "date": "2026-05-12",
+    "displayDate": "Tuesday, May 12, 2026",
     "time": "4:00 PM",
     "description": ""
   },
   {
     "title": "Member's Luncheon",
-    "date": "Wednesday, May 13, 2026",
+    "date": "2026-05-13",
+    "displayDate": "Wednesday, May 13, 2026",
     "time": "8:00 AM",
+    "description": ""
+  },
+  {
+    "title": "Pre-Performance Dinner for the Garde's Cinderella Ballet",
+    "date": "2026-05-14",
+    "displayDate": "Thursday, May 14, 2026",
+    "time": "4:30 PM",
+    "description": ""
+  },
+  {
+    "title": "CT Storytellers Meeting",
+    "date": "2026-05-14",
+    "displayDate": "Thursday, May 14, 2026",
+    "time": "9:30 AM",
+    "description": ""
+  },
+  {
+    "title": "Club Manager - Day Off",
+    "date": "2026-05-16",
+    "displayDate": "Saturday, May 16, 2026",
+    "time": "12:00 AM",
+    "description": ""
+  },
+  {
+    "title": "Dinner & Close-up Magic Show with Todd Gipstein",
+    "date": "2026-05-16",
+    "displayDate": "Saturday, May 16, 2026",
+    "time": "5:30 PM",
+    "description": ""
+  },
+  {
+    "title": "CT Storytellers Meeting",
+    "date": "2026-05-21",
+    "displayDate": "Thursday, May 21, 2026",
+    "time": "9:30 AM",
+    "description": ""
+  },
+  {
+    "title": "Monthly Themed Luncheon (Brunch theme)",
+    "date": "2026-05-22",
+    "displayDate": "Friday, May 22, 2026",
+    "time": "11:30 AM",
+    "description": ""
+  },
+  {
+    "title": "Annual Duckpin Bowling Banquet",
+    "date": "2026-05-29",
+    "displayDate": "Friday, May 29, 2026",
+    "time": "5:30 PM",
     "description": ""
   }
 ]
