@@ -152,6 +152,11 @@
       { title:'Summer Kickoff', date:'June 1', description:'Season opening event with drinks, dinner, and good company.', image:'images/events_02.png' }
     ];
 
+    function formatDate(ev){
+      const display = ev.displayDate || ev.date || '';
+      return ev.time ? `${display} · ${ev.time}` : display;
+    }
+
     function renderEvents(events){
       const container = document.getElementById('events-container');
       if(!container) return;
@@ -161,24 +166,26 @@
       }
       container.innerHTML = events.map(ev => `
         <article class="card">
-          
           <div class="card-body">
-            <span class="date">${ev.date || ''}</span>
+            <span class="date">${formatDate(ev)}</span>
             <h3>${ev.title || 'Club Event'}</h3>
-            
           </div>
         </article>
       `).join('');
     }
 
     async function loadEvents(){
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 8000);
       try{
-        const res = await fetch('events.json', { cache:'no-store' });
+        const res = await fetch('events.json', { cache:'no-store', signal: ctrl.signal });
         if(!res.ok) throw new Error('events.json not found');
         const events = await res.json();
         renderEvents(events);
       }catch(err){
         renderEvents(fallbackEvents);
+      }finally{
+        clearTimeout(timer);
       }
     }
 
