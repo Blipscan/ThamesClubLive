@@ -55,7 +55,8 @@
     .card{background:#07101a;border:1px solid rgba(166,137,74,.22);color:var(--cream);overflow:hidden;min-height:100%}
     .card img{display:block;width:100%;height:190px;object-fit:cover;background:#101820}
     .card-body{padding:20px}
-    .date{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold2);font-weight:700;margin-bottom:8px}
+    .date{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold2);font-weight:700;margin-bottom:4px}
+    .time{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold2);font-weight:500;opacity:.78;margin-bottom:10px}
     .card h3{font-family:var(--display);font-size:22px;line-height:1.08;margin-bottom:8px}
     .card p{font-size:13px;color:rgba(244,237,216,.72)}
     .empty,.error{grid-column:1/-1;background:rgba(7,16,26,.06);border:1px solid rgba(138,104,53,.25);padding:26px;color:rgba(26,18,8,.65)}
@@ -152,11 +153,6 @@
       { title:'Summer Kickoff', date:'June 1', description:'Season opening event with drinks, dinner, and good company.', image:'images/events_02.png' }
     ];
 
-    function formatDate(ev){
-      const display = ev.displayDate || ev.date || '';
-      return ev.time ? `${display} · ${ev.time}` : display;
-    }
-
     function renderEvents(events){
       const container = document.getElementById('events-container');
       if(!container) return;
@@ -164,14 +160,21 @@
         container.innerHTML = '<div class="empty">No upcoming public events are listed yet.</div>';
         return;
       }
-      container.innerHTML = events.map(ev => `
+      container.innerHTML = events.map(ev => {
+        const dateText = ev.displayDate || ev.date || '';
+        const showTime = ev.time && ev.time !== '12:00 AM';
+        const desc = (ev.description || '').trim();
+        return `
         <article class="card">
           <div class="card-body">
-            <span class="date">${formatDate(ev)}</span>
+            <span class="date">${dateText}</span>
+            ${showTime ? `<span class="time">${ev.time}</span>` : ''}
             <h3>${ev.title || 'Club Event'}</h3>
+            ${desc ? `<p>${desc}</p>` : ''}
           </div>
         </article>
-      `).join('');
+      `;
+      }).join('');
     }
 
     async function loadEvents(){
