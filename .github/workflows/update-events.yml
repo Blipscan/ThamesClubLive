@@ -1,4 +1,4 @@
-﻿name: Update Events from Google Calendar
+﻿name: Update Events
 
 on:
   schedule:
@@ -9,36 +9,19 @@ permissions:
   contents: write
 
 jobs:
-  update:
+  update-events:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT }}
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
-      - name: Install timezone data
-        run: pip install tzdata
-
-      - name: Run sync script
-        run: python sync-calendar.py
-
-      - name: Commit updated events.json
-        run: |
+      - run: python scripts/update_events.py
+      - run: |
           git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.email "github-actions@github.com"
           git add events.json
           git diff --cached --quiet && echo "No changes" && exit 0
-          git commit -m "Auto-update events"
+          git commit -m "Update events from Google Calendar"
           git pull --rebase origin main
-          git pull --rebase origin main
-          git push origin main origin main
-
+          git push origin main
