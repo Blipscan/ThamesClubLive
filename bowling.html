@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Duckpin Bowling — The Thames Club</title>
+<title>Duckpin Bowling â€” The Thames Club</title>
 <meta name="description" content="The Thames Club, New London, Connecticut. Founded 1869. Connecticut's oldest private social club.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
@@ -27,7 +27,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .lab-g{color:var(--gold-b)}.lab-d{color:#8a6835}
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
 
-/* NAV — now with logo */
+/* NAV â€” now with logo */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(7,16,26,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(166,137,74,.08);transition:border-color .5s}
 nav.up{border-bottom-color:rgba(166,137,74,.22)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 44px}
@@ -145,7 +145,7 @@ section{padding:96px 0}
 .r.in{opacity:1;transform:none}
 .r.d1{transition-delay:.08s}.r.d2{transition-delay:.17s}.r.d3{transition-delay:.26s}
 
-/* FOOTER — with logo */
+/* FOOTER â€” with logo */
 footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:54px 0 68px}
 .fg{display:grid;grid-template-columns:1.4fr .6fr;gap:40px}
 .foot-logo{height:48px;width:auto;opacity:.55;margin-bottom:14px;display:block}
@@ -166,7 +166,7 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
   section{padding:60px 0} h1{font-size:44px}
 }
 
-/* ── HAMBURGER ── */
+/* â”€â”€ HAMBURGER â”€â”€ */
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -231,7 +231,7 @@ table.data-table tr:last-child td{border-bottom:none}
 @media(max-width:768px){.two-col,.three-col,.stat-grid{grid-template-columns:1fr}}
 /* unified site nav + footer */
 
-/* ── UNIFIED NAV v2 ── */
+/* â”€â”€ UNIFIED NAV v2 â”€â”€ */
 .site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
 .site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
@@ -268,13 +268,74 @@ table.data-table tr:last-child td{border-bottom:none}
 @media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
 @media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
 
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
 
 <nav class="site-shell-nav">
   <div class="site-shell-inner">
-    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London · Est. 1869</small></a>
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London Â· Est. 1869</small></a>
     <div class="site-shell-links">
       <a href="dining.html">Dining</a>
       <div class="nav-dd">
@@ -323,7 +384,7 @@ table.data-table tr:last-child td{border-bottom:none}
     <a href="membership.html">Membership</a>
       <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
     <a href="visit.html">Visit</a>
-    <a href="visit.html">Plan a visit →</a>
+    <a href="visit.html">Plan a visit â†’</a>
   </div>
 </nav>
 <script>
@@ -352,7 +413,7 @@ table.data-table tr:last-child td{border-bottom:none}
 <section class="page-hero">
   <div class="hbg"></div>
   <div class="w">
-    <span class="eyebrow">The Thames Club · New London</span>
+    <span class="eyebrow">The Thames Club Â· New London</span>
     <h1>Duckpin<br>Bowling</h1>
     <p class="deck">Two lanes below the silhouette wall. A game smaller than ten-pin, harder than it looks, and native to New England. The Electric Boat men built these lanes. They still run.</p>
   </div>
@@ -364,8 +425,8 @@ table.data-table tr:last-child td{border-bottom:none}
       <div>
         <span class="sec-label-d">The Lanes</span>
         <h2 class="serif-dk">Built by<br>submarine men.</h2>
-        <p class="prose-dk">The duckpin lanes in the basement of the Thames Club were built and installed by Electric Boat workers — the same craftsmen who built submarines in the yard across the river. The woodwork is their work. The lanes have run continuously since.</p>
-        <p class="prose-dk" style="margin-top:16px">Duckpin bowling uses a smaller ball — no finger holes — and shorter, squatter pins. Three rolls per frame instead of two. A perfect game has never been bowled in the recorded history of the sport. It is a genuinely difficult game, played well only through repetition and patience.</p>
+        <p class="prose-dk">The duckpin lanes in the basement of the Thames Club were built and installed by Electric Boat workers â€” the same craftsmen who built submarines in the yard across the river. The woodwork is their work. The lanes have run continuously since.</p>
+        <p class="prose-dk" style="margin-top:16px">Duckpin bowling uses a smaller ball â€” no finger holes â€” and shorter, squatter pins. Three rolls per frame instead of two. A perfect game has never been bowled in the recorded history of the sport. It is a genuinely difficult game, played well only through repetition and patience.</p>
       </div>
       <img src="images/bowling_01.jpg" alt="Duckpin bowling lanes at The Thames Club" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
     </div>
@@ -380,7 +441,7 @@ table.data-table tr:last-child td{border-bottom:none}
     <div class="three-col">
       <div class="card">
         <h3>League Schedule</h3>
-        <p>Tuesday · Wednesday · Thursday<br>5:30 pm, lower level<br>Fall and spring seasons<br>Men's and women's divisions</p>
+        <p>Tuesday Â· Wednesday Â· Thursday<br>5:30 pm, lower level<br>Fall and spring seasons<br>Men's and women's divisions</p>
       </div>
       <div class="card">
         <h3>How to Join</h3>
@@ -388,7 +449,7 @@ table.data-table tr:last-child td{border-bottom:none}
       </div>
       <div class="card">
         <h3>Season Banquet</h3>
-        <p>End-of-season awards dinner for all league participants. One of the Club's most spirited evenings — trophies, toasts, and the final standings.</p>
+        <p>End-of-season awards dinner for all league participants. One of the Club's most spirited evenings â€” trophies, toasts, and the final standings.</p>
       </div>
     </div>
     <div class="stat-grid">
@@ -407,8 +468,8 @@ table.data-table tr:last-child td{border-bottom:none}
       <div>
         <span class="sec-label-d">History</span>
         <h2 class="serif-dk">A living artifact<br>of the region.</h2>
-        <p class="prose-dk">Duckpin bowling is a New England and Mid-Atlantic tradition. It was popular through the mid-twentieth century and is now rare — most alleys closed as the larger ten-pin game came to dominate. The Thames Club lanes are among the few still operating in Connecticut.</p>
-        <p class="prose-dk" style="margin-top:16px">The pin-setting machine — a mechanical marvel from another era — still runs. Members who know how it works are treated with appropriate respect.</p>
+        <p class="prose-dk">Duckpin bowling is a New England and Mid-Atlantic tradition. It was popular through the mid-twentieth century and is now rare â€” most alleys closed as the larger ten-pin game came to dominate. The Thames Club lanes are among the few still operating in Connecticut.</p>
+        <p class="prose-dk" style="margin-top:16px">The pin-setting machine â€” a mechanical marvel from another era â€” still runs. Members who know how it works are treated with appropriate respect.</p>
         <div class="gold-rule" style="margin:28px 0"></div>
         <a href="membership.html" class="cta-btn-dk">Join the Club</a>
         <a href="visit.html" class="cta-btn-dk" style="margin-left:12px">Visit</a>
@@ -423,8 +484,8 @@ table.data-table tr:last-child td{border-bottom:none}
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+        290 State Street Â· New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> Â· (959) 264-2733
       </div>
     </div>
     <div class="site-shell-foot-links">

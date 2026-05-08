@@ -149,7 +149,68 @@
     .btt svg{width:16px;height:16px}
 
     @media(max-width:860px){.sec-nav{display:none}}
-  </style>
+  
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
+</style>
 </head>
 <body>
 
@@ -648,6 +709,7 @@
 </script>
 </body>
 </html>
+
 
 
 

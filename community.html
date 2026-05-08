@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Thames Club — Community</title>
+<title>The Thames Club â€” Community</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -26,7 +26,7 @@
     line-height: 1.75;
   }
 
-  /* ── NAV ── */
+  /* â”€â”€ NAV â”€â”€ */
   nav {
     background: var(--navy);
     border-bottom: 1px solid rgba(201,168,76,0.3);
@@ -61,7 +61,7 @@
 
   .nav-links a:hover { color: var(--gold); }
 
-  /* ── PAGE HEADER ── */
+  /* â”€â”€ PAGE HEADER â”€â”€ */
   .page-header {
     text-align: center;
     padding: 72px 48px 48px;
@@ -99,7 +99,7 @@
     opacity: 0.6;
   }
 
-  /* ── TWO-COLUMN LAYOUT ── */
+  /* â”€â”€ TWO-COLUMN LAYOUT â”€â”€ */
   .columns-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -116,7 +116,7 @@
     border-right: 1px solid rgba(201,168,76,0.2);
   }
 
-  /* ── COLUMN HEADERS ── */
+  /* â”€â”€ COLUMN HEADERS â”€â”€ */
   .col-eyebrow {
     font-size: 10px;
     letter-spacing: 0.3em;
@@ -147,7 +147,7 @@
     margin: 20px 0 32px;
   }
 
-  /* ── BODY COPY ── */
+  /* â”€â”€ BODY COPY â”€â”€ */
   .col-body p {
     color: var(--text-light);
     font-size: 16.5px;
@@ -168,7 +168,7 @@
     color: var(--cream-dark);
   }
 
-  /* ── PULL QUOTE / CALLOUT ── */
+  /* â”€â”€ PULL QUOTE / CALLOUT â”€â”€ */
   .col-callout {
     border-left: 2px solid var(--gold);
     padding: 18px 0 18px 24px;
@@ -184,7 +184,7 @@
     margin: 0 !important;
   }
 
-  /* ── CLOSING STATEMENT ── */
+  /* â”€â”€ CLOSING STATEMENT â”€â”€ */
   .col-closing {
     margin-top: 40px;
     padding-top: 32px;
@@ -208,7 +208,7 @@
     font-style: normal !important;
   }
 
-  /* ── DECORATIVE CERTIFICATE (right column) ── */
+  /* â”€â”€ DECORATIVE CERTIFICATE (right column) â”€â”€ */
   .certificate {
     border: 1px solid rgba(201,168,76,0.35);
     padding: 32px 36px;
@@ -260,7 +260,7 @@
     opacity: 0.7;
   }
 
-  /* ── FOOTER ── */
+  /* â”€â”€ FOOTER â”€â”€ */
   footer {
     border-top: 1px solid rgba(201,168,76,0.2);
     padding: 40px 48px;
@@ -274,7 +274,7 @@
     color: rgba(201,168,76,0.5);
   }
 
-  /* ── RESPONSIVE ── */
+  /* â”€â”€ RESPONSIVE â”€â”€ */
   @media (max-width: 800px) {
     .columns-wrapper { grid-template-columns: 1fr; }
     .column:first-child { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
@@ -306,6 +306,67 @@
 @media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
 .nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
 
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
@@ -364,7 +425,7 @@
     <div class="col-body">
       <p class="lead">There is a particular kind of person who walks through the door of the Thames Club not because someone invited them, but because the building itself did.</p>
 
-      <p>They pass by on a winter afternoon and see the light coming through the windows. They notice the carved details above the entry, the sense of weight and permanence the façade carries. They feel, before they know anything else about the place, that something worth knowing is happening inside.</p>
+      <p>They pass by on a winter afternoon and see the light coming through the windows. They notice the carved details above the entry, the sense of weight and permanence the faÃ§ade carries. They feel, before they know anything else about the place, that something worth knowing is happening inside.</p>
 
       <p>Some of them keep walking. A few of them stop.</p>
 
@@ -372,13 +433,13 @@
         <p>He knew no one. He came anyway. That, it turns out, is exactly the right way to arrive.</p>
       </div>
 
-      <p>The Thames Club has always drawn this kind of member — the person who responds to a room before they respond to a roster. Who trusts that a place with this much history, this much quiet dignity, must contain people worth knowing.</p>
+      <p>The Thames Club has always drawn this kind of member â€” the person who responds to a room before they respond to a roster. Who trusts that a place with this much history, this much quiet dignity, must contain people worth knowing.</p>
 
       <p>They are almost always right.</p>
 
       <p>What they discover, in time, is that the building was only the beginning. The real architecture of this club is built from conversation across a long dinner, from a handshake that becomes a habit, from the particular ease that settles between people who keep returning to the same table.</p>
 
-      <p>Years pass. The room that first drew them in becomes the backdrop to a life — to friendships formed slowly and held firmly, to the kind of loyalty that is tested not in grand gestures but in small, steady ones.</p>
+      <p>Years pass. The room that first drew them in becomes the backdrop to a life â€” to friendships formed slowly and held firmly, to the kind of loyalty that is tested not in grand gestures but in small, steady ones.</p>
 
       <p><em>These are the members the Thames Club is made of.</em> Not a category. Not a demographic. People who recognized something here and decided to be part of it.</p>
     </div>
@@ -402,12 +463,12 @@
 
       <p><em>Here, they are numerous.</em></p>
 
-      <p>In our community, their lives move alongside others — families raised, days worked, routines kept — often without notice, even as they carry responsibilities few are ever asked to bear.</p>
+      <p>In our community, their lives move alongside others â€” families raised, days worked, routines kept â€” often without notice, even as they carry responsibilities few are ever asked to bear.</p>
 
-      <p>The Thames River has always run alongside this work. For more than a century, the men and women of Electric Boat and the submarine base have shaped this city in ways both visible and not — in the neighborhoods they settled, the institutions they supported, the civic life they quietly sustained.</p>
+      <p>The Thames River has always run alongside this work. For more than a century, the men and women of Electric Boat and the submarine base have shaped this city in ways both visible and not â€” in the neighborhoods they settled, the institutions they supported, the civic life they quietly sustained.</p>
 
       <div class="col-callout">
-        <p>Over the years, many have crossed our threshold. Some paused briefly. Others stayed. Their profiles line our walls — not as decoration, but as part of a larger community.</p>
+        <p>Over the years, many have crossed our threshold. Some paused briefly. Others stayed. Their profiles line our walls â€” not as decoration, but as part of a larger community.</p>
       </div>
 
       <p>From many services and professions, they served our city across the last one hundred fifty years. This is a place where many stories are told, and many more quietly held.</p>
@@ -420,7 +481,7 @@
         <p class="cert-footer">All Are Welcome Here</p>
       </div>
 
-      <p>Connecticut's oldest private social club has always understood that its purpose is larger than any single membership class or era. We exist because generation after generation of people in this city — in uniform and out of it — chose to build something together.</p>
+      <p>Connecticut's oldest private social club has always understood that its purpose is larger than any single membership class or era. We exist because generation after generation of people in this city â€” in uniform and out of it â€” chose to build something together.</p>
 
       <p><em>That tradition continues.</em></p>
     </div>
@@ -439,8 +500,8 @@
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+        290 State Street Â· New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> Â· (959) 264-2733
       </div>
     </div>
     <div class="site-shell-foot-links">
@@ -461,3 +522,4 @@
 </script>
 </body>
 </html>
+

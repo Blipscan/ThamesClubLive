@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Photo Gallery — The Thames Club</title>
+<title>Photo Gallery â€” The Thames Club</title>
 <meta name="description" content="The Thames Club, New London, Connecticut. Founded 1869. Connecticut's oldest private social club.">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
@@ -149,13 +149,74 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
   .w{padding:0 20px}
 }
 
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
 
 <nav class="site-shell-nav">
   <div class="site-shell-inner">
-    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London · Est. 1869</small></a>
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London Â· Est. 1869</small></a>
     <div class="site-shell-links">
       <a href="dining.html">Dining</a>
       <div class="nav-dd">
@@ -204,7 +265,7 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
     <a href="membership.html">Membership</a>
       <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
     <a href="visit.html">Visit</a>
-    <a href="visit.html">Plan a visit →</a>
+    <a href="visit.html">Plan a visit â†’</a>
   </div>
 </nav>
 <script>
@@ -234,9 +295,9 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
 <section class="page-hero">
   <div class="hbg"></div>
   <div class="w">
-    <span class="eyebrow">The Thames Club · New London</span>
+    <span class="eyebrow">The Thames Club Â· New London</span>
     <h1>The Club<br>in Photographs</h1>
-    <p class="deck">155 years of a house in use. The dining room, the lanes, the bar, the rooms — and the people who have made them matter.</p>
+    <p class="deck">155 years of a house in use. The dining room, the lanes, the bar, the rooms â€” and the people who have made them matter.</p>
   </div>
 </section>
 
@@ -246,16 +307,16 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
   <div class="w">
     <span class="sec-label">The House</span>
     <h2 class="serif">290 State Street.</h2>
-    <p class="prose" style="margin-top:16px;margin-bottom:40px">The Thames Club building has stood on State Street since 1905. Listed on the National Register of Historic Places, it has held continuous social life for over a century — meals, ceremonies, elections, and ordinary Tuesday evenings.</p>
+    <p class="prose" style="margin-top:16px;margin-bottom:40px">The Thames Club building has stood on State Street since 1905. Listed on the National Register of Historic Places, it has held continuous social life for over a century â€” meals, ceremonies, elections, and ordinary Tuesday evenings.</p>
 
     <!-- Featured layout: 1 large + 2 stacked -->
     <div class="featured-row">
       <div class="gitem" onclick="openLightbox(0)" data-cat="house">
         <!-- Replace src with base64 or relative path to exterior photo -->
-<img src="images/gallery_01.png" alt="The Thames Club — 290 State Street" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease">
+<img src="images/gallery_01.png" alt="The Thames Club â€” 290 State Street" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease">
         <div class="gitem-cap">
           <span>290 State Street</span>
-          <small>Exterior · New London, CT</small>
+          <small>Exterior Â· New London, CT</small>
         </div>
       </div>
       <div class="side-stack">
@@ -263,14 +324,14 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
 <div style="height:257px;overflow:hidden"><img src="images/gallery_02.png" alt="The Entry Hall" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
           <div class="gitem-cap">
             <span>The Entry</span>
-            <small>Interior · Ground Floor</small>
+            <small>Interior Â· Ground Floor</small>
           </div>
         </div>
         <div class="gitem" onclick="openLightbox(2)" data-cat="house">
 <div style="height:257px;overflow:hidden"><img src="images/gallery_03.png" alt="The Thames Club building" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform 6s ease"></div>
           <div class="gitem-cap">
             <span>290 State Street</span>
-            <small>Exterior · Spring</small>
+            <small>Exterior Â· Spring</small>
           </div>
         </div>
       </div>
@@ -282,21 +343,21 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
         <img src="images/gallery_04.png" alt="cc4b86fb f05d 4ab1 9750 b9a3747e5254" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>c. Early 20th Century</span>
-          <small>Archive · Exterior</small>
+          <small>Archive Â· Exterior</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(4)" data-cat="house">
         <img src="images/gallery_05.png" alt="fa08a36b 8074 4e14 95a8 cb4ce8d4dfa2" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>State Street</span>
-          <small>Exterior · New London</small>
+          <small>Exterior Â· New London</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(5)" data-cat="house">
         <img src="images/gallery_06.png" alt="f31f74b6 8b3f 4f3f 90ef 4318d1e78f61" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Architectural Detail</span>
-          <small>Exterior · Historic</small>
+          <small>Exterior Â· Historic</small>
         </div>
       </div>
     </div>
@@ -309,21 +370,21 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
   <div class="w">
     <span class="sec-label-d">The Rooms</span>
     <h2 class="serif-dk">Where members<br>gather.</h2>
-    <p class="prose-dk" style="margin-top:16px;margin-bottom:40px">The dining room, the bar, the library — rooms that have been in continuous use since the Club moved to State Street. Worn in the right places, cared for in the right ways.</p>
+    <p class="prose-dk" style="margin-top:16px;margin-bottom:40px">The dining room, the bar, the library â€” rooms that have been in continuous use since the Club moved to State Street. Worn in the right places, cared for in the right ways.</p>
 
     <div class="gallery-grid" style="margin-bottom:3px">
       <div class="gitem wide" onclick="openLightbox(6)" data-cat="rooms">
 <img src="images/gallery_07.png" alt="" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease">
         <div class="gitem-cap">
           <span>The Dining Room</span>
-          <small>Interior · Main Floor</small>
+          <small>Interior Â· Main Floor</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(7)" data-cat="rooms">
         <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_08.png" alt="The Bar" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
         <div class="gitem-cap">
           <span>The Bar</span>
-          <small>Interior · Social Room</small>
+          <small>Interior Â· Social Room</small>
         </div>
       </div>
     </div>
@@ -333,7 +394,7 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
         <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_09.jpg" alt="String quartet performing at the Thames Club" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
         <div class="gitem-cap">
           <span>Live Music</span>
-          <small>Interior · The Room</small>
+          <small>Interior Â· The Room</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(9)" data-cat="rooms">
@@ -342,7 +403,7 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
         </div>
         <div class="gitem-cap">
           <span>The Library</span>
-          <small>Interior · Upper Floor</small>
+          <small>Interior Â· Upper Floor</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(10)" data-cat="rooms">
@@ -351,7 +412,7 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
         </div>
         <div class="gitem-cap">
           <span>Private Dining</span>
-          <small>Interior · Event Room</small>
+          <small>Interior Â· Event Room</small>
         </div>
       </div>
     </div>
@@ -364,49 +425,49 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
   <div class="w">
     <span class="sec-label">Events &amp; Members</span>
     <h2 class="serif">The life of<br>the house.</h2>
-    <p class="prose" style="margin-top:16px;margin-bottom:40px">Dinners, ceremonies, league nights, banquets — the recurring occasions that give a private club its character over time.</p>
+    <p class="prose" style="margin-top:16px;margin-bottom:40px">Dinners, ceremonies, league nights, banquets â€” the recurring occasions that give a private club its character over time.</p>
 
     <div class="gallery-grid">
       <div class="gitem" onclick="openLightbox(11)" data-cat="events">
         <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_10.jpg" alt="New London Ledge Light" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
         <div class="gitem-cap">
           <span>New London Ledge Light</span>
-          <small>Community · Thames River</small>
+          <small>Community Â· Thames River</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(12)" data-cat="events">
         <img src="images/gallery_11.jpg" alt="IMG 20200306 192956" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Members' Reception</span>
-          <small>Events · Social Room</small>
+          <small>Events Â· Social Room</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(13)" data-cat="events">
         <img src="images/gallery_12.png" alt="file 000000007a1c71fdbf05fb3e1c0a5d3a" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Recognition Evening</span>
-          <small>Events · Annual</small>
+          <small>Events Â· Annual</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(14)" data-cat="events">
         <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_13.png" alt="Seasonal celebration at the Thames Club" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
         <div class="gitem-cap">
           <span>Holiday Celebration</span>
-          <small>Events · Seasonal</small>
+          <small>Events Â· Seasonal</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(15)" data-cat="events">
         <div style="aspect-ratio:4/3;overflow:hidden"><img src="images/gallery_14.jpg" alt="Speaker Evening at the Thames Club" class="fill" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease"></div>
         <div class="gitem-cap">
           <span>Speaker Evening</span>
-          <small>Events · Cultural</small>
+          <small>Events Â· Cultural</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(16)" data-cat="events">
         <img src="images/gallery_15.jpg" alt="dredil 400" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Members at the Club</span>
-          <small>Daily Life · Social</small>
+          <small>Daily Life Â· Social</small>
         </div>
       </div>
     </div>
@@ -426,28 +487,28 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
         <img src="images/gallery_16.jpg" alt="20260204 185830" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>The Lanes</span>
-          <small>Lower Level · Duckpin</small>
+          <small>Lower Level Â· Duckpin</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(18)" data-cat="bowling">
         <img src="images/gallery_17.jpg" alt="20250718 133235" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>The Pin Setter</span>
-          <small>Lower Level · Mechanical</small>
+          <small>Lower Level Â· Mechanical</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(19)" data-cat="bowling">
         <img src="images/gallery_18.png" alt="e3681fa6 b859 4d91 9175 7387180a8f23" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>League Night</span>
-          <small>Bowling · Tuesday–Thursday</small>
+          <small>Bowling Â· Tuesdayâ€“Thursday</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(20)" data-cat="bowling">
         <img src="images/gallery_19.jpg" alt="20250624 132903" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Equipment</span>
-          <small>Bowling · Detail</small>
+          <small>Bowling Â· Detail</small>
         </div>
       </div>
     </div>
@@ -460,34 +521,34 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
   <div class="w">
     <span class="sec-label-d">Restoration</span>
     <h2 class="serif-dk">The house<br>coming forward.</h2>
-    <p class="prose-dk" style="margin-top:16px;margin-bottom:40px">Documentation of the ongoing preservation effort — the top floor, the fabric of the building, and the labor of those who are bringing it forward.</p>
+    <p class="prose-dk" style="margin-top:16px;margin-bottom:40px">Documentation of the ongoing preservation effort â€” the top floor, the fabric of the building, and the labor of those who are bringing it forward.</p>
 
     <div class="gallery-grid">
       <div class="gitem" onclick="openLightbox(21)" data-cat="restoration">
         <img src="images/gallery_20.png" alt="file 00000000a77471f5b17a5f885b660e42" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Before</span>
-          <small>Top Floor · Pre-Restoration</small>
+          <small>Top Floor Â· Pre-Restoration</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(22)" data-cat="restoration">
         <img src="images/gallery_21.jpg" alt="20260123 113916" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>During</span>
-          <small>Top Floor · In Progress</small>
+          <small>Top Floor Â· In Progress</small>
         </div>
       </div>
       <div class="gitem" onclick="openLightbox(23)" data-cat="restoration">
         <img src="images/gallery_22.jpg" alt="file 00000000311871f8891fe727de58d12c (2)" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px">
         <div class="gitem-cap">
           <span>Original Detail</span>
-          <small>Interior · Historic Fabric</small>
+          <small>Interior Â· Historic Fabric</small>
         </div>
       </div>
     </div>
 
     <div style="margin-top:32px">
-      <a href="restoration.html" class="cta-btn-dk">Restoration Progress →</a>
+      <a href="restoration.html" class="cta-btn-dk">Restoration Progress â†’</a>
     </div>
   </div>
 </section>
@@ -509,10 +570,10 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <button class="lb-close" onclick="closeLightbox()">Close ✕</button>
-  <button class="lb-nav lb-prev" onclick="event.stopPropagation();lbStep(-1)">‹</button>
+  <button class="lb-close" onclick="closeLightbox()">Close âœ•</button>
+  <button class="lb-nav lb-prev" onclick="event.stopPropagation();lbStep(-1)">â€¹</button>
   <img class="lb-img" id="lb-img" src="images/gallery_23.jpg" alt="20220222 154907 resized (1)  AIE">
-  <button class="lb-nav lb-next" onclick="event.stopPropagation();lbStep(1)">›</button>
+  <button class="lb-nav lb-next" onclick="event.stopPropagation();lbStep(1)">â€º</button>
   <div class="lb-info">
     <span id="lb-title"></span>
     <small id="lb-caption"></small>
@@ -525,8 +586,8 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+        290 State Street Â· New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> Â· (959) 264-2733
       </div>
     </div>
     <div class="site-shell-foot-links">
@@ -542,17 +603,17 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
   </div>
 </footer>
 
-// Lightbox data — populate when real photos are added
+// Lightbox data â€” populate when real photos are added
 const photos = [
-  {src:'images/gallery_24.png', title:'290 State Street', cap:'Exterior · New London, CT'},
-  {src:'images/gallery_25.png', title:'The Entry', cap:'Interior · Ground Floor'},
-  {src:'images/gallery_26.jpg', title:'290 State Street', cap:'Interior · Historic Detail'},
-  {src:'images/gallery_27.png', title:'The Dining Room', cap:'Interior · Main Floor'},
-  {src:'images/gallery_28.png', title:'The Bar', cap:'Interior · Social Room'},
-  {src:'images/gallery_29.jpg', title:'Live Music', cap:'Interior · Ground Floor'},
-  {src:'images/gallery_30.jpg', title:'New London Ledge Light', cap:'Events · Dining Room'},
-  {src:'images/gallery_31.png', title:'Holiday Celebration', cap:'Events · Seasonal'},
-  {src:'images/gallery_32.png', title:'Speaker Evening', cap:'Events · Cultural'},
+  {src:'images/gallery_24.png', title:'290 State Street', cap:'Exterior Â· New London, CT'},
+  {src:'images/gallery_25.png', title:'The Entry', cap:'Interior Â· Ground Floor'},
+  {src:'images/gallery_26.jpg', title:'290 State Street', cap:'Interior Â· Historic Detail'},
+  {src:'images/gallery_27.png', title:'The Dining Room', cap:'Interior Â· Main Floor'},
+  {src:'images/gallery_28.png', title:'The Bar', cap:'Interior Â· Social Room'},
+  {src:'images/gallery_29.jpg', title:'Live Music', cap:'Interior Â· Ground Floor'},
+  {src:'images/gallery_30.jpg', title:'New London Ledge Light', cap:'Events Â· Dining Room'},
+  {src:'images/gallery_31.png', title:'Holiday Celebration', cap:'Events Â· Seasonal'},
+  {src:'images/gallery_32.png', title:'Speaker Evening', cap:'Events Â· Cultural'},
 ];
 
 let current = 0;

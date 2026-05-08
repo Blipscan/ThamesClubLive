@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Reciprocal Clubs Directory — The Thames Club</title>
+<title>Reciprocal Clubs Directory â€” The Thames Club</title>
 <style>
 @page {
   size: Letter;
   margin: 0.55in 0.55in 0.55in 0.55in;
   @bottom-center {
-    content: "The Thames Club  ·  290 State Street  ·  New London, CT 06320  ·  (959) 264-2733  ·  thamesclub.nl@gmail.com";
+    content: "The Thames Club  Â·  290 State Street  Â·  New London, CT 06320  Â·  (959) 264-2733  Â·  thamesclub.nl@gmail.com";
     font-family: "Times New Roman", Times, serif;
     font-size: 8.5pt;
     color: #6b6356;
@@ -375,7 +375,7 @@ html, body {
 }
 
 .notes-body li::before {
-  content: "·";
+  content: "Â·";
   position: absolute;
   left: 0.06in;
   color: #b8924a;
@@ -400,6 +400,67 @@ html, body {
   max-width: 6.2in;
 }
 
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
@@ -765,7 +826,7 @@ html, body {
     <div class="state-block">
       <div class="state-name">Germany</div>
       <div class="club-entry">
-        <div class="club-entry-line"><span class="club-entry-name">Der Übersee-Club</span><span class="club-entry-city">Hamburg</span></div>
+        <div class="club-entry-line"><span class="club-entry-name">Der Ãœbersee-Club</span><span class="club-entry-city">Hamburg</span></div>
         <span class="club-entry-url">www.ueberseeclub.de</span>
       </div>
     </div>
@@ -805,3 +866,4 @@ html, body {
 
 </body>
 </html>
+

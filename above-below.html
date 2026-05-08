@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Above &amp; Below — The Thames Club</title>
+<title>Above &amp; Below â€” The Thames Club</title>
 <meta content="Connecticut's oldest private social club. Founded February 8, 1869. For the people who make this corner of New England work." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
@@ -27,7 +27,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .lab-g{color:var(--gold-b)}.lab-d{color:#8a6835}
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
 
-/* NAV — now with logo */
+/* NAV â€” now with logo */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(7,16,26,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(166,137,74,.08);transition:border-color .5s}
 nav.up{border-bottom-color:rgba(166,137,74,.22)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 44px}
@@ -145,7 +145,7 @@ section{padding:96px 0}
 .r.in{opacity:1;transform:none}
 .r.d1{transition-delay:.08s}.r.d2{transition-delay:.17s}.r.d3{transition-delay:.26s}
 
-/* FOOTER — with logo */
+/* FOOTER â€” with logo */
 footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:54px 0 68px}
 .fg{display:grid;grid-template-columns:1.4fr .6fr;gap:40px}
 .foot-logo{height:48px;width:auto;opacity:.55;margin-bottom:14px;display:block}
@@ -166,7 +166,7 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
   section{padding:60px 0} h1{font-size:44px}
 }
 
-/* ── HAMBURGER ── */
+/* â”€â”€ HAMBURGER â”€â”€ */
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -210,6 +210,67 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 @media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
 .nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
 
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
@@ -249,24 +310,24 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- â•â•â• HERO â•â•â• -->
 <section class="hero sd" id="top" style="padding-bottom:90px">
 <div class="hbg"></div><div class="hgrid"></div>
 <img alt="The Thames Club" class="hdraw" src="images/above-below_01.jpg"/>
 <div class="w hcon">
-<p class="hey">Founded February 8, 1869 — New London, Connecticut</p>
+<p class="hey">Founded February 8, 1869 â€” New London, Connecticut</p>
 <h1>Above & Below</h1>
 <p class="hsub">The Thames Club publication and civic invitation for those who serve above and below the surface.</p>
 <div class="hfacts">
 <div><strong>Address</strong>290 State Street<br/>New London, CT 06320</div>
-<div><strong>Lunch</strong>Wed BYO · 12–2 pm</div>
-<div><strong>Dinner</strong>Thursdays · 5 pm</div>
+<div><strong>Lunch</strong>Wed BYO Â· 12â€“2 pm</div>
+<div><strong>Dinner</strong>Thursdays Â· 5 pm</div>
 <div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br/><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
 </div>
 </div>
 </section>
 <div class="rule"></div>
-<!-- ═══ ABOVE & BELOW ═══ -->
+<!-- â•â•â• ABOVE & BELOW â•â•â• -->
 <section class="sm" id="above-below">
 <div class="w">
 <div class="g21">
@@ -274,10 +335,10 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 <span class="lab lab-g">Above &amp; Below</span>
 <h2 class="hxl cr">The submarine community<br/>has a second home<br/><em>in this city.</em></h2>
 <div class="bt dk">
-<p>Electric Boat. The submarine base. The museum. The contractors, engineers, and families who relocate here and find they want to stay. The Thames River has shaped the submarine force — and the submarine force has shaped this city — for over a century.</p>
-<p>The Thames Club has been part of that story for longer than the submarine force has existed. Those who serve in it — and those who build, maintain, and support it — are among the people this club has always been for.</p>
+<p>Electric Boat. The submarine base. The museum. The contractors, engineers, and families who relocate here and find they want to stay. The Thames River has shaped the submarine force â€” and the submarine force has shaped this city â€” for over a century.</p>
+<p>The Thames Club has been part of that story for longer than the submarine force has existed. Those who serve in it â€” and those who build, maintain, and support it â€” are among the people this club has always been for.</p>
 </div>
-<p class="pull dk">If you have dedicated your working life to something serious — whatever that work is — you share the culture this club has always celebrated. The introduction is a formality.</p>
+<p class="pull dk">If you have dedicated your working life to something serious â€” whatever that work is â€” you share the culture this club has always celebrated. The introduction is a formality.</p>
 <div class="btns r d2">
 <a class="btn bg" href="above-and-below-issue-001.html">Read Issue One</a>
 <a class="btn bh" href="submarineland.html">Submarineland Guide</a>
@@ -298,7 +359,7 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 </div>
 </div>
 </section>
-<!-- ═══ THOSE WHO SERVE ═══ -->
+<!-- â•â•â• THOSE WHO SERVE â•â•â• -->
 <section class="sd" style="padding:0">
 <div style="max-width:var(--max);margin:0 auto;padding:96px 44px">
 <div class="g2c">
@@ -312,14 +373,14 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 <p><em style="color:rgba(232,223,200,.55)">Here, they are numerous.</em></p>
 </div>
 <div class="bt dk" style="margin-top:20px">
-<p>In our community, their lives move alongside others — families raised, days worked, routines kept — often without notice, even as they carry responsibilities few are ever asked to bear.</p>
-<p>Over the years, many have crossed our threshold. Some paused briefly. Others stayed. Their profiles line our walls — not as decoration, but as part of a larger community. From many services and professions, they served our city across the last one hundred fifty years.</p>
+<p>In our community, their lives move alongside others â€” families raised, days worked, routines kept â€” often without notice, even as they carry responsibilities few are ever asked to bear.</p>
+<p>Over the years, many have crossed our threshold. Some paused briefly. Others stayed. Their profiles line our walls â€” not as decoration, but as part of a larger community. From many services and professions, they served our city across the last one hundred fifty years.</p>
 </div>
 <div style="margin-top:32px;padding:24px 24px 24px 22px;border-left:2px solid var(--gold-dim)">
 <p style="font-family:var(--display);font-size:clamp(17px,2vw,22px);font-style:italic;line-height:1.65;color:rgba(232,223,200,.72)">The Thames Club recognizes them.</p>
 <p style="font-family:var(--display);font-size:clamp(15px,1.7vw,19px);font-style:italic;line-height:1.7;color:rgba(232,223,200,.5);margin-top:14px">We extend an open invitation to those whose lives have been dedicated to this demanding and singular calling. To visit. To sit at table. To be received not with ceremony, but with genuine respect.</p>
 <p style="font-family:var(--display);font-size:clamp(16px,1.9vw,21px);font-style:italic;color:var(--gold-b);margin-top:18px">All are welcome here.</p>
-<p style="font-family:var(--serif);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,223,200,.3);margin-top:12px">The Thames Club — New London<br/>Founded Eighteen Sixty-Nine</p>
+<p style="font-family:var(--serif);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(232,223,200,.3);margin-top:12px">The Thames Club â€” New London<br/>Founded Eighteen Sixty-Nine</p>
 </div>
 <div class="btns r d1">
 <a class="btn bg" href="membership.html">Membership</a>
@@ -328,26 +389,26 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 </div>
 <div class="r d2">
 <div class="ph" style="height:680px">
-<img alt="Those Who Serve Above and Below the Surface — Thames Club" src="images/above-below_03.jpg" style="object-fit:contain;background:#f4edd8"/>
+<img alt="Those Who Serve Above and Below the Surface â€” Thames Club" src="images/above-below_03.jpg" style="object-fit:contain;background:#f4edd8"/>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- ═══ THE ROOM ═══ -->
+<!-- â•â•â• THE ROOM â•â•â• -->
 
 
 
-<!-- ═══ HISTORY ═══ -->
+<!-- â•â•â• HISTORY â•â•â• -->
 
-<!-- ═══ EVENTS ═══ -->
+<!-- â•â•â• EVENTS â•â•â• -->
 
-<!-- ═══ THE CLUB ALIVE ═══ -->
+<!-- â•â•â• THE CLUB ALIVE â•â•â• -->
 
-<!-- ═══ MEMBERSHIP ═══ -->
+<!-- â•â•â• MEMBERSHIP â•â•â• -->
 
-<!-- ═══ VISIT ═══ -->
+<!-- â•â•â• VISIT â•â•â• -->
 
 <!-- FOOTER with TC logo -->
 
@@ -356,8 +417,8 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+        290 State Street Â· New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> Â· (959) 264-2733
       </div>
     </div>
     <div class="site-shell-foot-links">

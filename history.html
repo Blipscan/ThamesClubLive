@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>History — The Thames Club</title>
+<title>History â€” The Thames Club</title>
 <meta content="Connecticut's oldest private social club. Founded February 8, 1869. For the people who make this corner of New England work." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
@@ -27,7 +27,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .lab-g{color:var(--gold-b)}.lab-d{color:#8a6835}
 .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
 
-/* NAV — now with logo */
+/* NAV â€” now with logo */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(7,16,26,.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(166,137,74,.08);transition:border-color .5s}
 nav.up{border-bottom-color:rgba(166,137,74,.22)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 44px}
@@ -155,7 +155,7 @@ img[alt="Duckpin bowling illustration"]{display:block;margin:0 auto;object-posit
 .r.in{opacity:1;transform:none}
 .r.d1{transition-delay:.08s}.r.d2{transition-delay:.17s}.r.d3{transition-delay:.26s}
 
-/* FOOTER — with logo */
+/* FOOTER â€” with logo */
 footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:54px 0 68px}
 .fg{display:grid;grid-template-columns:1.4fr .6fr;gap:40px}
 .foot-logo{height:48px;width:auto;opacity:.55;margin-bottom:14px;display:block}
@@ -176,7 +176,7 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
   section{padding:60px 0} h1{font-size:44px}
 }
 
-/* ── HAMBURGER ── */
+/* â”€â”€ HAMBURGER â”€â”€ */
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -220,6 +220,67 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 @media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
 .nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
 
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
@@ -259,33 +320,33 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- â•â•â• HERO â•â•â• -->
 <section class="hero sd" id="top" style="padding-bottom:90px">
 <div class="hbg"></div><div class="hgrid"></div>
 <img alt="The Thames Club" class="hdraw" src="images/history_01.jpg"/>
 <div class="w hcon">
-<p class="hey">Founded February 8, 1869 — New London, Connecticut</p>
+<p class="hey">Founded February 8, 1869 â€” New London, Connecticut</p>
 <h1>History</h1>
 <p class="hsub">A record of the Club on the river since eighteen sixty-nine.</p>
 <div class="hfacts">
 <div><strong>Address</strong>290 State Street<br/>New London, CT 06320</div>
-<div><strong>Lunch</strong>Wed BYO · 12–2 pm</div>
-<div><strong>Dinner</strong>Thursdays · 5 pm</div>
+<div><strong>Lunch</strong>Wed BYO Â· 12â€“2 pm</div>
+<div><strong>Dinner</strong>Thursdays Â· 5 pm</div>
 <div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br/><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
 </div>
 </div>
 </section>
 
-<!-- ═══ ABOVE & BELOW ═══ -->
+<!-- â•â•â• ABOVE & BELOW â•â•â• -->
 
-<!-- ═══ THOSE WHO SERVE ═══ -->
+<!-- â•â•â• THOSE WHO SERVE â•â•â• -->
 
 
-<!-- ═══ THE ROOM ═══ -->
+<!-- â•â•â• THE ROOM â•â•â• -->
 
 
 <div class="rule"></div>
-<!-- ═══ HISTORY ═══ -->
+<!-- â•â•â• HISTORY â•â•â• -->
 <section class="sw" id="history">
 <div class="w">
 <!-- Headline + early building photo -->
@@ -294,9 +355,9 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 <span class="lab lab-g">History</span>
 <h2 class="hxl cr">156 years<br/>on the river.</h2>
 <div class="bt dk">
-<p>The Thames Club was founded on February 8, 1869 — before the submarine force, before Electric Boat, before the Gold Star Bridge. It has watched this city change hands, change purpose, and change character across three centuries of working waterfront.</p>
+<p>The Thames Club was founded on February 8, 1869 â€” before the submarine force, before Electric Boat, before the Gold Star Bridge. It has watched this city change hands, change purpose, and change character across three centuries of working waterfront.</p>
 <p>Our standing April Fools Joke: In September 2024, the U.S. Coast Guard purchased the 1905 Thames Club building on State Street 
-and moved it to Ledge Light. The Club moved and continued — as it has through every turn since 1869.</p>
+and moved it to Ledge Light. The Club moved and continued â€” as it has through every turn since 1869.</p>
 </div>
 <!-- O'Neill connection -->
 <div style="margin-top:28px;padding:24px;background:rgba(166,137,74,.06);border:1px solid rgba(166,137,74,.16)">
@@ -307,21 +368,21 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 <img alt="James O'Neill tile" src="images/history_02.jpg" style="width:100%;height:100%;object-fit:cover"/>
 </div>
 <div style="font-family:var(--display);font-size:13px;color:var(--cream);font-weight:600">James O'Neill</div>
-<div style="font-family:var(--serif);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px">Actor · Member</div>
+<div style="font-family:var(--serif);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px">Actor Â· Member</div>
 </div>
 <div style="text-align:center">
 <div style="width:70px;height:70px;border-radius:50%;overflow:hidden;margin:0 auto 8px;background:#111">
 <img alt="Eugene O'Neill" src="images/history_03.jpg" style="width:100%;height:100%;object-fit:cover"/>
 </div>
 <div style="font-family:var(--display);font-size:13px;color:var(--cream);font-weight:600">Eugene O'Neill</div>
-<div style="font-family:var(--serif);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px">Playwright · Born New London</div>
+<div style="font-family:var(--serif);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px">Playwright Â· Born New London</div>
 </div>
 <div style="text-align:center">
 <div style="width:70px;height:70px;border-radius:50%;overflow:hidden;margin:0 auto 8px;background:#111">
 <img alt="Nathan Hale" src="images/history_04.jpg" style="width:100%;height:100%;object-fit:cover"/>
 </div>
 <div style="font-family:var(--display);font-size:13px;color:var(--cream);font-weight:600">Nathan Hale</div>
-<div style="font-family:var(--serif);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px">New London · 1776</div>
+<div style="font-family:var(--serif);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:3px">New London Â· 1776</div>
 </div>
 </div>
 <p style="font-family:var(--serif);font-size:12px;line-height:1.7;color:rgba(232,223,200,.38);margin-top:16px">James O'Neill's silhouette tile hangs on the basement pub wall. His son Eugene won four Pulitzer Prizes and the Nobel Prize in Literature. New London is that kind of city.</p>
@@ -332,43 +393,43 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 </div>
 <div class="r d2" style="display:flex;flex-direction:column;gap:8px">
 <div class="ph" style="height:260px">
-<img alt="Thames Club — early photograph" src="images/history_05.jpg"/>
+<img alt="Thames Club â€” early photograph" src="images/history_05.jpg"/>
 </div>
-<p class="cap dk">The original building — State Street, New London</p>
+<p class="cap dk">The original building â€” State Street, New London</p>
 <div class="g2" style="gap:8px">
 <div class="ph" style="height:180px">
-<img alt="Vintage postcard — State Street" src="images/history_06.jpg"/>
+<img alt="Vintage postcard â€” State Street" src="images/history_06.jpg"/>
 </div>
 <div class="ph" style="height:180px">
-<img alt="The Day — Coast Guard buys Thames Club" src="images/history_07.jpg"/>
+<img alt="The Day â€” Coast Guard buys Thames Club" src="images/history_07.jpg"/>
 </div>
 </div>
 <div class="g2" style="gap:8px">
-<p class="cap dk">State Street postcard — early 1900s</p>
+<p class="cap dk">State Street postcard â€” early 1900s</p>
 <p class="cap dk">APRIL FOOL'S DAY</p>
 </div>
 </div>
 </div>
-<!-- Historic dinner photo — full width -->
+<!-- Historic dinner photo â€” full width -->
 <div class="r" style="margin-bottom:8px">
 <div class="ph" style="height:360px">
-<img alt="Thames Club — historic dinner photograph, circa 1940s" src="images/history_08.jpg" style="object-position:center center"/>
+<img alt="Thames Club â€” historic dinner photograph, circa 1940s" src="images/history_08.jpg" style="object-position:center center"/>
 </div>
-<p class="cap dk">A Club dinner — circa 1940s. The silhouette tiles already on the wall. The same room.</p>
+<p class="cap dk">A Club dinner â€” circa 1940s. The silhouette tiles already on the wall. The same room.</p>
 </div>
 <!-- Three historical rooms -->
 <div class="g3 r" style="margin-bottom:72px">
 <div>
 <div class="ph" style="height:280px"><img alt="Thames Club billiard room" src="images/history_09.jpg"/></div>
-<p class="cap dk">The billiard room — pool table, silhouette wall, red leather chairs</p>
+<p class="cap dk">The billiard room â€” pool table, silhouette wall, red leather chairs</p>
 </div>
 <div class="r d1">
 <div class="ph" style="height:280px"><img alt="Thames Club staircase from above" src="images/history_10.jpg" style="object-position:center top"/></div>
-<p class="cap dk">The main staircase from above — the arrival view</p>
+<p class="cap dk">The main staircase from above â€” the arrival view</p>
 </div>
 <div class="r d2">
-<div class="ph" style="height:280px"><img alt="James O'Neill — Thames Club member" src="images/history_11.jpg" style="object-position:center 25%"/></div>
-<p class="cap dk">James O'Neill — the actor whose silhouette tile hangs in the basement pub</p>
+<div class="ph" style="height:280px"><img alt="James O'Neill â€” Thames Club member" src="images/history_11.jpg" style="object-position:center 25%"/></div>
+<p class="cap dk">James O'Neill â€” the actor whose silhouette tile hangs in the basement pub</p>
 </div>
 </div>
 <!-- Lanes story -->
@@ -377,14 +438,14 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 <div class="ph" style="height:360px">
 <img alt="The duckpin pin-setting machine" src="images/history_12.jpg" style="object-position:40% center"/>
 </div>
-<p class="cap dk">The pin-setting machine — maintained for decades by one mechanic</p>
+<p class="cap dk">The pin-setting machine â€” maintained for decades by one mechanic</p>
 </div>
 <div class="r d2">
 <span class="lab lab-g">The Lanes</span>
 <h2 class="hxl cr">Built by<br/>Electric Boat<br/><em>hands.</em></h2>
 <div class="bt dk">
-<p>The duckpin lanes in the basement were built by Electric Boat craftsmen in the 1950s — a gift from the yard to the Club. They have run continuously ever since, maintained by a dedicated mechanic who knows every board.</p>
-<p>Duckpin uses a smaller ball — no finger holes — and lighter pins. Three balls per frame. No one has ever bowled a perfect game in sanctioned competition. The lanes run Tuesday, Wednesday, and Thursday evenings at 5:30.</p>
+<p>The duckpin lanes in the basement were built by Electric Boat craftsmen in the 1950s â€” a gift from the yard to the Club. They have run continuously ever since, maintained by a dedicated mechanic who knows every board.</p>
+<p>Duckpin uses a smaller ball â€” no finger holes â€” and lighter pins. Three balls per frame. No one has ever bowled a perfect game in sanctioned competition. The lanes run Tuesday, Wednesday, and Thursday evenings at 5:30.</p>
 </div>
 <div style="margin-top:20px;text-align:center;padding:16px;background:rgba(166,137,74,.05);border:1px solid rgba(166,137,74,.14)">
 <img alt="Duckpin bowling illustration" src="images/history_13.jpg" style="max-width:160px;height:auto;display:block;margin:0 auto"/>
@@ -396,13 +457,13 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 </div>
 </div>
 </section>
-<!-- ═══ EVENTS ═══ -->
+<!-- â•â•â• EVENTS â•â•â• -->
 
-<!-- ═══ THE CLUB ALIVE ═══ -->
+<!-- â•â•â• THE CLUB ALIVE â•â•â• -->
 
-<!-- ═══ MEMBERSHIP ═══ -->
+<!-- â•â•â• MEMBERSHIP â•â•â• -->
 
-<!-- ═══ VISIT ═══ -->
+<!-- â•â•â• VISIT â•â•â• -->
 
 <!-- FOOTER with TC logo -->
 
@@ -411,8 +472,8 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+        290 State Street Â· New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> Â· (959) 264-2733
       </div>
     </div>
     <div class="site-shell-foot-links">

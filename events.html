@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Events — The Thames Club</title>
+  <title>Events â€” The Thames Club</title>
   <meta name="description" content="Events at The Thames Club in New London, Connecticut." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,12 +85,73 @@
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   opacity:.008;
 }
+
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
 </style>
 </head>
 <body>
   <nav>
     <div class="nav-inner">
-      <a class="brand" href="index.html">The Thames Club<small>New London · Est. 1869</small></a>
+      <a class="brand" href="index.html">The Thames Club<small>New London Â· Est. 1869</small></a>
       <div class="links">
         <a href="dining.html">Dining</a>
         <a href="events.html">Events</a>
@@ -105,12 +166,12 @@
 
   <header class="hero">
     <div class="wrap">
-      <div class="eyebrow">Founded February 8, 1869 — New London, Connecticut</div>
+      <div class="eyebrow">Founded February 8, 1869 â€” New London, Connecticut</div>
       <h1>Events</h1>
       <p class="sub">Calendar, entertainment, and the reasons members return throughout the year.</p>
       <div class="facts">
         <div><strong>Address</strong>290 State Street<br>New London, CT 06320</div>
-        <div><strong>Lunch</strong>Wednesday BYO<br>12–2 PM</div>
+        <div><strong>Lunch</strong>Wednesday BYO<br>12â€“2 PM</div>
         <div><strong>Dinner</strong>Thursdays<br>5 PM</div>
         <div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
       </div>
@@ -124,7 +185,7 @@
       <p class="intro">Members receive the full calendar. These are the events that make the Club worth belonging to.</p>
 
       <div id="events-container" class="grid">
-        <div class="empty">Loading events…</div>
+        <div class="empty">Loading eventsâ€¦</div>
       </div>
 
       <div class="regular">
@@ -141,15 +202,15 @@
   <footer>
     <div class="wrap foot">
       <div><strong>The Thames Club</strong>Connecticut's oldest private social club.</div>
-      <div>290 State Street · New London, CT 06320<br>959-264-2733</div>
+      <div>290 State Street Â· New London, CT 06320<br>959-264-2733</div>
     </div>
   </footer>
 
   <script>
     const fallbackEvents = [
-      { title:'Pub Night', date:'Thursday · April 30 · 6:00 PM', description:'Members and guests welcome. $10 cover.', image:'images/events_06.jpg' },
-      { title:'Jazz Night', date:'Friday · May 10 · 7:00 PM', description:'Live jazz trio. Bar opens at 5:30.', image:'images/events_07.jpg' },
-      { title:'Flamenco Night', date:'Saturday · May 18', description:'Tapas, sangria, and live performance at the Club.', image:'images/events_04.jpg' },
+      { title:'Pub Night', date:'Thursday Â· April 30 Â· 6:00 PM', description:'Members and guests welcome. $10 cover.', image:'images/events_06.jpg' },
+      { title:'Jazz Night', date:'Friday Â· May 10 Â· 7:00 PM', description:'Live jazz trio. Bar opens at 5:30.', image:'images/events_07.jpg' },
+      { title:'Flamenco Night', date:'Saturday Â· May 18', description:'Tapas, sangria, and live performance at the Club.', image:'images/events_04.jpg' },
       { title:'Summer Kickoff', date:'June 1', description:'Season opening event with drinks, dinner, and good company.', image:'images/events_02.png' }
     ];
 
@@ -202,3 +263,4 @@
 
 
 <!-- CLEAN EVENTS PAGE TEST 04/30/2026 18:27:31 -->
+

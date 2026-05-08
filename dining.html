@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dining — Coming Soon</title>
+  <title>Dining â€” Coming Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body{margin:0;font-family:Georgia,serif;background:#0b1a2a;color:#f4f1ea;display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center}
@@ -11,13 +11,75 @@
     p{font-size:20px;line-height:1.5}
     a{color:#c9a96e;text-decoration:none}
     nav{margin-top:32px;font-size:16px}
-  </style>
+  
+/* === Thames Club link readability hardening === */
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+main a,
+article a,
+section a,
+footer a,
+.foot-info a,
+.prose a {
+  color: #8f7136;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,137,74,.45);
+}
+
+main a:hover,
+article a:hover,
+section a:hover,
+footer a:hover,
+.foot-info a:hover,
+.prose a:hover {
+  color: #0c1c2e;
+  border-bottom-color: #0c1c2e;
+}
+
+.site-nav a,
+.nav-r a,
+.nav-brand,
+.foot-nav a,
+.btn {
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+
+.site-nav a,
+.nav-r a {
+  color: rgba(244,237,216,.78);
+}
+
+.site-nav a:hover,
+.nav-r a:hover {
+  color: #f4edd8;
+}
+
+.nav-cta,
+.btn-d {
+  color: #f4edd8 !important;
+  border: 1px solid #a6894a !important;
+}
+
+footer a {
+  color: #c8aa62;
+}
+
+footer a:hover {
+  color: #f4edd8;
+}
+</style>
 </head>
 <body>
   <main class="card">
     <h1>Dining</h1>
     <p>Dining schedules and menus are being updated and will be available soon.</p>
-    <nav><a href="index.html">Return to Home</a> · <a href="events.html">Events</a> · <a href="visit.html">Visit</a></nav>
+    <nav><a href="index.html">Return to Home</a> Â· <a href="events.html">Events</a> Â· <a href="visit.html">Visit</a></nav>
   </main>
 </body>
 </html>
+
