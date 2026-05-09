@@ -1,4 +1,5 @@
-﻿
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -270,8 +271,8 @@ footer{background:var(--deep);border-top:1px solid rgba(166,137,74,.1);padding:5
 <p class="hsub">A record of the Club on the river since eighteen sixty-nine.</p>
 <div class="hfacts">
 <div><strong>Address</strong>290 State Street<br/>New London, CT 06320</div>
-<div><strong>Lunch</strong>Wed · 12–2 pm</div>
-<div><strong>Dinner</strong>Thursdays · 5 pm</div>
+<div><strong>Lunch</strong>Check Dining Page<br/>for current hours</div>
+<div><strong>Access</strong>Members / spouses / partners<br/>24-hour access unless announced</div>
 <div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br/><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
 </div>
 </div>
@@ -346,7 +347,7 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 </div>
 <div class="g2" style="gap:8px">
 <p class="cap dk">State Street postcard — early 1900s</p>
-<p class="cap dk">Historic newspaper clipping — “TO DAY”</p>
+<p class="cap dk">April Fools newspaper — “TO DAY”</p>
 </div>
 </div>
 </div>
@@ -430,8 +431,8 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('up',scrollY>60),{passive:true});
+const nav=document.querySelector('.site-shell-nav');
+if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('up',scrollY>60),{passive:true});}
 
 const ro=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}
