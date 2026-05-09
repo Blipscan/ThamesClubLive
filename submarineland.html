@@ -1,1200 +1,692 @@
-﻿<!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Submarineland â€” Above &amp; Below Special Edition | The Thames Club</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0d1b2a;
-    --navy-mid: #162032;
-    --navy-light: #1e2e42;
-    --cream: #f5f0e8;
-    --cream-warm: #ede8dc;
-    --gold: #c8a84b;
-    --gold-light: #d4b96a;
-    --gold-pale: #e8d9a8;
-    --white: #ffffff;
-    --text-body: #2a2a2a;
-    --rule: #c8a84b;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { font-size: 16px; }
-
-  body {
-    background: var(--cream);
-    color: var(--text-body);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-
-  /* â”€â”€ COVER â”€â”€ */
-  .cover {
-    background: var(--navy);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 60px 40px;
-  }
-
-  .cover-top-rule {
-    position: absolute;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 680px;
-    text-align: center;
-    color: var(--gold);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-  }
-
-  .cover-top-rule::before,
-  .cover-top-rule::after {
-    content: '';
-    display: inline-block;
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    vertical-align: middle;
-    margin: 0 12px;
-    opacity: 0.6;
-  }
-
-  .sub-drawing {
-    width: 320px;
-    max-width: 80vw;
-    opacity: 0.52;
-    mix-blend-mode: screen;
-    margin-bottom: 48px;
-    margin-top: 20px;
-  }
-
-  .cover-eyebrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .cover-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.8rem, 10vw, 7.5rem);
-    font-weight: 300;
-    color: var(--white);
-    letter-spacing: -0.01em;
-    line-height: 0.92;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-
-  .cover-rule {
-    width: 80px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 24px;
-    opacity: 0.7;
-  }
-
-  .cover-subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 3vw, 1.6rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--gold-light);
-    text-align: center;
-    letter-spacing: 0.02em;
-    margin-bottom: 8px;
-  }
-
-  .cover-location {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 400;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    text-align: center;
-    margin-top: 16px;
-  }
-
-  .cover-bottom {
-    position: absolute;
-    bottom: 48px;
-    text-align: center;
-    color: rgba(255,255,255,0.3);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-  }
-
-  /* â”€â”€ PAGE WRAPPER â”€â”€ */
-  .page {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 80px 48px;
-  }
-
-  @media (max-width: 640px) {
-    .page { padding: 60px 28px; }
-  }
-
-  /* â”€â”€ SECTION HEADERS â”€â”€ */
-  .section-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.35;
-  }
-
-  .section-numeral {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    opacity: 0.7;
-  }
-
-  h2.section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 400;
-    color: var(--navy);
-    line-height: 1.1;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-  }
-
-  h2.section-title em {
-    font-style: italic;
-    font-weight: 300;
-  }
-
-  .section-deck {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    font-style: italic;
-    color: #6b5e3e;
-    margin-bottom: 36px;
-    line-height: 1.5;
-  }
-
-  /* â”€â”€ OPENING ESSAY â”€â”€ */
-  .opening-block {
-    background: var(--navy);
-    color: var(--cream);
-    padding: 72px 60px;
-    margin: 0;
-  }
-
-  @media (max-width: 640px) {
-    .opening-block { padding: 52px 28px; }
-  }
-
-  .opening-block .opening-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .opening-block .opening-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.3;
-  }
-
-  .opening-block p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-    font-weight: 300;
-    line-height: 1.75;
-    color: rgba(245,240,232,0.9);
-    margin-bottom: 1.4em;
-  }
-
-  .opening-block p:last-child { margin-bottom: 0; }
-
-  /* â”€â”€ BODY TEXT â”€â”€ */
-  .prose p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
-    font-weight: 400;
-    line-height: 1.8;
-    color: #2a2416;
-    margin-bottom: 1.4em;
-  }
-
-  .prose p:last-child { margin-bottom: 0; }
-
-  /* â”€â”€ PULL QUOTE â”€â”€ */
-  .pull-quote {
-    border-left: 2px solid var(--gold);
-    padding: 4px 0 4px 28px;
-    margin: 48px 0;
-  }
-
-  .pull-quote p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.3rem, 3vw, 1.85rem);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--navy);
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  /* â”€â”€ DATA TABLE â”€â”€ */
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 40px 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-  }
-
-  .data-table th {
-    background: var(--navy);
-    color: var(--gold);
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.62rem;
-    padding: 10px 14px;
-    text-align: left;
-    border: none;
-  }
-
-  .data-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(200,168,75,0.15);
-    color: var(--text-body);
-    vertical-align: top;
-    line-height: 1.5;
-  }
-
-  .data-table tr:nth-child(even) td {
-    background: rgba(200,168,75,0.04);
-  }
-
-  .data-table td:first-child {
-    font-weight: 500;
-    color: var(--navy);
-  }
-
-  /* â”€â”€ STAT BLOCKS â”€â”€ */
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 2px;
-    margin: 40px 0;
-    background: rgba(200,168,75,0.2);
-  }
-
-  .stat-block {
-    background: var(--cream-warm);
-    padding: 28px 24px;
-    text-align: center;
-  }
-
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .stat-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* â”€â”€ PLACE CARDS â”€â”€ */
-  .place-list { margin: 40px 0; }
-
-  .place-card {
-    border-top: 1px solid rgba(200,168,75,0.3);
-    padding: 28px 0;
-  }
-
-  .place-card:last-child {
-    border-bottom: 1px solid rgba(200,168,75,0.3);
-  }
-
-  .place-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 3px;
-  }
-
-  .place-meta {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-  }
-
-  .place-card .prose p {
-    font-size: 1rem;
-    margin-bottom: 0;
-  }
-
-  /* â”€â”€ NEIGHBORHOOD CARDS â”€â”€ */
-  .neighborhood-card {
-    background: var(--navy);
-    color: var(--cream);
-    padding: 36px 40px;
-    margin-bottom: 3px;
-  }
-
-  @media (max-width: 640px) {
-    .neighborhood-card { padding: 28px 20px; }
-  }
-
-  .neighborhood-tag {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .neighborhood-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 14px;
-    line-height: 1;
-  }
-
-  .neighborhood-card p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.7;
-    color: rgba(245,240,232,0.85);
-  }
-
-  /* â”€â”€ LAW SECTION â”€â”€ */
-  .law-block {
-    background: #0d1b2a;
-    color: var(--cream);
-    padding: 56px 60px;
-    margin: 48px 0;
-  }
-
-  @media (max-width: 640px) {
-    .law-block { padding: 40px 24px; }
-  }
-
-  .law-block h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: var(--gold-light);
-    margin-bottom: 16px;
-    margin-top: 36px;
-    border-bottom: 1px solid rgba(200,168,75,0.2);
-    padding-bottom: 10px;
-  }
-
-  .law-block h3:first-of-type { margin-top: 0; }
-
-  .law-block p, .law-block li {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    line-height: 1.75;
-    color: rgba(245,240,232,0.85);
-    margin-bottom: 1em;
-  }
-
-  .law-block ul {
-    padding-left: 20px;
-    margin-bottom: 1.2em;
-  }
-
-  .law-block .law-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.58rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .law-block .law-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.3;
-  }
-
-  .law-block .warning-box {
-    border: 1px solid rgba(200,168,75,0.4);
-    padding: 20px 24px;
-    margin: 20px 0;
-    background: rgba(200,168,75,0.05);
-  }
-
-  .law-block .warning-box p {
-    margin-bottom: 0;
-    font-size: 1rem;
-    color: var(--gold-pale);
-  }
-
-  /* â”€â”€ REFERENCE TABLE â”€â”€ */
-  .ref-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-    background: rgba(200,168,75,0.2);
-    margin: 28px 0;
-  }
-
-  @media (max-width: 500px) {
-    .ref-grid { grid-template-columns: 1fr; }
-  }
-
-  .ref-cell {
-    background: rgba(13,27,42,0.95);
-    padding: 18px 20px;
-  }
-
-  .ref-cell .ref-org {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-
-  .ref-cell .ref-contact {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: rgba(245,240,232,0.85);
-    line-height: 1.5;
-  }
-
-  .ref-cell .ref-contact a {
-    color: var(--gold-light);
-    text-decoration: none;
-  }
-
-  /* â”€â”€ DIVIDERS â”€â”€ */
-  .section-divider {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 72px 0 64px;
-    padding: 0 48px;
-  }
-
-  .section-divider::before,
-  .section-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.25;
-  }
-
-  .section-divider-ornament {
-    color: var(--gold);
-    font-size: 0.7rem;
-    letter-spacing: 0.4em;
-    opacity: 0.6;
-  }
-
-  .thick-divider {
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
-    opacity: 0.3;
-    margin: 0;
-  }
-
-  /* â”€â”€ FOOTER â”€â”€ */
-  .footer {
-    background: var(--navy);
-    padding: 64px 48px;
-    text-align: center;
-  }
-
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--white);
-    letter-spacing: 0.05em;
-    margin-bottom: 6px;
-  }
-
-  .footer-sub {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 28px;
-  }
-
-  .footer-rule {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 28px;
-    opacity: 0.4;
-  }
-
-  .footer-address {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 300;
-    color: rgba(245,240,232,0.5);
-    line-height: 1.8;
-  }
-
-  .footer-address a {
-    color: var(--gold-light);
-    text-decoration: none;
-  }
-
-  /* â”€â”€ UTILITIES â”€â”€ */
-  .mt-lg { margin-top: 56px; }
-  .mt-md { margin-top: 36px; }
-  .text-center { text-align: center; }
-
-  strong {
-    font-weight: 600;
-    color: var(--navy);
-  }
-
-  .law-block strong {
-    color: var(--gold-pale);
-  }
-
-
-.site-nav{position:sticky;top:0;z-index:200;background:rgba(13,27,42,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,168,75,.18)}
-.site-nav .nav-in{max-width:1120px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.site-nav .brand{font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);text-decoration:none}
-.site-nav .nav-links{display:flex;gap:18px;flex-wrap:wrap}
-.site-nav .nav-links a{font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,.76);text-decoration:none}
-
-
-/* unified site nav + footer */
-.site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
-.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.site-shell-nav .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
-.site-shell-nav .site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
-.site-shell-nav .site-shell-links{display:flex;gap:14px 16px;flex-wrap:wrap;align-items:center}
-.site-shell-nav .site-shell-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
-.site-shell-nav .site-shell-links a:hover{color:#f4edd8}
-.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
-.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
-.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
-.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
-.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
-@media(max-width:900px){
-  .site-shell-nav .site-shell-inner{align-items:flex-start}
-  .site-shell-nav .site-shell-links{gap:10px 12px}
-}
-
-
-/* === Thames Club link readability hardening === */
-a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-main a,
-article a,
-section a,
-footer a,
-.foot-info a,
-.prose a {
-  color: #8f7136;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(166,137,74,.45);
-}
-
-main a:hover,
-article a:hover,
-section a:hover,
-footer a:hover,
-.foot-info a:hover,
-.prose a:hover {
-  color: #0c1c2e;
-  border-bottom-color: #0c1c2e;
-}
-
-.site-nav a,
-.nav-r a,
-.nav-brand,
-.foot-nav a,
-.btn {
-  border-bottom: none !important;
-  text-decoration: none !important;
-}
-
-.site-nav a,
-.nav-r a {
-  color: rgba(244,237,216,.78);
-}
-
-.site-nav a:hover,
-.nav-r a:hover {
-  color: #f4edd8;
-}
-
-.nav-cta,
-.btn-d {
-  color: #f4edd8 !important;
-  border: 1px solid #a6894a !important;
-}
-
-footer a {
-  color: #c8aa62;
-}
-
-footer a:hover {
-  color: #f4edd8;
-}
-</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submarineland | A Field Guide to New London</title>
+  <meta name="description" content="Submarineland is a free field guide for people arriving in New London through the submarine, defense, and maritime communities. Published by The Thames Club." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --navy-deep: #09182d;
+      --cream: #f6efe2;
+      --paper: #fbf7ee;
+      --gold: #b8934b;
+      --gold-soft: #d2b678;
+      --ink: #25211b;
+      --muted: #6b6257;
+      --line: rgba(184,147,75,.42);
+      --sea: #173b4f;
+      --steel: #465766;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Libre Baskerville", Georgia, serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246,239,226,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    nav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
+    }
+
+    nav a:hover { border-bottom-color: var(--gold); }
+
+    .hero {
+      min-height: 92vh;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      padding: 86px 22px 76px;
+      color: var(--paper);
+      background:
+        linear-gradient(90deg, rgba(9,24,45,.94), rgba(16,35,63,.78), rgba(23,59,79,.44)),
+        radial-gradient(circle at 78% 20%, rgba(210,182,120,.24), transparent 34%),
+        linear-gradient(135deg, var(--navy-deep), var(--sea));
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 36px;
+      border: 1px solid rgba(210,182,120,.42);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.026) 1px, transparent 1px);
+      background-size: 42px 42px;
+      opacity: .32;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1120px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.02;
+      margin: 0;
+      color: inherit;
+    }
+
+    h1 {
+      font-size: clamp(62px, 10vw, 128px);
+      letter-spacing: .015em;
+      font-weight: 700;
+    }
+
+    .hero-subhead {
+      max-width: 700px;
+      margin: 24px 0 0;
+      font-size: clamp(20px, 2.4vw, 32px);
+      line-height: 1.35;
+      color: rgba(251,247,238,.94);
+    }
+
+    .hero-copy {
+      max-width: 640px;
+      margin: 22px 0 34px;
+      color: rgba(251,247,238,.82);
+      font-size: 16px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 13px 22px;
+      border: 1px solid var(--gold-soft);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .button.primary {
+      background: var(--gold-soft);
+      color: var(--navy-deep);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--paper);
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .cover-card {
+      border: 1px solid rgba(210,182,120,.46);
+      background: rgba(246,239,226,.08);
+      box-shadow: 0 28px 70px rgba(0,0,0,.28);
+      padding: 34px;
+      min-height: 460px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sub-line-art {
+      min-height: 235px;
+      display: grid;
+      place-items: center;
+      border-bottom: 1px solid rgba(210,182,120,.34);
+      margin-bottom: 24px;
+      padding-bottom: 22px;
+    }
+
+    .sub-line-art svg {
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+    }
+
+    .cover-card p {
+      margin: 0;
+      font-size: 15px;
+      color: rgba(251,247,238,.84);
+    }
+
+    .section {
+      padding: 82px 22px;
+    }
+
+    .section.paper { background: var(--paper); }
+    .section.navy { background: var(--navy); color: var(--paper); }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .rule {
+      width: 88px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 0 28px;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 5vw, 72px);
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+
+    .navy .section-title { color: var(--paper); }
+
+    .lede {
+      max-width: 820px;
+      font-size: 20px;
+      color: var(--muted);
+      margin: 0 0 42px;
+    }
+
+    .navy .lede { color: rgba(251,247,238,.82); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.36);
+      padding: 30px 28px;
+      box-shadow: 0 18px 45px rgba(9,24,45,.06);
+    }
+
+    .navy .panel {
+      background: rgba(246,239,226,.06);
+      border-color: rgba(210,182,120,.32);
+      box-shadow: none;
+    }
+
+    .panel h3 {
+      font-size: 31px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .navy .panel h3 { color: var(--gold-soft); }
+
+    .panel p {
+      margin: 0;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .navy .panel p { color: rgba(251,247,238,.78); }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .toc a {
+      display: block;
+      text-decoration: none;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 0;
+      color: var(--navy);
+    }
+
+    .toc strong {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 27px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .toc span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .image-block {
+      min-height: 470px;
+      background:
+        linear-gradient(135deg, rgba(16,35,63,.93), rgba(23,59,79,.62)),
+        radial-gradient(circle at 70% 20%, rgba(210,182,120,.24), transparent 32%);
+      border: 1px solid var(--line);
+      box-shadow: 0 28px 70px rgba(9,24,45,.18);
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      color: var(--paper);
+      text-align: center;
+    }
+
+    .image-block span {
+      max-width: 360px;
+      display: block;
+      font-size: 13px;
+      line-height: 1.6;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(251,247,238,.8);
+    }
+
+    .image-block img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-block.has-photo {
+      padding: 0;
+      overflow: hidden;
+      background: #10233f;
+    }
+
+
+    .article h2 {
+      font-size: clamp(38px, 4.5vw, 62px);
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+
+    .article p {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .article strong { color: var(--navy); }
+
+    .callout {
+      margin: 34px 0;
+      padding: 26px 28px;
+      border-left: 4px solid var(--gold);
+      background: rgba(184,147,75,.09);
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .quote-band {
+      background: var(--navy-deep);
+      color: var(--paper);
+      text-align: center;
+      padding: 76px 22px;
+      border-top: 4px solid var(--gold);
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .quote-band p {
+      max-width: 940px;
+      margin: 0 auto;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(34px, 5vw, 68px);
+      line-height: 1.05;
+    }
+
+    .share-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 32px;
+      box-shadow: 0 18px 45px rgba(9,24,45,.06);
+    }
+
+    .share-card h3 {
+      color: var(--navy);
+      font-size: 34px;
+      margin-bottom: 14px;
+    }
+
+    .share-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .qr-box {
+      margin-top: 24px;
+      border: 1px dashed var(--gold);
+      min-height: 160px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--muted);
+      padding: 22px;
+      background: rgba(255,255,255,.36);
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 92px 22px;
+      background:
+        linear-gradient(rgba(246,239,226,.92), rgba(246,239,226,.92)),
+        radial-gradient(circle at center, rgba(210,182,120,.32), transparent 44%);
+    }
+
+    .final-cta h2 {
+      color: var(--navy);
+      font-size: clamp(44px, 6vw, 78px);
+      margin-bottom: 18px;
+    }
+
+    .final-cta p {
+      max-width: 760px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .final-cta .button.secondary {
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    footer {
+      background: var(--navy-deep);
+      color: rgba(251,247,238,.75);
+      padding: 34px 22px;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .nav-wrap { align-items: flex-start; flex-direction: column; }
+      nav { justify-content: flex-start; gap: 12px; }
+      .hero-inner, .split, .grid-3, .toc { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      .cover-card { min-height: auto; }
+      .section { padding: 64px 20px; }
+    }
+
+    @media print {
+      .site-header, .cta-row, .qr-box { display: none; }
+      .hero { min-height: 100vh; }
+      .section { page-break-inside: avoid; }
+      body { background: white; }
+    }
+  </style>
 </head>
 <body>
-
-
-<nav id="nav" class="site-shell-nav">
-  <div class="site-shell-inner">
-    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London Â· Est. 1869</small></a>
-    <div class="site-shell-links">
-      <a href="above-below.html">Above &amp; Below</a>
-      <a href="room.html">The Room</a>
-      <a href="history.html">History</a>
-      <a href="events.html">Events</a>
-      <a href="restoration.html">Restoration</a>
-      <a href="pierson-gallery.html">Pierson Gallery</a>
-      <a href="community.html">Community</a>
-      <a href="publications.html">Publications</a>
-      <a href="membership.html">Membership</a>
-      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
-      <a href="visit.html">Visit</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">The Thames Club</a>
+      <nav aria-label="Primary navigation">
+        <a href="history.html">History</a>
+        <a href="dining.html">Dining</a>
+        <a href="events.html">Events</a>
+        <a href="home-in-the-city.html">Home in the City</a>
+        <a href="visit.html">Visit</a>
+      </nav>
     </div>
-  </div>
-</nav>
-
-
-
-<!-- COVER -->
-<div class="cover">
-  <div class="cover-top-rule">Above &amp; Below &nbsp;Â·&nbsp; Thames Club &nbsp;Â·&nbsp; Special Edition</div>
-
-  <svg class="sub-drawing" viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="160" cy="148" rx="108" ry="110" stroke="white" stroke-width="1.5" fill="none"/>
-    <ellipse cx="160" cy="148" rx="88" ry="90" stroke="white" stroke-width="1" fill="none"/>
-    <ellipse cx="160" cy="148" rx="72" ry="74" stroke="white" stroke-width="0.6" fill="none" opacity="0.6"/>
-    <ellipse cx="160" cy="148" rx="54" ry="56" stroke="white" stroke-width="0.5" fill="none" opacity="0.45"/>
-    <ellipse cx="160" cy="148" rx="36" ry="38" stroke="white" stroke-width="0.5" fill="none" opacity="0.35"/>
-    <circle cx="160" cy="148" r="16" stroke="white" stroke-width="1" fill="none"/>
-    <circle cx="160" cy="148" r="6" stroke="white" stroke-width="0.8" fill="none"/>
-    <circle cx="160" cy="128" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
-    <circle cx="176" cy="138" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
-    <circle cx="176" cy="158" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
-    <circle cx="160" cy="168" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
-    <circle cx="144" cy="158" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
-    <circle cx="144" cy="138" r="4.5" stroke="white" stroke-width="0.8" fill="none"/>
-    <rect x="148" y="30" width="24" height="48" rx="4" stroke="white" stroke-width="1.2" fill="none"/>
-    <rect x="153" y="22" width="14" height="14" rx="2" stroke="white" stroke-width="0.8" fill="none"/>
-    <line x1="158" y1="22" x2="158" y2="10" stroke="white" stroke-width="0.7"/>
-    <line x1="162" y1="22" x2="162" y2="8" stroke="white" stroke-width="0.7"/>
-    <line x1="166" y1="22" x2="166" y2="12" stroke="white" stroke-width="0.7"/>
-    <circle cx="158" cy="9" r="2" stroke="white" stroke-width="0.6" fill="none"/>
-    <circle cx="162" cy="7" r="2" stroke="white" stroke-width="0.6" fill="none"/>
-    <line x1="268" y1="148" x2="310" y2="138" stroke="white" stroke-width="1.2"/>
-    <line x1="268" y1="148" x2="310" y2="158" stroke="white" stroke-width="0.7" opacity="0.5"/>
-    <line x1="52" y1="148" x2="10" y2="138" stroke="white" stroke-width="1.2"/>
-    <line x1="52" y1="148" x2="10" y2="158" stroke="white" stroke-width="0.7" opacity="0.5"/>
-    <line x1="160" y1="38" x2="160" y2="50" stroke="white" stroke-width="0.6" opacity="0.5"/>
-    <line x1="160" y1="246" x2="160" y2="258" stroke="white" stroke-width="0.6" opacity="0.5"/>
-    <line x1="220" y1="65" x2="214" y2="72" stroke="white" stroke-width="0.5" opacity="0.4"/>
-    <line x1="254" y1="98" x2="246" y2="103" stroke="white" stroke-width="0.5" opacity="0.4"/>
-    <line x1="100" y1="65" x2="106" y2="72" stroke="white" stroke-width="0.5" opacity="0.4"/>
-    <line x1="66" y1="98" x2="74" y2="103" stroke="white" stroke-width="0.5" opacity="0.4"/>
-    <line x1="220" y1="231" x2="214" y2="224" stroke="white" stroke-width="0.5" opacity="0.4"/>
-    <line x1="100" y1="231" x2="106" y2="224" stroke="white" stroke-width="0.5" opacity="0.4"/>
-    <line x1="160" y1="58" x2="160" y2="88" stroke="white" stroke-width="0.4" opacity="0.3"/>
-    <line x1="160" y1="208" x2="160" y2="238" stroke="white" stroke-width="0.4" opacity="0.3"/>
-    <line x1="72" y1="148" x2="102" y2="148" stroke="white" stroke-width="0.4" opacity="0.3"/>
-    <line x1="218" y1="148" x2="248" y2="148" stroke="white" stroke-width="0.4" opacity="0.3"/>
-  </svg>
-
-  <div class="cover-eyebrow">Special Edition &nbsp;Â·&nbsp; Spring 2026</div>
-  <div class="cover-title">Submarine<br>land</div>
-  <div class="cover-rule"></div>
-  <div class="cover-subtitle">A Field Guide for Newcomers</div>
-  <div class="cover-location">Everything worth knowing about landing here and living well<br>Southeastern Connecticut</div>
-  <div class="cover-bottom">Above &amp; Below &nbsp;Â·&nbsp; Thames Club, New London &nbsp;Â·&nbsp; Est. 1869</div>
-</div>
-
-<!-- OPENING ESSAY -->
-<div class="opening-block">
-  <div style="max-width:680px; margin:0 auto;">
-    <div class="opening-label">Introduction</div>
-    <p>Nobody tells you what it's actually like. You accepted the offer â€” Electric Boat, the sub base, a design contract, a transfer â€” and now you're pointing a moving truck toward a corner of New England that most Americans can't find on a map. Southeastern Connecticut. The Thames River. The place where the world's most sophisticated weapons are built quietly, a few miles from a lobster shack where the Wi-Fi password is written on a chalkboard.</p>
-    <p>Welcome. You are going to be fine.</p>
-    <p>This region rewards the curious and confounds the impatient. It is not Boston. It is not Providence. It operates on its own internal logic, shaped by three centuries of maritime industry, two of the country's oldest military installations, and a coastline that has an opinion about everything. The people who stay â€” and most do â€” tend to describe a specific moment when they understood they'd arrived somewhere real.</p>
-    <p>This guide exists to speed that moment along. It covers the geography, the neighborhoods, the work, the food, and the things that will surprise you â€” including the legal landscape, which differs from most of the country in ways that will matter to you within days of arrival. Read the whole thing. The section on Connecticut law is not optional.</p>
-  </div>
-</div>
-
-<div class="thick-divider"></div>
-
-<!-- I. THE LAY OF THE LAND -->
-<div class="page">
-  <div class="section-label"><span class="section-numeral">I</span> Geography</div>
-  <h2 class="section-title">The Lay of the Land â€”<br><em>What You're Actually Looking At</em></h2>
-  <p class="section-deck">The geography matters because it dictates everything else.</p>
-
-  <div class="prose">
-    <p>The Thames River runs north to south, bisecting the region, with New London on the west bank and Groton on the east. Those two miles of water â€” crossed by the Gold Star Memorial Bridge on I-95 â€” represent the central axis of your new life. Electric Boat's shipyard sits in Groton. Naval Submarine Base New London (which is, confusingly, in Groton) sits in Groton. EB's design and engineering offices are in New London. The Thames Club, Connecticut's oldest private social club, is in New London, at 290 State Street, a few blocks from the waterfront.</p>
-    <p>Understanding this east-west split is your first local knowledge test. When someone says "across the river," they mean it literally and it happens twenty times a day. The Gold Star Bridge is not optional â€” it is the central fact of regional commuting â€” and the interchange at Exit 84/85 will defeat your GPS at least once. Memorize it during daylight before you need it in the dark.</p>
-    <p>Radiating outward, the region unfolds in distinct layers. Immediately south, the Thames meets Long Island Sound. To the east, the shoreline runs through Mystic, Noank, and Stonington before crossing into Rhode Island. To the west, Waterford and East Lyme lead toward Old Lyme and the Connecticut River valley. Each of these places has a personality. Together they form what the tourism boards call "Mystic Country" â€” a name that undersells it considerably.</p>
-    <p>New London's Amtrak station is an asset most newcomers undervalue. It is a direct Acela-accessible stop: two and a half hours to New York Penn Station, two hours to South Station in Boston. For people maintaining relationships in those cities, or whose families are considering visits, this is not a minor convenience. It is a meaningful quality-of-life factor when accepting an offer in this region.</p>
-  </div>
-
-  <div class="stat-grid mt-lg">
-    <div class="stat-block">
-      <span class="stat-number">24,000</span>
-      <span class="stat-label">EB Employees Today</span>
-    </div>
-    <div class="stat-block">
-      <span class="stat-number">33,000</span>
-      <span class="stat-label">Target Workforce</span>
-    </div>
-    <div class="stat-block">
-      <span class="stat-number">8,000</span>
-      <span class="stat-label">New Hires in 2026</span>
-    </div>
-    <div class="stat-block">
-      <span class="stat-number">9,000</span>
-      <span class="stat-label">SUBASE Personnel</span>
-    </div>
-  </div>
-
-  <div class="prose mt-md">
-    <p>Electric Boat currently employs approximately 24,000 people across its Connecticut and Rhode Island operations, with more than 15,000 in Connecticut. The company is targeting peak employment of 33,000 â€” levels not seen since the Reagan-era submarine boom â€” and plans to hire 8,000 new employees in 2026 alone. Naval Submarine Base New London supports more than 21 attack submarines and approximately 9,000 military and civilian personnel across more than 40 tenant commands. Pfizer operates a major global research and development campus in Groton, making the region one of the denser concentrations of technical employment in all of New England.</p>
-  </div>
-</div>
-
-<div class="section-divider"><span class="section-divider-ornament">Â· Â· Â·</span></div>
-
-<!-- II. WHERE TO LIVE -->
-<div class="page" style="padding-top:0;">
-  <div class="section-label"><span class="section-numeral">II</span> Neighborhoods</div>
-  <h2 class="section-title">Where to Live â€”<br><em>A Candid Tour of Your Options</em></h2>
-  <p class="section-deck">The housing market has tightened considerably as EB's hiring surge has brought thousands of new residents.</p>
-
-  <div class="prose">
-    <p>Average single-family home prices in Groton run around $380,000 â€” well below comparable defense-industry hubs near Newport News or San Diego, and competitive with the broader New England market. That said, mid-range inventory is constrained, and anything decent within a ten-minute commute of the shipyard moves quickly. Start looking before you accept the offer, not after.</p>
-    <p>Most new arrivals rent for at least the first year. One-bedroom apartments in Groton near EB run $1,400â€“$1,900 per month. Two-bedrooms in the $1,800â€“$2,600 range. Mystic-area rentals carry a premium; East Lyme and Waterford offer better rental value for the commute distance. Begin your search early and use local property management companies in addition to the national platforms â€” the best rentals in small coastal towns rarely reach Zillow before they're gone.</p>
-  </div>
-</div>
-
-<!-- Neighborhood cards -->
-<div style="max-width:780px; margin:0 auto; padding: 0 48px;">
-
-  <div class="neighborhood-card">
-    <div class="neighborhood-tag">Best Overall Â· EB Engineers Â· Navy Families</div>
-    <div class="neighborhood-name">Mystic</div>
-    <p>Technically a village split between the towns of Groton and Stonington, Mystic punches well above its weight in every category â€” schools, restaurants, walkability, charm, and the kind of neighbors who sail on weekends. Twenty minutes from EB and ten minutes from everything worth doing. Real estate is the most expensive in the region. Most new hires cannot afford Mystic in year one. That is the honest answer. Rent somewhere cheaper, get oriented, and revisit after your first raise. <em>The New York Times</em> named The Shipwright's Daughter here among America's 50 best restaurants in 2024. The drawbridge is worth seeing at dusk.</p>
-  </div>
-
-  <div class="neighborhood-card" style="background: var(--navy-light);">
-    <div class="neighborhood-tag">Best Value Â· Families Â· Five Minutes to the Yard</div>
-    <div class="neighborhood-name">Groton</div>
-    <p>Dense suburban feel with strong public schools (A- on Niche), most residents own rather than rent, and you are five minutes from the yard. The village of Noank â€” accessible from Groton â€” is one of the most beautiful small harbors in New England. The tradeoff: "Groton" encompasses everything from the base perimeter to Mystic, so neighborhood variation is significant. The stretch near Eastern Point Beach and the areas close to Fort Griswold are the most desirable. Avoid the blocks immediately adjacent to I-95 interchanges.</p>
-  </div>
-
-  <div class="neighborhood-card">
-    <div class="neighborhood-tag">Best Schools Â· Quiet Â· True Value</div>
-    <div class="neighborhood-name">East Lyme / Niantic</div>
-    <p>Consistently rated the top place to live in New London County. Excellent schools, low crime, a real boardwalk in Niantic village, and Crescent Beach for summer. Twenty-five minutes from EB and the sub base. Slightly removed from the social core of the region, but the schools, the beach, and the quiet make it the right call for families who want to optimize for home life rather than proximity to the waterfront bar scene.</p>
-  </div>
-
-  <div class="neighborhood-card" style="background: var(--navy-light);">
-    <div class="neighborhood-tag">Character Â· Historic Â· No Chain Anything</div>
-    <div class="neighborhood-name">Stonington Borough</div>
-    <p>A narrow stone-and-clapboard peninsula jutting into the Sound, lined with Federal-era homes and a working lobster fleet. The most atmospheric address in southeastern Connecticut. Stonington is where you live if you want to feel like you actually moved to New England rather than just relocated for work. Dog Watch CafÃ©. The Breakwater. The Lighthouse Museum. Walking distance to all of it. Very much for people who walk to get coffee and know their neighbors' names within a month.</p>
-  </div>
-
-  <div class="neighborhood-card">
-    <div class="neighborhood-tag">Urban Â· Affordable Â· Underestimated</div>
-    <div class="neighborhood-name">New London</div>
-    <p>The city proper is undervalued and underestimated by people who drive through on I-95 and form an opinion. Historic architecture, the Garde Arts Center, the Amtrak station (direct to New York and Boston), waterfront access, and a food and arts scene that keeps expanding. The Pequot Avenue corridor and the neighborhoods near Connecticut College are the places to look. Noticeably cheaper than Groton for comparable space. Excellent for EB design office employees who prefer walking to their office to commuting across the bridge.</p>
-  </div>
-
-  <div class="neighborhood-card" style="background: var(--navy-light);">
-    <div class="neighborhood-tag">Hidden Gem Â· Harbor Life Â· No Inventory</div>
-    <div class="neighborhood-name">Noank</div>
-    <p>A village within Groton that locals guard like a secret. Compact, tight-knit, physically beautiful â€” Victorian cottages on steep lanes above a working harbor. Abbott's Lobster in the Rough and Ford's Lobster are here. You sit on the dock, there is no Wi-Fi, you pay cash, and nothing in your previous life has prepared you for how good a lobster roll can be. Inventory in Noank is essentially zero at any given moment. When something comes up, it goes immediately.</p>
-  </div>
-
-  <!-- HINTERLANDS HEADER -->
-  <div style="padding: 48px 40px 12px; background: var(--navy);">
-    <div style="font-family:'Inter',sans-serif; font-size:0.58rem; font-weight:500; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); opacity:0.7;">The Hinterlands â€” Inland &amp; Up the River</div>
-  </div>
-  <div style="background: var(--navy); padding: 0 40px 32px;">
-    <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:300; line-height:1.75; color:rgba(245,240,232,0.7); max-width:640px;">The coastal towns get all the attention. The inland options get all the space â€” and in some cases, all the value. These four are within 30 minutes of both the yard and the base and largely unknown to newcomers who arrive with their eyes fixed on the water.</p>
-  </div>
-
-  <div class="neighborhood-card">
-    <div class="neighborhood-tag">The Rose of New England Â· Affordable Â· Genuinely Interesting</div>
-    <div class="neighborhood-name">Norwich</div>
-    <p>Norwich is a city that knows its own history and is not finished with it. Founded in 1659, it sits where three rivers â€” the Yantic, the Shetucket, and the Thames â€” converge, and the architecture reflects every era of its ambition: colonial greens, Federal-period merchant houses, Victorian mill buildings being converted into lofts, a downtown that a national publication recently compared, not entirely unfairly, to Stars Hollow. It is 25 minutes from the yard via Route 12. Median home prices sit around $250,000 â€” the most affordable option in this guide by a wide margin â€” with genuine Victorian stock available at prices that would be unthinkable anywhere near the coast. The food scene is better than it has any right to be, the Slater Memorial Museum on the Norwich Free Academy campus is one of the finest small art museums in New England, and Mohegan Park gives the city 380 acres of woodland trails and a rose garden. Norwich is a city on the way up, which means it rewards the people who arrive before the work is finished rather than after.</p>
-  </div>
-
-  <div class="neighborhood-card" style="background: var(--navy-light);">
-    <div class="neighborhood-tag">Thames River Â· Rural Â· Strong Schools Â· EB Favorite</div>
-    <div class="neighborhood-name">Ledyard / Gales Ferry</div>
-    <p>Ledyard is the town; Gales Ferry is the village along the Thames that most people mean when they say it. Wooded roads, homes set well back from the street, a river with boat access and no coastal premium attached to it â€” it is the kind of place where EB engineers have been quietly landing for decades because it gives them everything they want without the price tag that comes with Mystic or Noank. The Harvard-Yale Regatta is rowed on the Thames here every June, which tells you something about the river's character and the community's relationship to it. Schools are rated B+ by Niche. Median home price around $395,000. The small commercial strip on Route 12 â€” Fireside Brick Oven, a diner, an artisan burger place with a dog-friendly patio â€” is unpretentious in exactly the right way. Twenty minutes to the yard, less if you know the back roads.</p>
-  </div>
-
-  <div class="neighborhood-card">
-    <div class="neighborhood-tag">Affordable Â· Quiet Â· Tribal Land Context</div>
-    <div class="neighborhood-name">Montville / Uncasville</div>
-    <p>Montville is the town; Uncasville is the village most people navigate to when they're heading to Mohegan Sun, which sits on the Mohegan Tribe's sovereign land within the town's borders. That adjacency is either a selling point or a reason to look elsewhere, depending on your priorities â€” the arena books national acts and the resort dining has improved substantially, but the surrounding residential areas are entirely separate in character from the casino complex. Quiet, affordable (median prices well below the regional average), and 20 minutes from the base. Not a destination choice, but a practical one for people who want space, low taxes relative to neighboring towns, and a commute that doesn't require the Gold Star Bridge.</p>
-  </div>
-
-  <div class="neighborhood-card" style="background: var(--navy-light);">
-    <div class="neighborhood-tag">Deep Country Â· Horse Properties Â· True Quiet</div>
-    <div class="neighborhood-name">North Stonington / Voluntown</div>
-    <p>This is the option for people who want to actually live in rural New England rather than a suburb of it. North Stonington and the Voluntown corridor sit at the edge of the Pachaug State Forest â€” Connecticut's largest â€” and the landscape is stone walls, hardwood ridgelines, farm stands, and roads that Google Maps still gets wrong. Horse properties, genuine acreage, and a pace of life that has not been updated since approximately 1987, which is part of the appeal. The commute to the base runs 25 to 30 minutes on Route 2; it requires no interstate. Almost no newcomers discover this corner of the region in their first year. The ones who do tend to stay for decades.</p>
-  </div>
-
-</div>
-
-<div style="max-width:780px; margin:0 auto; padding:0 48px;">
-  <div class="pull-quote" style="margin-top:56px;">
-    <p>Young engineers come from across the country to work at Electric Boat. Then they discover the coast. The question changes from where to work to where to stay.</p>
-  </div>
-</div>
-
-<div class="section-divider"><span class="section-divider-ornament">Â· Â· Â·</span></div>
-
-<!-- III. THE WORK -->
-<div class="page" style="padding-top:0;">
-  <div class="section-label"><span class="section-numeral">III</span> Electric Boat</div>
-  <h2 class="section-title">The Work â€”<br><em>What Electric Boat Actually Is Right Now</em></h2>
-  <p class="section-deck">A once-in-a-generation expansion. That is not marketing language.</p>
-
-  <div class="prose">
-    <p>Electric Boat has been building submarines since 1899, but what is happening right now is categorically different from any prior era. The United States Navy has committed to a program to build dozens of Columbia-class and Virginia-class submarines simultaneously, the largest and most expensive weapons platforms ever constructed. The Columbia-class boats â€” 560 feet long, nuclear-armed ballistic missile submarines â€” cost more than $9 billion each and take 84 months to build. EB is the lead yard. The Navy wants them faster. That means hiring, training, and retaining skilled workers at a pace that has, by the company's own accounting, exceeded World War II levels in recent years.</p>
-    <p>EB hired 5,300 people in 2023, more than 4,100 in 2024, and is targeting 8,000 new hires in 2026. The 89% retention rate for new recruits stands in stark contrast to other major shipyards where first-year turnover exceeds 50%.</p>
-    <p>What the press releases do not say: EB has a culture of long hours, particularly during crunch periods on program milestones. New hires often describe the first twelve to eighteen months as more demanding than the job description suggested. The Groton shipyard and the New London design center are culturally different workplaces â€” the trades and the engineers inhabit distinct worlds with different daily rhythms. If your role requires a security clearance, clearance processing for sensitive compartmented access can delay your actual start date by months. Understand this before you sign.</p>
-  </div>
-
-  <table class="data-table mt-lg">
-    <thead>
-      <tr>
-        <th>Metric</th>
-        <th>Detail</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Current workforce</td><td>~24,000 in CT and RI; 15,000+ in Connecticut</td></tr>
-      <tr><td>Target workforce</td><td>33,000 â€” Reagan-era levels, expected by end of decade</td></tr>
-      <tr><td>2026 hiring goal</td><td>8,000 new employees (2,500 Groton trades; 1,000 engineering/design)</td></tr>
-      <tr><td>Primary programs</td><td>Virginia-class (37% revenue); Columbia-class (36% revenue)</td></tr>
-      <tr><td>Columbia contract</td><td>12 boats through 2040; Pentagon's single highest priority procurement</td></tr>
-      <tr><td>Retention rate</td><td>89% of new recruits â€” among the highest in US shipbuilding</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="section-divider"><span class="section-divider-ornament">Â· Â· Â·</span></div>
-
-<!-- IV. EATING & DRINKING -->
-<div class="page" style="padding-top:0;">
-  <div class="section-label"><span class="section-numeral">IV</span> Food &amp; Drink</div>
-  <h2 class="section-title">Eating &amp; Drinking â€”<br><em>What the Region Does Exceptionally Well</em></h2>
-  <p class="section-deck">The baseline â€” fresh lobster, oysters, steamers, chowder â€” is among the best in the country. The ceiling is higher than most newcomers expect.</p>
-
-  <div class="prose">
-    <p>The region's best restaurants are concentrated in the Mystic-Noank-Stonington corridor. New London's dining scene is expanding and improving, but it has not yet caught up with its ambitions. Groton proper is workmanlike rather than destination-worthy except for a handful of specific places. Go where the food is, not where the commute is convenient.</p>
-    <p>One note on drinking that properly belongs in the next section: Connecticut banned happy hours in 1984. There are no drink specials tied to the time of day. Asking for the happy hour menu will mark you immediately and permanently as someone who just arrived. Bars close at 1 a.m. weeknights, 2 a.m. weekends. Package stores are open on Sundays.</p>
-  </div>
-
-  <div class="place-list mt-lg">
-
-    <div class="place-card">
-      <div class="place-name">The Shipwright's Daughter</div>
-      <div class="place-meta">Mystic Â· New York Times Top 50, 2024 Â· James Beard Northeast 2024</div>
-      <div class="prose"><p>Chef David Standridge's seafood-forward restaurant in the Whaler's Inn. Roasted oysters, undervalued local species prepared with precision, a wine program that earns attention. The national press got here first; reserve well in advance. Worth it.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Abbott's Lobster in the Rough</div>
-      <div class="place-meta">Noank Â· Cash only Â· BYOB Â· Seasonal (Mayâ€“Labor Day)</div>
-      <div class="prose"><p>The dock, the paper plates, the plastic bibs, the cold Narragansett. Connecticut-style hot lobster roll â€” butter, not mayo â€” done the way it was meant to be done. One of the great casual meals in New England. BYOB means stop at the package store. Bring cash.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Captain Scott's Lobster Dock</div>
-      <div class="place-meta">New London Â· Thames River Â· Year-round</div>
-      <div class="prose"><p>Credited as the birthplace of the hot Connecticut-style lobster roll. On the Thames, looking west across the docks. Homemade clam fritters, proper New England chowder. Year-round, which matters when Abbott's closes for winter and you still need a lobster roll in February.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">On the Waterfront</div>
-      <div class="place-meta">New London Â· Thames River Â· Family-run</div>
-      <div class="prose"><p>Panoramic Thames views, large dining room, outdoor patio in season. Chef Anthony Schiavone, family-owned and operated. The kind of room worth having in your rotation for the view alone; the kitchen has grown into matching it.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Blue Duck Bar &amp; Kitchen</div>
-      <div class="place-meta">New London Â· Downtown</div>
-      <div class="prose"><p>The best gastropub in New London, with a serious local beer selection, thoughtful menu, and the atmosphere of a place that actually knows what it is. Popular with the Garde Arts crowd before shows. Worth having on your regular list.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Paul's Pasta Shop</div>
-      <div class="place-meta">Groton Â· Locals only</div>
-      <div class="prose"><p>Fresh pasta made in-house, Italian that doesn't perform being Italian. Ask anyone at EB where they go for pasta and this is the answer. Small, unpretentious, consistently excellent. No reservations; arrive early or wait.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Dog Watch CafÃ©</div>
-      <div class="place-meta">Stonington &amp; Mystic Â· Waterfront</div>
-      <div class="prose"><p>Dockside outdoor tables, local seafood, rotating craft beers, sunset views across Stonington Harbor. The Stonington location is where locals go to decompress on a Friday evening. The Mystic location is where you take visitors. Both work.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Jasmine Thai</div>
-      <div class="place-meta">New London Â· Bank Street</div>
-      <div class="prose"><p>Among the most reliably excellent Thai restaurants in Connecticut. Worth the drive from anywhere in the region.</p></div>
-    </div>
-
-    <div class="place-card">
-      <div class="place-name">Tony D's</div>
-      <div class="place-meta">New London Â· Downtown Â· Since 1999</div>
-      <div class="prose"><p>A warm, brick-walled Italian institution near the Garde Arts Center. Family-run, consistent, good for pre-theater dinner. The kind of neighborhood restaurant that makes a city feel like home after about the third visit.</p></div>
-    </div>
-
-    <!-- Thames Club featured card -->
-    <div class="place-card" style="border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);">
-      <div class="place-name" style="color: var(--gold);">The Thames Club &nbsp;â€” 290 State Street 
-		  (Shameless Self Promotion)</div>
-      <div class="place-meta">Est. 1869 Â· Connecticut's Oldest Private Social Club Â· Third Oldest in New England </div>
-      <div class="prose"><p>If you've come here to build something â€” a career, a life, a community â€” this is where you come to belong. Dining, private events, and the duckpin bowling lanes (authentic, two lanes, entirely irreplaceable). The membership spans Electric Boat engineers, naval officers, local professionals, and 
-		  anyone who enjoys interesting company, classic architecture, having a 
-		  place to relax and entertain in the city. Inquire at <a href="mailto:thamesclub.nl@gmail.com" style="color:var(--gold);">thamesclub.nl@gmail.com</a> or (959) 264-2733.</p></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="section-divider"><span class="section-divider-ornament">Â· Â· Â·</span></div>
-
-<!-- V. GETTING OUT -->
-<div class="page" style="padding-top:0;">
-  <div class="section-label"><span class="section-numeral">V</span> Recreation</div>
-  <h2 class="section-title">Getting Out â€”<br><em>What to Do When You're Not Working</em></h2>
-  <p class="section-deck">The outdoors here is excellent and underused by newcomers who haven't yet learned to read the calendar.</p>
-
-  <div class="prose">
-    <p>Southeastern Connecticut is a three-season destination that behaves like a year-round one if you're willing to dress for it. The key insight: knowing where the hunting, fishing, and wildlife laws apply â€” which they do, actively and specifically â€” is prerequisite. Section VII covers what you need to know before you put a line in the water or a bow in your hands.</p>
-    <p>Long Island Sound is accessible from multiple points along the coast, and the Thames is navigable by kayak, canoe, or motorboat. The local sailing culture is deep â€” the area's racing history connects directly to the America's Cup era â€” and several active yacht clubs offer membership to newcomers. Block Island is a 70-minute ferry ride from New London, one of the more under-appreciated summer day trips on the East Coast.</p>
-    <p>Mystic Seaport Museum is the largest maritime museum in the country and contains the only surviving wooden whaling ship, the Charles W. Morgan. If you work in submarine construction you will find its conversations about what it means to build ships in America unusually resonant. The USS Nautilus and Submarine Force Museum in Groton tells the complete history of American submarine development â€” the Nautilus, the world's first nuclear-powered submarine launched here in 1954, is open for self-guided tours. Free admission. If you are new to this world, start here.</p>
-    <p>The Garde Arts Center on State Street in New London is a restored 1926 movie palace that books touring theater, dance, music, and film. If you are moving to New London and have not put the Garde on your regular calendar, you have missed the point of living there. Foxwoods and Mohegan Sun are both within 20 minutes inland. New London's Sailfest each July is the city's signature summer event â€” a weekend of free live music, an artisan market, and what is generally acknowledged to be an exceptional fireworks show over the Thames.</p>
-  </div>
-</div>
-
-<div class="section-divider"><span class="section-divider-ornament">Â· Â· Â·</span></div>
-
-<!-- VI. THINGS NOBODY TELLS YOU -->
-<div class="page" style="padding-top:0;">
-  <div class="section-label"><span class="section-numeral">VI</span> Honest Notes</div>
-  <h2 class="section-title">Things Nobody Tells You â€”<br><em>The Honest Version</em></h2>
-
-  <div class="prose">
-    <p><strong>The commute is real and it costs time.</strong> I-95 through New London and Groton is a 1950s-era highway carrying double its designed capacity. The Gold Star Bridge approaches and the Exit 84/85 interchange are among Connecticut's documented high-accident zones. The commute is not long in miles â€” it is occasionally long in patience.</p>
-    <p><strong>Connecticut winters are not what most of the country experiences.</strong> Southeastern Connecticut sits at the intersection of cold fronts from the north and moisture off the Sound, which produces ice events that highway infrastructure was not designed to handle. All-season tires are inadequate for February conditions on rural roads. Budget $300â€“$600 per month for combined utilities during heating season.</p>
-    <p><strong>Mystic is not a town.</strong> It is a village that spans the border of Groton and Stonington, has no independent municipal government, and will confound anyone trying to look up its school district, zip code, or tax rate. Know which side of the river you're on before you make a real estate decision.</p>
-    <p><strong>Package stores are open on Sundays.</strong> Grocery stores do not sell wine or spirits. These are state laws, not local preferences.</p>
-    <p><strong>Connecticut income and property taxes are significant.</strong> State income tax runs from 3% to 6.99% depending on bracket. Property tax is set at the municipal level via mill rate, and the difference between a Groton mill rate and a Stonington Borough rate on equivalent property can be several thousand dollars annually. Run the full financial math before assuming the lower housing cost makes this comparable to your previous location.</p>
-    <p><strong>The region's character rewards patience.</strong> The people who grow the best oysters, build the most interesting boats, and cook the best food are not on social media. Ask around. Go back to the same places. Locals remember people who come back. The institutions that connect people â€” the Thames Club, the yacht clubs, the Garde, the farmers markets â€” are worth finding early. The people who become rooted here almost always trace it back to a place they kept going back to.</p>
-  </div>
-
-  <div class="pull-quote">
-    <p>Connecticut law will surprise you. The next section is not supplementary reading. It contains information that will affect you within the first week.</p>
-  </div>
-</div>
-
-<div class="thick-divider"></div>
-
-<!-- VII. THE GROUND RULES -->
-<div class="law-block">
-  <div style="max-width:680px; margin:0 auto;">
-    <div class="law-label"><span style="font-size:0.7rem; letter-spacing:0.1em; font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400;">VII</span> Connecticut Law</div>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3rem); font-weight:300; color:var(--white); margin-bottom:12px; line-height:1.1;">The Ground Rules â€”</h2>
-    <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,3.5vw,2.2rem); font-weight:300; font-style:italic; color:var(--gold-light); margin-bottom:32px; line-height:1.1;">What Connecticut Expects of You Legally</h2>
-    <p>Connecticut is not a frontier state. It is a small, dense, well-regulated New England jurisdiction with a legislature that has been actively tightening its laws for decades. If you are coming from Texas, Florida, Arizona, the rural South, or anywhere the default assumption is "it's probably fine," several things here will surprise you. The laws are real, they are enforced, and the penalties are not theoretical. <em>None of this is legal advice. All of it is accurate as of this writing. Consult an attorney for anything that actually matters.</em></p>
-
-    <h3>Firearms</h3>
-    <div class="warning-box">
-      <p><strong>Your out-of-state carry permit is invalid in Connecticut.</strong> Connecticut does not honor concealed carry permits from any other state â€” not Texas, not Florida, not Virginia, not any state. Carrying on an out-of-state permit in Connecticut is a Class E felony. People with security clearances have had serious career consequences from this mistake.</p>
-    </div>
-    <p>The permit process is two-step: local issuing authority first, then the state level through DESPP. Requirements include a state-approved firearms safety course completed within the past two years, a clean record, and age 21+ for handguns. Connecticut is technically "May Issue" but court precedent has made it functionally "Shall Issue" â€” if you meet the requirements, they must approve you.</p>
-    <p>Connecticut bans defined assault weapons, magazines holding more than 10 rounds, ghost guns, and bump stocks. Pre-2013 large-capacity magazines were required to be registered with DESPP by January 1, 2014 to be grandfathered. If you arrived in Connecticut after January 1, 2024, in lawful possession of large-capacity magazines acquired legally in your previous state, contact DESPP promptly to determine your obligations under current state law â€” this area has specific and evolving requirements. Consult an attorney.</p>
-    <p>Your Connecticut Pistol Permit does not authorize carry in any state park or forest. This applies to Bluff Point, Rocky Neck, Haley Farm, Harkness Memorial, and every other state-managed outdoor space you will use regularly. Connecticut requires that all firearms accessible by any minor under 18 be stored securely â€” locked container, gun safe, or trigger lock. This is a criminal offense if violated.</p>
-
-    <h3>Castle Doctrine &amp; Self-Defense</h3>
-    <p>Connecticut has the Castle Doctrine. Connecticut does not have Stand Your Ground. These are different laws, and confusing them can be catastrophic.</p>
-    <p><strong>Inside your home or workplace:</strong> no duty to retreat before using force, including deadly force, to defend yourself. <strong>Outside your home:</strong> Connecticut law requires you to retreat to a place of complete safety before using deadly force â€” if you can do so safely. Connecticut is one of eleven states that maintain this traditional duty. Florida, Texas, and most Southern and Western states have Stand Your Ground. Connecticut does not.</p>
-    <p>Never fire a warning shot in Connecticut. It is treated as use of deadly force and the full justification standard applies.</p>
-
-    <h3>Driving</h3>
-    <p>No handheld cell phones while operating a motor vehicle â€” not at a red light, not in stop-and-go traffic, not while temporarily stopped. Hands-free only. Fines: $200 first offense, $375 second, $625 third. When any emergency vehicle is stopped with lights activated, move to the adjacent lane. When a school bus is stopped with red lights flashing and stop arm extended, every vehicle in every direction must stop. New residents must register vehicles and obtain a Connecticut license within 60 days of establishing residency.</p>
-    <p>Connecticut does not have a blanket open container law. Passengers who are 21+ may legally possess and consume open alcoholic beverages in a moving vehicle. The driver may not drink while operating. Any driver under 21 faces a mandatory 60-day license suspension if an officer finds any alcohol anywhere in the car.</p>
-
-    <h3>OUI â€” Operating Under the Influence</h3>
-    <p>Connecticut calls it OUI, not DUI. Legal threshold: 0.08% BAC for adults 21+, 0.04% for commercial drivers, 0.02% for under 21. First offense: 48 hours to 6 months in jail (or probation with 100 hours community service), $500â€“$1,000 fine, 45-day license suspension, mandatory ignition interlock device for one year. An OUI conviction creates a record that appears in background investigations and can trigger administrative review of security clearances. Do not refuse the breathalyzer â€” refusal results in longer suspension and is admissible as evidence of consciousness of guilt.</p>
-
-    <h3>Alcohol â€” Purchase &amp; Social Host Law</h3>
-    <p>Happy hours have been illegal in Connecticut since 1984. Bars close at 1 a.m. weeknights, 2 a.m. weekends. Package stores are open on Sundays. Grocery stores sell beer only â€” not wine, not spirits.</p>
-    <p>Connecticut makes it a Class A misdemeanor to knowingly or recklessly permit a minor under 21 to possess alcohol or cannabis in your home or on your property. If you provided alcohol to the minor: Class E felony. This law was expanded in 2021 to include cannabis.</p>
-
-    <h3>Fishing</h3>
-    <p>Two separate licenses: Freshwater (Inland) License for rivers and lakes, and a Marine Waters Fishing License for saltwater. Both required for anyone 16 or older. Connecticut has reciprocity with Maine, Massachusetts, Rhode Island, and New York. Key regulations: striped bass slot limit 28 to under 31 inches, 1 fish daily; circle hooks required for striped bass when using bait; sturgeon and river herring are prohibited entirely. A Personal Use Lobster License ($60/year) is required for recreational lobster; minimum carapace length 4.75 inches; V-notched females cannot be possessed under any circumstances.</p>
-
-    <h3>Hunting</h3>
-    <p>A Hunter Education Course is required before any first-time hunter purchases a license in Connecticut â€” not waived for experienced hunters from other states. All firearms hunters must wear minimum 400 square inches of blaze orange or blaze pink above the waist. All deer harvests must be reported within 24 hours. Sunday hunting on private land with written landowner permission is now permitted (as of October 1, 2025), except migratory birds and within 40 feet of any blazed public trail. Possession of a firearm while archery hunting is prohibited.</p>
-
-    <h3>Protected Wildlife</h3>
-    <p>The Migratory Bird Treaty Act prohibits taking, possessing, or harassing any migratory bird without a federal permit â€” criminal penalties up to $15,000 and six months per violation. Nearly every wild bird visible on the Connecticut coast is protected. Bald eagles nest along the Connecticut River with increasing sightings in southeastern Connecticut; first violation of the Eagle Protection Act carries up to $100,000 and one year in prison. Cold-stunned sea turtles washing onto beaches are incapacitated, not dead â€” do not move them into the water. Call DEEP Dispatch: 860-424-3333. Killing a timber rattlesnake is a state criminal offense.</p>
-
-    <h3>Cannabis â€” Federal Contractor Note</h3>
-    <p>Adult-use cannabis is legal in Connecticut for adults 21+. Federal contractor employees â€” the majority of EB's workforce â€” are subject to federal drug testing requirements regardless of Connecticut's legalization. Cannabis will cause you to fail a federal contractor drug test and can result in termination or clearance revocation. Connecticut's legalization does not change your federal contractor obligations.</p>
-
-    <div class="ref-grid" style="margin-top:40px;">
-      <div class="ref-cell">
-        <div class="ref-org">DEEP Dispatch â€” Wildlife</div>
-        <div class="ref-contact">860-424-3333</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Free Field Guide · New London & Groton</div>
+          <h1>Submarineland</h1>
+          <p class="hero-subhead">A practical guide for people arriving in the submarine community.</p>
+          <p class="hero-copy">New to New London, Groton, the river, the base, the shipyard, or the defense world around them? Start here. No form. No login. Just a useful guide meant to be passed along.</p>
+          <div class="cta-row">
+            <a class="button primary" href="#guide">Read the Guide</a>
+            <a class="button secondary" href="#share">Share It</a>
+          </div>
+        </div>
+
+        <aside class="cover-card" aria-label="Submarine line drawing and guide summary">
+          <div class="sub-line-art">
+            <svg viewBox="0 0 620 260" role="img" aria-label="Line drawing of a submarine in the Thames River" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" stroke="#d2b678" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M74 158c38-42 108-62 216-62h98c56 0 112 22 158 62-46 40-102 62-158 62h-98c-108 0-178-20-216-62Z" />
+                <path d="M168 158h306" />
+                <path d="M280 96v-46h70v46" />
+                <path d="M302 50v-28h26v28" />
+                <path d="M122 132c-34 4-58 12-78 26 20 14 44 22 78 26" />
+                <path d="M520 136l58 22-58 22" />
+                <circle cx="238" cy="158" r="10" />
+                <circle cx="288" cy="158" r="10" />
+                <circle cx="338" cy="158" r="10" />
+                <path d="M68 228h484" opacity=".62" />
+              </g>
+            </svg>
+          </div>
+          <p>For the first week, the first posting, the first job, the first contract, the first apartment, the first night ashore — a guide to the place around the boats.</p>
+        </aside>
       </div>
-      <div class="ref-cell">
-        <div class="ref-org">DEEP Marine Fisheries</div>
-        <div class="ref-contact">860-434-6043<br><a href="mailto:deep.marine.fisheries@ct.gov">deep.marine.fisheries@ct.gov</a></div>
-      </div>
-      <div class="ref-cell">
-        <div class="ref-org">Online Licensing (Fish &amp; Hunt)</div>
-        <div class="ref-contact">portal.ct.gov/CTOutdoorLicenses</div>
-      </div>
-      <div class="ref-cell">
-        <div class="ref-org">DESPP â€” Firearms Licensing</div>
-        <div class="ref-contact">despp.ct.gov</div>
-      </div>
-      <div class="ref-cell">
-        <div class="ref-org">Connecticut DMV</div>
-        <div class="ref-contact">portal.ct.gov/dmv</div>
-      </div>
-      <div class="ref-cell">
-        <div class="ref-org">DEEP Inland Fisheries</div>
-        <div class="ref-contact">860-424-3474<br><a href="mailto:deep.inland.fisheries@ct.gov">deep.inland.fisheries@ct.gov</a></div>
-      </div>
-    </div>
+    </section>
 
-    <p style="margin-top:40px; font-style:italic; color:rgba(245,240,232,0.5); font-size:0.95rem;">The Thames runs to the sea. The boats go out and come back. The work matters â€” in ways that are unusual to live alongside, and worth taking the time to understand. You've landed somewhere real. Now you know the rules.</p>
+    <section id="guide" class="section paper">
+      <div class="wrap">
+        <div class="rule"></div>
+        <h2 class="section-title">Start here.</h2>
+        <p class="lede">Submarineland is not a tourist brochure. It is a plainspoken orientation to the life around the Thames: the people, neighborhoods, habits, rooms, and rhythms that make the submarine community feel less temporary.</p>
 
-  </div>
-</div>
-
-<!-- FOOTER -->
-
-<footer class="site-shell-footer">
-  <div class="site-shell-foot-inner">
-    <div>
-      <div class="site-shell-foot-brand">The Thames Club</div>
-      <div class="site-shell-foot-copy">
-        290 State Street Â· New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> Â· (959) 264-2733
+        <div class="toc" aria-label="Guide sections">
+          <a href="#arriving"><strong>Arriving</strong><span>What to know your first week.</span></a>
+          <a href="#river"><strong>The River</strong><span>Why New London and Groton work as one place.</span></a>
+          <a href="#after-work"><strong>After Work</strong><span>Where the day goes after the gate, office, pier, or yard.</span></a>
+          <a href="#belonging"><strong>Belonging</strong><span>How introductions happen in a real town.</span></a>
+        </div>
       </div>
-    </div>
-    <div class="site-shell-foot-links">
-      <a href="index.html">Home</a>
-      <a href="restoration.html">Restoration</a>
-      <a href="pierson-gallery.html">Pierson Gallery</a>
-      <a href="community.html">Community</a>
-      <a href="publications.html">Publications</a>
-      <a href="membership.html">Membership</a>
-      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
-      <a href="visit.html">Visit</a>
-    </div>
-  </div>
-</footer>
+    </section>
 
-</body></html>
+    <section id="arriving" class="section">
+      <div class="wrap split">
+        <div class="image-block has-photo">
+          <img src="images/submarineland-arriving.jpg" alt="New London waterfront and Groton across the Thames at early evening" />
+        </div>
+        <article class="article">
+          <div class="rule"></div>
+          <h2>Arriving in Submarineland</h2>
+          <p><strong>The submarine world is not just a workplace.</strong> It is a geography. New London, Groton, the Thames River, the base, the shipyard, the contractors, the schools, the hotels, the apartments, the diners, the clubs, and the old streets all form one working neighborhood.</p>
+          <p>For someone arriving from another state, another command, another company, or another phase of life, the area can feel oddly compressed at first. Everything is close, but not always obvious. The useful places are learned by repetition and recommendation.</p>
+          <div class="callout">The purpose of this guide is simple: make the first week easier.</div>
+          <p>Keep it on your phone. Send it to someone transferring in. Print it for a welcome packet. The guide is free because useful things travel farther when no one has to ask permission to share them.</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="river" class="section paper">
+      <div class="wrap split">
+        <article class="article">
+          <div class="rule"></div>
+          <h2>The river is the center.</h2>
+          <p>The Thames River divides New London and Groton, but in daily life it binds them. One side holds the old city, train station, restaurants, State Street, the waterfront, and the long civic memory of the port. The other side carries the working weight of the submarine base, the shipyard, and much of the industrial ecosystem that supports the fleet.</p>
+          <p>That two-bank life matters. People work on one side, live on another, meet in a third place, and slowly build a mental map that is less about town lines than usefulness.</p>
+          <p>Submarineland is the name for that practical map.</p>
+        </article>
+        <div class="image-block has-photo">
+          <img src="images/submarineland-river.jpg" alt="The Thames River connecting New London and Groton" />
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <p>What people wish they knew when they arrived.</p>
+    </section>
+
+    <section id="after-work" class="section paper">
+      <div class="wrap">
+        <div class="rule"></div>
+        <h2 class="section-title">After work matters.</h2>
+        <p class="lede">The real adjustment is not only where to report. It is where the rest of the day goes.</p>
+
+        <div class="grid-3">
+          <article class="panel">
+            <h3>Where to land</h3>
+            <p>Find a few dependable rooms: a quiet table, a familiar bar, a place to read, a place to meet someone without starting from scratch.</p>
+          </article>
+          <article class="panel">
+            <h3>Who to ask</h3>
+            <p>Local knowledge moves through people. The right introduction saves weeks of guessing.</p>
+          </article>
+          <article class="panel">
+            <h3>How to stay</h3>
+            <p>A place becomes livable when routines form: lunch, errands, water, walks, events, dinner, and the small habits of belonging.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="belonging" class="section navy">
+      <div class="wrap">
+        <div class="rule"></div>
+        <h2 class="section-title">A guide is only the beginning.</h2>
+        <p class="lede">Submarineland helps people understand the area. The next step is giving them rooms where they can meet the area.</p>
+
+        <div class="grid-3">
+          <article class="panel">
+            <h3>For newcomers</h3>
+            <p>A first orientation to New London, Groton, and the submarine community around the Thames.</p>
+          </article>
+          <article class="panel">
+            <h3>For employers</h3>
+            <p>A simple pass-along resource for recruits, contractors, transfers, and visiting professionals.</p>
+          </article>
+          <article class="panel">
+            <h3>For members</h3>
+            <p>A useful way to introduce the Club’s civic role without leading with a membership pitch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="share" class="section paper">
+      <div class="wrap split">
+        <div class="share-card">
+          <h3>Share Submarineland</h3>
+          <p><strong>Best use:</strong> send this page to anyone newly connected to the submarine, maritime, shipbuilding, Navy, or defense community in southeastern Connecticut.</p>
+          <p><strong>Suggested text:</strong></p>
+          <p>New to the submarine community in New London? Start here. This is a free field guide to the place around the boats.</p>
+          <div class="qr-box">QR code goes here after deployment:<br>https://thamesclub1869.com/submarineland.html</div>
+        </div>
+        <article class="article">
+          <div class="rule"></div>
+          <h2>Distribution plan</h2>
+          <p>Put the guide where people already arrive: hotel desks, relocation packets, member emails, LinkedIn posts, contractor onboarding notes, real estate offices, and informal welcome messages.</p>
+          <p>Do not gate it. Do not make people fill out a form. The whole point is pass-along value.</p>
+          <p>The quiet conversion path is simple: help people first, earn trust, then invite them to see the house.</p>
+          <div class="cta-row">
+            <a class="button primary" href="home-in-the-city.html">See Home in the City</a>
+            <a class="button secondary" href="visit.html">Arrange a Visit</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="wrap">
+        <h2>Free. Useful. Meant to travel.</h2>
+        <p>Submarineland is published as a civic resource by The Thames Club for those arriving, working, serving, building, and settling into the life around the Thames.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="button primary" href="#guide">Read from the Top</a>
+          <a class="button secondary" href="visit.html">Visit The Thames Club</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Submarineland · A free field guide from The Thames Club · 290 State Street · New London, Connecticut
+  </footer>
+</body>
+</html>
