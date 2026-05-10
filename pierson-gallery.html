@@ -1,38 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pierson Gallery — Coming Soon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin:0;
-      font-family: Georgia, serif;
-      background:#0b1a2a;
-      color:#f4f1ea;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      height:100vh;
-      text-align:center;
-    }
-    h1 {
-      font-size:42px;
-      margin-bottom:10px;
-      letter-spacing:1px;
-    }
-    p {
-      font-size:18px;
-      opacity:.85;
-    }
-    a {
-      margin-top:30px;
-      color:#c9a96e;
-      text-decoration:none;
-      font-size:16px;
-    }
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pierson Gallery — The Thames Club</title>
+<meta name="description" content="The Thames Club, New London, Connecticut. Founded 1869. Connecticut's oldest private social club.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Libre Baskerville',Georgia,serif;background:#07101a;color:#e8dfc8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:root{
+  --deep:#07101a;--navy:#0c1c2e;--mid:#0e1c2c;
+  --cream:#f4edd8;--cream-d:#e8dfc8;--cream-dim:#a89e87;
+  --gold:#a6894a;--gold-b:#c9a96e;--gold-dim:rgba(166,137,74,.25);
+  --ink:#1a1208;--serif:'Libre Baskerville',Georgia,serif;
+  --display:'Cormorant Garamond',Georgia,serif;--max:1120px;
+}
+.w{max-width:var(--max);margin:0 auto;padding:0 44px}
+
+/* PAGE HERO */
+.page-hero{min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--deep);padding-bottom:72px;padding-top:120px}
+.page-hero .hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 90%,rgba(166,137,74,.07) 0%,transparent 40%),radial-gradient(ellipse at 85% 10%,rgba(166,137,74,.04) 0%,transparent 38%)}
+.page-hero .w{position:relative;z-index:2}
+.page-hero .eyebrow{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-b);margin-bottom:18px;display:block}
+.page-hero h1{font-family:var(--display);font-size:clamp(42px,7vw,88px);font-weight:600;line-height:.95;letter-spacing:-.01em;color:var(--cream);margin-bottom:22px}
+.page-hero .deck{font-family:var(--serif);font-size:15px;line-height:1.7;color:var(--cream-dim);max-width:560px}
+
+/* SECTION SHELLS */
+.sc{background:var(--cream);color:var(--ink);padding:88px 0}
+.sec-label-d{font-family:var(--serif);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:#8a6835;display:block;margin-bottom:16px}
+h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weight:600;line-height:1;letter-spacing:-.01em;color:var(--navy);margin-bottom:24px}
+.prose-dk{font-family:var(--serif);font-size:15px;line-height:1.8;color:#4a3f2e;max-width:640px}
+
+/* SITE NAV */
+.site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
+.site-shell-nav .site-shell-inner{max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.site-shell-nav .site-shell-brand{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8;text-decoration:none;line-height:1.2}
+.site-shell-nav .site-shell-brand small{display:block;font-size:9px;font-weight:400;letter-spacing:.24em;color:#a6894a;margin-top:2px}
+.site-shell-nav .site-shell-links{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.site-shell-nav .site-shell-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-nav .site-shell-links a:hover{color:#f4edd8}
+.nav-dd{position:relative}
+.nav-dd-trigger{display:flex;align-items:center;gap:4px;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.75);padding:7px 11px;border-radius:4px;cursor:pointer;background:none;border:none;white-space:nowrap;transition:color .15s,background .15s}
+.nav-dd-trigger::after{content:'';display:inline-block;width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin-top:-3px;opacity:.6}
+.nav-dd-trigger:hover{color:#f4edd8;background:rgba(166,137,74,.08)}
+.nav-dd-menu{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:180px;background:rgba(10,22,40,.98);border:1px solid rgba(166,137,74,.2);border-radius:6px;padding:6px;z-index:100;backdrop-filter:blur(12px)}
+.nav-dd-menu a{display:block;font-family:'Inter',system-ui,sans-serif;font-size:10.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,237,216,.65);text-decoration:none;padding:9px 14px;border-radius:4px;transition:color .15s,background .15s;white-space:nowrap}
+.nav-dd-menu a:hover{color:#f4edd8;background:rgba(166,137,74,.1)}
+.dd-divider{height:1px;background:rgba(166,137,74,.12);margin:4px 0}
+.nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}
+.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(232,223,200,.7);transition:all .25s}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-hamburger.open span:nth-child(2){opacity:0}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-mobile{display:none;flex-direction:column;border-top:1px solid rgba(166,137,74,.15);background:rgba(7,16,26,.98)}
+.nav-mobile a,.nav-mobile span.mob-section{font-family:'Inter',system-ui,sans-serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,223,200,.65);padding:13px 24px;border-bottom:1px solid rgba(166,137,74,.08);text-decoration:none;display:block;transition:color .2s}
+.nav-mobile a:hover{color:#f4edd8}
+.nav-mobile span.mob-section{font-size:9px;color:#a6894a;padding:14px 24px 6px;border-bottom:none}
+.nav-mobile.open{display:flex}
+@media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
+@media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
+
+/* SITE FOOTER */
+.site-shell-footer{background:#0c1c2e;color:rgba(244,237,216,.75);border-top:1px solid rgba(166,137,74,.18);padding:42px 24px}
+.site-shell-footer .site-shell-foot-inner{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.site-shell-footer .site-shell-foot-brand{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:.14em;text-transform:uppercase;color:#f4edd8;margin-bottom:8px}
+.site-shell-footer .site-shell-foot-copy{font-family:'Inter',system-ui,sans-serif;font-size:12px;line-height:1.8}
+.site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
+.site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
+.site-shell-footer .site-shell-foot-links a:hover{color:#f4edd8}
+
 /* === Thames Club link readability hardening === */
 a {
   color: inherit;
@@ -45,7 +88,8 @@ article a,
 section a,
 footer a,
 .foot-info a,
-.prose a {
+.prose a,
+.prose-dk a {
   color: #8f7136;
   text-decoration: none;
   border-bottom: 1px solid rgba(166,137,74,.45);
@@ -56,52 +100,112 @@ article a:hover,
 section a:hover,
 footer a:hover,
 .foot-info a:hover,
-.prose a:hover {
+.prose a:hover,
+.prose-dk a:hover {
   color: #0c1c2e;
   border-bottom-color: #0c1c2e;
 }
 
-.site-nav a,
-.nav-r a,
-.nav-brand,
-.foot-nav a,
-.btn {
+.site-shell-nav a,
+.site-shell-footer .site-shell-foot-links a,
+.nav-cta {
   border-bottom: none !important;
   text-decoration: none !important;
 }
 
-.site-nav a,
-.nav-r a {
-  color: rgba(244,237,216,.78);
-}
-
-.site-nav a:hover,
-.nav-r a:hover {
-  color: #f4edd8;
-}
-
-.nav-cta,
-.btn-d {
+.nav-cta {
   color: #f4edd8 !important;
   border: 1px solid #a6894a !important;
 }
 
-footer a {
+footer.site-shell-footer .site-shell-foot-copy a {
   color: #c8aa62;
 }
 
-footer a:hover {
+footer.site-shell-footer .site-shell-foot-copy a:hover {
   color: #f4edd8;
 }
 </style>
 </head>
 <body>
 
-<h1>Pierson Gallery</h1>
-<p>Coming Soon</p>
+<nav class="site-shell-nav">
+  <div class="site-shell-inner">
+    <a class="site-shell-brand" href="index.html">The Thames Club<small>New London &middot; Est. 1869</small></a>
+    <div class="site-shell-links">
+      <a href="dining.html">Dining</a>
+      <div class="nav-dd"><span class="nav-dd-trigger">Events</span><div class="nav-dd-menu"><a href="events.html">Events calendar</a><a href="event-rooms.html">Event rooms</a><a href="event-planners.html">Private events</a></div></div>
+      <a href="above-below.html">Above &amp; Below</a>
+      <div class="nav-dd"><span class="nav-dd-trigger">About</span><div class="nav-dd-menu"><a href="history.html">History</a><a href="restoration.html">Restoration</a><a href="pierson-gallery.html">Pierson Gallery</a><div class="dd-divider"></div><a href="gallery.html">Photo gallery</a><a href="bowling.html">Duckpin bowling</a><a href="community.html">Community</a></div></div>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html" class="nav-cta">Visit</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="dining.html">Dining</a>
+    <span class="mob-section">Events</span>
+    <a href="events.html">Events calendar</a>
+    <a href="event-rooms.html">Event rooms</a>
+    <a href="event-planners.html">Private events</a>
+    <a href="above-below.html">Above &amp; Below</a>
+    <span class="mob-section">About</span>
+    <a href="history.html">History</a>
+    <a href="restoration.html">Restoration</a>
+    <a href="pierson-gallery.html">Pierson Gallery</a>
+    <a href="gallery.html">Photo gallery</a>
+    <a href="bowling.html">Duckpin bowling</a>
+    <a href="community.html">Community</a>
+    <a href="membership.html">Membership</a>
+    <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+    <a href="visit.html">Visit</a>
+  </div>
+</nav>
 
-<a href="index.html">← Return to Home</a>
 
+<section class="page-hero">
+  <div class="hbg"></div>
+  <div class="w">
+    <span class="eyebrow">The Thames Club · New London</span>
+    <h1>Pierson Gallery</h1>
+    <p class="deck">The Dr. Anne B. Pierson Gallery, taking shape on the top floor.</p>
+  </div>
+</section>
+
+<section class="sc">
+  <div class="w">
+    <span class="sec-label-d">In Progress</span>
+    <h2 class="serif-dk">Coming forward<br>on the top floor.</h2>
+    <p class="prose-dk" style="margin-top:16px">The Dr. Anne B. Pierson Gallery is taking shape on the top floor as part of the Thames Club's preservation work. See the <a href="restoration.html">Restoration page</a> for progress.</p>
+  </div>
+</section>
+
+
+<footer class="site-shell-footer">
+  <div class="site-shell-foot-inner">
+    <div>
+      <div class="site-shell-foot-brand">The Thames Club</div>
+      <div class="site-shell-foot-copy">
+        290 State Street · New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+      </div>
+    </div>
+    <div class="site-shell-foot-links">
+      <a href="index.html">Home</a>
+      <a href="restoration.html">Restoration</a>
+      <a href="pierson-gallery.html">Pierson Gallery</a>
+      <a href="community.html">Community</a>
+      <a href="publications.html">Publications</a>
+      <a href="membership.html">Membership</a>
+      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+      <a href="visit.html">Visit</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}document.querySelectorAll('.nav-dd').forEach(function(dd){var trigger=dd.querySelector('.nav-dd-trigger'),menu=dd.querySelector('.nav-dd-menu');if(!trigger||!menu)return;trigger.addEventListener('click',function(e){e.stopPropagation();var isOpen=menu.style.display==='block';document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});menu.style.display=isOpen?'none':'block';});});document.addEventListener('click',function(){document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});});})();
+</script>
 </body>
 </html>
-
