@@ -106,7 +106,7 @@ ENCODING_FILES = [
     "events.html",
     "event-planners.html",
     "membership.html",
-    "above-and-below-issue-001.html",
+    "above-and-below-issue-1.html",
 ]
 
 # Files that need the Beyond -> Below branding fix
