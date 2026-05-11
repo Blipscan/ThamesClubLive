@@ -1,0 +1,652 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Above &amp; Below — Issue One: Homecoming | The Thames Club</title>
+  <meta name="description" content="Above &amp; Below, Issue One: Homecoming. A quarterly publication of The Thames Club, New London, Connecticut."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --navy:#0c1c2e;--cream:#f4edd8;--cream-d:#e8dfc8;
+      --gold:#a6894a;--gold-m:rgba(166,137,74,.4);
+      --ink:#1c1c1c;--ink-m:#5a5a5a;--ink-l:#888;
+      --w92:rgba(244,237,216,.92);--w70:rgba(244,237,216,.70);
+      --w55:rgba(244,237,216,.55);--w42:rgba(244,237,216,.42);
+      --w35:rgba(244,237,216,.35);
+      --serif:'Libre Baskerville',Georgia,serif;
+      --display:'Cormorant Garamond',Georgia,serif;
+      --sans:'Inter',system-ui,sans-serif;
+      --max:760px;
+      --max-w:1080px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--serif);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .w{max-width:var(--max-w);margin:0 auto;padding:0 28px}
+    .wn{max-width:var(--max);margin:0 auto;padding:0 28px}
+    .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold-m),transparent);margin:0 auto;max-width:var(--max)}
+    .lab{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+
+    /* NAV */
+    .site-nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(12,28,46,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,137,74,.12)}
+    .nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 28px}
+    .nav-brand{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--w92);text-decoration:none;line-height:1.25}
+    .nav-brand span{display:block;font-size:9.5px;font-weight:400;letter-spacing:.26em;color:var(--w55);margin-top:1px}
+    .nav-r{display:flex;gap:26px;align-items:center}
+    .nav-r a{font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.10em;text-transform:uppercase;color:var(--w70);text-decoration:none}
+    .nav-r a:hover{color:var(--w92)}
+    .nav-cta{padding:8px 20px!important;border:1px solid var(--gold);border-radius:2px;color:var(--w92)!important}
+    .btn{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:2px;transition:background .15s}
+    .btn-g{border:1px solid var(--gold);color:var(--w92)}
+    .btn-g:hover{background:rgba(166,137,74,.15)}
+    .btn-d{border:1px solid rgba(28,28,28,.22);color:var(--ink)}
+    .btn-d:hover{background:rgba(28,28,28,.04)}
+
+    /* COVER */
+    .cover{display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:var(--navy);color:var(--cream)}
+    .cover-bg{position:absolute;inset:0}
+    .cover-tex{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 80px,rgba(166,137,74,.4) 80px,rgba(166,137,74,.4) 81px),repeating-linear-gradient(90deg,transparent,transparent 80px,rgba(166,137,74,.4) 80px,rgba(166,137,74,.4) 81px)}
+    .cover-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 80%,rgba(166,137,74,.06) 0%,transparent 50%),radial-gradient(ellipse at 75% 20%,rgba(166,137,74,.04) 0%,transparent 50%)}
+    .cover-content{position:relative;z-index:2;padding:0 0 80px}
+    .cover-pub{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .cover h1{font-family:var(--display);font-size:clamp(42px,5.8vw,72px);font-weight:700;line-height:.96;letter-spacing:.03em;text-transform:uppercase;margin-bottom:12px}
+    .cover-issue{font-family:var(--sans);font-size:12px;letter-spacing:.20em;text-transform:uppercase;color:var(--w55);margin-bottom:28px}
+    .cover-sub{font-size:21px;line-height:1.6;color:var(--w70);max-width:560px}
+    .cover-meta{margin-top:48px;font-family:var(--sans);font-size:12px;color:var(--w42);line-height:1.7}
+    .cover-meta a{color:var(--gold);text-decoration:none}
+
+    /* ARTICLE LAYOUT */
+    article{padding:72px 0}
+    .a-head{font-family:var(--display);font-size:clamp(28px,3.2vw,40px);font-weight:700;line-height:1.12;margin:0 0 8px}
+    .a-sub{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-l);margin:0 0 28px}
+    .prose{font-size:18.5px;line-height:1.82;color:var(--ink-m);max-width:var(--max)}
+    .prose p+p{margin-top:20px}
+    .prose .drop:first-letter{float:left;font-family:var(--display);font-size:64px;line-height:.8;padding:4px 10px 0 0;font-weight:700;color:var(--ink)}
+    .prose em{font-style:italic}
+    .prose .break{display:block;text-align:center;color:var(--gold);margin:32px 0;font-size:14px;letter-spacing:.5em}
+
+    /* PULL QUOTE */
+    .pull{margin:40px 0;padding:28px 0 28px 28px;border-left:2px solid var(--gold);font-size:21px;font-style:italic;line-height:1.55;color:var(--ink);max-width:600px}
+
+    /* DARK SECTION */
+    .dark{background:var(--navy);color:var(--cream)}
+    .dark .lab{color:var(--gold)}
+    .dark .a-head{color:var(--cream)}
+    .dark .a-sub{color:var(--w42)}
+    .dark .prose{color:var(--w70)}
+    .dark .pull{border-color:var(--gold);color:var(--w92)}
+
+    /* MENU */
+    .menu-course{margin-top:32px;padding-top:28px;border-top:1px solid rgba(166,137,74,.18)}
+    .dark .menu-course{border-color:rgba(166,137,74,.25)}
+    .menu-cat{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+    .menu-name{font-family:var(--display);font-size:22px;font-weight:700;margin-bottom:6px}
+    .menu-desc{font-size:16.5px;line-height:1.72;color:var(--ink-m);max-width:600px}
+    .dark .menu-desc{color:var(--w70)}
+    .menu-wine{margin-top:10px;font-family:var(--sans);font-size:12px;color:var(--ink-l);letter-spacing:.02em}
+    .dark .menu-wine{color:var(--w42)}
+
+    /* NOTEBOOK */
+    .nb-item{padding:24px 0;border-bottom:1px solid rgba(166,137,74,.18)}
+    .nb-title{font-size:18px;font-weight:700;margin-bottom:6px}
+    .nb-body{font-size:15.5px;line-height:1.72;color:var(--ink-m)}
+
+    /* SILENT RUNNING */
+    .silent{background:var(--navy);color:var(--cream);text-align:center;padding:80px 28px}
+    .silent p{font-family:var(--display);font-size:22px;font-style:italic;line-height:1.6;color:var(--w70);max-width:500px;margin:0 auto}
+    .silent .mark{display:block;margin-top:28px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+
+    /* PHOTO SLOT */
+    .photo-slot{margin:40px 0;background:var(--cream-d);border:1px solid rgba(166,137,74,.2);padding:40px 28px;text-align:center;font-family:var(--sans);font-size:10px;color:var(--ink-l);letter-spacing:.05em;line-height:1.7}
+    .dark .photo-slot{background:rgba(255,255,255,.04);border-color:rgba(166,137,74,.2)}
+    .photo-slot .ph-lab{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+
+    /* FOOTER */
+    footer{background:var(--navy);color:var(--w70);border-top:1px solid rgba(166,137,74,.25);padding:52px 0 60px}
+    .foot-g{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:start}
+    .foot-brand{font-family:var(--display);font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--w92);margin-bottom:16px}
+    .foot-info{font-family:var(--sans);font-size:13px;line-height:1.85}
+    .foot-info a{color:var(--gold);text-decoration:none}
+    .foot-info a:hover{text-decoration:underline}
+    .foot-nav{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+    .foot-nav a{font-family:var(--sans);font-size:10.5px;letter-spacing:.10em;text-transform:uppercase;color:var(--w70);text-decoration:none}
+    .foot-nav a:hover{color:var(--w92)}
+    .foot-copy{margin-top:44px;padding-top:22px;border-top:1px solid rgba(166,137,74,.12);font-family:var(--sans);font-size:11px;color:var(--w35)}
+
+    @media(max-width:860px){
+      .nav-r a:not(.nav-cta){display:none}
+      .foot-g{grid-template-columns:1fr}
+      .foot-nav{align-items:flex-start}
+      .cover h1{font-size:38px}
+    }
+  .auto-style2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+	overflow: hidden;
+	color: var(--cream);
+	background: var(--navy);
+	padding-top: 100px;
+}
+
+    /* SECTION INDICATOR */
+    .sec-nav{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:6px;opacity:0;transition:opacity .4s}
+    .sec-nav.visible{opacity:1}
+    .sec-nav a{display:block;width:8px;height:8px;border-radius:50%;background:rgba(166,137,74,.25);transition:background .3s,transform .3s;position:relative}
+    .sec-nav a.active{background:var(--gold);transform:scale(1.3)}
+    .sec-nav a:hover{background:rgba(166,137,74,.6)}
+    .sec-nav .sec-tip{position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--sans);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(12,28,46,.92);padding:5px 10px;border-radius:3px;pointer-events:none;opacity:0;transition:opacity .2s}
+    .sec-nav a:hover .sec-tip{opacity:1}
+
+    /* BACK TO TOP */
+    .btt{position:fixed;bottom:28px;right:24px;z-index:100;width:40px;height:40px;border-radius:50%;background:rgba(12,28,46,.85);border:1px solid rgba(166,137,74,.3);color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .3s,border-color .2s;backdrop-filter:blur(8px);text-decoration:none}
+    .btt.visible{opacity:1}
+    .btt:hover{border-color:var(--gold)}
+    .btt svg{width:16px;height:16px}
+
+    @media(max-width:860px){.sec-nav{display:none}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav"><div class="w nav-in">
+  <a href="index.html" class="nav-brand">The Thames Club<span>New London · 1869</span></a>
+  <div class="nav-r">
+    <a href="index.html#the-room">The Room</a>
+    <a href="index.html#first-names">The Members</a>
+    <a href="index.html#events">Events</a>
+    <a href="index.html#membership">Membership</a>
+    <a href="index.html#membership" class="nav-cta">Visit</a>
+  </div>
+</div></nav>
+
+<!-- ═══════════════════════════════════════════════
+     COVER
+     ═══════════════════════════════════════════════ -->
+<section class="auto-style2" id="cover">
+  <div class="cover-bg" style="background:linear-gradient(180deg,rgba(12,28,46,.6),rgba(12,28,46,.4) 40%,rgba(12,28,46,.9)),url('images/river-dawn.jpg') center/cover">
+    <div class="cover-tex"></div>
+    <div class="cover-glow"></div>
+  </div>
+  <div class="w cover-content">
+    <div class="cover-pub">Above &amp; Below — A Quarterly Publication of The Thames Club</div>
+    <h1>Homecoming</h1>
+    <div class="cover-issue">Issue One</div>
+    <p class="cover-sub">The first meal ashore. Thirty-one years in Building 260. Two banks of one river. A record of the community that gathers at the Thames Club — the sailors, builders, physicians, attorneys, engineers, educators, and families who share a room and a first-name basis on the New London bank of the Thames.</p>
+    <div class="cover-meta">
+      The Thames Club · 290 State Street · New London, CT 06320<br>
+      <a href="index.html">thames.club</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════
+     FROM THE PRESIDENT
+     ═══════════════════════════════════════════════ -->
+<article id="president"><div class="wn">
+  <div class="a-head">From the Walls</div>
+  <div style="margin:24px 0 20px"><img alt="Ramón Masso-Flores" src="images/ramon-tile.jpg" style="width:23%;display:block"></div>
+  <div class="a-sub">By Ramón Masso-Flores, Senior Chief Petty Officer (Ret.), U.S. Submarine Service<br>
+    President of the Thames Club</div>
+
+  <div class="prose">
+      <div class="flex-1 flex flex-col px-4 max-w-3xl mx-auto w-full pt-1">
+		  <div data-test-render-count="1">
+			  <div class="group" style="height: auto; opacity: 1; transform: none;">
+				  <div class="contents">
+					  <div class="group relative relative pb-3" data-is-streaming="false" style="opacity: 1; transform: none;">
+						  <div class="font-claude-response relative leading-[1.65rem] [&amp;_pre&gt;div]:bg-bg-000/50 [&amp;_pre&gt;div]:border-0.5 [&amp;_pre&gt;div]:border-border-400 [&amp;_.ignore-pre-bg&gt;div]:bg-transparent [&amp;_.standard-markdown_:is(p,blockquote,h1,h2,h3,h4,h5,h6)]:pl-2 [&amp;_.standard-markdown_:is(p,blockquote,ul,ol,h1,h2,h3,h4,h5,h6)]:pr-8 [&amp;_.progressive-markdown_:is(p,blockquote,h1,h2,h3,h4,h5,h6)]:pl-2 [&amp;_.progressive-markdown_:is(p,blockquote,ul,ol,h1,h2,h3,h4,h5,h6)]:pr-8">
+							  <div>
+								  <div class="standard-markdown grid-cols-1 grid [&amp;_&gt;_*]:min-w-0 gap-3 standard-markdown">
+									  <hr class="border-border-200 border-t-0.5 my-3 mx-1.5">
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  I came to New London the way most of us do&nbsp; 
+									  -&nbsp; orders in hand, a family to settle, and 
+									  not much time to think about whether this 
+									  was home or just the next assignment. That 
+									  was the submarine life. You went where the 
+									  boats were.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  The boats were here.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  I spent my years in the Navy working on 
+									  reactors. Not a job that invites casual 
+									  conversation at dinner parties, but one 
+									  that demands everything you have —  
+									  precision, patience, a willingness to be 
+									  responsible for things that cannot go 
+									  wrong. You learn, in that environment, 
+									  that the man next to you is all you have. 
+									  Rank matters. Competence matters more. And 
+									  what a person carries inside them —  their 
+									  character, their steadiness —  matters most 
+									  of all.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  It was law school next and after retirement I found my way to the public defender's office. 
+									  Different uniform, same instinct: stand 
+									  next to the person who needs someone 
+									  standing next to them. The work was hard 
+									  and often thankless and I would do it 
+									  again.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  New London had become home by then. Not 
+									  because orders kept me here, but because 
+									  the city had gotten into me the way 
+									  certain places do —  quietly, without 
+									  announcement, until one day you realize 
+									  you're not passing through anymore. I got 
+									  involved with Church of the City. I found 
+									  community there, and responsibility, and 
+									  the particular satisfaction that comes 
+									  from showing up consistently for something 
+									  larger than yourself.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  The Thames Club came later, and it 
+									  surprised me. I'll be honest —  when I 
+									  first crossed that threshold, I wasn't 
+									  sure it was my kind of place. Old 
+									  building, long history, the weight of a 
+									  hundred and fifty years in the woodwork. 
+									  But what I found inside was something I 
+									  recognized from the boats: people who took 
+									  their obligations seriously and didn't 
+									  make a production of it. People who showed 
+									  up.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  I became president. I'm still not entirely 
+									  sure how that happened, except that I've 
+									  never been good at standing on the 
+									  sideline.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  If you're new to this area —  if the Navy 
+									  or Electric Boat, Dominion or Offshore 
+									  power; science, medicine, law or commerce; 
+									  the work that 
+									  defines this region has brought you here&nbsp; 
+									  -&nbsp; 
+									  I want you to know something. This 
+									  community is deeper than it looks from the 
+									  outside. The river, the base, the yards, 
+									  the hospital, the neighborhoods —  they have been shaped 
+									  by people like us for a very long time. We 
+									  are part of that history whether we know 
+									  it yet or not.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  The Thames Club has been here since 1869. 
+									  It has seen a great deal. It is not a 
+									  museum, though —  it is a place where 
+									  people gather, eat, argue, laugh, and 
+									  occasionally bowl badly. It is, in the 
+									  oldest sense of the word, a club: a place 
+									  that belongs to its members, and whose 
+									  members belong to each other.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  Come and see it. Sit at the bar. Stay for 
+									  lunch. The walls have stories, and so do 
+									  the people who walk past them every day.</p>
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">
+									  So do you.</p>
+									  <hr class="border-border-200 border-t-0.5 my-3 mx-1.5">
+									  <p class="font-claude-response-body break-words whitespace-normal leading-[1.7]">&nbsp;</p>
+								  </div>
+							  </div>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+
+  <div style="margin:40px 0;text-align:center">
+    <img alt="Thames Club — 102 Years" src="images/thames-102.png" style="max-width:100%;height:auto">
+  </div>
+</div>
+
+</article>
+
+<!-- ═══════════════════════════════════════════════
+     ABOVE AND BELOW — opening essay
+     ═══════════════════════════════════════════════ -->
+<article id="above-below"><div class="wn">
+  <div class="lab">Above and Below</div>
+  <h2 class="a-head">The Clubs Are Gone. This One Stayed.</h2>
+  <div class="a-sub">Opening Essay — Issue One</div>
+
+  <div class="prose">
+    <p class="drop">There used to be a place on every base where you could sit down. Not the mess hall. Not the chow line. A place with tablecloths and conversation and a drink you didn't have to rush through before the next watch. Officers' clubs. Chiefs' clubs. They had different names and different rules, but they served the same purpose: they were where military people could be people. Where rank still mattered but relaxation was permitted. Where friendships formed over something other than a mission briefing.</p>
+
+    <p>Those places are mostly gone now. Consolidated, defunded, closed. The buildings sometimes remain — repurposed as conference centers or administrative offices — but the life inside them has vanished. An entire social architecture, altered, consolidated, and in many places lost.</p>
+
+    <p>We noticed.</p>
+
+    <p>The Thames Club has stood in New London since 1869. We predate the submarine force by three decades. We have watched the boats come and go from this river for more than a century. Our walls hold the photographs of members who served in every branch, every era. We have been, for a hundred and fifty-five years, the kind of place that bases used to have and no longer do.</p>
+
+    <p>But here is what makes it better than a base club ever was: you sit down next to people you would never meet inside the fence. Physicians. Attorneys. Architects. Educators. Clergy. Business owners. Theater people. The room holds thirty professions and no rank structure. The doctor has a first name here. So does the retired admiral 
+	and the plumber.</p>
+
+    <p class="break">———</p>
+
+    <p>There is another table worth knowing about.</p>
+
+    <p>It is roughly four feet long and bolted to the deck of a submarine. The tablecloth is white linen, dampened with seawater — a tradition carried forward from the age of sail, when the moisture kept plates from sliding as the ship rolled. Navy blue-and-white china. Silver flatware. Officers seated by seniority. A few feet away, the crew's mess: four tables, twenty seats, a rotation that runs through every watch because there isn't room for everyone at once.</p>
+
+    <p>The galley that serves both is the size of a family bathroom. A team of six cooks produces four meals a day, every day, for months, from scratch. Bread baked daily. Saturday night pizza and wings. Sunday prime rib. Everything made by hand in a space that would get a restaurant shut down. Ask any submariner what they remember about being underway and they'll get to the food within two minutes. It was the best part of the day, and the cooks knew it.</p>
+
+    <p>This is the submarine way. Excellence produced under conditions that don't permit excuses. The cooks understand what every submariner understands: when you are on patrol for ninety days, the things that seem small become the things that hold you together. The meal. The conversation around it. The moment when the work pauses and you sit across from someone who knows exactly where you are, because they're there too.</p>
+
+    <p class="break">———</p>
+
+    <p>This publication is called Above and Below because that is where this community lives — on the surface and beneath it, in New London and at sea, in the shipyard and in the deep. It is also where this club lives: above, in a city whose membership spans every profession in the region; and below, in the quieter knowledge that some of the most disciplined people in the country walk through here without ceremony and find themselves 
+	talking baseball with a playwright.</p>
+
+    <p>The clubs are gone from the bases. But here is one that stays.</p>
+
+    <p>The table is set.</p>
+  </div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     THE PROFILE
+     ═══════════════════════════════════════════════ -->
+<article id="profile"><div class="wn">
+  <div class="lab">The Profile</div>
+  <h2 class="a-head">Thirty-One Years in Building 260</h2>
+  <div class="a-sub">A Composite Portrait — Issue One</div>
+
+  <div class="prose">
+    <p style="font-style:italic;color:var(--gold);margin-bottom:24px">If this is you, you already belong. We just haven't met yet.</p>
+
+    <p class="drop">His hands are the first thing you notice. Not damaged, exactly, but used. The kind of hands that make you conscious of your own.</p>
+
+    <p>He started at Electric Boat in 1993, the week after his twentieth birthday. His father had worked there. His uncle before that. Nobody sat him down and said this is what you're going to do. It was more like gravity. He grew up in Ledyard, twelve minutes from the yard, and the yard was where the work was.</p>
+
+    <p>"First day, I didn't understand anything." He's not being humble. He means it. "They put me on a crew doing fit-up work and I couldn't — the tolerances, the prints. Guys next to me had fifteen years in. They'd look at a weld and just know. Took me a year before I started to get it. Two years before I trusted my own work."</p>
+
+    <p>What he does is join metal. The simple version. The complicated version involves tolerances measured in thousandths of an inch, welds that must be perfect because they will be submerged under pressure for decades, and quality standards enforced by people whose job is to find the one thing you did wrong. He has worked on six classes of submarine. He cannot name most of them, or describe what he did in specificity, because the work is classified. Thirty-one years of his life, and he can't put it on a résumé.</p>
+
+    <p>"You get used to that. People ask what you do and you say 'I work at the boat yard.' That's it. What am I going to say? Can't tell them the interesting stuff."</p>
+
+    <p>He works in Building 260 — one of the massive structures along the Groton waterfront visible from the Gold Star Bridge, where submarine sections are assembled before being joined at the graving dock. Inside it is loud, organized, and surprisingly clean. The work moves slowly. The standards do not move at all.</p>
+
+    <p>Three of his four kids grew up within earshot of the yard's shift whistle. His oldest daughter is a nurse at L+M. His son thought about the yard but went into HVAC. "He's doing fine," he says, in a tone that closes the subject.</p>
+
+    <div class="pull">He has never been on a submarine at sea. He has been aboard many of them in the yard — in spaces most sailors never see, with tools and blueprints, doing work that will disappear inside a hull and never be inspected again by human eyes.</div>
+
+    <p>The crew that sails the boat will not know his name. He is fine with this. He shifts in his chair when he says it.</p>
+
+    <p>"Sometimes I watch one go down the river. And I know which sections I worked on. I know where my welds are. And I think — those guys are gonna go under in that thing, and they're gonna trust it completely. Part of why they can is 'cause I didn't cut a single corner. Not once. Thirty-one years." He pauses. "You don't get a letter for that. Nobody calls. But you know."</p>
+
+    <p>He has never been to the Thames Club. He has driven past it hundreds of times. He is not sure if it's the kind of place for someone like him.</p>
+
+    <p>It is. And inside, he'd find himself sitting next to a doctor and an attorney and a retired Navy captain — all on a first-name basis. That part usually surprises people.</p>
+  </div>
+
+  <p style="margin-top:36px;font-family:var(--sans);font-size:12px;color:var(--ink-l);line-height:1.7;max-width:var(--max)"><em>This profile is a composite drawn from conversations with Electric Boat tradesmen. No single individual is depicted.</em> "The Profile" will appear in every issue. If you know someone whose story deserves to be told — a submariner, a builder, a family member, a physician, a veteran, a member — we would like to hear from you.</p>
+
+  <div style="margin:40px 0"><img alt="Shipyard welder at work" src="images/eb-welder-final.png" style="width:100%;max-width:480px;height:auto;display:block"></div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     THE TABLE
+     ═══════════════════════════════════════════════ -->
+<article class="dark" id="table"><div class="wn">
+  <div class="lab">The Table</div>
+  <h2 class="a-head">A Homecoming Dinner</h2>
+  <div class="a-sub">A Menu for the First Real Meal Ashore · Serves Eight · New England Winter</div>
+
+  <div class="prose">
+    <p>On a submarine, you dream about fresh food the way you dream about sunlight — not constantly, but in sudden, aching flashes. Weeks into a patrol, when the last of the lettuce is gone and the eggs are powdered, someone will say something about a tomato. A real one. Or a steak with the bone still in it, because the galley's steaks have the bones trimmed off to save freezer space.</p>
+
+    <p>This menu is for the moment after. The first real dinner ashore. It starts where the submarine galley — which does remarkable work under impossible conditions — leaves off: fresh, local, unhurried.</p>
+  </div>
+
+  <div class="menu-course">
+    <div class="menu-cat">To Begin</div>
+    <div class="menu-name">Oysters on the Half Shell with Mignonette</div>
+    <div class="menu-desc">Local Mystic or Noank oysters. Champagne mignonette, freshly grated horseradish, lemon. Half a dozen per person, served on crushed ice as they come off the knife. Nothing says "you're on land" like an oyster that was in the Sound this morning.</div>
+    <div class="menu-wine">Muscadet Sèvre et Maine. Bone-dry, built for oysters.</div>
+  </div>
+
+  <div class="menu-course">
+    <div class="menu-cat">Soup</div>
+    <div class="menu-name">New England Clam Chowder</div>
+    <div class="menu-desc">Littleneck clams, salt pork, Yukon Gold potatoes, heavy cream. Built on clam liquor, not flour. A cup, not a bowl — this is the second course of five.</div>
+    <div class="menu-wine">Albariño, Rías Baixas. Bright acidity to cut the cream.</div>
+  </div>
+
+  <div class="menu-course">
+    <div class="menu-cat">Salad</div>
+    <div class="menu-name">Butter Lettuce with Shaved Pear, Toasted Walnuts, and Point Reyes Blue</div>
+    <div class="menu-desc">A few leaves. Anjou pear, shaved thin. Toasted walnuts. A crumble of blue. Sherry-walnut vinaigrette. After months of no fresh greens, this is not a side dish. It is a restoration.</div>
+  </div>
+
+  <div class="menu-course">
+    <div class="menu-cat">Main Course</div>
+    <div class="menu-name">Dry-Aged Bone-In Ribeye</div>
+    <div class="menu-desc">The submarine galley strips the bones and fat from their steaks to save space. This is the answer: a dry-aged, bone-in ribeye with the fat cap intact, seared in cast iron and finished in the oven. The bone stays. The fat stays. Everything the galley had to sacrifice, returned. Alongside: roasted Yukon Golds with rosemary, braised winter greens with garlic.</div>
+    <div class="menu-wine">Pauillac, Château Lynch-Bages 2016. Or: Stag's Leap Artemis, Napa Valley.</div>
+  </div>
+
+  <div class="menu-course">
+    <div class="menu-cat">Cheese</div>
+    <div class="menu-name">A New England Board</div>
+    <div class="menu-desc">Jasper Hill Harbison. Cabot Clothbound Cheddar aged at Jasper Hill. A local chèvre. Honeycomb, fig preserves, water crackers.</div>
+    <div class="menu-wine">Graham's 20-Year Tawny Port.</div>
+  </div>
+
+  <div class="menu-course">
+    <div class="menu-cat">Dessert</div>
+    <div class="menu-name">Warm Apple Brown Betty with Vanilla Crème Anglaise</div>
+    <div class="menu-desc">Not a cobbler, not a crisp. A Brown Betty: layers of buttered breadcrumbs and spiced apples, baked low and slow. This is submarine galley thinking — warm, sweet, built to make everyone at the table happy — made with real butter and time.</div>
+  </div>
+
+  <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(166,137,74,.25)">
+    <div class="prose">
+      <p style="font-size:15px">A good whiskey after dessert is appropriate. Something with smoke and a little sweetness — a Balvenie DoubleWood or a Redbreast 12.</p>
+    </div>
+  </div>
+
+  <div class="photo-slot" style="padding:0;border:none;background:none"><img alt="Oyster platter on crushed ice" src="images/oyster-platter-final.jpg" style="width:100%;height:auto;display:block"></div>
+
+  <p style="margin-top:32px;font-family:var(--sans);font-size:12px;color:var(--w42);line-height:1.7;max-width:var(--max)"><em>A note on the galley:</em> Submarine cooks receive the highest food budget per sailor in the Navy. Many train at the Culinary Institute of America. They bake bread from scratch daily. They do it underway, without daylight, for months. This dinner doesn't compete with the galley. It picks up where the galley, by necessity, leaves off. The cooks would understand.</p>
+
+  <p style="margin-top:16px;font-family:var(--sans);font-size:12px;color:var(--w42);line-height:1.7">"The Table" will appear in every issue with a complete menu tied to the theme. Complete recipes are available through the Club.</p>
+
+</div></article>
+
+<!-- ═══════════════════════════════════════════════
+     THE RIVER
+     ═══════════════════════════════════════════════ -->
+<article id="river"><div class="wn">
+  <div class="lab">The River</div>
+  <h2 class="a-head">Two Banks, One Community</h2>
+  <div class="a-sub">The Thames River Corridor</div>
+
+  <div class="prose">
+    <p class="drop">The Thames is not a wide river. Standing on the New London side, you can see Groton clearly — the cranes at Electric Boat, the piers at the submarine base, the long shape of a boat tied up alongside. On a quiet morning, the sound carries: the industrial hum of the shipyard, the diesel of a harbor tug.</p>
+
+    <p>The submarine base was established in 1916. Electric Boat's lineage stretches to the commissioning of USS Holland in 1900. Since then, generations have crossed this river daily — to build, to train, to deploy. But the river community was never only submarines. New London was commerce, institutions, law, medicine, education. Groton was the yard. The people who built the boats on one side lived, worshipped, doctored, litigated, and taught on the other.</p>
+
+    <p>The Thames Club, sitting on the New London bank since 1869, has been a gathering point for this cross-river community longer than any other institution still standing. Merchants and whalers first. Then naval officers and shipbuilders. Then the physicians who treated the families, the attorneys who handled the estates, the clergy who served the congregations, the educators who taught the children. The membership rolls, across a hundred and fifty-five years, read like a census of every profession the river corridor has sustained.</p>
+
+    <p>What changes is the faces. New officers arriving for their first assignment. Young welders driving across the Gold Star Bridge before dawn. Families settling into Waterford, Ledyard, Montville, Groton. Doctors taking positions at Lawrence + Memorial. Teachers starting at the schools. They come from everywhere, and this river is the first thing they see that tells them they've arrived.</p>
+  </div>
+
+  <div style="margin:40px 0"><img alt="Thames River at dawn, winter — view toward Groton" src="images/thames-river-drone.jpg" style="width:100%;height:auto;display:block"></div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     FROM THE WALLS
+     ═══════════════════════════════════════════════ -->
+<article id="walls"><div class="wn">
+  <div class="lab">From the Walls</div>
+  <h2 class="a-head">Before the Boats</h2>
+  <div class="a-sub">What the Club's Earliest Records Tell Us</div>
+
+  <div class="prose">
+    <p class="drop">The club was founded in 1869. New London was then a whaling port in its final years, a city built on the waterfront trades — shipping, chandlery, rope-making, provisioning. The men who founded the club were merchants and professionals, people who made their living from the river and gathered because gathering is what people in working communities do.</p>
+
+    <p>They could not have known that within thirty years, a new kind of vessel would transform their city. They were doing what felt natural: creating a place of substance where serious people could sit together.</p>
+
+    <p>By 1900, the USS Holland had been commissioned. By 1916, the submarine base was established on the Groton side. By the 1920s, the membership had begun to change — not dramatically, but in the way most things happen here: gradually and quietly. The club's existing culture — its discretion, its steadiness, its habit of receiving people based on character — turned out to be what the growing military and industrial community needed.</p>
+
+    <p>The work ahead is archival. Future issues will document the early membership rolls, photographs from the pre-World War I era, and the first recorded submariners among the membership. We also expect to find physicians, attorneys, and tradesmen from the club's first decades — the full cross-section of a working river city.</p>
+
+    <p>The submarine community became part of the Thames Club's story. It did not replace the story that was already here.</p>
+  </div>
+
+  <p style="margin-top:32px;font-family:var(--sans);font-size:12px;color:var(--ink-l);line-height:1.7;max-width:var(--max)"><em>"From the Walls" will appear in every issue, drawing from the Thames Club's archive. We invite members with knowledge of the club's history — early records, photographs, personal accounts — to help us recover these stories.</em></p>
+
+  <div style="margin:40px 0"><img alt="Early Thames Club ledger" src="images/club-ledger-final.jpg" style="width:100%;height:auto;display:block"></div>
+</div></article>
+
+<div class="rule"></div>
+
+<!-- ═══════════════════════════════════════════════
+     COMMUNITY NOTEBOOK
+     ═══════════════════════════════════════════════ -->
+<article id="notebook"><div class="wn">
+  <div class="lab">Community Notebook</div>
+  <h2 class="a-head">Notes from the River</h2>
+  <div class="a-sub">Events, Milestones &amp; Recognitions</div>
+
+  <div class="nb-item">
+    <div class="nb-title">Electric Boat's Growing Workforce</div>
+    <div class="nb-body">General Dynamics Electric Boat continues its multi-year hiring campaign supporting Columbia-class and Virginia-class programs. Thousands of new skilled workers — and their families — are arriving in the Thames River corridor. If you are one of them, welcome. This is a place that knows how to absorb good people.</div>
+  </div>
+
+  <div class="nb-item">
+    <div class="nb-title">The Submarine Force Library and Museum</div>
+    <div class="nb-body">Three miles from where you are reading this, on the Groton waterfront. Free and open to the public. The memorial to the fifty-two submarines and 3,506 submariners lost in World War II is on the grounds. If you have not visited recently, go.</div>
+  </div>
+
+  <div class="nb-item">
+    <div class="nb-title">Connecticut Storytelling Center</div>
+    <div class="nb-body">Founded some forty years ago at Connecticut College, the Connecticut Storytelling Center now maintains its home on the third floor of the Thames Club, including an office, storage space, and the center's 800-volume storytelling collection in the library.</div>
+  </div>
+
+  <div class="nb-item">
+    <div class="nb-title">At the Club</div>
+    <div class="nb-body">Thursday evenings remain open for guests by introduction. Rotary and Kiwanis meet regularly. Lunch with Chef Jon runs Tuesday through Thursday. Pub food Wednesday through Saturday. If you've thought about visiting, Thursday is a good place to start. No ceremony. Just come.</div>
+  </div>
+
+  <div class="nb-item">
+    <div class="nb-title">A Note to Everyone Who Isn't a Submariner</div>
+    <div class="nb-body">This first issue leans toward the submarine community because the Above &amp; Below initiative is new and the story needed telling. But this publication belongs to the full membership — the physicians, educators, attorneys, architects, clergy, business owners, and everyone else who has found a seat in the room. Future issues will reflect the complete community. Your stories are just as welcome.</div>
+  </div>
+
+  <p style="margin-top:28px;font-family:var(--sans);font-size:12px;color:var(--ink-l);line-height:1.7;max-width:var(--max)"><em>Share a story:</em> Above and Below is built on the stories of this community. Retirements, milestones, homecomings, losses, or simply a story worth telling — contact the editorial committee through the club.</p>
+</div></article>
+
+<!-- ═══════════════════════════════════════════════
+     SILENT RUNNING
+     ═══════════════════════════════════════════════ -->
+<div class="silent">
+  <p>The first meal ashore is never about the food.<br>It is about sitting across from someone who waited.</p>
+  <span class="mark">Silent Running</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     BACK COVER / CTA
+     ═══════════════════════════════════════════════ -->
+<section style="padding:72px 0;background:var(--cream-d);border-top:1px solid rgba(166,137,74,.15)"><div class="wn" style="text-align:center">
+  <div class="lab">The Thames Club</div>
+  <h2 style="font-family:var(--display);font-size:28px;font-weight:700;margin:0 0 16px">The table is set.</h2>
+  <p style="font-size:17px;color:var(--ink-m);line-height:1.7;max-width:480px;margin:0 auto 28px">Membership is by introduction. If you recognize something in these pages, we invite you to visit.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="index.html#membership" class="btn btn-d">Arrange a Visit</a>
+    <a href="tel:9592642733" class="btn btn-d">Call (959) 264-2733</a>
+    <a href="index.html" class="btn btn-d">Return to Home</a>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="w">
+  <div class="foot-g">
+    <div>
+      <div class="foot-brand">The Thames Club</div>
+      <div class="foot-info">
+        290 State Street, New London, CT 06320<br>
+        <a href="tel:9592642733">(959) 264-2733</a><br>
+        <a href="/cdn-cgi/l/email-protection#53313c3b21203b3c353513273b323e3620303f26313d36243f3c3d373c3d7d3c2134"><span class="__cf_email__" data-cfemail="385a57504a4b50575e5e784c5059555d4b5b544d5a565d4f5457565c575616574a5f">[email&#160;protected]</span></a><br><br>
+        Lunch: Tues–Thurs, 12–2 pm<br>
+        Pub: Wed–Sat, 5–9 pm<br>
+        Members: 24/7 access
+      </div>
+    </div>
+    <div class="foot-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#the-room">The Room</a>
+      <a href="index.html#first-names">The Members</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#membership">Membership</a>
+    </div>
+  </div>
+  <div class="foot-copy">© 2026 The Thames Club. All rights reserved.</div>
+</div>
+</footer>
+
+<!-- Section indicator -->
+<nav class="sec-nav" id="sec-nav">
+  <a href="#cover"><span class="sec-tip">Cover</span></a>
+  <a href="#president"><span class="sec-tip">President's Letter</span></a>
+  <a href="#above-below"><span class="sec-tip">Above & Below</span></a>
+  <a href="#profile"><span class="sec-tip">The Profile</span></a>
+  <a href="#table"><span class="sec-tip">The Table</span></a>
+  <a href="#river"><span class="sec-tip">The River</span></a>
+  <a href="#walls"><span class="sec-tip">From the Walls</span></a>
+  <a href="#notebook"><span class="sec-tip">Notebook</span></a>
+</nav>
+
+<!-- Back to top -->
+<a class="btt" href="#cover" id="btt" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</a>
+
+<script>
+(function(){
+  // Section indicator + back to top visibility
+  var sections = ['cover','president','above-below','profile','table','river','walls','notebook'];
+  var dots = document.querySelectorAll('#sec-nav a');
+  var secNav = document.getElementById('sec-nav');
+  var btt = document.getElementById('btt');
+
+  function update(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var vh = window.innerHeight;
+
+    // Show/hide nav dots and back-to-top after scrolling past cover
+    var pastCover = scrollY > vh * 0.5;
+    secNav.classList.toggle('visible', pastCover);
+    btt.classList.toggle('visible', pastCover);
+
+    // Find active section
+    var active = 0;
+    for(var i = 0; i < sections.length; i++){
+      var el = document.getElementById(sections[i]);
+      if(el && el.getBoundingClientRect().top < vh * 0.4) active = i;
+    }
+    dots.forEach(function(d,j){ d.classList.toggle('active', j === active); });
+  }
+
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+</body>
+</html>
+
