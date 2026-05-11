@@ -202,14 +202,19 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
 .closing-mark{display:inline-block;width:40px;height:1px;background:var(--gold);margin:24px auto 16px}
 .closing-sig{font-family:'Inter',system-ui,sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#7a756e}
 
-/* QR — Take This Guide With You */
-.qr-block{margin:64px auto 0;text-align:center;max-width:420px;padding-top:48px;border-top:1px solid var(--rule);scroll-margin-top:96px}
-.qr-block .qr-label{font-family:'Inter',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+/* Share Submarineland */
+.share-block{margin:64px auto 0;text-align:center;max-width:580px;padding-top:48px;border-top:1px solid var(--rule);scroll-margin-top:96px}
+.share-block .share-eyebrow{font-family:'Inter',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.share-block .share-title{font-family:var(--display);font-size:clamp(26px,3.5vw,34px);font-weight:300;color:var(--navy);margin-bottom:22px;letter-spacing:-.3px;line-height:1.2}
+.share-block .share-best-use{font-size:15.5px;line-height:1.7;color:#4a4540;max-width:500px;margin:0 auto 32px;text-indent:0}
+.share-block .share-best-use strong{font-family:'Inter',system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:inline-block;margin-right:6px}
+.share-block .share-suggested{background:var(--warm);border-left:3px solid var(--gold);padding:22px 28px;margin:0 auto 40px;text-align:left;max-width:500px}
+.share-block .share-suggested-label{font-family:'Inter',system-ui,sans-serif;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.share-block .share-suggested-text{font-family:var(--display);font-size:19px;font-style:italic;color:var(--navy);line-height:1.55;margin:0;text-indent:0}
 .article .qr-link{display:inline-block;line-height:0;text-decoration:none;border-bottom:none;transition:opacity .2s,transform .2s}
 .article .qr-link:hover{opacity:.85;transform:translateY(-2px)}
 .qr-image{display:block;width:200px;height:200px;max-width:100%}
-.qr-block .qr-caption{font-family:var(--display);font-size:15px;font-style:italic;color:#6a655e;margin-top:20px;text-indent:0;line-height:1.55}
-.qr-block .qr-url{font-family:'Inter',system-ui,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7a756e;margin-top:8px;word-break:break-all}
+.share-block .qr-url{font-family:'Inter',system-ui,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7a756e;margin-top:14px;word-break:break-all}
 
 /* CTA strip before footer (matches site pattern) */
 .cta-strip{background:var(--navy);padding:64px 0;text-align:center;border-top:1px solid var(--rule)}
@@ -931,13 +936,18 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
   </div>
 
 
-  <!-- ── QR — Take This Guide With You ── -->
-  <div id="guide" class="qr-block">
-    <div class="qr-label">Take this guide with you</div>
+  <!-- ── SHARE SUBMARINELAND ── -->
+  <div id="guide" class="share-block">
+    <div class="share-eyebrow">Pass It Along</div>
+    <h2 class="share-title">Share Submarineland</h2>
+    <p class="share-best-use"><strong>Best use:</strong>send this page to anyone newly connected to the submarine, maritime, shipbuilding, Navy, or defense community in southeastern Connecticut.</p>
+    <div class="share-suggested">
+      <div class="share-suggested-label">Suggested text</div>
+      <p class="share-suggested-text">New to the submarine community in New London? Start here. This is a free field guide to the place around the boats.</p>
+    </div>
     <a href="https://thamesclub1869.com/submarineland.html" class="qr-link" aria-label="Open this guide on your phone">
       <img src="images/submarineland-qr.png" alt="Scan to open Submarineland on your phone" class="qr-image" width="200" height="200">
     </a>
-    <p class="qr-caption">Scan with your phone camera to save the guide, or share the link.</p>
     <div class="qr-url">thamesclub1869.com/submarineland.html</div>
   </div>
 
