@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Above &amp; Below — Issue 2.1 | Thames Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --deep-navy: #091422;
+    --gold: #c9a84c;
+    --gold-light: #e4c97e;
+    --gold-pale: #f5e9c8;
+    --cream: #faf7f0;
+    --warm-white: #f9f6ef;
+    --text-dark: #1a1a1a;
+    --text-mid: #3a3530;
+    --rule: #c9a84c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--navy);
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 120% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(201,168,76,0.03) 80px,
+        rgba(201,168,76,0.03) 81px
+      );
+    pointer-events: none;
+  }
+
+  .masthead-top {
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .masthead-top span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.7);
+    text-transform: uppercase;
+  }
+
+  .masthead-body {
+    padding: 48px 40px 44px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pub-name {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    opacity: 0.85;
+  }
+
+  .issue-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(38px, 6vw, 64px);
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .issue-title em {
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 0.85em;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    display: block;
+    margin-top: 4px;
+  }
+
+  .gold-rule {
+    width: 80px;
+    height: 1px;
+    background: var(--gold);
+    margin: 22px auto;
+    opacity: 0.6;
+  }
+
+  .gold-rule-wide {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+
+  .deck {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2.5vw, 21px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    max-width: 640px;
+    margin: 0 auto 24px;
+    line-height: 1.55;
+    letter-spacing: 0.02em;
+  }
+
+  .issue-meta {
+    font-family: 'Cormorant SC', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: rgba(201,168,76,0.55);
+    text-transform: uppercase;
+  }
+
+  /* ── CONTENTS NAV ── */
+  .contents-strip {
+    background: var(--deep-navy);
+    border-top: 1px solid rgba(201,168,76,0.25);
+    border-bottom: 3px solid var(--gold);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contents-strip a {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.75);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .contents-strip a:hover { color: var(--gold-light); }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 60px 0 52px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.4), transparent);
+  }
+
+  .section-headline {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(22px, 3.5vw, 32px);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.25;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .section-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 28px;
+    letter-spacing: 0.02em;
+  }
+
+  .body-text p {
+    margin-bottom: 22px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-mid);
+    font-weight: 400;
+  }
+
+  .body-text p:last-child { margin-bottom: 0; }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    margin: 36px 0 36px 24px;
+    padding: 12px 0 12px 28px;
+  }
+
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(19px, 2.8vw, 24px);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.5;
+    margin: 0 0 10px !important;
+  }
+
+  .pull-quote cite {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  /* ── STAT BOX ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2px;
+    margin: 36px 0;
+    border: 1px solid rgba(201,168,76,0.3);
+    overflow: hidden;
+  }
+
+  .stat-cell {
+    background: var(--warm-white);
+    padding: 24px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .stat-cell:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .stat-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+
+  /* ── SIDEBAR / CALLOUT ── */
+  .callout {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 32px 36px;
+    margin: 36px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .callout::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .callout-label {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .callout h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+
+  .callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 14px;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ── TIMELINE (callout variant) ── */
+  .timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .timeline-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.82);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.18);
+    display: flex;
+    gap: 18px;
+  }
+
+  .timeline-list li:last-child { border-bottom: none; }
+
+  .timeline-list .tl-date {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    min-width: 130px;
+    padding-top: 2px;
+  }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    text-align: center;
+    padding: 10px 0;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 0.5em;
+    opacity: 0.5;
+  }
+
+  /* ── EDITOR'S LETTER ── */
+  .editors-letter {
+    background: var(--warm-white);
+    border-top: 3px solid var(--navy);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Cinzel', serif;
+    font-size: 72px;
+    font-weight: 600;
+    color: var(--navy);
+    float: left;
+    line-height: 0.8;
+    margin: 8px 14px 0 0;
+    padding-bottom: 4px;
+  }
+
+  /* ── SIGNATURE ── */
+  .signature {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  .signature-name {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: var(--navy);
+    font-style: normal;
+    display: block;
+    margin-top: 6px;
+  }
+
+  .signature-title {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.06em;
+    display: block;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    padding: 44px 40px 36px;
+    text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+
+  .footer-name {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .footer-address {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .footer-copy {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    color: rgba(201,168,76,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-rule {
+    width: 60px;
+    height: 1px;
+    background: rgba(201,168,76,0.3);
+    margin: 20px auto;
+  }
+
+  /* ── ORNAMENT ── */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 20px;
+    margin: 10px 0;
+    letter-spacing: 1em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .masthead-top { padding: 12px 20px; }
+    .masthead-body { padding: 36px 20px 32px; }
+    .contents-strip { padding: 12px 20px; gap: 18px; }
+    .container { padding: 0 20px; }
+    .section { padding: 44px 0 36px; }
+    .pull-quote { margin-left: 0; }
+    .callout { padding: 24px 22px; }
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .drop-cap::first-letter { font-size: 52px; margin: 5px 10px 0 0; }
+    .timeline-list li { flex-direction: column; gap: 4px; }
+    .timeline-list .tl-date { min-width: auto; }
+  }
+
+  @media print {
+    .contents-strip { display: none; }
+    .section { page-break-inside: avoid; }
+  }
+
+  /* === Thames Club link readability hardening === */
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  main a,
+  article a,
+  section a,
+  footer a,
+  .foot-info a,
+  .prose a {
+    color: #8f7136;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(166,137,74,.45);
+  }
+
+  main a:hover,
+  article a:hover,
+  section a:hover,
+  footer a:hover,
+  .foot-info a:hover,
+  .prose a:hover {
+    color: #0c1c2e;
+    border-bottom-color: #0c1c2e;
+  }
+
+  .site-nav a,
+  .nav-r a,
+  .nav-brand,
+  .foot-nav a,
+  .btn {
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+
+  footer a {
+    color: #c8aa62;
+  }
+
+  footer a:hover {
+    color: #f4edd8;
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- MASTHEAD -->
+<!-- ══════════════════════════════════════════ -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>Thames Club · Est. 1869</span>
+    <span>290 State Street · New London, Connecticut</span>
+    <span>Issue 2.1 · Spring 2026 · Continued</span>
+  </div>
+  <div class="masthead-body">
+    <div class="pub-name">Above &amp; Below</div>
+    <h1 class="issue-title">
+      The Shifting Floor
+      <em>Energy, Decisions, and the Forty Years Ahead</em>
+    </h1>
+    <div class="gold-rule"></div>
+    <p class="deck">Last winter rewrote the question. Four energy pillars — nuclear, solar, offshore wind, and natural gas — are being reconsidered at once, and the decisions that follow will not be made in Washington alone.</p>
+    <div class="gold-rule-wide"></div>
+    <div style="height: 20px;"></div>
+    <span class="issue-meta">A Publication of the Thames Club &nbsp;·&nbsp; Global Table Media LLC</span>
+  </div>
+</header>
+
+<!-- CONTENTS STRIP -->
+<nav class="contents-strip">
+  <a href="#letter">Editor's Letter</a>
+  <a href="#cold">The Cold Event</a>
+  <a href="#nuclear">Nuclear</a>
+  <a href="#solar">Solar</a>
+  <a href="#wind">Revolution Wind</a>
+  <a href="#gas">The Floor</a>
+  <a href="#data">Data Centers</a>
+  <a href="#hormuz">Hormuz</a>
+  <a href="#decisions">The Decisions</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- EDITOR'S LETTER -->
+<!-- ══════════════════════════════════════════ -->
+<section class="editors-letter" id="letter">
+<div class="container">
+<div class="section" style="border: none;">
+
+  <div class="section-label">Editor's Letter</div>
+
+  <div class="body-text drop-cap">
+
+    <p>The conversation that Above &amp; Below opened in our Spring issue has accelerated in ways that were not predictable in March. The winter that followed our last printing turned the question of energy security from a matter of long-term planning into a matter of immediate consequence — billed to ratepayers, debated on Capitol Hill, and litigated, more than once, in federal court.</p>
+
+    <p>Issue Two went to the membership in March, when Revolution Wind had just begun delivering power and Millstone's next chapter was still a matter of negotiation in the future tense. The picture has moved faster than expected. What follows is not a revision of what we wrote then — it is an account of what has shifted since, on each of the threads the issue traced, and on several it did not.</p>
+
+    <p>Issue Two framed energy security around Millstone, and around the particular geography that connects the nuclear plant in Waterford to the offshore turbines off Point Judith and to the submarine industrial base across the river. The frame holds. What has changed is the breadth of the conversation. The bipartisan vote in Hartford on Senate Bill 4 in May. The midnight expiration of the federal residential solar credit on December 31. The lapsed federal appeal that finally cleared Revolution Wind to send power to the grid. The Section 202(c) emergency dispatch order during January's nineteen-day cold event. These were not abstract policy developments. They were structural choices, made under pressure, with consequences that will be measured in decades.</p>
+
+    <p>This continuation widens the lens. Four energy sources — nuclear, solar, offshore wind, and natural gas — are being reconsidered at the same time, by overlapping authorities, against a backdrop of rising electricity demand and a federal posture that continues to oscillate. The decisions that follow are not federal alone. Many of the most consequential will be made at the state level and at the municipal level — in places like Waterford, Killingly, and yes, New London. We have set this material as Issue 2.1 deliberately: it is the second half of the conversation Issue Two began, brought forward as the events themselves have moved.</p>
+
+  </div>
+
+  <div class="signature">
+    <span>With warm regards,</span>
+    <span class="signature-name">The Editors</span>
+    <span class="signature-title">Above &amp; Below · Thames Club</span>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- INVITATION TO MEMBERSHIP -->
+<!-- ══════════════════════════════════════════ -->
+<div id="invitation">
+<div class="container">
+<div class="callout" style="text-align: center; padding: 44px 38px; margin: 56px 0 8px;">
+  <div class="callout-label">A Note to the Membership</div>
+  <h3 style="font-style: italic; font-size: clamp(20px,2.6vw,26px); max-width: 640px; margin: 0 auto 18px; color: var(--gold-light); font-weight: 500;">The Club has always been a safe place to speak and be heard.<br>This may be a good occasion to do it once again.</h3>
+  <p style="max-width: 580px; margin: 0 auto;">Our membership spans every vantage on the questions that follow — voters, donors, those entering or well into the fixed-income phase of economic life, and members who follow the daily drama of the news cycle closely. For one hundred and fifty-six years, this room has held conversations across exactly that kind of difference. We are inclined to pick an evening this season and do it again. Watch the calendar; an invitation will follow.</p>
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE COLD EVENT -->
+<!-- ══════════════════════════════════════════ -->
+<div id="cold">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Opening</div>
+  <h2 class="section-headline">The Grid Wrote Something Down</h2>
+  <div class="section-subhead">Nineteen days in January, and what they revealed</div>
+
+  <div class="body-text">
+
+    <p>On the second of January 2026, the average overnight low across New England fell below ten degrees. It stayed there. For nineteen consecutive days, the regional electric system ran in a configuration that grid operators had drilled for and warned about for a decade but had never sustained at that duration. Demand peaked above twenty-one thousand megawatts. Liquefied natural gas tankers offloaded at Everett, Massachusetts, supplying the dual-fuel power plants that had been pre-positioned for exactly this scenario. ISO New England reported approximately six billion dollars in market transactions across the event — a figure that represents not profit but cost, paid by ratepayers, distributed across the grid's six states.</p>
+
+    <p>On January 14, the U.S. Department of Energy invoked Section 202(c) of the Federal Power Act, an authority used rarely and only in declared emergencies. The order directed certain generation units to operate or remain on standby regardless of environmental compliance limits, on the explicit determination that reliability would otherwise be compromised. The order was lifted twelve days later, when forecast temperatures recovered and reserves stabilized.</p>
+
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <span class="stat-number">19</span>
+      <span class="stat-label">Consecutive cold days</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">$6B</span>
+      <span class="stat-label">Market transactions</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">21K</span>
+      <span class="stat-label">Megawatt peak demand</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">202(c)</span>
+      <span class="stat-label">Federal emergency order</span>
+    </div>
+  </div>
+
+  <div class="body-text">
+
+    <p>These are the facts of the cold event, as reported by ISO New England in its post-winter summary. What they describe is a grid that performed — but a grid that performed at the outer edge of what its current portfolio of generators can deliver. The question that follows is not whether to congratulate the operators. The question is whether the structure that produced this outcome is the structure that should produce the next one.</p>
+
+    <p>Last winter was not a near-miss. It was a structural warning, and the grid wrote it down.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- NUCLEAR -->
+<!-- ══════════════════════════════════════════ -->
+<div id="nuclear">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Pillar One</div>
+  <h2 class="section-headline">Nuclear: From Preservation to Expansion</h2>
+  <div class="section-subhead">A March filing, a bipartisan vote, and a question of geography</div>
+
+  <div class="body-text">
+
+    <p>The first and most consequential development since Issue Two went to print landed on March 17, when Dominion Energy filed three bid options into Connecticut's zero-carbon procurement. The filings offered the Department of Energy and Environmental Protection a choice of long-term Power Purchase Agreement contracts at nine, twelve, or sixteen million megawatt-hours per year, each extending into the 2030s. The largest of the three would lock in the full output of both operating units — Millstone Unit 2 and Unit 3 — for roughly a decade.</p>
+
+    <p>The filings carried an unusual frankness. Dominion stated publicly that without a new long-term contract in place, Unit 2's 2035 license renewal becomes uncertain. Plant economics, the company said, depend on contractual visibility well in advance of the capital commitments that license extension requires. In parallel, the filings referenced ongoing discussions with what Dominion described as "well-capitalized counterparties" — language widely understood in the industry to mean hyperscale data-center operators willing to buy plant output directly, bypassing the state procurement entirely.</p>
+
+    <p>The savings figures are not small. The existing Millstone PPA, signed in 2019 at just under five cents per kilowatt-hour, has saved Connecticut ratepayers an estimated two hundred and twenty million dollars in 2024 alone, and a projected seven hundred million dollars over its full term. Eight hundred and fifty Dominion employees and three hundred and eighty contractors work at the Waterford site; their families live across the shoreline. DEEP is expected to act on the bids in the second quarter of this year. PURA approval would follow in the third. Whether Connecticut keeps the plant under a ratepayer-facing contract or yields its output to the data-center bidders is the decision that frames much of what follows.</p>
+
+  </div>
+
+  <div class="pull-quote">
+    <p>"Millstone is a critical asset for the region. We need long-term contractual certainty to make the investments that keep it running."</p>
+    <cite>Dominion Energy, Connecticut Zero-Carbon Procurement Filing — March 17, 2026</cite>
+  </div>
+
+  <div class="body-text">
+
+    <p>That decision sits inside a broader regulatory shift. In May 2026, Connecticut's General Assembly passed Senate Bill 4 with a margin that has become unusual in state energy policy: large majorities from both parties in both chambers. Public Act 25-173, as the bill became after Governor Lamont's signature, did not approve the construction of any specific facility. It did something arguably more consequential. It established the state-level regulatory framework under which new nuclear generation — including small modular reactor projects at the existing Millstone footprint, and at other sites meeting specified criteria — can be evaluated and permitted. The state's 1979 moratorium on new nuclear construction, lifted partially in 2022, has now been comprehensively replaced with an affirmative authorization to consider.</p>
+
+    <p>The Governor's framing, in the weeks preceding the vote, has been direct. Connecticut residents have been confronted with electricity bills that he has characterized, in interviews, as a source of intense frustration — and as the political precondition for almost everything else the state would like to do on energy. The cost question is the live question. So is the technology question.</p>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">A Plain Explanation</div>
+    <h3>What a Small Modular Reactor Actually Is</h3>
+    <p>A small modular reactor is not a miniature version of a Millstone unit. It is a different design philosophy: factory-built reactor cores rated below 300 megawatts per unit, manufactured to a standardized specification, shipped to a prepared site, and installed in clusters to scale output. The Nuclear Regulatory Commission has begun licensing reviews of several SMR designs from companies including NuScale, GE Hitachi, and TerraPower. Commercial deployment in the United States remains some years away.</p>
+    <p>The argument for SMRs at an existing nuclear site is straightforward: the transmission interconnection is already built, the security infrastructure is already in place, and the workforce that operates Millstone today is the workforce that would operate an SMR cluster tomorrow. The argument against — or for caution — is the cost.</p>
+  </div>
+
+  <div class="body-text">
+
+    <p>Cost estimates for first-of-a-kind SMR power vary across what the state's Office of Consumer Counsel has described as an extraordinary range — somewhere between roughly twenty dollars and five hundred dollars per megawatt-hour, depending on technology selection, financing terms, siting conditions, and the degree to which manufacturing scale can be achieved. Connecticut's existing Millstone power purchase agreement, by way of comparison, prices generation at roughly fifty dollars per megawatt-hour. The arithmetic between the floor and the ceiling of the SMR estimate range is the difference between a project that lowers ratepayer costs and one that raises them substantially.</p>
+
+    <p>The state has begun to operationalize the framework. Public Act 25-173 established a five-million-dollar Site Readiness Funding Program for Connecticut municipalities willing to host new nuclear generation, and DEEP has run three workshops under it — the first two on small modular fission, the third, on May 13, on fusion. No town has yet stepped forward. Commissioner Katie Dykes has described the program's posture as patient: a long conversation rather than a fast procurement. ISO New England's most recent forecast projects regional electricity demand rising roughly forty percent over the next twenty years, driven by electrification of buildings and transportation and the data-center buildout in neighboring states. The mid-2030s, in Dykes' framing, is when the region's reserve margins narrow to the point of decision.</p>
+
+    <p>Geography matters here. Very few sites in Connecticut combine the available land, the cooling water access, and the security and transmission infrastructure that an SMR cluster would require. Legislators from the Hartford region have observed, accurately, that the capitol is not among them. The lower Thames is.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SOLAR -->
+<!-- ══════════════════════════════════════════ -->
+<div id="solar">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Pillar Two</div>
+  <h2 class="section-headline">Solar: The Math Changed at Midnight</h2>
+  <div class="section-subhead">December 31, 2025 — and a narrow window through Independence Day</div>
+
+  <div class="body-text">
+
+    <p>At midnight on December 31, 2025, the federal Residential Clean Energy Credit — the thirty-percent income-tax credit for homeowner-purchased solar installations — expired for systems installed after that date. The expiration had been written into federal tax legislation enacted earlier in 2025, and was therefore neither a surprise to the industry nor reversible by administrative action. For a typical Connecticut household installing a residential solar system, the lost credit value is approximately nine thousand dollars — a figure that the state's solar industry expects will reduce residential installation volume by twenty to twenty-five percent in 2026.</p>
+
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <span class="stat-number">12/31/25</span>
+      <span class="stat-label">Residential credit expired</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">$9,000</span>
+      <span class="stat-label">Typical CT credit lost</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">7/4/26</span>
+      <span class="stat-label">PPA / lease window ends</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">20–25%</span>
+      <span class="stat-label">Sales-volume contraction</span>
+    </div>
+  </div>
+
+  <div class="body-text">
+
+    <p>A narrower set of options remains open to homeowners through July 4, 2026. The federal investment tax credit for commercial-scale and third-party-owned systems — solar leases and power purchase agreements — has a different expiration trajectory. Connecticut residents who lease their solar systems, or who purchase the electricity through a PPA rather than owning the equipment outright, retain access to the credit through that mid-summer window. After that, the residential solar market in Connecticut shifts to the supports that remain at the state level.</p>
+
+    <p>Those supports are not nothing. The Residential Renewable Energy Solutions program, administered by Connecticut's utilities under PURA oversight, continues to compensate homeowners for the electricity their systems export to the grid through long-term tariff agreements. The state's Energy Storage Solutions incentive remains active, paying battery owners for the grid-reliability value of their stored kilowatt-hours. Connecticut's sales and property tax exemptions for renewable energy installations remain in place. Smart-E loans, administered through the Connecticut Green Bank in partnership with local lenders, continue to provide below-market financing for residential clean energy projects.</p>
+
+    <p>On May 6, 2026, the General Assembly passed House Bill 5340, which extends several of these state-level supports and clarifies the regulatory treatment of distributed solar generation under the post-federal-credit environment. The legislation does not, and could not, replicate the financial value of the lapsed federal credit. What it does, in the view of the industry associations that supported its passage, is signal that Connecticut intends to preserve the residential solar market as a meaningful component of the state's energy mix, rather than allow it to contract along with the federal incentive structure.</p>
+
+    <p>What members are seeing on their bills is the second half of the same story. Eversource's standard supply rate rose roughly twenty-nine percent on January 1, from 9.748 cents per kilowatt-hour to 12.64 cents. Connecticut now carries the third-highest residential all-in electricity price in the nation, at roughly 30.48 cents per kilowatt-hour. The combination of generation, transmission, and public-benefits charges is the structural reality behind the Millstone negotiation: the state cannot afford to lose its lowest-cost baseload contract without a replacement plan, and there is no replacement plan presently on the table.</p>
+
+    <p>The twenty-to-twenty-five-percent contraction in projected installation volume is, by industry estimates, the new baseline. The question is whether it is the floor or the trajectory.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- REVOLUTION WIND -->
+<!-- ══════════════════════════════════════════ -->
+<div id="wind">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Pillar Three</div>
+  <h2 class="section-headline">Revolution Wind: How It Came Home</h2>
+  <div class="section-subhead">Seven months of orders, injunctions, and idle assets — and a State Pier that built it anyway</div>
+
+  <div class="body-text">
+
+    <p>On August 22, 2025, the U.S. Department of the Interior issued a stop-work order against Revolution Wind, an Ørsted–Skyborn Renewables project then approximately eighty percent complete in federal waters fifteen nautical miles southeast of Point Judith. The order cited national security concerns related to marine radar interference. It paused construction on a project whose components had been staged through New London's State Pier, whose foundations were already in the seabed, and whose sixty-five Siemens Gamesa turbines were either installed or scheduled for installation through the autumn weather window. The financial cost of the pause was significant: by Ørsted's filings, the project incurred approximately one and four-tenths million dollars per day in idle-asset and demobilization costs across the duration of the order.</p>
+
+    <p>In September 2025, the U.S. District Court for the District of Columbia ruled that the federal government had failed to articulate any factual basis sufficient to support the stop-work order, and that public statements from administration officials suggested the order's underlying motivation was unrelated to its stated national security justification. Work resumed.</p>
+
+    <p>On December 22, 2025, a second stop-work order was issued, this time covering five offshore wind projects in advanced development: Revolution Wind, Vineyard Wind, Sunrise Wind, Empire Wind, and Coastal Virginia Offshore Wind. The legal challenge followed within days. On January 12, 2026, Judge Royce Lamberth granted a preliminary injunction against the December order, finding, again, that the government had not established the factual record required to support a finding of imminent harm. The federal appeal deadline lapsed in April without action by the Department of Justice. The case, for now, is over.</p>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">A Timeline</div>
+    <h3>Revolution Wind, August 2025 – March 2026</h3>
+    <ul class="timeline-list">
+      <li><span class="tl-date">Aug 22, 2025</span><span>Interior issues first stop-work order. Project approximately 80% complete.</span></li>
+      <li><span class="tl-date">Sept 2025</span><span>U.S. District Court for D.C. reverses the order. Work resumes.</span></li>
+      <li><span class="tl-date">Dec 22, 2025</span><span>Second stop-work order, this time covering five offshore wind projects.</span></li>
+      <li><span class="tl-date">Jan 12, 2026</span><span>Judge Royce Lamberth grants preliminary injunction. Construction continues.</span></li>
+      <li><span class="tl-date">April 2026</span><span>Federal appeal deadline lapses without action.</span></li>
+      <li><span class="tl-date">March 13, 2026</span><span>First power delivered to the New England grid from Revolution Wind.</span></li>
+    </ul>
+  </div>
+
+  <div class="body-text">
+
+    <p>On March 13, 2026, Revolution Wind delivered electricity to the New England grid for the first time. Governor Lamont marked the occasion at New London's State Pier on March 19. Connecticut's energy commissioner spoke at that event in terms that bear repeating.</p>
+
+  </div>
+
+  <div class="pull-quote">
+    <p>"As we've seen from the harsh winter we've had, and the impacts to fossil fuel prices as a result of the Iran war, having diverse sources of stable, reliable power that both states can count on matters enormously."</p>
+    <cite>Katie Dykes, Commissioner, Connecticut DEEP — March 2026</cite>
+  </div>
+
+  <div class="body-text">
+
+    <p>What happens next, at State Pier and across the offshore wind sector, is unsettled. As of mid-May, fifty-eight of Revolution Wind's sixty-five turbines were installed. The project must reach commercial operation by December 31 of this year, or its utility off-takers can terminate their power-purchase agreements. Ørsted has stated publicly that it will meet the date. Connecticut's three-hundred-and-four-megawatt share will deliver hundreds of millions of dollars in annual ratepayer savings across the project's twenty-year, fixed-price agreement — savings that are not academic in a state carrying the third-highest residential electricity price in the nation.</p>
+
+    <p>What is new is the federal response to the litigation record. Developers went five-and-oh in court across the spring; the administration has since shifted strategy. TotalEnergies accepted nine hundred and twenty-eight million dollars in late March to relinquish its U.S. offshore-wind lease portfolio. In early May, Golden State Wind in California and Bluepoint Wind in the New York and New Jersey waters followed under similar terms. Total federal outlay to date is approximately two billion dollars for lease cancellations — payments that the companies have publicly committed to redirecting toward liquefied natural gas and conventional generation projects.</p>
+
+    <p>The Clean Energy States Alliance, in a May 4 assessment, characterized the federal offshore-wind pipeline beyond the projects already under construction as effectively closed for the duration of this administration. For Connecticut, the practical implication is that the offshore generation in the regional resource mix through 2030 will be what is built now — Revolution Wind, Vineyard Wind 1, SouthFork Wind, and the handful of others already past their final federal approvals. State Pier itself assembled turbines for SouthFork Wind, is currently working through completion of Sunrise Wind, and will continue staging work into 2027. What comes after Sunrise depends on Washington.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE FLOOR -->
+<!-- ══════════════════════════════════════════ -->
+<div id="gas">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Pillar Four</div>
+  <h2 class="section-headline">The Gas System Showed Its Limits</h2>
+  <div class="section-subhead">The floor under everything else — and why January exposed it</div>
+
+  <div class="body-text">
+
+    <p>The natural gas system that fuels approximately half of New England's electricity generation is governed by contract structures that predate the region's transition toward gas-fired generation by decades. Under those structures, pipeline capacity is allocated to heating customers — residential and commercial — by firm contract, with electric generators holding the residual, interruptible portion. In normal weather, the arrangement works. In January, with sustained sub-zero overnight temperatures across the region, it constrains.</p>
+
+    <p>The bulk power system in New England currently carries approximately fourteen thousand megawatts of natural-gas-fired generating capacity. During the cold event, much of that capacity was operating on liquefied natural gas delivered to Everett, on oil reserves drawn down to the floors permitted by state environmental compliance, and — under the Section 202(c) emergency order — on operating exceptions that allowed certain units to continue running past their normal limits.</p>
+
+    <p>The structural shift behind these numbers is the retirement schedule. Approximately seven thousand megawatts of generation across New England has retired since the start of the last decade or is scheduled to retire by the end of this one. The retirements are not principally gas; they are coal, oil, and older nuclear units operating under economic and regulatory pressure. The replacement generation has been disproportionately gas, supplemented by behind-the-meter solar — distributed rooftop and small commercial installations that contribute meaningfully to the daytime load profile but, by physical necessity, deliver nothing after sunset.</p>
+
+    <p>The combination produces a grid whose floor is gas, whose ceiling on hot summer afternoons is heavily weighted toward solar, and whose cold winter evenings — when heating demand peaks and behind-the-meter solar disappears — fall back to the same gas-fired units that the pipeline contracts have already deprioritized. The nineteen days in January are what the structure looks like under pressure. The structure is the floor under everything the other three pillars sit on.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- DATA CENTERS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="data">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">The Demand Side</div>
+  <h2 class="section-headline">The Data Center Question</h2>
+  <div class="section-subhead">Where the new load is coming from, and who pays for the grid that carries it</div>
+
+  <div class="body-text">
+
+    <p>The U.S. Energy Information Administration's Short-Term Energy Outlook, released earlier this year, projects U.S. electricity consumption to grow at the strongest four-year pace since the year 2000. The International Energy Agency has projected, separately, that U.S. data center electricity demand could approximately double — a roughly one-hundred-thirty-percent increase — through the second half of this decade. These figures bound a question that has moved from industry forecasting reports into state legislative committees with unusual speed.</p>
+
+    <p>In Washington, Senator Richard Blumenthal has been among the sponsors of federal legislation — the GRID Act, in its current iteration — that would require federal review of major data center load additions and establish ratepayer protection standards. In Hartford, Senate Bill 245 has been introduced in the 2026 session, addressing siting, energy procurement, and cost allocation for large new loads connecting to the Connecticut grid. The state's Office of Consumer Counsel has argued, in proceedings before PURA, that the cost of grid upgrades attributable to large industrial loads should not be socialized onto residential ratepayers.</p>
+
+    <p>The scale is best understood through comparison. In Virginia, Dominion Energy's contracted data-center capacity has reached approximately fifty-one gigawatts, up from sixteen and a half gigawatts in mid-2023 — a tripling in roughly thirty months. Northern Virginia now runs the largest concentrated industrial electrical load in the United States. That figure, more than any forecast curve, is what the "well-capitalized counterparties" referenced in Dominion's Connecticut filing actually look like in practice. The question of who buys Millstone's output after the existing PPA expires is the same question, asked from the opposite direction.</p>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">The Connecticut Question</div>
+    <h3>What "Large Load" Means at the Town Level</h3>
+    <p>A single hyperscale data center can require fifty to one hundred megawatts of firm electric supply — comparable to the load of a small city. The decision to host one is, in the first instance, a municipal zoning decision. The decision to allocate the grid upgrades that follow is a state regulatory decision. The two decisions have rarely been made in coordination. Whether they will be — and on what terms — is part of what Senate Bill 245 and similar measures are attempting to define before Connecticut faces the question at the scale that Virginia, Ohio, and Texas already have.</p>
+  </div>
+
+  <div class="body-text">
+
+    <p>Connecticut has not yet attracted the scale of data center development that has reshaped the load profile in northern Virginia or central Ohio. Whether it will — and on what terms — is a decision that will be made through legislation, municipal zoning, and utility procurement. The hundred-thirty-percent projection does not say where the demand will land. It says only that, somewhere, it will. The question for Connecticut, and for the towns within it, is whether to invite the load on terms that reflect what the cold event already taught.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE STRAIT OF HORMUZ -->
+<!-- ══════════════════════════════════════════ -->
+<div id="hormuz">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">The Background Conflict</div>
+  <h2 class="section-headline">The Strait of Hormuz, Eight Weeks On</h2>
+  <div class="section-subhead">An unfinished ceasefire — and the price signal that reaches Connecticut</div>
+
+  <div class="body-text">
+
+    <p>Issue Two referenced the Iran war in the present tense. The situation has moved. Active hostilities ran from late February through early April. A ceasefire was negotiated on April 8 and remains, in the President's own characterization as recently as May 11, "on life support." The Strait of Hormuz — the chokepoint through which roughly seventeen million barrels of oil pass daily — remains effectively closed to ordinary commercial traffic. Global energy markets have absorbed the disruption through drawdowns of strategic petroleum reserves, accelerated liquefied natural gas flows out of U.S. Gulf terminals, and a recalibration of European pipeline imports from Norway and North Africa.</p>
+
+    <p>For southeastern Connecticut, the relevance is twofold. The Virginia-class submarines whose commissionings Issue Two covered are part of the deterrent posture that keeps the chokepoint situation from escalating further. And the price signal that flows through ISO New England's wholesale market is, in part, the price of that distant standoff. The grid here and the geopolitics there are no longer comfortably separable. Commissioner Dykes' remark at the State Pier ceremony in March — that diverse, stable, reliable sources of power matter enormously in the shadow of an active conflict — read as policy framing when it was delivered. It reads now as a description of the operating environment.</p>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- THE DECISIONS -->
+<!-- ══════════════════════════════════════════ -->
+<div id="decisions">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Closing</div>
+  <h2 class="section-headline">The Decisions Are Local</h2>
+  <div class="section-subhead">Hartford, Waterford, Killingly, New London — where the next forty years will actually be decided</div>
+
+  <div class="body-text">
+
+    <p>Issue Two placed three facts on the table: Millstone at fifty, Revolution Wind delivering power, three Virginia-class boats commissioned and a Columbia-class ordered. Eight weeks on, each of those facts has acquired a sharper edge. Millstone's next chapter is being written this quarter, in filings before DEEP. Revolution Wind is racing a December commercial-operation deadline while the federal pipeline behind it closes. The submarine work continues at pace. The grid that connects them is more expensive than it was, and more constrained than it has been in a generation. The choices are sharper now.</p>
+
+    <p>The decisions that will determine what southeastern Connecticut's grid looks like in 2046 are not, in the main, federal decisions. The federal posture has been volatile; some of its consequences — the lapsed solar credit, the offshore wind freeze — have already been priced into the planning horizon. The decisions in front of Connecticut, and in front of the towns within Connecticut, are state and municipal.</p>
+
+    <p>Waterford will vote, at some point in the years ahead, on whether to host expanded nuclear generation at the existing Millstone site. Other towns may be asked to consider data center developments, with the workforce, tax-base, and grid implications that follow. The state will decide whether to commission additional offshore wind procurement and on what schedule. PURA will decide how the costs of grid modernization are allocated. The Connecticut Office of Consumer Counsel will continue to make the case for the residential ratepayer in proceedings whose outcomes are measured in cents per kilowatt-hour but, compounded across two decades, in significant household balance sheets.</p>
+
+    <p>The lower Thames region has a workforce that is, by accident of history and by sustained investment, well-prepared for several of these decisions. The engineering and operations talent at Millstone. The naval nuclear program at the Submarine Base. The industrial workforce at Electric Boat. The redeveloped marine logistics capacity at New London's State Pier. These are not abstract assets. They are the human and physical infrastructure that turns an energy policy choice — about an SMR cluster, about a data center, about a next round of offshore wind procurement — into something that can actually be built.</p>
+
+    <p>The Thames Club's membership is positioned, more directly than most, to think clearly about this. The ratepayer, the engineer, the contractor, the developer, the regulator, the planner — they are all, on a given evening, in the same room. What that room has agreed on, by the Club's long tradition, is not the decisions themselves. It is the discipline of taking the facts seriously before the decisions are made.</p>
+
+    <p>The grid is being rebuilt in front of us. The question for the region is not whether we want a vote — it is whether we are ready to cast one.</p>
+
+  </div>
+
+  <div class="ornament">· · ·</div>
+
+  <div style="margin-top: 36px; padding: 28px; border: 1px solid rgba(201,168,76,0.3); background: var(--warm-white);">
+    <div class="section-label" style="margin-bottom: 16px;">Sources &amp; Verification</div>
+    <div class="body-text" style="font-size: 14px; color: #888;">
+      <p style="font-size: 14px; line-height: 1.65; margin-bottom: 14px;">Figures and events in this continuation are drawn from primary documents and verified reporting. Cold-event statistics, including the nineteen-day duration, the peak demand figure, and the approximately six-billion-dollar market-transactions total, are reported by ISO New England's post-winter summary and its 2026 CELT forecast. The Section 202(c) emergency order is on the public record of the U.S. Department of Energy. Public Act 25-173 (Senate Bill 4), House Bill 5340, and the Site Readiness Funding Program documentation are available through the Connecticut General Assembly and the Department of Energy and Environmental Protection; the DEEP advanced-nuclear workshop series (March–May 2026) is on the agency's public record. Dominion Energy's three March 17, 2026 zero-carbon procurement filings, including the cited PPA savings figures and the language regarding Unit 2's 2035 license-renewal risk, are public on the DEEP docket and have been reported by the Hartford Business Journal and CT News Junkie. Revolution Wind's litigation history is drawn from the docket of the U.S. District Court for the District of Columbia in Revolution Wind, LLC v. Burgum; construction status (fifty-eight of sixty-five turbines installed; December 31 commercial-operation deadline) is from Ørsted's May 2026 status statements. The federal offshore-wind lease buyouts — TotalEnergies on March 23, followed by Golden State Wind and Bluepoint Wind in early May — are documented in the companies' press releases and in the Clean Energy States Alliance assessment of May 4, 2026. National demand projections cite the U.S. Energy Information Administration's Short-Term Energy Outlook and the International Energy Agency's electricity reporting; the Dominion Virginia data-center capacity figures are from Dominion's investor materials. The Eversource standard-supply rate change effective January 1, 2026, and Connecticut's residential rate ranking are drawn from the Eversource rate filing and EIA state-level residential rate data. The expirations of the federal Residential Clean Energy Credit (Section 25D) and the commercial / third-party lease and PPA window (Section 48E) are set out in the One Big Beautiful Bill Act. Strait of Hormuz and ceasefire-status references are drawn from CSIS commercial-traffic analysis and White House public statements of April 8 and May 11, 2026. Secondary sourcing includes CT Mirror, CT Public, CT News Junkie, and CT Examiner. The Katie Dykes pull quote, originally published in Above &amp; Below Issue 2, is drawn from remarks delivered at New London's State Pier on March 19, 2026; the Dominion quotation is from the filing's public text. All figures verified as of May 14, 2026; where filings or proceedings are ongoing, that status is noted in-text.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-name">The Thames Club</div>
+  <div class="footer-address">
+    290 State Street · New London, Connecticut 06320<br>
+    Established 1869
+  </div>
+  <div class="footer-rule"></div>
+  <div class="footer-copy">
+    Above &amp; Below is produced pro bono by Global Table Media LLC for the Thames Club membership.<br>
+    Issue 2.1 · Spring 2026 · Continued &nbsp;·&nbsp; © 2026 Global Table Media LLC
+  </div>
+</footer>
+
+</body>
+</html>
