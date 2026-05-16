@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Publications — The Thames Club</title>
+<title>Above &amp; Below — Issue Two Addendum | The Thames Club</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
 <style>
 :root{--navy:#0c1c2e;--cream:#f4edd8;--gold:#a6894a;--ink:#1c1c1c;--muted:#6b6251}
 *{box-sizing:border-box;margin:0;padding:0} body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
-.nav-in{max-width:1120px;margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-family:'Cormorant Garamond',serif;font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:#f4edd8}
-.links{display:flex;gap:18px;flex-wrap:wrap}.links a{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78)}
-.hero{background:var(--navy);color:var(--cream);padding:110px 28px 80px}.wrap{max-width:1120px;margin:0 auto}
+
+.hero{background:var(--navy);color:var(--cream);padding:90px 28px 60px}
+.wrap{max-width:1120px;margin:0 auto}
 .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,7vw,92px);line-height:.92;font-weight:600;margin-bottom:18px}
-.deck{max-width:640px;font-size:18px;line-height:1.8;color:rgba(244,237,216,.78)}
-.grid{max-width:1120px;margin:0 auto;padding:56px 28px 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
-.card{background:#fffdf8;border:1px solid rgba(166,137,74,.2);padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.04)}
-.tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-.card h2{font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1.02;color:var(--navy);margin-bottom:10px}
-.card p{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:22px}
-.btn{display:inline-block;border:1px solid rgba(12,28,46,.26);padding:12px 18px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-.btn:hover{background:var(--navy);color:var(--cream);border-color:var(--navy)}
-footer{background:var(--navy);color:rgba(244,237,216,.75);padding:42px 28px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,76px);line-height:.95;font-weight:600;margin-bottom:18px}
+.deck{max-width:680px;font-size:17px;line-height:1.8;color:rgba(244,237,216,.78)}
+
+.reader{max-width:1180px;margin:0 auto;padding:40px 24px 64px}
+.reader iframe{width:100%;height:88vh;min-height:720px;border:none;border-radius:8px;background:#fff;box-shadow:0 12px 36px rgba(0,0,0,.10)}
+.reader-foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.reader-foot a{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:2px}
+.reader-foot a:hover{color:var(--gold)}
 
 /* unified site nav + footer */
 .site-shell-nav{position:sticky;top:0;z-index:999;background:rgba(12,28,46,.98);backdrop-filter:blur(10px);border-bottom:1px solid rgba(166,137,74,.18)}
@@ -49,68 +46,6 @@ footer{background:var(--navy);color:rgba(244,237,216,.75);padding:42px 28px}
 @media(max-width:960px){.nav-hamburger{display:flex}.site-shell-links{display:none!important}}
 @media(min-width:961px){.nav-hamburger{display:none!important}.nav-mobile{display:none!important}}
 .nav-cta{padding:7px 16px!important;border:1px solid rgba(166,137,74,.45)!important;border-radius:20px!important;color:#f4edd8!important;background:transparent!important;margin-left:8px}.nav-cta:hover{background:rgba(166,137,74,.15)!important;border-color:#c9a96e!important}
-
-
-/* === Thames Club link readability hardening === */
-a {
-  color: inherit;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-main a,
-article a,
-section a,
-footer a,
-.foot-info a,
-.prose a {
-  color: #8f7136;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(166,137,74,.45);
-}
-
-main a:hover,
-article a:hover,
-section a:hover,
-footer a:hover,
-.foot-info a:hover,
-.prose a:hover {
-  color: #0c1c2e;
-  border-bottom-color: #0c1c2e;
-}
-
-.site-nav a,
-.nav-r a,
-.nav-brand,
-.foot-nav a,
-.btn {
-  border-bottom: none !important;
-  text-decoration: none !important;
-}
-
-.site-nav a,
-.nav-r a {
-  color: rgba(244,237,216,.78);
-}
-
-.site-nav a:hover,
-.nav-r a:hover {
-  color: #f4edd8;
-}
-
-.nav-cta,
-.btn-d {
-  color: #f4edd8 !important;
-  border: 1px solid #a6894a !important;
-}
-
-footer a {
-  color: #c8aa62;
-}
-
-footer a:hover {
-  color: #f4edd8;
-}
 </style></head>
 <body>
 
@@ -143,21 +78,29 @@ footer a:hover {
     <a href="bowling.html">Duckpin bowling</a>
     <a href="community.html">Community</a>
     <a href="membership.html">Membership</a>
-      <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
+    <a href="reciprocal-clubs.html">Reciprocal Clubs</a>
     <a href="visit.html">Visit</a>
   </div>
 </nav>
 
 <section class="hero"><div class="wrap">
-<div class="eyebrow">The Thames Club Publications</div>
-<h1>House Publications</h1>
-<p class="deck">Editorial work distributed by clicking from the Thames Club website. These are full-color publication pages presented in the Club’s house format.</p>
+<div class="eyebrow">Above &amp; Below &middot; Issue Two &middot; Addendum</div>
+<h1>Above &amp; Below</h1>
+<p class="deck">An addendum to the second issue of the Club's editorial series &mdash; additional notes, corrections, and reflections accompanying Issue Two.</p>
 </div></section>
-<section class="grid">
-<article class="card"><div class="tag">Above &amp; Below · Issue Two</div><h2>Above &amp; Below</h2><p>The second issue of the Club's editorial series — stories, features, and perspectives from the Thames Club community.</p><a class="btn" href="above-and-below-issue-2.html">Read Issue Two</a></article>
-<article class="card"><div class="tag">Above &amp; Below · Issue Two · Addendum</div><h2>Addendum</h2><p>Additional notes, corrections, and reflections accompanying the second issue of <em>Above &amp; Below</em>.</p><a class="btn" href="above-and-below-issue-2-addendum.html">Read Addendum</a></article>
-<article class="card"><div class="tag">Above &amp; Below · Issue One</div><h2>Homecoming</h2><p>The first issue of <em>Above &amp; Below</em>, presented as a Thames Club publication in the house editorial style.</p><a class="btn" href="above-and-below-issue-1.html">Open Publication</a></article>
-<article class="card"><div class="tag">Above &amp; Below · Special Edition</div><h2>Submarineland</h2><p>A special edition field guide for newcomers to southeastern Connecticut, built as a full-color editorial publication and linked from the site.</p><a class="btn" href="submarineland.html">Open Special Edition</a></article>
+
+<section class="reader">
+  <iframe
+    src="https://claude.site/public/artifacts/cd0619c0-e9f1-4a41-943b-4e573f010987/embed"
+    title="Above and Below Issue Two Addendum"
+    allow="clipboard-write"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+  <div class="reader-foot">
+    <a href="above-and-below-issue-2.html">&larr; Read Issue Two</a>
+    <a href="publications.html">Return to Publications &rarr;</a>
+  </div>
 </section>
 
 <footer class="site-shell-footer">
@@ -165,8 +108,8 @@ footer a:hover {
     <div>
       <div class="site-shell-foot-brand">The Thames Club</div>
       <div class="site-shell-foot-copy">
-        290 State Street · New London, CT 06320<br>
-        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> · (959) 264-2733
+        290 State Street &middot; New London, CT 06320<br>
+        <a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a> &middot; (959) 264-2733
       </div>
     </div>
     <div class="site-shell-foot-links">
