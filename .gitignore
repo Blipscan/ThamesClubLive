@@ -1,1 +1,6 @@
 backups/
+
+# Local working files — not for deploy
+_atwood_extract/
+*.STAGING.html
+audit-report.csv
