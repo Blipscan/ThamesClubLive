@@ -68,5 +68,12 @@
     "displayDate": "Saturday, June 27, 2026",
     "time": "1:00 PM",
     "description": ""
+  },
+  {
+    "title": "Club reserved for private member event",
+    "date": "2026-07-02",
+    "displayDate": "Thursday, July 2, 2026",
+    "time": "12:00 AM",
+    "description": ""
   }
 ]
