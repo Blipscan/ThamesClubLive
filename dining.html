@@ -125,6 +125,16 @@ footer.site-shell-footer .site-shell-foot-copy a {
 footer.site-shell-footer .site-shell-foot-copy a:hover {
   color: #f4edd8;
 }
+
+/* CHEF ANNA FEATURE */
+.chef-feature{display:flex;gap:44px;align-items:flex-start;flex-wrap:wrap}
+.chef-feature .chef-photo{flex:0 0 300px;max-width:300px;width:100%}
+.chef-feature .chef-photo img{width:100%;height:auto;display:block;border-radius:6px;border:1px solid rgba(166,137,74,.3);box-shadow:0 14px 44px rgba(7,16,26,.20)}
+.chef-feature .chef-photo figcaption{font-family:var(--serif);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8a6835;margin-top:12px;text-align:center}
+.chef-feature .chef-body{flex:1;min-width:280px}
+.chef-feature .chef-body h2.serif-dk{margin-bottom:0}
+.chef-feature .chef-body .prose-dk{margin-top:20px}
+@media(max-width:720px){.chef-feature{gap:28px}.chef-feature .chef-photo{flex:0 0 100%;max-width:320px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -174,6 +184,21 @@ footer.site-shell-footer .site-shell-foot-copy a:hover {
 </section>
 
 <section class="sc">
+  <div class="w">
+    <span class="sec-label-d">Meet our chef</span>
+    <div class="chef-feature">
+      <figure class="chef-photo">
+        <img src="images/chef-anna.png" alt="Chef Anna in the Thames Club kitchen" width="340" height="453">
+      </figure>
+      <div class="chef-body">
+        <h2 class="serif-dk">Welcome Chef Anna!</h2>
+        <p class="prose-dk">Chef Anna has been passionate about making great food from a very young age. She is both our part-time chef and a full-time culinary student at Norwich Technical High School. Anna was a finalist in the State SkillsUSA Cooking Competition her sophomore year, placed third in their Restaurant Service Competition junior year, and intends to compete in the cooking competition again in her senior year. She&rsquo;s been awarded &ldquo;Best Work Ethic&rdquo; in her shop at school for three years running, and was additionally awarded &ldquo;Best Baker&rdquo; junior year. When Anna isn&rsquo;t in the kitchen, she enjoys animals, gardening, time in the woods or water, and watching movies with her family.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sc" style="border-top:1px solid rgba(166,137,74,.22);padding-top:56px">
   <div class="w">
     <span class="sec-label-d">Schedule</span>
     <h2 class="serif-dk">Hours and<br>service.</h2>
