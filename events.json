@@ -1,12 +1,5 @@
 [
   {
-    "title": "Pub reserved private meeting (Armelde Pitre)",
-    "date": "2026-07-08",
-    "displayDate": "Wednesday, July 8, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
     "title": "Nick Checker presents solo performance of Nameaug",
     "date": "2026-07-10",
     "displayDate": "Friday, July 10, 2026",
@@ -74,6 +67,13 @@
     "date": "2026-08-07",
     "displayDate": "Friday, August 7, 2026",
     "time": "5:30 PM",
+    "description": ""
+  },
+  {
+    "title": "Summer Club Vacation",
+    "date": "2026-08-08",
+    "displayDate": "Saturday, August 8, 2026",
+    "time": "12:00 AM",
     "description": ""
   }
 ]
