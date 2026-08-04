@@ -28,13 +28,6 @@
     "description": ""
   },
   {
-    "title": "Classic Movie Night",
-    "date": "2026-08-07",
-    "displayDate": "Friday, August 7, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
     "title": "Summer Club Vacation",
     "date": "2026-08-08",
     "displayDate": "Saturday, August 8, 2026",
@@ -56,7 +49,7 @@
     "description": ""
   },
   {
-    "title": "Cocktail Party with Heavy Hors D'Oeuvres",
+    "title": "Classic Movie Night",
     "date": "2026-08-21",
     "displayDate": "Friday, August 21, 2026",
     "time": "5:30 PM",
