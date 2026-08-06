@@ -115,6 +115,19 @@ h2.serif-dk{font-family:var(--display);font-size:clamp(32px,5vw,60px);font-weigh
 .gitem .ratio-tall{aspect-ratio:2/3}
 .gitem img.fill{width:100%;height:100%;object-fit:cover;display:block}
 
+/* TIKI PARTY GALLERY */
+.tiki-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin-top:34px}
+.tiki-gallery-card{margin:0;position:relative;overflow:hidden;background:rgba(255,255,255,.03)}
+.tiki-gallery-card a{display:block;aspect-ratio:4/3;overflow:hidden}
+.tiki-gallery-card a:focus-visible{outline:2px solid var(--gold-b);outline-offset:-2px}
+.tiki-gallery-card img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+.tiki-gallery-card a:hover img,.tiki-gallery-card a:focus img{transform:scale(1.04)}
+.tiki-gallery-card figcaption{padding:13px 16px 15px;font-family:var(--serif);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.82);line-height:1.65}
+.tiki-gallery-card.featured{grid-column:span 2}
+.tiki-gallery-card.featured a{aspect-ratio:16/9}
+@media(max-width:850px){.tiki-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tiki-gallery-card.featured{grid-column:span 2}}
+@media(max-width:560px){.tiki-gallery-grid{grid-template-columns:1fr}.tiki-gallery-card.featured{grid-column:span 1}.tiki-gallery-card.featured a{aspect-ratio:4/3}}
+
 /* PHOTO PLACEHOLDER (remove when real photos added) */
 .ph-block{background:rgba(255,255,255,.04);border:1px dashed rgba(166,137,74,.2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
 .ph-label{font-family:var(--serif);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream-dim);opacity:.5;text-align:center;line-height:1.6}
@@ -553,6 +566,59 @@ footer a:hover {
 </section>
 
 
+<!-- TIKI PARTY GALLERY — 2026 -->
+<section class="sw" id="tiki-party-gallery">
+  <div class="w">
+    <span class="sec-label">Events &amp; Gatherings</span>
+    <h2 class="serif">A tropical evening at the Club.</h2>
+    <p class="prose" style="margin-top:16px">A few scenes from the Thames Club Tiki Party — bright flowers, classic cocktails, outdoor dining, and an evening shared with members and guests.</p>
+    <div class="tiki-gallery-grid">
+      <figure class="tiki-gallery-card featured">
+        <a href="images/tiki-party/tiki-bar-gathering.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/tiki-bar-gathering.jpg" alt="Members gather around the Thames Club tiki bar." loading="lazy" decoding="async" width="675" height="900">
+        </a>
+        <figcaption>Members gather around the Thames Club tiki bar.</figcaption>
+      </figure>
+      <figure class="tiki-gallery-card">
+        <a href="images/tiki-party/tropical-table-gathering.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/tropical-table-gathering.jpg" alt="Guests enjoy the outdoor tropical table setting." loading="lazy" decoding="async" width="675" height="900">
+        </a>
+        <figcaption>Guests enjoy the outdoor tropical table setting.</figcaption>
+      </figure>
+      <figure class="tiki-gallery-card">
+        <a href="images/tiki-party/aloha-welcome.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/aloha-welcome.jpg" alt="A colorful Aloha welcome at the tropical-themed gathering." loading="lazy" decoding="async" width="675" height="900">
+        </a>
+        <figcaption>A colorful Aloha welcome at the tropical-themed gathering.</figcaption>
+      </figure>
+      <figure class="tiki-gallery-card">
+        <a href="images/tiki-party/members-and-leis.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/members-and-leis.jpg" alt="Members visit indoors wearing bright flower leis." loading="lazy" decoding="async" width="675" height="900">
+        </a>
+        <figcaption>Members visit indoors wearing bright flower leis.</figcaption>
+      </figure>
+      <figure class="tiki-gallery-card">
+        <a href="images/tiki-party/tiki-bartender.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/tiki-bartender.jpg" alt="The tiki bartender prepares a cocktail." loading="lazy" decoding="async" width="675" height="900">
+        </a>
+        <figcaption>The tiki bartender prepares a cocktail.</figcaption>
+      </figure>
+      <figure class="tiki-gallery-card">
+        <a href="images/tiki-party/guest-at-buffet.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/guest-at-buffet.jpg" alt="A guest smiles beside the tropical buffet." loading="lazy" decoding="async" width="675" height="900">
+        </a>
+        <figcaption>A guest smiles beside the tropical buffet.</figcaption>
+      </figure>
+      <figure class="tiki-gallery-card">
+        <a href="images/tiki-party/tropical-buffet.jpg" target="_blank" rel="noopener">
+          <img src="images/tiki-party/tropical-buffet.jpg" alt="The tropical buffet and polished chafing dishes." loading="lazy" decoding="async" width="1200" height="900">
+        </a>
+        <figcaption>The tropical buffet and polished chafing dishes.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="sw">
   <div class="w" style="text-align:center">
@@ -603,17 +669,33 @@ footer a:hover {
 </footer>
 
 <script>
-// Lightbox data — populate when real photos are added
+// Lightbox data — one entry per .gitem tile, indexed to match openLightbox(i).
+// Entries with an empty src show title/caption only (tile has no photo yet).
 const photos = [
   {src:'images/gallery_24.png', title:'290 State Street', cap:'Exterior · New London, CT'},
   {src:'images/gallery_25.png', title:'The Entry', cap:'Interior · Ground Floor'},
   {src:'images/gallery_26.jpg', title:'290 State Street', cap:'Interior · Historic Detail'},
+  {src:'', title:'c. Early 20th Century', cap:'Archive · Exterior'},
+  {src:'', title:'State Street', cap:'Exterior · New London'},
+  {src:'', title:'Architectural Detail', cap:'Exterior · Historic'},
   {src:'images/gallery_27.png', title:'The Dining Room', cap:'Interior · Main Floor'},
   {src:'images/gallery_28.png', title:'The Bar', cap:'Interior · Social Room'},
   {src:'images/gallery_29.jpg', title:'Live Music', cap:'Interior · Ground Floor'},
+  {src:'', title:'The Library', cap:'Interior · Upper Floor'},
+  {src:'', title:'Private Dining', cap:'Interior · Event Room'},
   {src:'images/gallery_30.jpg', title:'New London Ledge Light', cap:'Events · Dining Room'},
+  {src:'', title:'Members\' Reception', cap:'Events · Social Room'},
+  {src:'', title:'Recognition Evening', cap:'Events · Annual'},
   {src:'images/gallery_31.png', title:'Holiday Celebration', cap:'Events · Seasonal'},
   {src:'images/gallery_32.png', title:'Speaker Evening', cap:'Events · Cultural'},
+  {src:'', title:'Members at the Club', cap:'Daily Life · Social'},
+  {src:'', title:'The Lanes', cap:'Lower Level · Duckpin'},
+  {src:'', title:'The Pin Setter', cap:'Lower Level · Mechanical'},
+  {src:'', title:'League Night', cap:'Bowling · Tuesday–Thursday'},
+  {src:'', title:'Equipment', cap:'Bowling · Detail'},
+  {src:'', title:'Before', cap:'Top Floor · Pre-Restoration'},
+  {src:'', title:'During', cap:'Top Floor · In Progress'},
+  {src:'', title:'Original Detail', cap:'Interior · Historic Fabric'},
 ];
 
 let current = 0;
