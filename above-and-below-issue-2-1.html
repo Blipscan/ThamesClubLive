@@ -424,6 +424,58 @@
     display: block;
   }
 
+  /* ── IN-SECTION MINOR HEADING ── */
+  .mini-head {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 34px 0 14px;
+    line-height: 1.4;
+  }
+
+  /* ── FOOTNOTE REFERENCES ── */
+  sup.fn {
+    font-size: 10px;
+    line-height: 0;
+    vertical-align: super;
+  }
+
+  sup.fn a {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-bottom: none !important;
+  }
+
+  sup.fn a:hover { color: var(--navy); }
+
+  /* ── SOURCE LIST ── */
+  .source-list {
+    margin: 0;
+    padding-left: 24px;
+  }
+
+  .source-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #6f6a63;
+    margin-bottom: 12px;
+    padding-left: 4px;
+  }
+
+  .source-list li:last-child { margin-bottom: 0; }
+
+  .source-list li:target {
+    background: var(--gold-pale);
+    box-shadow: 0 0 0 6px var(--gold-pale);
+    border-radius: 2px;
+  }
+
   /* ── FOOTER ── */
   .footer {
     background: var(--navy);
@@ -554,13 +606,13 @@
     <div class="pub-name">Above &amp; Below</div>
     <h1 class="issue-title">
       The Shifting Floor
-      <em>Energy, Decisions, and the Forty Years Ahead</em>
+      <em>Energy, decisions, and the forty years ahead</em>
     </h1>
     <div class="gold-rule"></div>
-    <p class="deck">Last winter rewrote the question. Four energy pillars — nuclear, solar, offshore wind, and natural gas — are being reconsidered at once, and the decisions that follow will not be made in Washington alone.</p>
+    <p class="deck">A prolonged New England cold spell tested the region's fuel system while Connecticut reconsidered nuclear power, solar policy, offshore wind, natural gas, and fast-growing electricity demand.</p>
     <div class="gold-rule-wide"></div>
     <div style="height: 20px;"></div>
-    <span class="issue-meta">A Publication of the Thames Club &nbsp;·&nbsp; Global Table Media LLC</span>
+    <span class="issue-meta">Corrected reading edition &nbsp;·&nbsp; Reporting through May 14, 2026</span>
   </div>
 </header>
 
@@ -571,10 +623,11 @@
   <a href="#nuclear">Nuclear</a>
   <a href="#solar">Solar</a>
   <a href="#wind">Revolution Wind</a>
-  <a href="#gas">The Floor</a>
+  <a href="#gas">Natural Gas</a>
   <a href="#data">Data Centers</a>
   <a href="#hormuz">Hormuz</a>
   <a href="#decisions">The Decisions</a>
+  <a href="#sources">Sources</a>
 </nav>
 
 
@@ -589,13 +642,11 @@
 
   <div class="body-text drop-cap">
 
-    <p>The conversation that Above &amp; Below opened in our Spring issue has accelerated in ways that were not predictable in March. The winter that followed our last printing turned the question of energy security from a matter of long-term planning into a matter of immediate consequence — billed to ratepayers, debated on Capitol Hill, and litigated, more than once, in federal court.</p>
+    <p>The energy conversation opened in the Spring issue of Above &amp; Below has moved quickly. Since that issue went to the membership in March, Revolution Wind has begun delivering electricity, Connecticut has continued its zero-carbon procurement, and state officials have advanced an informational process for considering new nuclear technologies. At the same time, a nineteen-day cold spell exposed the continuing relationship among weather, natural-gas availability, stored oil, electricity prices, and regional reliability.</p>
 
-    <p>Issue Two went to the membership in March, when Revolution Wind had just begun delivering power and Millstone's next chapter was still a matter of negotiation in the future tense. The picture has moved faster than expected. What follows is not a revision of what we wrote then — it is an account of what has shifted since, on each of the threads the issue traced, and on several it did not.</p>
+    <p>Issue Two framed energy security around a particular geography: Millstone Power Station in Waterford, the offshore-wind supply chain centered partly on New London's State Pier, and the submarine industrial base on both sides of the Thames. That frame remains useful, but it is not complete. New England's electricity system is regional. Federal agencies license nuclear plants and offshore projects. ISO New England operates the bulk power system and wholesale markets. Connecticut makes procurement and energy-policy decisions. Municipalities control important land-use and local approval processes. None acts alone.</p>
 
-    <p>Issue Two framed energy security around Millstone, and around the particular geography that connects the nuclear plant in Waterford to the offshore turbines off Point Judith and to the submarine industrial base across the river. The frame holds. What has changed is the breadth of the conversation. The bipartisan vote in Hartford on Senate Bill 4 in May. The midnight expiration of the federal residential solar credit on December 31. The lapsed federal appeal that finally cleared Revolution Wind to send power to the grid. The Section 202(c) emergency dispatch order during January's nineteen-day cold event. These were not abstract policy developments. They were structural choices, made under pressure, with consequences that will be measured in decades.</p>
-
-    <p>This continuation widens the lens. Four energy sources — nuclear, solar, offshore wind, and natural gas — are being reconsidered at the same time, by overlapping authorities, against a backdrop of rising electricity demand and a federal posture that continues to oscillate. The decisions that follow are not federal alone. Many of the most consequential will be made at the state level and at the municipal level — in places like Waterford, Killingly, and yes, New London. We have set this material as Issue 2.1 deliberately: it is the second half of the conversation Issue Two began, brought forward as the events themselves have moved.</p>
+    <p>This continuation examines four major sources of electricity — nuclear, solar, offshore wind, and natural gas — alongside the demand growth associated with electrification and data centers. It distinguishes reported facts from forecasts and editorial conclusions. The purpose is not to prescribe a single answer. It is to establish a reliable common record before the argument begins.</p>
 
   </div>
 
@@ -617,8 +668,9 @@
 <div class="container">
 <div class="callout" style="text-align: center; padding: 44px 38px; margin: 56px 0 8px;">
   <div class="callout-label">A Note to the Membership</div>
-  <h3 style="font-style: italic; font-size: clamp(20px,2.6vw,26px); max-width: 640px; margin: 0 auto 18px; color: var(--gold-light); font-weight: 500;">The Club has always been a safe place to speak and be heard.<br>This may be a good occasion to do it once again.</h3>
-  <p style="max-width: 580px; margin: 0 auto;">Our membership spans every vantage on the questions that follow — voters, donors, those entering or well into the fixed-income phase of economic life, and members who follow the daily drama of the news cycle closely. For one hundred and fifty-six years, this room has held conversations across exactly that kind of difference. We are inclined to pick an evening this season and do it again. Watch the calendar; an invitation will follow.</p>
+  <h3 style="font-style: italic; font-size: clamp(20px,2.6vw,26px); max-width: 660px; margin: 0 auto 18px; color: var(--gold-light); font-weight: 500;">The Club has long been a place where people connected to New London's civic, maritime, naval, business, and cultural life can speak and be heard.</h3>
+  <p style="max-width: 600px; margin: 0 auto 14px;">Our members approach energy questions from different personal and professional experiences. Some are especially attentive to household costs; others know the region through engineering, construction, maritime work, public service, or the naval community. That range does not guarantee agreement. It does give the Club an opportunity to host a serious conversation grounded in evidence and conducted with respect.</p>
+  <p style="max-width: 600px; margin: 0 auto;">We are considering an evening devoted to that conversation. Watch the Club calendar for details.</p>
 </div>
 </div>
 </div>
@@ -633,40 +685,42 @@
 
   <div class="section-label">Opening</div>
   <h2 class="section-headline">The Grid Wrote Something Down</h2>
-  <div class="section-subhead">Nineteen days in January, and what they revealed</div>
+  <div class="section-subhead">Nineteen cold days, and what they revealed</div>
 
   <div class="body-text">
 
-    <p>On the second of January 2026, the average overnight low across New England fell below ten degrees. It stayed there. For nineteen consecutive days, the regional electric system ran in a configuration that grid operators had drilled for and warned about for a decade but had never sustained at that duration. Demand peaked above twenty-one thousand megawatts. Liquefied natural gas tankers offloaded at Everett, Massachusetts, supplying the dual-fuel power plants that had been pre-positioned for exactly this scenario. ISO New England reported approximately six billion dollars in market transactions across the event — a figure that represents not profit but cost, paid by ratepayers, distributed across the grid's six states.</p>
+    <p>From January 23 through February 10, 2026, New England experienced a prolonged outbreak of Arctic air. ISO New England reported that regional temperatures averaged about 15 degrees Fahrenheit during the period — approximately 11 degrees below normal. Electricity consumption during the cold spell totaled roughly 7,669 gigawatt-hours. Winter demand peaked on January 25 at 20,182 megawatts, slightly above the grid operator's pre-winter forecast for normal conditions.<sup class="fn"><a href="#s1">[1]</a></sup></p>
 
-    <p>On January 14, the U.S. Department of Energy invoked Section 202(c) of the Federal Power Act, an authority used rarely and only in declared emergencies. The order directed certain generation units to operate or remain on standby regardless of environmental compliance limits, on the explicit determination that reliability would otherwise be compromised. The order was lifted twelve days later, when forecast temperatures recovered and reserves stabilized.</p>
+    <p>The system remained reliable, but doing so required extraordinary use of stored fuel. ISO New England reported that power plants burned approximately 139 million gallons of oil during the full winter, including about 111 million gallons during the nineteen-day cold period. Snow cover also reduced the performance of behind-the-meter solar installations during the event.<sup class="fn"><a href="#s1">[1]</a></sup></p>
+
+    <p>On January 25, at ISO New England's request, the U.S. Department of Energy issued an emergency order under Section 202(c) of the Federal Power Act. The order allowed specified generating resources to operate as needed notwithstanding certain permit or emissions limits. DOE extended the order on January 30, and it remained effective through February 14. Fifty-seven resources representing approximately 11,215 megawatts of winter capacity received specified-resource treatment; twenty-six later reported exceeding a limit identified in the order.<sup class="fn"><a href="#s1">[1]</a><a href="#s2">[2]</a></sup></p>
+
+    <p>The financial number associated with the winter also requires precision. ISO New England reported more than $6 billion in energy-market value over the entire December-through-February winter: approximately $1.8 billion in December, $2.7 billion in January, and $1.5 billion in February. That was not the cost of the nineteen-day cold spell alone, and market value is not the same thing as generator profit. It is a measure of transactions in the regional wholesale energy market.<sup class="fn"><a href="#s1">[1]</a></sup></p>
 
   </div>
 
   <div class="stat-row">
     <div class="stat-cell">
-      <span class="stat-number">19</span>
-      <span class="stat-label">Consecutive cold days</span>
+      <span class="stat-number">19 days</span>
+      <span class="stat-label">January 23–February 10 cold period</span>
     </div>
     <div class="stat-cell">
-      <span class="stat-number">$6B</span>
-      <span class="stat-label">Market transactions</span>
+      <span class="stat-number">20,182 MW</span>
+      <span class="stat-label">Winter peak during the event</span>
     </div>
     <div class="stat-cell">
-      <span class="stat-number">21K</span>
-      <span class="stat-label">Megawatt peak demand</span>
+      <span class="stat-number">111M gal</span>
+      <span class="stat-label">Oil burned during the cold period</span>
     </div>
     <div class="stat-cell">
-      <span class="stat-number">202(c)</span>
-      <span class="stat-label">Federal emergency order</span>
+      <span class="stat-number">Jan 25–Feb 14</span>
+      <span class="stat-label">Section 202(c) order in effect</span>
     </div>
   </div>
 
   <div class="body-text">
 
-    <p>These are the facts of the cold event, as reported by ISO New England in its post-winter summary. What they describe is a grid that performed — but a grid that performed at the outer edge of what its current portfolio of generators can deliver. The question that follows is not whether to congratulate the operators. The question is whether the structure that produced this outcome is the structure that should produce the next one.</p>
-
-    <p>Last winter was not a near-miss. It was a structural warning, and the grid wrote it down.</p>
+    <p>The record supports two conclusions. First, the regional system performed its essential job: customers were served through a difficult period. Second, that performance depended heavily on oil, natural gas, fuel logistics, and temporary regulatory flexibility. Calling the winter either an uncomplicated success or a narrowly avoided collapse would overstate the evidence. It was a demanding real-world test of the system New England has today.</p>
 
   </div>
 
@@ -683,47 +737,35 @@
 <div class="section">
 
   <div class="section-label">Pillar One</div>
-  <h2 class="section-headline">Nuclear: From Preservation to Expansion</h2>
-  <div class="section-subhead">A March filing, a bipartisan vote, and a question of geography</div>
+  <h2 class="section-headline">Nuclear: Preservation, Procurement, and the Possibility of Expansion</h2>
+  <div class="section-subhead">Millstone's existing role and Connecticut's longer conversation</div>
 
   <div class="body-text">
 
-    <p>The first and most consequential development since Issue Two went to print landed on March 17, when Dominion Energy filed three bid options into Connecticut's zero-carbon procurement. The filings offered the Department of Energy and Environmental Protection a choice of long-term Power Purchase Agreement contracts at nine, twelve, or sixteen million megawatt-hours per year, each extending into the 2030s. The largest of the three would lock in the full output of both operating units — Millstone Unit 2 and Unit 3 — for roughly a decade.</p>
+    <p>Connecticut released a new Zero Carbon Request for Proposals on January 30, 2026. The solicitation sought bids from existing or new nuclear generation, hydropower, solar, onshore wind, related transmission, and certain storage resources. Most bids were due March 17. Connecticut designed the procurement to allow participation by other New England states, and state law requires at least two other states to share the costs of any new Connecticut procurement of existing nuclear generation.<sup class="fn"><a href="#s3">[3]</a></sup></p>
 
-    <p>The filings carried an unusual frankness. Dominion stated publicly that without a new long-term contract in place, Unit 2's 2035 license renewal becomes uncertain. Plant economics, the company said, depend on contractual visibility well in advance of the capital commitments that license extension requires. In parallel, the filings referenced ongoing discussions with what Dominion described as "well-capitalized counterparties" — language widely understood in the industry to mean hyperscale data-center operators willing to buy plant output directly, bypassing the state procurement entirely.</p>
+    <p>The current Millstone and Seabrook contracts expire in 2029. In announcing the new solicitation, the Department of Energy and Environmental Protection said those contracts had saved Connecticut ratepayers an estimated $153 million as of 2025 through the resale of energy and environmental attributes into the market. DEEP also said that the risk of existing nuclear plants retiring had receded as wholesale market conditions improved. The new procurement is therefore best understood as a competitive search for affordability, reliability, and price stability — not as proof that Millstone has announced an imminent closure.<sup class="fn"><a href="#s3">[3]</a></sup></p>
 
-    <p>The savings figures are not small. The existing Millstone PPA, signed in 2019 at just under five cents per kilowatt-hour, has saved Connecticut ratepayers an estimated two hundred and twenty million dollars in 2024 alone, and a projected seven hundred million dollars over its full term. Eight hundred and fifty Dominion employees and three hundred and eighty contractors work at the Waterford site; their families live across the shoreline. DEEP is expected to act on the bids in the second quarter of this year. PURA approval would follow in the third. Whether Connecticut keeps the plant under a ratepayer-facing contract or yields its output to the data-center bidders is the decision that frames much of what follows.</p>
+    <p>Proposals submitted to a competitive procurement may contain confidential commercial information. Until DEEP publishes selections or releasable bid documents, the price, volume, duration, and conditions of individual proposals should not be treated as settled public facts. The decision process will involve DEEP review and, for any resulting utility contract, review by the Public Utilities Regulatory Authority.</p>
 
-  </div>
-
-  <div class="pull-quote">
-    <p>"Millstone is a critical asset for the region. We need long-term contractual certainty to make the investments that keep it running."</p>
-    <cite>Dominion Energy, Connecticut Zero-Carbon Procurement Filing — March 17, 2026</cite>
-  </div>
-
-  <div class="body-text">
-
-    <p>That decision sits inside a broader regulatory shift. In May 2026, Connecticut's General Assembly passed Senate Bill 4 with a margin that has become unusual in state energy policy: large majorities from both parties in both chambers. Public Act 25-173, as the bill became after Governor Lamont's signature, did not approve the construction of any specific facility. It did something arguably more consequential. It established the state-level regulatory framework under which new nuclear generation — including small modular reactor projects at the existing Millstone footprint, and at other sites meeting specified criteria — can be evaluated and permitted. The state's 1979 moratorium on new nuclear construction, lifted partially in 2022, has now been comprehensively replaced with an affirmative authorization to consider.</p>
-
-    <p>The Governor's framing, in the weeks preceding the vote, has been direct. Connecticut residents have been confronted with electricity bills that he has characterized, in interviews, as a source of intense frustration — and as the political precondition for almost everything else the state would like to do on energy. The cost question is the live question. So is the technology question.</p>
+    <p>Millstone remains central to Connecticut's electricity system and to southeastern Connecticut's economy. Its two operating units provide carbon-free, around-the-clock generation and connect to transmission infrastructure built for a major power station. Those characteristics make the Waterford site relevant to any discussion of the state's existing nuclear fleet. They do not, by themselves, determine the terms of a future contract or establish that a new reactor will be built there.</p>
 
   </div>
 
   <div class="callout">
-    <div class="callout-label">A Plain Explanation</div>
-    <h3>What a Small Modular Reactor Actually Is</h3>
-    <p>A small modular reactor is not a miniature version of a Millstone unit. It is a different design philosophy: factory-built reactor cores rated below 300 megawatts per unit, manufactured to a standardized specification, shipped to a prepared site, and installed in clusters to scale output. The Nuclear Regulatory Commission has begun licensing reviews of several SMR designs from companies including NuScale, GE Hitachi, and TerraPower. Commercial deployment in the United States remains some years away.</p>
-    <p>The argument for SMRs at an existing nuclear site is straightforward: the transmission interconnection is already built, the security infrastructure is already in place, and the workforce that operates Millstone today is the workforce that would operate an SMR cluster tomorrow. The argument against — or for caution — is the cost.</p>
+    <div class="callout-label">A Point of Correction</div>
+    <h3>Connecticut's 2025 Nuclear Legislation</h3>
+    <p>Public Act 25-173 was enacted in 2025, not 2026. It did not approve a reactor or comprehensively repeal every restriction on new nuclear construction. Among its nuclear provisions, the law directed DEEP to conduct an informational process on new nuclear capacity and authorized an Advanced Nuclear Reactor Site Readiness Funding Program. The program may use up to $5 million in bond authorization for grants or loans supporting eligible site-readiness work.<sup class="fn"><a href="#s4">[4]</a><a href="#s5">[5]</a></sup></p>
+    <p>The law also established a municipal role. A community interested in qualifying for the program would have to take affirmative local action under the statute. That framework creates a path for consideration; it does not predict which municipality, if any, will use it.</p>
+    <p>DEEP held three informational workshops during the spring of 2026. The first two addressed advanced fission technologies and related siting questions. The third, held May 13, addressed fusion. DEEP described the series as an effort to help municipalities and policymakers understand emerging technologies before developing the site-readiness program.<sup class="fn"><a href="#s5">[5]</a></sup></p>
   </div>
 
-  <div class="body-text">
-
-    <p>Cost estimates for first-of-a-kind SMR power vary across what the state's Office of Consumer Counsel has described as an extraordinary range — somewhere between roughly twenty dollars and five hundred dollars per megawatt-hour, depending on technology selection, financing terms, siting conditions, and the degree to which manufacturing scale can be achieved. Connecticut's existing Millstone power purchase agreement, by way of comparison, prices generation at roughly fifty dollars per megawatt-hour. The arithmetic between the floor and the ceiling of the SMR estimate range is the difference between a project that lowers ratepayer costs and one that raises them substantially.</p>
-
-    <p>The state has begun to operationalize the framework. Public Act 25-173 established a five-million-dollar Site Readiness Funding Program for Connecticut municipalities willing to host new nuclear generation, and DEEP has run three workshops under it — the first two on small modular fission, the third, on May 13, on fusion. No town has yet stepped forward. Commissioner Katie Dykes has described the program's posture as patient: a long conversation rather than a fast procurement. ISO New England's most recent forecast projects regional electricity demand rising roughly forty percent over the next twenty years, driven by electrification of buildings and transportation and the data-center buildout in neighboring states. The mid-2030s, in Dykes' framing, is when the region's reserve margins narrow to the point of decision.</p>
-
-    <p>Geography matters here. Very few sites in Connecticut combine the available land, the cooling water access, and the security and transmission infrastructure that an SMR cluster would require. Legislators from the Hartford region have observed, accurately, that the capitol is not among them. The lower Thames is.</p>
-
+  <div class="callout">
+    <div class="callout-label">A Plain Explanation</div>
+    <h3>What a Small Modular Reactor Is — and Is Not</h3>
+    <p>The Nuclear Regulatory Commission generally describes small modular reactors as advanced reactors capable of producing up to 300 megawatts of electricity per unit. "Modular" refers to a design and construction approach in which significant components may be manufactured in factories and assembled at a site. Designs differ substantially in coolant, fuel, safety systems, physical configuration, and stage of federal review.<sup class="fn"><a href="#s6">[6]</a></sup></p>
+    <p>No commercial SMR is currently operating in the United States. Several developers are pursuing licensing or pre-application work, but cost and schedule estimates remain uncertain. First-of-a-kind projects are particularly difficult to price because manufacturing scale, financing, regulatory review, supply chains, and construction experience are still developing.</p>
+    <p>An existing nuclear site may offer useful infrastructure, including transmission access, security experience, industrial land, and an experienced regional workforce. Whether any particular location is suitable for an advanced reactor would still require technical studies, federal licensing, state review, financing, and the applicable local process. The lower Thames region is part of that conversation; it is not yet the answer to it.</p>
   </div>
 
 </div>
@@ -739,45 +781,52 @@
 <div class="section">
 
   <div class="section-label">Pillar Two</div>
-  <h2 class="section-headline">Solar: The Math Changed at Midnight</h2>
-  <div class="section-subhead">December 31, 2025 — and a narrow window through Independence Day</div>
+  <h2 class="section-headline">Solar: The Federal Incentive Changed</h2>
+  <div class="section-subhead">What ended, what remains, and what the July deadline really means</div>
 
   <div class="body-text">
 
-    <p>At midnight on December 31, 2025, the federal Residential Clean Energy Credit — the thirty-percent income-tax credit for homeowner-purchased solar installations — expired for systems installed after that date. The expiration had been written into federal tax legislation enacted earlier in 2025, and was therefore neither a surprise to the industry nor reversible by administrative action. For a typical Connecticut household installing a residential solar system, the lost credit value is approximately nine thousand dollars — a figure that the state's solar industry expects will reduce residential installation volume by twenty to twenty-five percent in 2026.</p>
+    <p>Federal law ended the Residential Clean Energy Credit under Section 25D for expenditures made after December 31, 2025. For an eligible homeowner-owned system completed in time, the credit had generally equaled 30 percent of qualified expenditures. For later residential expenditures, that homeowner credit is no longer available.<sup class="fn"><a href="#s7">[7]</a></sup></p>
 
+    <p>The change does not create a single "typical Connecticut loss." The former credit's dollar value depended on the project's qualified cost and the taxpayer's circumstances. A $30,000 eligible project, for example, could have generated a credit of up to $9,000, but that example should not be presented as the universal Connecticut installation.</p>
+
+    <p>Third-party-owned systems require different language. A homeowner who signs a lease or power-purchase agreement does not personally claim the business investment credit under Section 48E. The third-party owner may be eligible, depending on the facility and compliance with federal requirements. For affected wind and solar facilities, July 4, 2026 is generally a beginning-of-construction deadline associated with continued eligibility; other requirements, including placed-in-service rules, also apply. It is not simply a last day for a homeowner to sign a lease.<sup class="fn"><a href="#s8">[8]</a></sup></p>
+
+    <p>State-level programs remain important. Connecticut's Residential Renewable Energy Solutions program compensates participating residential systems under long-term tariff structures. The Energy Storage Solutions program provides incentives for qualifying batteries and grid-support performance. State tax provisions and financing through Connecticut Green Bank programs may also affect project economics. Homeowners should evaluate the complete contract, including ownership, escalation clauses, maintenance obligations, production assumptions, roof condition, and the treatment of renewable-energy attributes — not only the advertised monthly payment.</p>
+
+    <p>On May 6, the General Assembly passed House Bill 5340. As of this edition's May 14 reporting cutoff, the bill awaited final gubernatorial action. Its provisions addressed successor programs and additional policy and consumer-protection questions for solar and distributed energy; it did not recreate the former 30-percent federal homeowner credit.<sup class="fn"><a href="#s9">[9]</a></sup></p>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">A Point of Precision</div>
+    <h3>Reading the Electricity-Rate Numbers Honestly</h3>
+    <p>Eversource's standard-service supply rate increased from 9.748 cents per kilowatt-hour for July–December 2025 to 12.64 cents for January–June 2026, an increase of about 29.7 percent from the immediately preceding six-month period. Compared with the 11.19-cent rate in effect during January–June 2025, however, the winter-over-winter increase was about 13 percent. Both comparisons are accurate; publishing only one can create a distorted impression.<sup class="fn"><a href="#s10">[10]</a></sup></p>
+    <p>Standard service is the supply portion of a customer's bill, not the entire bill. Transmission, distribution, public-benefit charges, usage, customer type, and other items determine the all-in amount. Connecticut has consistently ranked among the country's higher-cost states for residential electricity, but any precise national ranking should carry the month and dataset used because state averages change from month to month.</p>
   </div>
 
   <div class="stat-row">
     <div class="stat-cell">
       <span class="stat-number">12/31/25</span>
-      <span class="stat-label">Residential credit expired</span>
-    </div>
-    <div class="stat-cell">
-      <span class="stat-number">$9,000</span>
-      <span class="stat-label">Typical CT credit lost</span>
+      <span class="stat-label">Section 25D homeowner credit ends</span>
     </div>
     <div class="stat-cell">
       <span class="stat-number">7/4/26</span>
-      <span class="stat-label">PPA / lease window ends</span>
+      <span class="stat-label">Beginning-of-construction deadline</span>
     </div>
     <div class="stat-cell">
-      <span class="stat-number">20–25%</span>
-      <span class="stat-label">Sales-volume contraction</span>
+      <span class="stat-number">12.64¢</span>
+      <span class="stat-label">Standard service, Jan–Jun 2026</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-number">13%</span>
+      <span class="stat-label">Winter-over-winter supply increase</span>
     </div>
   </div>
 
   <div class="body-text">
 
-    <p>A narrower set of options remains open to homeowners through July 4, 2026. The federal investment tax credit for commercial-scale and third-party-owned systems — solar leases and power purchase agreements — has a different expiration trajectory. Connecticut residents who lease their solar systems, or who purchase the electricity through a PPA rather than owning the equipment outright, retain access to the credit through that mid-summer window. After that, the residential solar market in Connecticut shifts to the supports that remain at the state level.</p>
-
-    <p>Those supports are not nothing. The Residential Renewable Energy Solutions program, administered by Connecticut's utilities under PURA oversight, continues to compensate homeowners for the electricity their systems export to the grid through long-term tariff agreements. The state's Energy Storage Solutions incentive remains active, paying battery owners for the grid-reliability value of their stored kilowatt-hours. Connecticut's sales and property tax exemptions for renewable energy installations remain in place. Smart-E loans, administered through the Connecticut Green Bank in partnership with local lenders, continue to provide below-market financing for residential clean energy projects.</p>
-
-    <p>On May 6, 2026, the General Assembly passed House Bill 5340, which extends several of these state-level supports and clarifies the regulatory treatment of distributed solar generation under the post-federal-credit environment. The legislation does not, and could not, replicate the financial value of the lapsed federal credit. What it does, in the view of the industry associations that supported its passage, is signal that Connecticut intends to preserve the residential solar market as a meaningful component of the state's energy mix, rather than allow it to contract along with the federal incentive structure.</p>
-
-    <p>What members are seeing on their bills is the second half of the same story. Eversource's standard supply rate rose roughly twenty-nine percent on January 1, from 9.748 cents per kilowatt-hour to 12.64 cents. Connecticut now carries the third-highest residential all-in electricity price in the nation, at roughly 30.48 cents per kilowatt-hour. The combination of generation, transmission, and public-benefits charges is the structural reality behind the Millstone negotiation: the state cannot afford to lose its lowest-cost baseload contract without a replacement plan, and there is no replacement plan presently on the table.</p>
-
-    <p>The twenty-to-twenty-five-percent contraction in projected installation volume is, by industry estimates, the new baseline. The question is whether it is the floor or the trajectory.</p>
+    <p>The federal change makes many new residential projects less attractive than they would have been with a 30-percent homeowner credit. How much Connecticut's installation market contracts cannot yet be stated as an observed 2026 fact. It will depend on system prices, financing costs, state programs, utility rates, customer preferences, and the availability of third-party ownership.</p>
 
   </div>
 
@@ -794,16 +843,18 @@
 <div class="section">
 
   <div class="section-label">Pillar Three</div>
-  <h2 class="section-headline">Revolution Wind: How It Came Home</h2>
-  <div class="section-subhead">Seven months of orders, injunctions, and idle assets — and a State Pier that built it anyway</div>
+  <h2 class="section-headline">Revolution Wind: Construction Through Litigation</h2>
+  <div class="section-subhead">A project that reached first power after two federal interruptions</div>
 
   <div class="body-text">
 
-    <p>On August 22, 2025, the U.S. Department of the Interior issued a stop-work order against Revolution Wind, an Ørsted–Skyborn Renewables project then approximately eighty percent complete in federal waters fifteen nautical miles southeast of Point Judith. The order cited national security concerns related to marine radar interference. It paused construction on a project whose components had been staged through New London's State Pier, whose foundations were already in the seabed, and whose sixty-five Siemens Gamesa turbines were either installed or scheduled for installation through the autumn weather window. The financial cost of the pause was significant: by Ørsted's filings, the project incurred approximately one and four-tenths million dollars per day in idle-asset and demobilization costs across the duration of the order.</p>
+    <p>Revolution Wind is a 704-megawatt offshore-wind project located approximately fifteen nautical miles southeast of Point Judith. Connecticut contracted for 304 megawatts of its output and Rhode Island for 400. The project is designed around sixty-five turbines.<sup class="fn"><a href="#s11">[11]</a></sup></p>
 
-    <p>In September 2025, the U.S. District Court for the District of Columbia ruled that the federal government had failed to articulate any factual basis sufficient to support the stop-work order, and that public statements from administration officials suggested the order's underlying motivation was unrelated to its stated national security justification. Work resumed.</p>
+    <p>On August 22, 2025, the Bureau of Ocean Energy Management issued a stop-work order when the project was approximately 80 percent complete. Revolution Wind challenged the order, and on September 22 the U.S. District Court for the District of Columbia granted preliminary relief allowing construction to resume. A preliminary injunction preserves the parties' positions while litigation continues; it is not a final judgment on every disputed question.<sup class="fn"><a href="#s12">[12]</a></sup></p>
 
-    <p>On December 22, 2025, a second stop-work order was issued, this time covering five offshore wind projects in advanced development: Revolution Wind, Vineyard Wind, Sunrise Wind, Empire Wind, and Coastal Virginia Offshore Wind. The legal challenge followed within days. On January 12, 2026, Judge Royce Lamberth granted a preliminary injunction against the December order, finding, again, that the government had not established the factual record required to support a finding of imminent harm. The federal appeal deadline lapsed in April without action by the Department of Justice. The case, for now, is over.</p>
+    <p>On December 22, 2025, the Department of the Interior paused construction on five offshore-wind projects then under development or construction: Revolution Wind, Vineyard Wind 1, Sunrise Wind, Empire Wind 1, and Coastal Virginia Offshore Wind. Revolution Wind again sought judicial relief. On January 12, 2026, the district court granted another preliminary injunction, and construction continued.<sup class="fn"><a href="#s13">[13]</a></sup></p>
+
+    <p>Revolution Wind delivered electricity to the New England grid for the first time on March 13. First power is a commissioning milestone, not the same as full commercial operation. As of the reporting cutoff, construction and commissioning work remained underway.<sup class="fn"><a href="#s14">[14]</a></sup></p>
 
   </div>
 
@@ -811,33 +862,31 @@
     <div class="callout-label">A Timeline</div>
     <h3>Revolution Wind, August 2025 – March 2026</h3>
     <ul class="timeline-list">
-      <li><span class="tl-date">Aug 22, 2025</span><span>Interior issues first stop-work order. Project approximately 80% complete.</span></li>
-      <li><span class="tl-date">Sept 2025</span><span>U.S. District Court for D.C. reverses the order. Work resumes.</span></li>
-      <li><span class="tl-date">Dec 22, 2025</span><span>Second stop-work order, this time covering five offshore wind projects.</span></li>
-      <li><span class="tl-date">Jan 12, 2026</span><span>Judge Royce Lamberth grants preliminary injunction. Construction continues.</span></li>
-      <li><span class="tl-date">April 2026</span><span>Federal appeal deadline lapses without action.</span></li>
-      <li><span class="tl-date">March 13, 2026</span><span>First power delivered to the New England grid from Revolution Wind.</span></li>
+      <li><span class="tl-date">Aug 22, 2025</span><span>BOEM issues a stop-work order. Project approximately 80% complete.</span></li>
+      <li><span class="tl-date">Sept 22, 2025</span><span>U.S. District Court for D.C. grants preliminary relief. Work resumes.</span></li>
+      <li><span class="tl-date">Dec 22, 2025</span><span>Interior pauses construction on five offshore-wind projects.</span></li>
+      <li><span class="tl-date">Jan 12, 2026</span><span>District court grants a second preliminary injunction. Construction continues.</span></li>
+      <li><span class="tl-date">March 13, 2026</span><span>First power delivered to the New England grid.</span></li>
     </ul>
   </div>
 
-  <div class="body-text">
-
-    <p>On March 13, 2026, Revolution Wind delivered electricity to the New England grid for the first time. Governor Lamont marked the occasion at New London's State Pier on March 19. Connecticut's energy commissioner spoke at that event in terms that bear repeating.</p>
-
+  <div class="callout">
+    <div class="callout-label">A Point of Precision</div>
+    <h3>The Savings Estimates Require Two Different Numbers</h3>
+    <p>DEEP has published two distinct estimates, and they should not be blended.</p>
+    <p>First, the agency estimated that the presence of Revolution Wind could reduce wholesale energy and capacity costs across all six New England states by roughly $500 million annually by 2028. Connecticut consumers would receive a share of those regional market effects.</p>
+    <p>Second, DEEP estimated that Connecticut's separate 304-megawatt contract could save Connecticut ratepayers an additional $150 million to $200 million in public-benefit charges over the full twenty-year contract. The first is a regional annual market estimate; the second is a Connecticut lifetime contract estimate. Both are projections rather than guaranteed savings.<sup class="fn"><a href="#s15">[15]</a></sup></p>
   </div>
 
-  <div class="pull-quote">
-    <p>"As we've seen from the harsh winter we've had, and the impacts to fossil fuel prices as a result of the Iran war, having diverse sources of stable, reliable power that both states can count on matters enormously."</p>
-    <cite>Katie Dykes, Commissioner, Connecticut DEEP — March 2026</cite>
-  </div>
+  <div class="mini-head">What Comes After the Projects Already Underway</div>
 
   <div class="body-text">
 
-    <p>What happens next, at State Pier and across the offshore wind sector, is unsettled. As of mid-May, fifty-eight of Revolution Wind's sixty-five turbines were installed. The project must reach commercial operation by December 31 of this year, or its utility off-takers can terminate their power-purchase agreements. Ørsted has stated publicly that it will meet the date. Connecticut's three-hundred-and-four-megawatt share will deliver hundreds of millions of dollars in annual ratepayer savings across the project's twenty-year, fixed-price agreement — savings that are not academic in a state carrying the third-highest residential electricity price in the nation.</p>
+    <p>After courts allowed the five paused projects to proceed, the federal government began reaching agreements under which companies relinquished undeveloped offshore-wind leases. TotalEnergies announced on March 23 that it would relinquish two leases in exchange for approximately $928 million in reimbursement and make an equivalent investment in U.S. gas and power projects. On April 27, the Interior Department announced agreements involving Bluepoint Wind and Golden State Wind totaling another $885 million.<sup class="fn"><a href="#s16">[16]</a><a href="#s17">[17]</a></sup></p>
 
-    <p>What is new is the federal response to the litigation record. Developers went five-and-oh in court across the spring; the administration has since shifted strategy. TotalEnergies accepted nine hundred and twenty-eight million dollars in late March to relinquish its U.S. offshore-wind lease portfolio. In early May, Golden State Wind in California and Bluepoint Wind in the New York and New Jersey waters followed under similar terms. Total federal outlay to date is approximately two billion dollars for lease cancellations — payments that the companies have publicly committed to redirecting toward liquefied natural gas and conventional generation projects.</p>
+    <p>Together, those announced reimbursements were approximately $1.8 billion as of May 14. They concerned undeveloped leases, not the cancellation of Revolution Wind. The broader federal pause on new offshore-wind leasing and permitting nevertheless makes the post-construction pipeline substantially less certain. In March, the Clean Energy States Alliance described the national project pipeline as having "virtually disappear[ed]" during the preceding year.<sup class="fn"><a href="#s18">[18]</a></sup></p>
 
-    <p>The Clean Energy States Alliance, in a May 4 assessment, characterized the federal offshore-wind pipeline beyond the projects already under construction as effectively closed for the duration of this administration. For Connecticut, the practical implication is that the offshore generation in the regional resource mix through 2030 will be what is built now — Revolution Wind, Vineyard Wind 1, SouthFork Wind, and the handful of others already past their final federal approvals. State Pier itself assembled turbines for SouthFork Wind, is currently working through completion of Sunrise Wind, and will continue staging work into 2027. What comes after Sunrise depends on Washington.</p>
+    <p>New London's State Pier has supported the regional offshore-wind supply chain, including work associated with South Fork Wind and Revolution Wind, with Sunrise Wind also part of the planned project sequence. The facility's future workload will depend on completion schedules, remaining approved projects, litigation, procurement decisions, and federal policy. That uncertainty is real; declaring the entire industry either secure or finished would go beyond the record.</p>
 
   </div>
 
@@ -847,25 +896,27 @@
 
 
 <!-- ══════════════════════════════════════════ -->
-<!-- THE FLOOR -->
+<!-- NATURAL GAS -->
 <!-- ══════════════════════════════════════════ -->
 <div id="gas">
 <div class="container">
 <div class="section">
 
   <div class="section-label">Pillar Four</div>
-  <h2 class="section-headline">The Gas System Showed Its Limits</h2>
-  <div class="section-subhead">The floor under everything else — and why January exposed it</div>
+  <h2 class="section-headline">The Gas System Under Winter Pressure</h2>
+  <div class="section-subhead">The fuel beneath much of New England's electricity supply</div>
 
   <div class="body-text">
 
-    <p>The natural gas system that fuels approximately half of New England's electricity generation is governed by contract structures that predate the region's transition toward gas-fired generation by decades. Under those structures, pipeline capacity is allocated to heating customers — residential and commercial — by firm contract, with electric generators holding the residual, interruptible portion. In normal weather, the arrangement works. In January, with sustained sub-zero overnight temperatures across the region, it constrains.</p>
+    <p>Natural gas produced approximately 55 percent of the electricity generated within New England in 2025. Nearly half of the region's generating capacity — about 14,000 megawatts in 2026 — uses natural gas as its primary fuel. More than 7,000 megawatts of mostly coal, oil, and nuclear generation has retired since 2013 or announced plans to retire in the coming years.<sup class="fn"><a href="#s19">[19]</a></sup></p>
 
-    <p>The bulk power system in New England currently carries approximately fourteen thousand megawatts of natural-gas-fired generating capacity. During the cold event, much of that capacity was operating on liquefied natural gas delivered to Everett, on oil reserves drawn down to the floors permitted by state environmental compliance, and — under the Section 202(c) emergency order — on operating exceptions that allowed certain units to continue running past their normal limits.</p>
+    <p>The regional constraint is not simply a shortage of gas-fired power plants. It is the interaction between the electric system and the natural-gas delivery system. During cold weather, pipeline capacity is heavily committed to local gas utilities serving residential, commercial, and industrial heating customers. Many electric generators rely on interruptible gas arrangements and must obtain fuel that remains available after firm obligations are served.</p>
 
-    <p>The structural shift behind these numbers is the retirement schedule. Approximately seven thousand megawatts of generation across New England has retired since the start of the last decade or is scheduled to retire by the end of this one. The retirements are not principally gas; they are coal, oil, and older nuclear units operating under economic and regulatory pressure. The replacement generation has been disproportionately gas, supplemented by behind-the-meter solar — distributed rooftop and small commercial installations that contribute meaningfully to the daytime load profile but, by physical necessity, deliver nothing after sunset.</p>
+    <p>Liquefied natural gas delivered by ship can supplement pipeline supply, and dual-fuel generators may switch from gas to stored oil. Both were important during the 2026 cold period. ISO New England reported 45.6 billion cubic feet of natural gas consumed by power plants during the winter and record oil use, including the 111 million gallons burned during the nineteen-day cold spell.<sup class="fn"><a href="#s1">[1]</a></sup></p>
 
-    <p>The combination produces a grid whose floor is gas, whose ceiling on hot summer afternoons is heavily weighted toward solar, and whose cold winter evenings — when heating demand peaks and behind-the-meter solar disappears — fall back to the same gas-fired units that the pipeline contracts have already deprioritized. The nineteen days in January are what the structure looks like under pressure. The structure is the floor under everything the other three pillars sit on.</p>
+    <p>Behind-the-meter solar reduces the amount of electricity that must be supplied by the bulk system during daylight hours. Its winter contribution is limited by shorter days, snow, clouds, and the timing of evening demand. Batteries can shift electricity across hours, but their contribution depends on charge level and duration. Offshore wind tends to have stronger seasonal production in winter, although individual hours remain weather-dependent. Nuclear plants provide large quantities of energy from fuel stored on site.</p>
+
+    <p>The practical lesson is not that one resource can replace every other resource. It is that New England's reliability depends on the performance of a portfolio — and on the physical fuel, transmission, storage, and operating arrangements behind that portfolio.</p>
 
   </div>
 
@@ -882,28 +933,31 @@
 <div class="section">
 
   <div class="section-label">The Demand Side</div>
-  <h2 class="section-headline">The Data Center Question</h2>
-  <div class="section-subhead">Where the new load is coming from, and who pays for the grid that carries it</div>
+  <h2 class="section-headline">The Data-Center Question</h2>
+  <div class="section-subhead">Where electricity growth may come from, and who pays for the infrastructure</div>
 
   <div class="body-text">
 
-    <p>The U.S. Energy Information Administration's Short-Term Energy Outlook, released earlier this year, projects U.S. electricity consumption to grow at the strongest four-year pace since the year 2000. The International Energy Agency has projected, separately, that U.S. data center electricity demand could approximately double — a roughly one-hundred-thirty-percent increase — through the second half of this decade. These figures bound a question that has moved from industry forecasting reports into state legislative committees with unusual speed.</p>
+    <p>In January 2026, the U.S. Energy Information Administration projected that national electricity use would rise for four consecutive years for the first time since 2007, producing the strongest four-year growth period since 2000. EIA identified large computing centers as the principal driver of the acceleration.<sup class="fn"><a href="#s20">[20]</a></sup></p>
 
-    <p>In Washington, Senator Richard Blumenthal has been among the sponsors of federal legislation — the GRID Act, in its current iteration — that would require federal review of major data center load additions and establish ratepayer protection standards. In Hartford, Senate Bill 245 has been introduced in the 2026 session, addressing siting, energy procurement, and cost allocation for large new loads connecting to the Connecticut grid. The state's Office of Consumer Counsel has argued, in proceedings before PURA, that the cost of grid upgrades attributable to large industrial loads should not be socialized onto residential ratepayers.</p>
+    <p>The International Energy Agency projects that U.S. data-center electricity consumption will increase by approximately 240 terawatt-hours between 2024 and 2030 — an increase of about 130 percent. That is more than a doubling, not merely a 30-percent rise. The forecast is not a guarantee, and the geographic distribution of the load remains uncertain.<sup class="fn"><a href="#s21">[21]</a></sup></p>
 
-    <p>The scale is best understood through comparison. In Virginia, Dominion Energy's contracted data-center capacity has reached approximately fifty-one gigawatts, up from sixteen and a half gigawatts in mid-2023 — a tripling in roughly thirty months. Northern Virginia now runs the largest concentrated industrial electrical load in the United States. That figure, more than any forecast curve, is what the "well-capitalized counterparties" referenced in Dominion's Connecticut filing actually look like in practice. The question of who buys Millstone's output after the existing PPA expires is the same question, asked from the opposite direction.</p>
+    <p>Virginia demonstrates both the scale and the importance of definitions. Dominion Energy reported a contracted data-center pipeline of nearly 51 gigawatts as of March 2026, an increase of approximately 2.5 gigawatts from the end of 2025. That figure includes projects at different stages of development and should not be confused with 51 gigawatts of data centers already operating. Virginia's existing data-center load is much smaller, although it remains the country's largest concentration.<sup class="fn"><a href="#s22">[22]</a></sup></p>
+
+    <p>Dominion advises that data centers expecting less than 50 megawatts may sometimes connect through existing distribution infrastructure, while projects above 50 megawatts will probably require transmission extensions and a new substation. Actual requirements depend on the site and the customer's requested service.<sup class="fn"><a href="#s23">[23]</a></sup></p>
 
   </div>
 
   <div class="callout">
-    <div class="callout-label">The Connecticut Question</div>
-    <h3>What "Large Load" Means at the Town Level</h3>
-    <p>A single hyperscale data center can require fifty to one hundred megawatts of firm electric supply — comparable to the load of a small city. The decision to host one is, in the first instance, a municipal zoning decision. The decision to allocate the grid upgrades that follow is a state regulatory decision. The two decisions have rarely been made in coordination. Whether they will be — and on what terms — is part of what Senate Bill 245 and similar measures are attempting to define before Connecticut faces the question at the scale that Virginia, Ohio, and Texas already have.</p>
+    <div class="callout-label">Pending, Not Enacted</div>
+    <h3>Federal and Connecticut Proposals</h3>
+    <p>Senators Richard Blumenthal and Josh Hawley introduced the Guaranteeing Rate Insulation from Data Centers Act — the GRID Act — in February 2026. According to the sponsors, it would prioritize consumers on the grid, require new data centers to use generation separate from the grid, provide a ten-year transition for existing facilities, and require public disclosure of current and projected electricity use. It is a proposed federal law, not an enacted requirement.<sup class="fn"><a href="#s24">[24]</a></sup></p>
+    <p>Connecticut Senate Bill 245 had a narrower title and purpose than some public descriptions suggested: "An Act Eliminating Certain Tax Incentives for Data Centers." Committee language also addressed labor and sustainable-design conditions. It did not by itself create a comprehensive siting, energy-procurement, and grid-cost-allocation system.<sup class="fn"><a href="#s25">[25]</a></sup></p>
   </div>
 
   <div class="body-text">
 
-    <p>Connecticut has not yet attracted the scale of data center development that has reshaped the load profile in northern Virginia or central Ohio. Whether it will — and on what terms — is a decision that will be made through legislation, municipal zoning, and utility procurement. The hundred-thirty-percent projection does not say where the demand will land. It says only that, somewhere, it will. The question for Connecticut, and for the towns within it, is whether to invite the load on terms that reflect what the cold event already taught.</p>
+    <p>The policy question remains broader than either bill. Large loads can require generation, substations, transmission, distribution upgrades, water, land, and long lead times. Municipal land-use decisions and state utility regulation therefore intersect, but they are not interchangeable. Before Connecticut attracts development at Virginia's scale, policymakers will need to decide how project-specific infrastructure costs, long-term commitments, reliability risks, tax benefits, and community effects are allocated.</p>
 
   </div>
 
@@ -920,14 +974,31 @@
 <div class="section">
 
   <div class="section-label">The Background Conflict</div>
-  <h2 class="section-headline">The Strait of Hormuz, Eight Weeks On</h2>
-  <div class="section-subhead">An unfinished ceasefire — and the price signal that reaches Connecticut</div>
+  <h2 class="section-headline">The Strait of Hormuz at the May 14 Reporting Cutoff</h2>
+  <div class="section-subhead">A distant disruption with consequences for fuel markets</div>
 
   <div class="body-text">
 
-    <p>Issue Two referenced the Iran war in the present tense. The situation has moved. Active hostilities ran from late February through early April. A ceasefire was negotiated on April 8 and remains, in the President's own characterization as recently as May 11, "on life support." The Strait of Hormuz — the chokepoint through which roughly seventeen million barrels of oil pass daily — remains effectively closed to ordinary commercial traffic. Global energy markets have absorbed the disruption through drawdowns of strategic petroleum reserves, accelerated liquefied natural gas flows out of U.S. Gulf terminals, and a recalibration of European pipeline imports from Norway and North Africa.</p>
+    <p>Military action involving the United States, Israel, and Iran began on February 28, 2026. A ceasefire took effect on April 8, although President Trump described it on May 11 as being on "life support." As of May 12, the Energy Information Administration expected the Strait of Hormuz to remain effectively closed through late May, with traffic gradually resuming afterward.<sup class="fn"><a href="#s26">[26]</a><a href="#s27">[27]</a></sup></p>
 
-    <p>For southeastern Connecticut, the relevance is twofold. The Virginia-class submarines whose commissionings Issue Two covered are part of the deterrent posture that keeps the chokepoint situation from escalating further. And the price signal that flows through ISO New England's wholesale market is, in part, the price of that distant standoff. The grid here and the geopolitics there are no longer comfortably separable. Commissioner Dykes' remark at the State Pier ceremony in March — that diverse, stable, reliable sources of power matter enormously in the shadow of an active conflict — read as policy framing when it was delivered. It reads now as a description of the operating environment.</p>
+    <p>The volume figure also needs a definition. Total petroleum liquids moving through the strait averaged approximately 20 million barrels per day in 2024. Narrower measures limited to crude oil and condensate produce smaller figures. A publication should state which measure it is using rather than present a single number without a category.<sup class="fn"><a href="#s28">[28]</a></sup></p>
+
+    <p>The disruption reduced Middle Eastern production and shipping, raised global oil prices, and affected liquefied-natural-gas markets. By late April, the United States had released 17.5 million barrels from the Strategic Petroleum Reserve. EIA also reported that U.S. LNG export capacity increased by about 0.9 billion cubic feet per day in April, though that capacity increase should not be attributed solely to the conflict.<sup class="fn"><a href="#s27">[27]</a><a href="#s29">[29]</a></sup></p>
+
+    <p>For New England, the connection is economic rather than geographic. The region's wholesale electricity prices are strongly influenced by the cost and availability of natural gas and oil. International disruptions can therefore affect a Connecticut electricity bill without any direct interruption at a Connecticut power plant.</p>
+
+    <p>Commissioner Katie Dykes connected the harsh winter and the Iran conflict to the value of a diverse supply portfolio in a March written release:</p>
+
+  </div>
+
+  <div class="pull-quote">
+    <p>"Having diverse sources of stable, reliable power that both perform strongly in the winter and are insulated from geopolitical events is beneficial to Connecticut ratepayers."<sup class="fn"><a href="#s30">[30]</a></sup></p>
+    <cite>Katie Dykes, Commissioner, Connecticut DEEP — March 2026</cite>
+  </div>
+
+  <div class="body-text">
+
+    <p>Southeastern Connecticut's submarine industrial base is part of the nation's broader defense posture, but assigning a specific deterrent effect in the Hormuz conflict to submarines built or based here would require evidence not available in the public record. The region's naval importance and the region's electricity costs are both real; they should not be joined by an unsupported causal claim.</p>
 
   </div>
 
@@ -944,31 +1015,78 @@
 <div class="section">
 
   <div class="section-label">Closing</div>
-  <h2 class="section-headline">The Decisions Are Local</h2>
-  <div class="section-subhead">Hartford, Waterford, Killingly, New London — where the next forty years will actually be decided</div>
+  <h2 class="section-headline">The Decisions Are Shared</h2>
+  <div class="section-subhead">Federal, regional, state, and local authority over the next twenty years</div>
 
   <div class="body-text">
 
-    <p>Issue Two placed three facts on the table: Millstone at fifty, Revolution Wind delivering power, three Virginia-class boats commissioned and a Columbia-class ordered. Eight weeks on, each of those facts has acquired a sharper edge. Millstone's next chapter is being written this quarter, in filings before DEEP. Revolution Wind is racing a December commercial-operation deadline while the federal pipeline behind it closes. The submarine work continues at pace. The grid that connects them is more expensive than it was, and more constrained than it has been in a generation. The choices are sharper now.</p>
+    <p>The energy decisions facing southeastern Connecticut are consequential, but they are not exclusively local — or exclusively federal.</p>
 
-    <p>The decisions that will determine what southeastern Connecticut's grid looks like in 2046 are not, in the main, federal decisions. The federal posture has been volatile; some of its consequences — the lapsed solar credit, the offshore wind freeze — have already been priced into the planning horizon. The decisions in front of Connecticut, and in front of the towns within Connecticut, are state and municipal.</p>
+    <p>The Nuclear Regulatory Commission licenses commercial reactors. Federal agencies control offshore-energy leasing and permitting. ISO New England operates the regional bulk power system and wholesale markets. Connecticut determines state procurement policy, utility regulation, consumer programs, and many cost-allocation rules. Municipalities make land-use decisions and, under Public Act 25-173, may choose whether to pursue eligibility for advanced-nuclear site-readiness assistance.</p>
 
-    <p>Waterford will vote, at some point in the years ahead, on whether to host expanded nuclear generation at the existing Millstone site. Other towns may be asked to consider data center developments, with the workforce, tax-base, and grid implications that follow. The state will decide whether to commission additional offshore wind procurement and on what schedule. PURA will decide how the costs of grid modernization are allocated. The Connecticut Office of Consumer Counsel will continue to make the case for the residential ratepayer in proceedings whose outcomes are measured in cents per kilowatt-hour but, compounded across two decades, in significant household balance sheets.</p>
+    <p>Millstone's existing contracts expire in 2029, and Connecticut's 2026 procurement will help determine whether a new agreement provides sufficient value to ratepayers and participating states. Revolution Wind is moving from construction and commissioning toward full commercial operation, while the pipeline of later offshore projects faces serious federal uncertainty. Residential solar continues under a changed federal tax environment. Natural gas remains the principal source of New England generation and the fuel most exposed to winter delivery constraints. Data centers could add substantial new demand, but forecasts do not establish that the load will locate in Connecticut.</p>
 
-    <p>The lower Thames region has a workforce that is, by accident of history and by sustained investment, well-prepared for several of these decisions. The engineering and operations talent at Millstone. The naval nuclear program at the Submarine Base. The industrial workforce at Electric Boat. The redeveloped marine logistics capacity at New London's State Pier. These are not abstract assets. They are the human and physical infrastructure that turns an energy policy choice — about an SMR cluster, about a data center, about a next round of offshore wind procurement — into something that can actually be built.</p>
+    <p>The lower Thames region enters this discussion with significant assets: an operating nuclear station in Waterford, the Naval Submarine Base, Electric Boat and its regional supply chain, maritime and logistics capacity in New London, and a workforce experienced in demanding technical and industrial work. Those strengths create opportunities. They do not eliminate the need for transparent costs, credible schedules, community consent, federal licensing, environmental review, and protection of residential ratepayers.</p>
 
-    <p>The Thames Club's membership is positioned, more directly than most, to think clearly about this. The ratepayer, the engineer, the contractor, the developer, the regulator, the planner — they are all, on a given evening, in the same room. What that room has agreed on, by the Club's long tradition, is not the decisions themselves. It is the discipline of taking the facts seriously before the decisions are made.</p>
+    <p>The Thames Club has always included members drawn from communities that shaped New London's civic and maritime life. The Club does not need to produce a single institutional position on nuclear power, wind, solar, gas, or data centers. It can do something more consistent with its history: provide a room in which claims are tested, uncertainties are acknowledged, and disagreement begins from an accurate record.</p>
 
-    <p>The grid is being rebuilt in front of us. The question for the region is not whether we want a vote — it is whether we are ready to cast one.</p>
+    <p>The grid is changing in front of us. The first responsibility is to describe that change truthfully.</p>
 
   </div>
 
   <div class="ornament">· · ·</div>
 
+</div>
+</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SOURCES -->
+<!-- ══════════════════════════════════════════ -->
+<div id="sources">
+<div class="container">
+<div class="section">
+
+  <div class="section-label">Sources and Verification</div>
+
+  <ol class="source-list">
+    <li id="s1">ISO New England, "Winter 2025/26 Overview," NEPOOL Participants Committee materials, April 9, 2026, and ISO New England winter update, March 25, 2026: April report; March presentation.</li>
+    <li id="s2">U.S. Department of Energy, Federal Power Act Section 202(c), ISO New England Order No. 202-26-3: DOE order.</li>
+    <li id="s3">Connecticut DEEP, "DEEP Announces 2026 Zero Carbon Request for Proposals," January 30, 2026: DEEP release.</li>
+    <li id="s4">Connecticut General Assembly, Public Act 25-173: official act.</li>
+    <li id="s5">Connecticut DEEP, "DEEP To Hold Third Public Informational Workshop to Explore New Nuclear Energy Capacity," April 30, 2026: DEEP release.</li>
+    <li id="s6">U.S. Nuclear Regulatory Commission, Emergency Preparedness for Small Modular Reactors and Other New Technologies, defining the relevant class by reference to approximately 300 megawatts electric or less per module: NRC final-rule materials.</li>
+    <li id="s7">Internal Revenue Service, instructions and frequently asked questions concerning Public Law 119-21 and Section 25D: IRS FAQs.</li>
+    <li id="s8">Internal Revenue Service, guidance concerning Sections 45Y and 48E: Internal Revenue Bulletin 2025-36.</li>
+    <li id="s9">Connecticut General Assembly, House Bill 5340, 2026 session: bill record; File No. 385.</li>
+    <li id="s10">Connecticut Office of Consumer Counsel, electric-supplier market fact sheet: OCC fact sheet.</li>
+    <li id="s11">Bureau of Ocean Energy Management, "Revolution Wind": project page.</li>
+    <li id="s12">Revolution Wind, September 2025 litigation and construction update: project statement.</li>
+    <li id="s13">Revolution Wind, "U.S. Federal Court Grants Preliminary Injunction," January 12, 2026: project statement.</li>
+    <li id="s14">Ørsted, "Revolution Wind Begins Delivering Power to New England," March 13, 2026: company release.</li>
+    <li id="s15">Connecticut DEEP, preliminary Revolution Wind cost and reliability analysis, September 9, 2025: DEEP analysis.</li>
+    <li id="s16">TotalEnergies, U.S. offshore-wind lease agreements, March 23, 2026: company release.</li>
+    <li id="s17">U.S. Department of the Interior, Bluepoint Wind and Golden State Wind agreements, April 27, 2026: Interior release.</li>
+    <li id="s18">Clean Energy States Alliance, "Offshore Wind — Four Themes at IPF 2026," March 17, 2026: CESA article.</li>
+    <li id="s19">ISO New England, "Resource Mix," 2025–26 data: ISO-NE resource mix.</li>
+    <li id="s20">U.S. Energy Information Administration, "EIA Forecasts Strongest Four-Year Growth in U.S. Electricity Demand Since 2000," January 13, 2026: EIA release.</li>
+    <li id="s21">International Energy Agency, Energy and AI, "Energy Demand from AI": IEA analysis.</li>
+    <li id="s22">Reuters, "Dominion Beats Quarterly Profit Estimates on Higher Virginia Power Demand," May 1, 2026, reporting Dominion's first-quarter results and contracted data-center pipeline: Reuters report.</li>
+    <li id="s23">Dominion Energy Virginia, "Data Center Requests": company guidance.</li>
+    <li id="s24">Office of Senator Richard Blumenthal, "Blumenthal Introduces Bill to Protect Americans from Increasing Electricity Costs," February 12, 2026: official release.</li>
+    <li id="s25">Connecticut General Assembly, Senate Bill 245, 2026 session: bill record.</li>
+    <li id="s26">The White House, "Operation Epic Fury…as Ceasefire Takes Hold," April 8, 2026: White House release. The President's May 11 characterization was reported contemporaneously by Reuters and the Associated Press.</li>
+    <li id="s27">U.S. Energy Information Administration, May 2026 Short-Term Energy Outlook update: EIA release.</li>
+    <li id="s28">U.S. Energy Information Administration, "World Oil Transit Chokepoints": EIA analysis.</li>
+    <li id="s29">U.S. Energy Information Administration, April 2026 energy-security updates, including Strategic Petroleum Reserve releases: EIA archive.</li>
+    <li id="s30">Connecticut DEEP, "Governor Lamont and Commissioner Dykes Statements on Revolution Wind Delivering First Power," March 16, 2026: official statement.</li>
+  </ol>
+
   <div style="margin-top: 36px; padding: 28px; border: 1px solid rgba(201,168,76,0.3); background: var(--warm-white);">
-    <div class="section-label" style="margin-bottom: 16px;">Sources &amp; Verification</div>
-    <div class="body-text" style="font-size: 14px; color: #888;">
-      <p style="font-size: 14px; line-height: 1.65; margin-bottom: 14px;">Figures and events in this continuation are drawn from primary documents and verified reporting. Cold-event statistics, including the nineteen-day duration, the peak demand figure, and the approximately six-billion-dollar market-transactions total, are reported by ISO New England's post-winter summary and its 2026 CELT forecast. The Section 202(c) emergency order is on the public record of the U.S. Department of Energy. Public Act 25-173 (Senate Bill 4), House Bill 5340, and the Site Readiness Funding Program documentation are available through the Connecticut General Assembly and the Department of Energy and Environmental Protection; the DEEP advanced-nuclear workshop series (March–May 2026) is on the agency's public record. Dominion Energy's three March 17, 2026 zero-carbon procurement filings, including the cited PPA savings figures and the language regarding Unit 2's 2035 license-renewal risk, are public on the DEEP docket and have been reported by the Hartford Business Journal and CT News Junkie. Revolution Wind's litigation history is drawn from the docket of the U.S. District Court for the District of Columbia in Revolution Wind, LLC v. Burgum; construction status (fifty-eight of sixty-five turbines installed; December 31 commercial-operation deadline) is from Ørsted's May 2026 status statements. The federal offshore-wind lease buyouts — TotalEnergies on March 23, followed by Golden State Wind and Bluepoint Wind in early May — are documented in the companies' press releases and in the Clean Energy States Alliance assessment of May 4, 2026. National demand projections cite the U.S. Energy Information Administration's Short-Term Energy Outlook and the International Energy Agency's electricity reporting; the Dominion Virginia data-center capacity figures are from Dominion's investor materials. The Eversource standard-supply rate change effective January 1, 2026, and Connecticut's residential rate ranking are drawn from the Eversource rate filing and EIA state-level residential rate data. The expirations of the federal Residential Clean Energy Credit (Section 25D) and the commercial / third-party lease and PPA window (Section 48E) are set out in the One Big Beautiful Bill Act. Strait of Hormuz and ceasefire-status references are drawn from CSIS commercial-traffic analysis and White House public statements of April 8 and May 11, 2026. Secondary sourcing includes CT Mirror, CT Public, CT News Junkie, and CT Examiner. The Katie Dykes pull quote, originally published in Above &amp; Below Issue 2, is drawn from remarks delivered at New London's State Pier on March 19, 2026; the Dominion quotation is from the filing's public text. All figures verified as of May 14, 2026; where filings or proceedings are ongoing, that status is noted in-text.</p>
+    <div class="section-label" style="margin-bottom: 16px;">Verification Standard</div>
+    <div class="body-text">
+      <p style="font-size: 15px; line-height: 1.7; color: #6f6a63;">Reported events and quantitative claims in this edition are tied to named sources above. Forecasts and modeled savings are identified as estimates rather than outcomes. Pending bills, procurements, and lawsuits are described as pending as of the May 14 reporting cutoff. Quotations reproduce the language of their identified public source. Editorial interpretations are presented as interpretations and not as statements by the cited agencies.</p>
     </div>
   </div>
 
