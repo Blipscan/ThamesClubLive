@@ -1,12 +1,5 @@
 [
   {
-    "title": "Club Manager Out of Office",
-    "date": "2026-08-17",
-    "displayDate": "Monday, August 17, 2026",
-    "time": "12:00 AM",
-    "description": ""
-  },
-  {
     "title": "Classic Movie Night",
     "date": "2026-08-21",
     "displayDate": "Friday, August 21, 2026",
@@ -39,6 +32,20 @@
     "date": "2026-09-11",
     "displayDate": "Friday, September 11, 2026",
     "time": "5:00 PM",
+    "description": ""
+  },
+  {
+    "title": "Fall Decorating Committee",
+    "date": "2026-09-17",
+    "displayDate": "Thursday, September 17, 2026",
+    "time": "10:00 AM",
+    "description": ""
+  },
+  {
+    "title": "Private Member Event (CT Storytellers)",
+    "date": "2026-09-17",
+    "displayDate": "Thursday, September 17, 2026",
+    "time": "1:00 PM",
     "description": ""
   }
 ]
