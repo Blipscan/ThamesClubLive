@@ -47,5 +47,12 @@
     "displayDate": "Thursday, September 17, 2026",
     "time": "1:00 PM",
     "description": ""
+  },
+  {
+    "title": "Trivia Night",
+    "date": "2026-09-18",
+    "displayDate": "Friday, September 18, 2026",
+    "time": "5:30 PM",
+    "description": ""
   }
 ]
