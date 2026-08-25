@@ -47,5 +47,12 @@
     "displayDate": "Saturday, September 19, 2026",
     "time": "1:00 PM",
     "description": ""
+  },
+  {
+    "title": "Bowling Dinner",
+    "date": "2026-09-24",
+    "displayDate": "Thursday, September 24, 2026",
+    "time": "1:00 PM",
+    "description": ""
   }
 ]
