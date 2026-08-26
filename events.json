@@ -54,5 +54,12 @@
     "displayDate": "Thursday, September 24, 2026",
     "time": "1:00 PM",
     "description": ""
+  },
+  {
+    "title": "Monthly Luncheon",
+    "date": "2026-09-25",
+    "displayDate": "Friday, September 25, 2026",
+    "time": "11:30 AM",
+    "description": ""
   }
 ]
