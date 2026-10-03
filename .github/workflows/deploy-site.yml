@@ -1,0 +1,25 @@
+name: Publish website edits
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - events.json
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: publish-thames-site
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render publication
+        env:
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -z "$RENDER_DEPLOY_HOOK" ]; then
+            echo "Render deploy hook is not configured."
+            exit 1
+          fi
+          curl --fail --silent --show-error --retry 3 --request POST "$RENDER_DEPLOY_HOOK" >/dev/null
