@@ -401,7 +401,7 @@ and moved it to Ledge Light. The Club moved and continued — as it has through 
 
 <script>
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('up',scrollY>60),{passive:true});
+window.addEventListener('scroll',()=>nav?.classList.toggle('up',scrollY>60),{passive:true});
 
 const ro=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}

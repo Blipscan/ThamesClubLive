@@ -323,7 +323,7 @@ footer a:hover {
 <script>
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  if(nav) nav.classList.toggle('up', window.scrollY > 40);
+  if(nav) nav?.classList.toggle('up', window.scrollY > 40);
 });
 document.querySelectorAll('.r').forEach(el => {
   new IntersectionObserver(([e]) => e.isIntersecting && e.target.classList.add('in'), {threshold:.12}).observe(el);
