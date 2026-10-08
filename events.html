@@ -184,6 +184,19 @@ footer a:hover {
 .site-shell-footer .site-shell-foot-links{display:flex;gap:12px 16px;flex-wrap:wrap;align-items:flex-start}
 .site-shell-footer .site-shell-foot-links a{font-family:'Inter',system-ui,sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,237,216,.78);text-decoration:none}
 .site-shell-footer .site-shell-foot-links a:hover{color:#f4edd8}
+
+    /* Member event flyers: complete artwork, display only. */
+    .hero{min-height:0;padding:40px 0 64px}
+    .hero > .wrap{width:100%}
+    .event-flyers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0 0 48px;align-items:start}
+    .event-flyer{min-width:0;margin:0}
+    .event-flyer-art{height:350px;display:flex;align-items:center;justify-content:center;padding:7px;border:1px solid rgba(201,169,110,.65);background:rgba(244,237,216,.035);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+    .event-flyer img{display:block;width:100%;height:100%;object-fit:contain}
+    .event-flyer figcaption{padding:13px 2px 0;text-align:center;font-family:var(--display);font-size:21px;line-height:1.15;color:var(--cream)}
+    .event-flyer time{display:block;margin-bottom:5px;font-family:var(--serif);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
+    @media(max-width:960px){.event-flyers{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px;margin-left:auto;margin-right:auto}.event-flyer-art{height:420px}}
+    @media(max-width:560px){.hero{min-height:0;padding-top:28px}.event-flyers{grid-template-columns:1fr;max-width:350px;gap:28px;margin-bottom:38px}.event-flyer-art{height:auto;aspect-ratio:2/3}}
+
 </style>
 <link rel="stylesheet" href="https://thamesclub1869.com/club-navigation.css?v=20261008"><script defer src="https://thamesclub1869.com/club-navigation.js?v=20261008"></script></head>
 <body>
@@ -191,6 +204,24 @@ footer a:hover {
 
   <header class="hero">
     <div class="wrap">
+      <section class="event-flyers" aria-label="Club events open to members">
+        <figure class="event-flyer">
+          <div class="event-flyer-art"><img src="images/event-flyers/gipstein-2026-10-09.svg" alt="Todd Gipstein: Around the World by Private Jet, October 9, 2026. Cocktails and hors d’oeuvres 5:30 PM; presentation 6:30 PM; Q&A 7:30 PM." decoding="async"></div>
+          <figcaption><time datetime="2026-10-09">October 9</time>Todd Gipstein · Around the World</figcaption>
+        </figure>
+        <figure class="event-flyer">
+          <div class="event-flyer-art"><img src="images/event-flyers/flock-theatre-2026-10-16.svg" alt="Pre-Show Dinner and Flock Theatre’s Hughie, October 16, 2026. Dinner 5 PM, $30++; show 7 PM. Reserve by October 12." decoding="async"></div>
+          <figcaption><time datetime="2026-10-16">October 16</time>Dinner &amp; Flock Theatre</figcaption>
+        </figure>
+        <figure class="event-flyer">
+          <div class="event-flyer-art"><img src="images/event-flyers/lost-boys-2026-10-23.svg" alt="The Lost Boys classic movie night, October 23, 2026 at 5:30 PM. $20++ includes pizza and popcorn. Reserve by October 16." decoding="async"></div>
+          <figcaption><time datetime="2026-10-23">October 23</time>Classic Movie Night</figcaption>
+        </figure>
+        <figure class="event-flyer">
+          <div class="event-flyer-art"><img src="images/event-flyers/witching-2026-10-30.svg" alt="Witching, Bitching and Warlocks monthly luncheon, October 30, 2026 at 11:30 AM. $40++; reserve by October 23. Menu coming soon." decoding="async"></div>
+          <figcaption><time datetime="2026-10-30">October 30</time>Witching, Bitching &amp; Warlocks</figcaption>
+        </figure>
+      </section>
       <div class="eyebrow">Founded February 8, 1869 — New London, Connecticut</div>
       <h1>Events</h1>
       <p class="sub">Calendar, entertainment, and the reasons members return throughout the year.</p>
