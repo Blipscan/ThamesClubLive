@@ -191,6 +191,8 @@ footer a:hover {
     .event-flyers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0 0 48px;align-items:start}
     .event-flyer{min-width:0;margin:0}
     .event-flyer-art{height:350px;display:flex;align-items:center;justify-content:center;padding:7px;border:1px solid rgba(201,169,110,.65);background:rgba(244,237,216,.035);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+    .event-flyer-art:hover{border-color:var(--cream)}
+    .event-flyer-art:focus-visible{outline:3px solid var(--gold2);outline-offset:4px}
     .event-flyer img{display:block;width:100%;height:100%;object-fit:contain}
     .event-flyer figcaption{padding:13px 2px 0;text-align:center;font-family:var(--display);font-size:21px;line-height:1.15;color:var(--cream)}
     .event-flyer time{display:block;margin-bottom:5px;font-family:var(--serif);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2)}
@@ -204,25 +206,26 @@ footer a:hover {
 
   <header class="hero">
     <div class="wrap">
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">Select a flyer to read it full size in a new tab.</p>
       <section class="event-flyers" aria-label="Club events open to members">
         <figure class="event-flyer">
-          <div class="event-flyer-art"><img src="images/event-flyers/gipstein-2026-10-09.svg" alt="Todd Gipstein: Around the World by Private Jet, October 9, 2026. Cocktails and hors d’oeuvres 5:30 PM; presentation 6:30 PM; Q&A 7:30 PM." decoding="async"></div>
+          <a class="event-flyer-art" href="images/event-flyers/gipstein-2026-10-09.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/gipstein-2026-10-09.svg" alt="Todd Gipstein: Around the World by Private Jet, October 9, 2026. Cocktails and hors d’oeuvres 5:30 PM; presentation 6:30 PM; Q&A 7:30 PM." decoding="async"></a>
           <figcaption><time datetime="2026-10-09">October 9</time>Todd Gipstein · Around the World</figcaption>
         </figure>
         <figure class="event-flyer">
-          <div class="event-flyer-art"><img src="images/event-flyers/flock-theatre-2026-10-16.svg" alt="Pre-Show Dinner and Flock Theatre’s Hughie, October 16, 2026. Dinner 5 PM, $30++; show 7 PM. Reserve by October 12." decoding="async"></div>
+          <a class="event-flyer-art" href="images/event-flyers/flock-theatre-2026-10-16.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/flock-theatre-2026-10-16.svg" alt="Pre-Show Dinner and Flock Theatre’s Hughie, October 16, 2026. Dinner 5 PM, $30++; show 7 PM. Reserve by October 12." decoding="async"></a>
           <figcaption><time datetime="2026-10-16">October 16</time>Dinner &amp; Flock Theatre</figcaption>
         </figure>
         <figure class="event-flyer">
-          <a class="event-flyer-art" href="images/event-flyers/shadows-spirits-talk-2026-10-21.png" aria-label="Read the full Shadows and Spirits concert talk flyer"><img src="images/event-flyers/shadows-spirits-talk-2026-10-21.png" width="1024" height="1536" alt="Shadows &amp; Spirits concert talk with Eastern Connecticut Symphony Orchestra. Wednesday, October 21, 2026 at 2 PM at The Thames Club. Complimentary for members; snack provided by ECSO and cash bar open. The separate concert is October 24 at 7:30 PM at Garde Arts Center; tickets sold separately." decoding="async"></a>
+          <a class="event-flyer-art" href="images/event-flyers/shadows-spirits-talk-2026-10-21.png" target="_blank" rel="noopener noreferrer" aria-label="Read the full Shadows and Spirits concert talk flyer (opens in a new tab)"><img src="images/event-flyers/shadows-spirits-talk-2026-10-21.png" width="1024" height="1536" alt="Shadows &amp; Spirits concert talk with Eastern Connecticut Symphony Orchestra. Wednesday, October 21, 2026 at 2 PM at The Thames Club. Complimentary for members; snack provided by ECSO and cash bar open. The separate concert is October 24 at 7:30 PM at Garde Arts Center; tickets sold separately." decoding="async"></a>
           <figcaption><time datetime="2026-10-21">October 21 · 2 PM</time>Shadows &amp; Spirits · Concert Talk</figcaption>
         </figure>
         <figure class="event-flyer">
-          <div class="event-flyer-art"><img src="images/event-flyers/lost-boys-2026-10-23.svg" alt="The Lost Boys classic movie night, October 23, 2026 at 5:30 PM. $20++ includes pizza and popcorn. Reserve by October 16." decoding="async"></div>
+          <a class="event-flyer-art" href="images/event-flyers/lost-boys-2026-10-23.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/lost-boys-2026-10-23.svg" alt="The Lost Boys classic movie night, October 23, 2026 at 5:30 PM. $20++ includes pizza and popcorn. Reserve by October 16." decoding="async"></a>
           <figcaption><time datetime="2026-10-23">October 23</time>Classic Movie Night</figcaption>
         </figure>
         <figure class="event-flyer">
-          <div class="event-flyer-art"><img src="images/event-flyers/witching-2026-10-30.svg" alt="Witching, Bitching and Warlocks monthly luncheon, October 30, 2026 at 11:30 AM. $40++; reserve by October 23. Menu coming soon." decoding="async"></div>
+          <a class="event-flyer-art" href="images/event-flyers/witching-2026-10-30.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/witching-2026-10-30.svg" alt="Witching, Bitching and Warlocks monthly luncheon, October 30, 2026 at 11:30 AM. $40++; reserve by October 23. Menu coming soon." decoding="async"></a>
           <figcaption><time datetime="2026-10-30">October 30</time>Witching, Bitching &amp; Warlocks</figcaption>
         </figure>
       </section>
