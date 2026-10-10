@@ -190,6 +190,7 @@ footer a:hover {
     .hero > .wrap{width:100%}
     .event-flyers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0 0 48px;align-items:start}
     .event-flyer{min-width:0;margin:0}
+    .event-flyer[hidden],.event-flyers[hidden],#event-flyer-hint[hidden]{display:none!important}
     .event-flyer-art{height:350px;display:flex;align-items:center;justify-content:center;padding:7px;border:1px solid rgba(201,169,110,.65);background:rgba(244,237,216,.035);box-shadow:0 8px 24px rgba(0,0,0,.2)}
     .event-flyer-art:hover{border-color:var(--cream)}
     .event-flyer-art:focus-visible{outline:3px solid var(--gold2);outline-offset:4px}
@@ -206,7 +207,7 @@ footer a:hover {
 
   <header class="hero">
     <div class="wrap">
-      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">Select a flyer to read it full size in a new tab.</p>
+      <p id="event-flyer-hint" style="font-size:12px;color:var(--muted);margin-bottom:16px">Select a flyer to read it full size in a new tab.</p>
       <section class="event-flyers" aria-label="Club events open to members">
         <figure class="event-flyer">
           <a class="event-flyer-art" href="images/event-flyers/gipstein-2026-10-09.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/gipstein-2026-10-09.svg" alt="Todd Gipstein: Around the World by Private Jet, October 9, 2026. Cocktails and hors d’oeuvres 5:30 PM; presentation 6:30 PM; Q&A 7:30 PM." decoding="async"></a>
@@ -229,6 +230,46 @@ footer a:hover {
           <figcaption><time datetime="2026-10-30">October 30</time>Witching, Bitching &amp; Warlocks</figcaption>
         </figure>
       </section>
+      <script>
+        // Expire flyers after their event day in the Club's local timezone.
+        (function () {
+          const gallery = document.querySelector('.event-flyers');
+          const hint = document.getElementById('event-flyer-hint');
+          const dayFormat = new Intl.DateTimeFormat('en-US', {
+            timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit'
+          });
+          function refreshFlyers() {
+            const parts = dayFormat.formatToParts(new Date());
+            const part = name => parts.find(item => item.type === name).value;
+            const today = part('year') + '-' + part('month') + '-' + part('day');
+            let visible = 0;
+            gallery.querySelectorAll('.event-flyer').forEach(flyer => {
+              const time = flyer.querySelector('time[datetime]');
+              const date = flyer.dataset.endDate || (time && time.getAttribute('datetime'));
+              flyer.hidden = Boolean(date && /^\d{4}-\d{2}-\d{2}$/.test(date) && date < today);
+              if (!flyer.hidden) visible++;
+            });
+            gallery.hidden = visible === 0;
+            hint.hidden = visible === 0;
+            // Recheck at the next local midnight (also handles daylight-saving changes).
+            const now = Date.now();
+            let low = now, high = now + 26 * 60 * 60 * 1000;
+            while (high - low > 250) {
+              const mid = Math.floor((low + high) / 2);
+              if (dayFormat.format(new Date(mid)) === dayFormat.format(new Date(now))) low = mid;
+              else high = mid;
+            }
+            clearTimeout(timer);
+            timer = setTimeout(refreshFlyers, high - now + 250);
+          }
+          let timer;
+          refreshFlyers();
+          window.addEventListener('pageshow', refreshFlyers);
+          document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) refreshFlyers();
+          });
+        })();
+      </script>
       <div class="eyebrow">Founded February 8, 1869 — New London, Connecticut</div>
       <h1>Events</h1>
       <p class="sub">Calendar, entertainment, and the reasons members return throughout the year.</p>
