@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>Visit — The Thames Club</title>
-<meta content="Connecticut's oldest private social club. Founded February 8, 1869. For the people who make this corner of New England work." name="description"/>
+<title>Arrange a Visit | The Thames Club, New London CT</title>
+<meta content="Considering membership? Arrange a visit to The Thames Club in New London, CT. Meet members, see the clubhouse, and learn about dining, events, and duckpin bowling." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -271,6 +271,44 @@ footer a {
 footer a:hover {
   color: #f4edd8;
 }
+/* Membership welcome homepage trial, 2026-10-10. */
+.welcome-hero{position:relative;overflow:hidden;padding:62px 0 48px;background:#07101a}
+.welcome-drawing{position:absolute;right:-2%;top:22px;width:58%;height:390px;object-fit:contain;object-position:right center;filter:invert(1);mix-blend-mode:screen;opacity:.62;pointer-events:none;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 38%);mask-image:linear-gradient(to right,transparent 0%,#000 38%)}
+.welcome-copy{position:relative;max-width:680px}
+.welcome-label{font:11px Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:2.5px;color:#c9a96e;margin-bottom:20px}
+.welcome h1{font:400 clamp(40px,6vw,66px)/1.05 Georgia,serif;letter-spacing:0;text-transform:none;margin:0 0 18px}
+.welcome h2{font:400 32px/1.2 Georgia,serif;margin:0 0 20px}
+.welcome h3{font:400 22px/1.2 Georgia,serif;margin:0 0 13px}
+.welcome p{font:16px/1.8 Georgia,serif;margin:0 0 18px}
+.welcome .welcome-lead{font:22px/1.5 Georgia,serif}
+.welcome-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.welcome a.welcome-button{display:inline-block;background:#c9a96e;color:#07101a;border:1px solid #c9a96e;padding:14px 20px;font:12px Inter,Arial,sans-serif;letter-spacing:.6px;text-decoration:none}
+.welcome a.welcome-outline{background:transparent;color:#c9a96e}
+.welcome a.welcome-button:hover{background:#e2c792;color:#07101a}
+.welcome a:focus-visible{outline:3px solid #c9a96e;outline-offset:4px}
+.welcome-life{background:#f4edd8;color:#241d15;padding:48px 0}
+.welcome-life .welcome-label{color:#796035}
+.welcome-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:30px}
+.welcome-columns article{border-top:1px solid #b9a987;padding-top:22px}
+.welcome-columns p{font-size:15px}
+.welcome a.welcome-link{color:#795d2c;font:13px Inter,Arial,sans-serif;border-bottom:1px solid #795d2c}
+.welcome-invite{padding:48px 0;background:#0c1c2e}
+.welcome-invite-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:45px}
+.welcome-access{padding:28px 0;text-align:center;border-top:1px solid #453e31}
+.welcome-access a{display:inline-block;color:#e8dfc8;border:1px solid #786a4e;padding:11px 18px;margin:6px;font:12px Inter,Arial,sans-serif}
+.welcome-access a:hover{color:#f4edd8;background:#102b43}
+.welcome-access a.welcome-staff{display:table;border:0;font-size:11px;color:#c9a96e;margin:8px auto 0;padding:8px}
+@media(max-width:640px){.welcome-columns,.welcome-invite-grid{grid-template-columns:1fr;gap:24px}.welcome-hero{padding-top:42px}.welcome-drawing{right:-12%;top:8px;width:100%;height:300px;opacity:.30}}
+
+
+.visit-details{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+.visit-details article+article{margin-top:30px}
+.visit-request{background:#fffaf0;padding:28px;border-top:3px solid #a6894a;scroll-margin-top:100px}
+.welcome .visit-note{font:12px/1.6 Arial,sans-serif;color:#635947;margin-top:16px}
+.welcome .visit-contact{font:14px/1.8 Arial,sans-serif;margin-top:24px;overflow-wrap:anywhere}
+.welcome .visit-contact a{color:#795d2c}
+@media(max-width:700px){.visit-details{grid-template-columns:1fr;gap:32px}}
+
 </style>
 <link rel="stylesheet" href="https://thamesclub1869.com/club-navigation.css?v=20261008"><script defer src="https://thamesclub1869.com/club-navigation.js?v=20261008"></script></head>
 <body>
@@ -278,73 +316,38 @@ footer a:hover {
 
 <div data-tc-navigation><noscript><a href="https://thamesclub1869.com/">Club Home</a> · <a href="https://duckpin-manager-production.up.railway.app/members-home">Members’ Home</a> · <a href="https://duckpin-manager-production.up.railway.app/bowler-login">Bowlers’ Home</a> · <a href="https://duckpin-manager-production.up.railway.app/staff-workspace">Staff Login</a></noscript></div>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero sd" id="top" style="padding-bottom:90px">
-<div class="hbg"></div><div class="hgrid"></div>
-<img alt="The Thames Club" class="hdraw" src="images/visit_01.jpg"/>
-<div class="w hcon">
-<p class="hey">Founded February 8, 1869 — New London, Connecticut</p>
-<h1>Visit</h1>
-<p class="hsub">Come by, see the house, and understand the place in person.</p>
-<div class="hfacts">
-<div><strong>Address</strong>290 State Street<br/>New London, CT 06320</div>
-<div><strong>Lunch</strong>Every Wednesday · 12–2 pm</div>
-<div><strong>Other times</strong>See <a href="events.html">Events</a></div>
-<div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br/><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
+
+<main class="welcome" id="top">
+<section class="welcome-hero">
+<img class="welcome-drawing" src="images/index_01.jpg" alt="Historic Thames Club illustration">
+<div class="w"><div class="welcome-copy">
+<div class="welcome-label">Your first visit · New London, Connecticut</div>
+<h1>Come visit<br>the Thames Club</h1>
+<p class="welcome-lead">The best introduction is in person.</p>
+<p>A website can show you the rooms. A visit lets you meet the people.</p>
+<p>If you are considering membership, we invite you to see our historic clubhouse in downtown New London. Come with your questions and a little curiosity. We will show you around, explain Club life, and introduce you to members.</p>
+<p>You do not need to know someone at the Club already.</p>
+<div class="welcome-actions"><a class="welcome-button" href="#visit-request">Request a Visit →</a><a class="welcome-button welcome-outline" href="tel:+19592642733">Call (959) 264-2733</a></div>
+</div></div></section>
+<section class="welcome-life" id="visit"><div class="w visit-details">
+<div>
+<article><h2>What to expect</h2><p>Your first visit is a chance to get acquainted. See the gathering spaces and duckpin bowling lanes, learn about dining and upcoming events, and discuss how membership works.</p><p>Let us know if you would like to bring your spouse, partner, or a friend.</p></article>
+<article><h3>Choose a good time</h3><p>Wednesday lunch can be a convenient opportunity to meet us. Other opportunities depend on the <a class="welcome-link" href="events.html">Club calendar</a>.</p><p>Please contact us to confirm a suitable time and any meal arrangements before coming.</p></article>
+<article><h3>Find us</h3><p>The Thames Club<br>290 State Street<br>New London, CT 06320</p><p>The clubhouse is a short walk from New London Union Station. Contact us if you need parking directions or information about accessibility.</p><a class="welcome-link" href="https://maps.google.com/?q=290+State+Street+New+London+CT" target="_blank" rel="noopener noreferrer">Get Directions →</a></article>
 </div>
-</div>
-</section>
+<aside class="visit-request" id="visit-request" aria-labelledby="visit-request-title">
+<div class="welcome-label">Let’s get acquainted</div>
+<h2 id="visit-request-title">Tell us you would<br>like to visit</h2>
+<p>Email us your name, preferred visiting times, and any questions. You may also include a phone number.</p>
+<p>We will contact you to confirm the arrangements.</p>
+<div class="welcome-actions"><a class="welcome-button" href="mailto:thamesclub.nl@gmail.com?subject=I'd%20like%20to%20visit%20the%20Thames%20Club&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20arrange%20a%20visit%20to%20the%20Thames%20Club.%0A%0AName%3A%0APreferred%20visiting%20times%3A%0ANumber%20visiting%3A%0APhone%20(optional)%3A%0AQuestions%20or%20accessibility%20needs%3A%0A%0AThank%20you.">Email Your Visit Request →</a></div>
+<p class="visit-note">Opens your email app with a visit request ready to complete and send.</p>
+<p class="visit-contact">You can also write directly to<br><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a><br>or call <a href="tel:+19592642733">(959) 264-2733</a>.</p>
+</aside>
+</div></section>
+<section class="welcome-invite"><div class="w welcome-invite-grid"><h2>Prefer to speak<br>with someone?</h2><div><p>We would be pleased to help you plan your visit.</p><a class="welcome-button welcome-outline" href="tel:+19592642733">Call (959) 264-2733</a></div></div></section>
+</main>
 
-<!-- ═══ ABOVE & BELOW ═══ -->
-
-<!-- ═══ THOSE WHO SERVE ═══ -->
-
-
-<!-- ═══ THE ROOM ═══ -->
-
-
-
-<!-- ═══ HISTORY ═══ -->
-
-<!-- ═══ EVENTS ═══ -->
-
-<!-- ═══ THE CLUB ALIVE ═══ -->
-
-<!-- ═══ MEMBERSHIP ═══ -->
-
-<!-- ═══ VISIT ═══ -->
-<section class="sm" id="visit">
-<div class="w">
-<div class="g2c">
-<div class="r">
-<span class="lab lab-g">Visit</span>
-<h2 class="hxl cr">Come on a<br/>Wednesday.</h2>
-<div class="bt dk">
-<p>The easiest way to visit is to come by when the Club is open. Wednesday lunch runs noon to two, house made. For other meals and gatherings, see the <a href="events.html">Events page</a>. Ring the bell at either entrance and someone will let you in.</p>
-<p>Or call ahead. Or just show up. The door is the introduction.</p>
-</div>
-<div class="inf r d1">
-<strong>Address</strong>290 State Street, New London, CT 06320<br/><br/>
-          <strong>Phone</strong><a href="tel:9592642733">959-264-2733</a><br/><br/>
-<strong>Email</strong><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a><br/><br/>
-<strong>Membership Inquiries</strong>Call Jennifer at <a href="tel:9592642733">(959) 264-2733</a><br/><br/>
-<strong>By Train</strong>Union Station · 27 Water Street · Short walk<br/>Amtrak &amp; Shore Line East from New Haven, Providence, New York<br/><br/>
-          <strong>Parking</strong>Street parking on State &amp; Washington St<br/>Leased lot at the barbershop on Washington St<br/><br/>
-          <strong>WiFi</strong>Ask at the bar  ·  24/7 member fob access
-        </div>
-<div class="btns r d2">
-<a class="btn bg" href="tel:9592642733">Call 959-264-2733</a>
-<a class="btn bh" href="https://maps.google.com/?q=290+State+Street+New+London+CT" target="_blank">Google Maps</a>
-</div>
-</div>
-<div class="r d2">
-<div class="ph" style="height:360px;margin-bottom:8px"><img alt="Hunt room fireplace" src="images/visit_02.jpg" style="object-position:center 40%"/></div>
-<div class="ph" style="height:210px"><img alt="Member's Lunch — See You There" src="images/visit_03.jpg"/></div>
-<p class="cap dk">The Club is open Wednesday lunch · See Events for other times</p>
-</div>
-</div>
-</div>
-</section>
 <!-- FOOTER with TC logo -->
 
 <footer class="site-shell-footer">
