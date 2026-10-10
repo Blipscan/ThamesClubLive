@@ -4,8 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>The Thames Club — New London, Connecticut</title>
-<meta content="Connecticut's oldest private social club. Founded February 8, 1869. For the people who make this corner of New England work." name="description"/>
+<title>The Thames Club | Private Social Club in New London, CT</title>
+<meta content="Discover dining, duckpin bowling, events, and friendship at The Thames Club, a private social club in New London, CT since 1869. Arrange a visit." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -271,29 +271,75 @@ footer a {
 footer a:hover {
   color: #f4edd8;
 }
-.portal-links{display:flex;gap:16px;flex-wrap:wrap;margin:26px 0}.portal-links a{display:block;padding:16px 24px;background:#102b43;border:1px solid #c9a96e;border-radius:4px;color:#f4edd8;text-decoration:none;font:24px Georgia,serif}.portal-links a:first-child{background:#852e3b}.portal-links span{display:block;font:12px/1.5 Inter,system-ui,sans-serif;margin-top:6px;color:#e5dac5}.portal-links a:hover{filter:brightness(1.15)}.portal-links a:focus-visible{outline:3px solid #c9a96e;outline-offset:4px}@media(max-width:600px){.portal-links{flex-direction:column}.portal-links a{font-size:22px}}.staff-entry{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-10px 0 28px}.staff-entry a{font:13px Inter,system-ui,sans-serif;color:#f4edd8;padding:10px 16px;border:1px solid rgba(201,169,110,.45);border-radius:4px}.staff-entry span{font:11px Inter,system-ui,sans-serif;color:#a89e87}.staff-entry a:hover{background:#102b43;color:#f4edd8}</style>
+.portal-links{display:flex;gap:16px;flex-wrap:wrap;margin:26px 0}.portal-links a{display:block;padding:16px 24px;background:#102b43;border:1px solid #c9a96e;border-radius:4px;color:#f4edd8;text-decoration:none;font:24px Georgia,serif}.portal-links a:first-child{background:#852e3b}.portal-links span{display:block;font:12px/1.5 Inter,system-ui,sans-serif;margin-top:6px;color:#e5dac5}.portal-links a:hover{filter:brightness(1.15)}.portal-links a:focus-visible{outline:3px solid #c9a96e;outline-offset:4px}@media(max-width:600px){.portal-links{flex-direction:column}.portal-links a{font-size:22px}}.staff-entry{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-10px 0 28px}.staff-entry a{font:13px Inter,system-ui,sans-serif;color:#f4edd8;padding:10px 16px;border:1px solid rgba(201,169,110,.45);border-radius:4px}.staff-entry span{font:11px Inter,system-ui,sans-serif;color:#a89e87}.staff-entry a:hover{background:#102b43;color:#f4edd8}
+/* Membership welcome homepage trial, 2026-10-10. */
+.welcome-hero{position:relative;overflow:hidden;padding:62px 0 48px;background:#07101a}
+.welcome-drawing{position:absolute;right:0;top:5px;width:65%;height:300px;object-fit:contain;filter:invert(1);mix-blend-mode:screen;opacity:.24;pointer-events:none}
+.welcome-copy{position:relative;max-width:680px}
+.welcome-label{font:11px Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:2.5px;color:#c9a96e;margin-bottom:20px}
+.welcome h1{font:400 clamp(40px,6vw,66px)/1.05 Georgia,serif;letter-spacing:0;text-transform:none;margin:0 0 18px}
+.welcome h2{font:400 32px/1.2 Georgia,serif;margin:0 0 20px}
+.welcome h3{font:400 22px/1.2 Georgia,serif;margin:0 0 13px}
+.welcome p{font:16px/1.8 Georgia,serif;margin:0 0 18px}
+.welcome .welcome-lead{font:22px/1.5 Georgia,serif}
+.welcome-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.welcome a.welcome-button{display:inline-block;background:#c9a96e;color:#07101a;border:1px solid #c9a96e;padding:14px 20px;font:12px Inter,Arial,sans-serif;letter-spacing:.6px;text-decoration:none}
+.welcome a.welcome-outline{background:transparent;color:#c9a96e}
+.welcome a.welcome-button:hover{background:#e2c792;color:#07101a}
+.welcome a:focus-visible{outline:3px solid #c9a96e;outline-offset:4px}
+.welcome-life{background:#f4edd8;color:#241d15;padding:48px 0}
+.welcome-life .welcome-label{color:#796035}
+.welcome-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:30px}
+.welcome-columns article{border-top:1px solid #b9a987;padding-top:22px}
+.welcome-columns p{font-size:15px}
+.welcome a.welcome-link{color:#795d2c;font:13px Inter,Arial,sans-serif;border-bottom:1px solid #795d2c}
+.welcome-invite{padding:48px 0;background:#0c1c2e}
+.welcome-invite-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:45px}
+.welcome-access{padding:28px 0;text-align:center;border-top:1px solid #453e31}
+.welcome-access a{display:inline-block;color:#e8dfc8;border:1px solid #786a4e;padding:11px 18px;margin:6px;font:12px Inter,Arial,sans-serif}
+.welcome-access a:hover{color:#f4edd8;background:#102b43}
+.welcome-access a.welcome-staff{display:table;border:0;font-size:11px;color:#c9a96e;margin:8px auto 0;padding:8px}
+@media(max-width:640px){.welcome-columns,.welcome-invite-grid{grid-template-columns:1fr;gap:24px}.welcome-hero{padding-top:42px}.welcome-drawing{width:100%;opacity:.15}}
+
+</style>
 <link rel="stylesheet" href="https://thamesclub1869.com/club-navigation.css?v=20261008"><script defer src="https://thamesclub1869.com/club-navigation.js?v=20261008"></script></head>
 <body>
 <!-- NAV with TC duck logo -->
 
 <div data-tc-navigation><noscript><a href="https://thamesclub1869.com/">Club Home</a> · <a href="https://duckpin-manager-production.up.railway.app/members-home">Members’ Home</a> · <a href="https://duckpin-manager-production.up.railway.app/bowler-login">Bowlers’ Home</a> · <a href="https://duckpin-manager-production.up.railway.app/staff-workspace">Staff Login</a></noscript></div>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero sd" id="top" style="padding-bottom:90px">
-<div class="hbg"></div><div class="hgrid"></div>
-<img alt="The Thames Club" class="hdraw" src="images/index_01.jpg"/>
-<div class="w hcon">
-<p class="hey">Founded February 8, 1869 — New London, Connecticut</p>
-<h1>The Thames<br/><em>Club</em></h1>
-<p class="hsub">A gathering place on the river since eighteen sixty-nine. Merchants and sea captains. Physicians, lawyers, educators, and civic leaders. Engineers and executives. Those who teach, heal, build, serve, and give back. The work changes. The room endures.</p>
-<div class="portal-links" aria-label="Club portals"><a href="members-home.html">Members’ Home <span>Member directory · coming soon</span></a><a href="https://duckpin-manager-production.up.railway.app/bowler-login">Bowlers’ Home <span>Teams, schedules &amp; scores</span></a></div><div class="staff-entry"><a href="https://duckpin-manager-production.up.railway.app/staff-workspace">Staff Login</a><span>Officer desks · Preview and training</span></div><div class="hfacts">
-<div><strong>Address</strong>290 State Street<br/>New London, CT 06320</div>
-<div><strong>Lunch</strong>Every Wednesday · 12–2 pm</div>
-<div><strong>Other times</strong>See <a href="events.html">Events</a></div>
-<div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br/><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
-</div>
-</div>
-</section>
+
+<main class="welcome" id="top">
+<section class="welcome-hero">
+<img class="welcome-drawing" src="images/index_01.jpg" alt="Historic Thames Club illustration">
+<div class="w"><div class="welcome-copy">
+<div class="welcome-label">A private social club in New London, Connecticut</div>
+<h1>The Thames Club</h1>
+<p class="welcome-lead">Good conversation. A familiar table.<br>Something to look forward to.</p>
+<p>At the Thames Club, people from across southeastern Connecticut come together for dining, duckpin bowling, lectures, celebrations, and the pleasure of knowing one another.</p>
+<p>Our historic clubhouse on State Street is a place to meet friends—and make new ones. Members bring different professions, backgrounds, and interests. What they share is an appreciation for good company and a community they can help shape.</p>
+<div class="welcome-actions"><a class="welcome-button" href="membership.html">Discover Membership</a><a class="welcome-button welcome-outline" href="visit.html">Arrange a Visit →</a></div>
+</div></div></section>
+<section class="welcome-life"><div class="w">
+<div class="welcome-label">A tradition of coming together · Since 1869</div>
+<h2>Find your place at the Club</h2>
+<div class="welcome-columns">
+<article><h3>Around the table</h3><p>Share a meal, linger over conversation, and get to know the people who live and work around you.</p></article>
+<article><h3>Down at the lanes</h3><p>Enjoy the Club’s duckpin bowling tradition, where friendly competition gives people a reason to return week after week.</p></article>
+<article><h3>Something on the calendar</h3><p>Lectures, movie nights, seasonal gatherings, and special occasions bring fresh experiences to a familiar setting.</p></article>
+</div><div class="welcome-actions"><a class="welcome-link" href="community.html">Explore Club Life →</a><a class="welcome-link" href="events.html">See Upcoming Events →</a></div>
+</div></section>
+<section class="welcome-invite"><div class="w welcome-invite-grid">
+<div><div class="welcome-label">An open invitation</div><h2>Your introduction<br>starts with a visit</h2></div>
+<div><p>Curious about membership? You don’t need to know a current member to take the first step. Contact us, come see the clubhouse, and let us introduce you.</p><p>Whether you have lived here for years or have just arrived in New London or Groton, we would be pleased to meet you.</p><a class="welcome-button" href="visit.html">Arrange a Visit →</a></div>
+</div></section>
+<section class="welcome-access"><div class="w">
+<div class="welcome-label">Already part of the Club?</div>
+<a href="https://duckpin-manager-production.up.railway.app/members-home">Members’ Home</a>
+<a href="https://duckpin-manager-production.up.railway.app/bowler-login">Bowlers’ Home</a>
+<a class="welcome-staff" href="https://duckpin-manager-production.up.railway.app/staff-workspace">Staff Login</a>
+</div></section>
+</main>
 
 <!-- FOOTER -->
 <footer class="site-shell-footer">
