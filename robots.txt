@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thamesclub1869.com/sitemap.xml
