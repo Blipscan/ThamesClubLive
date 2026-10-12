@@ -293,7 +293,7 @@ footer a:hover {
                 const link = document.createElement('a'); link.className = 'event-flyer-art';
                 link.href = imageUrl.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
                 link.setAttribute('aria-label', 'Read '+flyer.title+' flyer (opens in a new tab)');
-                const image = document.createElement('img'); image.src = imageUrl.href; image.alt = flyer.title; image.decoding = 'async'; link.appendChild(image);
+                const image = document.createElement('img'); image.src = imageUrl.href; image.alt = flyer.title; image.decoding = 'async'; if (flyer.image_type === 'application/pdf') { link.textContent = 'View full event flyer (PDF)'; } else { link.appendChild(image); }
                 const caption = document.createElement('figcaption'); const time = document.createElement('time');
                 time.dateTime = flyer.event_date;
                 time.textContent = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(flyer.event_date+'T12:00:00Z'));
