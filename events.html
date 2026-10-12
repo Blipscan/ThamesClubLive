@@ -232,7 +232,7 @@ footer a:hover {
         </figure>
       </section>
       <script>
-        // Expire flyers after their event day in the Club's local timezone.
+        // Show approved flyers from 30 days before the event through its last day, in Club local time.
         (function () {
           const gallery = document.querySelector('.event-flyers');
           const hint = document.getElementById('event-flyer-hint');
@@ -244,10 +244,23 @@ footer a:hover {
             const part = name => parts.find(item => item.type === name).value;
             const today = part('year') + '-' + part('month') + '-' + part('day');
             let visible = 0;
-            gallery.querySelectorAll('.event-flyer').forEach(flyer => {
-              const time = flyer.querySelector('time[datetime]');
-              const date = flyer.dataset.endDate || (time && time.getAttribute('datetime'));
-              flyer.hidden = Boolean(date && /^\d{4}-\d{2}-\d{2}$/.test(date) && date < today);
+            const validDate = date => /^\d{4}-\d{2}-\d{2}$/.test(date || '') &&
+              !Number.isNaN(Date.parse(date + 'T12:00:00Z')) &&
+              new Date(date + 'T12:00:00Z').toISOString().slice(0, 10) === date;
+            const eventDate = flyer => flyer.querySelector('time[datetime]')?.getAttribute('datetime');
+            const flyers = Array.from(gallery.querySelectorAll('.event-flyer'));
+            flyers.sort((a, b) => (eventDate(a) || '').localeCompare(eventDate(b) || ''));
+            flyers.forEach(flyer => {
+              const date = eventDate(flyer);
+              const endDate = flyer.dataset.endDate || date;
+              const start = validDate(date) ? new Date(date + 'T12:00:00Z') : null;
+              if (start) start.setUTCDate(start.getUTCDate() - 30);
+              // Existing curated flyers are approved; pending/rejected entries never display.
+              const approved = !flyer.dataset.approval || flyer.dataset.approval === 'approved';
+              const startDate = start && start.toISOString().slice(0, 10);
+              flyer.hidden = !approved || !validDate(date) || !validDate(endDate) ||
+                today < startDate || today > endDate;
+              gallery.appendChild(flyer);
               if (!flyer.hidden) visible++;
             });
             gallery.hidden = visible === 0;
