@@ -117,5 +117,19 @@
     "displayDate": "Wednesday, November 11, 2026",
     "time": "12:30 PM",
     "description": ""
+  },
+  {
+    "title": "Bowling",
+    "date": "2026-11-12",
+    "displayDate": "Thursday, November 12, 2026",
+    "time": "12:30 PM",
+    "description": ""
+  },
+  {
+    "title": "Reserved for ECSO meeting",
+    "date": "2026-11-12",
+    "displayDate": "Thursday, November 12, 2026",
+    "time": "1:00 PM",
+    "description": ""
   }
 ]
