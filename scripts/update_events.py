@@ -19,6 +19,10 @@ for block in raw.split("BEGIN:VEVENT")[1:]:
     if not title or not start:
         continue
 
+    # Publish only calendar entries deliberately marked as public invitations.
+    if not title.group(1).strip().upper().startswith("[PUBLIC]"):
+        continue
+
     ds = start.group(1).strip()
 
     try:
@@ -31,7 +35,8 @@ for block in raw.split("BEGIN:VEVENT")[1:]:
 
     if today <= dt.date() <= limit:
         events.append({
-            "title": title.group(1).replace("\\,", ",").strip(),
+            "audience": "public",
+            "title": re.sub(r"^\[PUBLIC\]\s*", "", title.group(1), flags=re.I).replace("\\,", ",").strip(),
             "date": dt.strftime("%Y-%m-%d"),
             "displayDate": dt.strftime("%A, %B %d, %Y").replace(" 0", " "),
             "time": dt.strftime("%I:%M %p").lstrip("0"),
@@ -42,3 +47,4 @@ events.sort(key=lambda e: (e["date"], e["time"]))
 
 with open("events.json", "w", encoding="utf-8") as f:
     json.dump(events, f, indent=2, ensure_ascii=False)
+

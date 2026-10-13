@@ -208,122 +208,13 @@ footer a:hover {
 
   <header class="hero">
     <div class="wrap">
-      <p id="event-flyer-hint" style="font-size:12px;color:var(--muted);margin-bottom:16px">Select a flyer to read it full size in a new tab.</p>
-      <section class="event-flyers" aria-label="Club events open to members">
-        <figure class="event-flyer">
-          <a class="event-flyer-art" href="images/event-flyers/gipstein-2026-10-09.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/gipstein-2026-10-09.svg" alt="Todd Gipstein: Around the World by Private Jet, October 9, 2026. Cocktails and hors d’oeuvres 5:30 PM; presentation 6:30 PM; Q&A 7:30 PM." decoding="async"></a>
-          <figcaption><time datetime="2026-10-09">October 9</time>Todd Gipstein · Around the World</figcaption>
-        </figure>
-        <figure class="event-flyer">
-          <a class="event-flyer-art" href="images/event-flyers/flock-theatre-2026-10-16.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/flock-theatre-2026-10-16.svg" alt="Pre-Show Dinner and Flock Theatre’s Hughie, October 16, 2026. Dinner 5 PM, $30++; show 7 PM. Reserve by October 12." decoding="async"></a>
-          <figcaption><time datetime="2026-10-16">October 16</time>Dinner &amp; Flock Theatre</figcaption>
-        </figure>
-        <figure class="event-flyer">
-          <a class="event-flyer-art" href="images/event-flyers/shadows-spirits-talk-2026-10-21.png" target="_blank" rel="noopener noreferrer" aria-label="Read the full Shadows and Spirits concert talk flyer (opens in a new tab)"><img src="images/event-flyers/shadows-spirits-talk-2026-10-21.png" width="1024" height="1536" alt="Shadows &amp; Spirits concert talk with Eastern Connecticut Symphony Orchestra. Wednesday, October 21, 2026 at 2 PM at The Thames Club. Complimentary for members; snack provided by ECSO and cash bar open. The separate concert is October 24 at 7:30 PM at Garde Arts Center; tickets sold separately." decoding="async"></a>
-          <figcaption><time datetime="2026-10-21">October 21 · 2 PM</time>Shadows &amp; Spirits · Concert Talk</figcaption>
-        </figure>
-        <figure class="event-flyer">
-          <a class="event-flyer-art" href="images/event-flyers/lost-boys-2026-10-23.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/lost-boys-2026-10-23.svg" alt="The Lost Boys classic movie night, October 23, 2026 at 5:30 PM. $20++ includes pizza and popcorn. Reserve by October 16." decoding="async"></a>
-          <figcaption><time datetime="2026-10-23">October 23</time>Classic Movie Night</figcaption>
-        </figure>
-        <figure class="event-flyer">
-          <a class="event-flyer-art" href="images/event-flyers/witching-2026-10-30.svg" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="images/event-flyers/witching-2026-10-30.svg" alt="Witching, Bitching and Warlocks monthly luncheon, October 30, 2026 at 11:30 AM. $40++; reserve by October 23. Menu coming soon." decoding="async"></a>
-          <figcaption><time datetime="2026-10-30">October 30</time>Witching, Bitching &amp; Warlocks</figcaption>
-        </figure>
-      </section>
-      <script>
-        // Show approved flyers from 30 days before the event through its last day, in Club local time.
-        (function () {
-          const gallery = document.querySelector('.event-flyers');
-          const hint = document.getElementById('event-flyer-hint');
-          const dayFormat = new Intl.DateTimeFormat('en-US', {
-            timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit'
-          });
-          function refreshFlyers() {
-            const parts = dayFormat.formatToParts(new Date());
-            const part = name => parts.find(item => item.type === name).value;
-            const today = part('year') + '-' + part('month') + '-' + part('day');
-            let visible = 0;
-            const validDate = date => /^\d{4}-\d{2}-\d{2}$/.test(date || '') &&
-              !Number.isNaN(Date.parse(date + 'T12:00:00Z')) &&
-              new Date(date + 'T12:00:00Z').toISOString().slice(0, 10) === date;
-            const eventDate = flyer => flyer.querySelector('time[datetime]')?.getAttribute('datetime');
-            const flyers = Array.from(gallery.querySelectorAll('.event-flyer'));
-            flyers.sort((a, b) => (eventDate(a) || '').localeCompare(eventDate(b) || ''));
-            flyers.forEach(flyer => {
-              const date = eventDate(flyer);
-              const endDate = flyer.dataset.endDate || date;
-              const start = validDate(date) ? new Date(date + 'T12:00:00Z') : null;
-              if (start) start.setUTCDate(start.getUTCDate() - 30);
-              // Existing curated flyers are approved; pending/rejected entries never display.
-              const approved = !flyer.dataset.approval || flyer.dataset.approval === 'approved';
-              const startDate = start && start.toISOString().slice(0, 10);
-              flyer.hidden = !approved || !validDate(date) || !validDate(endDate) ||
-                today < startDate || today > endDate;
-              gallery.appendChild(flyer);
-              if (!flyer.hidden) visible++;
-            });
-            gallery.hidden = visible === 0;
-            hint.hidden = visible === 0;
-            // Recheck at the next local midnight (also handles daylight-saving changes).
-            const now = Date.now();
-            let low = now, high = now + 26 * 60 * 60 * 1000;
-            while (high - low > 250) {
-              const mid = Math.floor((low + high) / 2);
-              if (dayFormat.format(new Date(mid)) === dayFormat.format(new Date(now))) low = mid;
-              else high = mid;
-            }
-            clearTimeout(timer);
-            timer = setTimeout(refreshFlyers, high - now + 250);
-          }
-          let timer;
-          async function loadApprovedFlyers() {
-            try {
-              const response = await fetch('https://duckpin-manager-production.up.railway.app/api/event-flyers/public', {cache:'no-store', signal:AbortSignal.timeout(10000)});
-              if (!response.ok) throw new Error('Flyer feed unavailable');
-              const data = await response.json();
-              if (!Array.isArray(data.flyers)) throw new Error('Invalid flyer feed');
-              const incoming = document.createDocumentFragment();
-              for (const flyer of data.flyers) {
-                if (!/^[a-z0-9-]+$/.test(flyer.id) || !/^\d{4}-\d{2}-\d{2}$/.test(flyer.event_date)) continue;
-                const imageUrl = new URL(flyer.image_url);
-                if (imageUrl.origin !== 'https://duckpin-manager-production.up.railway.app' || !imageUrl.pathname.startsWith('/api/event-flyers/')) continue;
-                const figure = document.createElement('figure');
-                figure.className = 'event-flyer'; figure.dataset.approval = 'approved'; figure.dataset.feed = 'gm'; figure.hidden = true;
-                const link = document.createElement('a'); link.className = 'event-flyer-art';
-                link.href = imageUrl.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
-                link.setAttribute('aria-label', 'Read '+flyer.title+' flyer (opens in a new tab)');
-                const image = document.createElement('img'); image.src = imageUrl.href; image.alt = flyer.title; image.decoding = 'async'; if (flyer.image_type === 'application/pdf') { link.textContent = 'View full event flyer (PDF)'; } else { link.appendChild(image); }
-                const caption = document.createElement('figcaption'); const time = document.createElement('time');
-                time.dateTime = flyer.event_date;
-                time.textContent = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(flyer.event_date+'T12:00:00Z'));
-                caption.append(time, document.createTextNode(flyer.title)); figure.append(link,caption); incoming.appendChild(figure);
-              }
-              gallery.querySelectorAll('[data-feed="gm"]').forEach(item => item.remove());
-              gallery.appendChild(incoming); refreshFlyers();
-            } catch (error) {
-              // Preserve the curated gallery if the approval service is temporarily unavailable.
-              console.warn('Approved flyer feed temporarily unavailable.');
-            }
-          }
-          loadApprovedFlyers();
-          setInterval(loadApprovedFlyers, 60000);
-          window.addEventListener('pageshow', loadApprovedFlyers);
-          document.addEventListener('visibilitychange', function () { if (!document.hidden) loadApprovedFlyers(); });
-          refreshFlyers();
-          window.addEventListener('pageshow', refreshFlyers);
-          document.addEventListener('visibilitychange', function () {
-            if (!document.hidden) refreshFlyers();
-          });
-        })();
-      </script>
       <div class="eyebrow">Founded February 8, 1869 — New London, Connecticut</div>
       <h1>Events</h1>
-      <p class="sub">Calendar, entertainment, and the reasons members return throughout the year.</p>
+      <p class="sub">Music, conversation, good food and shared experiences — discover life at the Thames Club.</p>
       <div class="facts">
         <div><strong>Address</strong>290 State Street<br>New London, CT 06320</div>
         <div><strong>Lunch</strong>Every Wednesday<br>12–2 pm</div>
-        <div><strong>Other times</strong>See calendar below</div>
+        <div><strong>Other times</strong>Public invitations below</div>
         <div><strong>Contact</strong><a href="tel:9592642733">959-264-2733</a><br><a href="mailto:thamesclub.nl@gmail.com">thamesclub.nl@gmail.com</a></div>
       </div>
     </div>
@@ -332,8 +223,8 @@ footer a:hover {
   <main>
     <section class="wrap">
       <span class="section-label">Calendar &amp; Entertainment</span>
-      <h2>What's coming</h2>
-      <p class="intro">Members receive the full calendar. These are the events that make the Club worth belonging to.</p>
+      <h2>Open to the public</h2>
+      <p class="intro">Events listed here specifically welcome the public. Members can sign in to Members’ Home for the full Club calendar, flyers and dining information.<br><a href="https://duckpin-manager-production.up.railway.app/members-home">Members’ Home →</a></p>
 
       <div id="events-container" class="grid">
         <div class="empty">Loading events…</div>
@@ -381,31 +272,27 @@ footer a:hover {
   </script>
 
   <script>
-    const fallbackEvents = [
-      { title:'Pub Night', date:'Thursday · April 30 · 6:00 PM', description:'Members and guests welcome. $10 cover.', image:'images/events_06.jpg' },
-      { title:'Jazz Night', date:'Friday · May 10 · 7:00 PM', description:'Live jazz trio. Bar opens at 5:30.', image:'images/events_07.jpg' },
-      { title:'Flamenco Night', date:'Saturday · May 18', description:'Tapas, sangria, and live performance at the Club.', image:'images/events_04.jpg' },
-      { title:'Summer Kickoff', date:'June 1', description:'Season opening event with drinks, dinner, and good company.', image:'images/events_02.png' }
-    ];
-
+    const fallbackEvents = [];
+    const escapeHtml = value => String(value || '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     function renderEvents(events){
       const container = document.getElementById('events-container');
       if(!container) return;
       if(!events || !events.length){
-        container.innerHTML = '<div class="empty">No upcoming public events are listed yet.</div>';
+        container.innerHTML = '<div class="empty">No public invitations are currently posted. Please check back, or contact the Club about visiting.</div>';
         return;
       }
       container.innerHTML = events.map(ev => {
-        const dateText = ev.displayDate || ev.date || '';
+        const dateText = escapeHtml(ev.displayDate || ev.date);
         const showTime = ev.time && ev.time !== '12:00 AM';
-        const desc = (ev.description || '').trim();
+        const desc = escapeHtml((ev.description || '').trim());
         return `
         <article class="card">
           <div class="card-body">
             <span class="date">${dateText}</span>
-            ${showTime ? `<span class="time">${ev.time}</span>` : ''}
-            <h3>${ev.title || 'Club Event'}</h3>
+            ${showTime ? `<span class="time">${escapeHtml(ev.time)}</span>` : ''}
+            <h3>${escapeHtml(ev.title || 'Club Event')}</h3>
             ${desc ? `<p>${desc}</p>` : ''}
+            ${typeof ev.image_url==='string' && /^https:\/\/duckpin-manager-production\.up\.railway\.app\/api\/event-flyers\/[a-z0-9-]+\/image$/.test(ev.image_url) ? `<p><a href="${escapeHtml(ev.image_url)}" target="_blank" rel="noopener">View event flyer →</a></p>` : ''}
           </div>
         </article>
       `;
@@ -419,7 +306,10 @@ footer a:hover {
         const res = await fetch('events.json', { cache:'no-store', signal: ctrl.signal });
         if(!res.ok) throw new Error('events.json not found');
         const events = await res.json();
-        renderEvents(events);
+        const today=new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date());
+        const publicEvents=events.filter(e=>e.audience==='public' && e.date>=today);
+        try{const feed=await fetch('https://duckpin-manager-production.up.railway.app/api/event-flyers/public',{cache:'no-store',signal:AbortSignal.timeout(8000)});if(feed.ok){const data=await feed.json();for(const f of data.flyers||[])publicEvents.push({title:f.title,date:f.event_date,time:f.event_time,description:f.price,image_url:f.image_url});}}catch(e){}
+        renderEvents(publicEvents.sort((a,b)=>a.date.localeCompare(b.date)));
       }catch(err){
         renderEvents(fallbackEvents);
       }finally{
@@ -431,4 +321,5 @@ footer a:hover {
   </script>
 </body>
 </html>
+
 
