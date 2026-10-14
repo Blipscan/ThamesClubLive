@@ -19,9 +19,6 @@ for block in raw.split("BEGIN:VEVENT")[1:]:
     if not title or not start:
         continue
 
-    # Publish only calendar entries deliberately marked as public invitations.
-    if not title.group(1).strip().upper().startswith("[PUBLIC]"):
-        continue
 
     ds = start.group(1).strip()
 
