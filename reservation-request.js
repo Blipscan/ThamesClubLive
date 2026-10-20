@@ -120,7 +120,7 @@
     open(target.figure,target.figure?.querySelector('.event-flyer-art')||document.querySelector('h1'),target.event);
   }
 
-  function enhance(){const hint=document.getElementById('event-flyer-hint');if(hint)hint.textContent='Select a flyer for event details and a request form. A full-size flyer link is included.';document.querySelectorAll('.event-flyer-art').forEach(a=>{a.setAttribute('aria-haspopup','dialog');a.setAttribute('aria-label','Open event details and request form');});}
+  function enhance(){document.querySelectorAll('.event-flyer-art').forEach(a=>{a.setAttribute('aria-haspopup','dialog');a.setAttribute('aria-label','Open event details and request form');});}
   enhance();openFromEmail();const gallery=document.querySelector('.event-flyers');if(gallery)new MutationObserver(()=>{enhance();openFromEmail();}).observe(gallery,{childList:true});
   form.addEventListener('submit',async e=>{
     e.preventDefault();if(form.querySelector('button[type=submit]').disabled)return;refreshAttendees();
