@@ -57,7 +57,7 @@
     const title=line(data.title||caption?.textContent||'Club event');const date=data.event_date||figure.querySelector('time')?.dateTime||'';
     const fixed=known[date]?.match.test(title)?known[date]:{};
     const instructions=[data.notes,data.reservation_instructions,data.reservation_contact,figure.querySelector('.event-flyer-art img')?.alt,figure.querySelector('figcaption')?.textContent,...Array.from(figure.querySelectorAll('a[href^="mailto:"]'),a=>a.href)].filter(Boolean).join('\n');
-    return {key:eventKey(figure),title,date,cc:notifyDonna(instructions)?DONNA:'',time:data.event_time||fixed.time||'Time to be confirmed',price:data.price||fixed.price||'Price to be confirmed',deadline:data.reserve_by||fixed.deadline||'',notes:data.notes||fixed.notes||'',location:data.location||fixed.location||'The Thames Club · 290 State Street, New London',noReservation:data.reservations_required===false||fixed.noReservation||false,meals:Array.isArray(data.meal_choices)?data.meal_choices:fixed.meals||[],image:figure.querySelector('.event-flyer-art')?.href};
+    return {key:eventKey(figure),title,date,reservationStatus:data.reservation_status||'',cc:notifyDonna(instructions)?DONNA:'',time:data.event_time||fixed.time||'Time to be confirmed',price:data.price||fixed.price||'Price to be confirmed',deadline:data.reserve_by||fixed.deadline||'',notes:data.notes||fixed.notes||'',location:data.location||fixed.location||'The Thames Club · 290 State Street, New London',noReservation:data.reservations_required===false||fixed.noReservation||false,meals:Array.isArray(data.meal_choices)?data.meal_choices:fixed.meals||[],image:figure.querySelector('.event-flyer-art')?.href};
   }
   function open(figure,trigger,preset=null){
     event=preset||metadata(figure);lastTrigger=trigger;form.reset();savedGuests=[];$('#tc-attendees').replaceChildren();capability=window.TCRequestTracking?.newReference();reference=capability?.id||'';
@@ -74,16 +74,16 @@
 
   // Stable email links contain an event identifier only, never member details.
   const emailEvents = {
-    'first-friday-2026-11-06': {title:'First Friday Dinner & Concert by Candlelight — Christopher Faison',date:'2026-11-06',time:'5:30 PM',price:'$75++ per person',deadline:'2026-10-30',notes:'Sounds Familiar. Menu details to follow.'},
+    'first-friday-2026-11-06': {"title": "First Friday Dinner & Concert by Candlelight — Christopher Faison", "date": "2026-11-06", "time": "5:30 PM", "notes": "Sounds Familiar. Menu details to follow. An 18% service charge applies, followed by 7.35% tax.", "image": "images/first-friday-2026-11-06.jpg", "price": "$75++ per person", "deadline": "2026-10-30"},
     'wells-watercraft-tour-2026-11-13': {title:'Wells Watercraft Hall Tour & Cocktails',date:'2026-11-13',time:'3 PM',location:'Mystic Seaport Museum; cocktails afterward at La Plage',notes:'Reserve with Donna Richmond at donnarichmond5@gmail.com.',image:'images/wells-watercraft-tour-2026-11-13.png'},
     'paris-to-pathos-talk-2026-11-18': {title:'Paris to Pathos — Concert Talk',date:'2026-11-18',time:'2 PM',noReservation:true,notes:'Members and nonmembers welcome; no reservations required. Cash bar and complimentary snacks. The separate concert is November 21.',image:'images/paris-to-pathos-talk-2026-11-18.png'},
     'thanksgiving-2026-11-19': {title:'Thanksgiving Dinner & Game of Chance',date:'2026-11-19',time:'5:30 PM',notes:'Tables of players rolling dice before a traditional Thanksgiving dinner.'},
-    'holiday-spectacular-talk-2026-12-02': {title:'Holiday Spectacular — ECSO Concert Talk',date:'2026-12-02',notes:'Talk time to be confirmed. Preview of the separate December 5 concert at 3 PM at the Garde Arts Center.',reservationStatus:'unknown'},
-    'holiday-dinner-2026-12-05': {title:'Annual Holiday Dinner with Mike Zaitchik',date:'2026-12-05',time:'5:30 PM',notes:'All-faiths winter-season dinner with music by Mike Zaitchik.'},
-    'menorah-lighting-2026-12-10': {title:'Menorah Lighting',date:'2026-12-10',time:'6 PM',reservationStatus:'unknown'},
-    'holiday-trivia-2026-12-11': {title:'Holiday Theme Trivia Night',date:'2026-12-11',time:'5:30 PM',reservationStatus:'unknown'},
-    'ugly-sweater-2026-12-18': {title:'Ugly Sweater & Carol-oke Night',date:'2026-12-18',time:'5:30 PM',reservationStatus:'unknown'},
-    'new-years-eve-2026-12-31': {title:"New Year's Eve with Mike Zaitchik",date:'2026-12-31',time:'5:30 PM',notes:'Mike Zaitchik at the keyboard.',reservationStatus:'unknown'}
+    'holiday-spectacular-talk-2026-12-02': {"title": "Holiday Spectacular — ECSO Concert Talk", "date": "2026-12-02", "time": "2 PM", "notes": "Cash bar and complimentary snacks. Preview of the separate December 5 concert at 3 PM at the Garde Arts Center.", "image": "images/holiday-spectacular-talk-2026-12-02.webp", "reservationStatus": "unknown"},
+    'holiday-dinner-2026-12-05': {"title": "Annual Holiday Dinner with Mike Zaitchik", "date": "2026-12-05", "time": "5:30 PM", "notes": "All faiths welcome. Music by Mike Zaitchik. Price, menu and reservation deadline to be confirmed.", "image": "images/holiday-dinner-2026-12-05.webp"},
+    'menorah-lighting-2026-12-10': {"title": "Menorah Lighting", "date": "2026-12-10", "time": "6 PM", "notes": "Cash bar and complimentary light refreshments. Reservation requirements to be confirmed.", "image": "images/menorah-lighting-2026-12-10.webp", "reservationStatus": "unknown"},
+    'holiday-trivia-2026-12-11': {"title": "Holiday Theme Trivia Night", "date": "2026-12-11", "time": "5:30 PM", "notes": "Holiday trivia and dinner. Menu and reservation requirements to be confirmed.", "image": "images/holiday-trivia-2026-12-11.webp", "price": "$40; service charge and tax details to be confirmed", "reservationStatus": "unknown"},
+    'ugly-sweater-2026-12-18': {"title": "Ugly Sweater & Carol-oke Night", "date": "2026-12-18", "time": "5:30 PM", "notes": "Wear your wildest sweater and sing seasonal favorites. Light snacks. Reservation requirements to be confirmed.", "image": "images/ugly-sweater-2026-12-18.webp", "price": "$15; service charge and tax details to be confirmed", "reservationStatus": "unknown"},
+    'new-years-eve-2026-12-31': {"title": "New Year’s Eve with Mike Zaitchik", "date": "2026-12-31", "time": "5:30 PM", "notes": "Mike Zaitchik at the keyboard. Price and reservation requirements to be confirmed.", "image": "images/new-years-eve-2026-12-31.webp", "reservationStatus": "unknown"}
   };
   let emailOpened=false;
   function eventKey(figure){

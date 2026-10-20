@@ -1,0 +1,99 @@
+{
+  "timezone": "America/New_York",
+  "rule": "Show from 30 calendar days before event through event date; hide afterward",
+  "events": [
+    {
+      "id": "first-friday-2026-11-06",
+      "title": "First Friday Dinner & Concert by Candlelight — Christopher Faison",
+      "event_date": "2026-11-06",
+      "event_time": "5:30 PM",
+      "notes": "Sounds Familiar. Menu details to follow. An 18% service charge applies, followed by 7.35% tax.",
+      "price": "$75++ per person",
+      "reserve_by": "2026-10-30",
+      "reservations_required": true,
+      "asset": "images/first-friday-2026-11-06.jpg",
+      "display_from": "2026-10-07",
+      "library_file_id": null,
+      "source": "Gmail 1a140a826cc6cddb approved preview"
+    },
+    {
+      "id": "holiday-spectacular-talk-2026-12-02",
+      "title": "Holiday Spectacular — ECSO Concert Talk",
+      "event_date": "2026-12-02",
+      "event_time": "2 PM",
+      "notes": "Cash bar and complimentary snacks. Preview of the separate December 5 concert at 3 PM at the Garde Arts Center. Talk time confirmed in Jennifer’s October 15 calendar.",
+      "reservation_status": "unknown",
+      "asset": "images/holiday-spectacular-talk-2026-12-02.webp",
+      "display_from": "2026-11-02",
+      "library_file_id": "libfile_d3b53d7e50188191907b2cad3062eebf",
+      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+    },
+    {
+      "id": "holiday-dinner-2026-12-05",
+      "title": "Annual Holiday Dinner with Mike Zaitchik",
+      "event_date": "2026-12-05",
+      "event_time": "5:30 PM",
+      "notes": "All faiths welcome. Music by Mike Zaitchik. Price, menu and reservation deadline to be confirmed.",
+      "reservations_required": true,
+      "asset": "images/holiday-dinner-2026-12-05.webp",
+      "display_from": "2026-11-05",
+      "library_file_id": "libfile_aa1a5119d91c81919b1ea5ed6ee9aaa0",
+      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+    },
+    {
+      "id": "menorah-lighting-2026-12-10",
+      "title": "Menorah Lighting",
+      "event_date": "2026-12-10",
+      "event_time": "6 PM",
+      "notes": "Cash bar and complimentary light refreshments. Reservation requirements to be confirmed.",
+      "reservation_status": "unknown",
+      "asset": "images/menorah-lighting-2026-12-10.webp",
+      "display_from": "2026-11-10",
+      "library_file_id": "libfile_1550621818f4819183bcd404ddbc8c5b",
+      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+    },
+    {
+      "id": "holiday-trivia-2026-12-11",
+      "title": "Holiday Theme Trivia Night",
+      "event_date": "2026-12-11",
+      "event_time": "5:30 PM",
+      "notes": "Holiday trivia and dinner. Menu and reservation requirements to be confirmed.",
+      "price": "$40; service charge and tax details to be confirmed",
+      "reservation_status": "unknown",
+      "asset": "images/holiday-trivia-2026-12-11.webp",
+      "display_from": "2026-11-11",
+      "library_file_id": "libfile_950ae7d568d0819185cf9cdf77ca5308",
+      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+    },
+    {
+      "id": "ugly-sweater-2026-12-18",
+      "title": "Ugly Sweater & Carol-oke Night",
+      "event_date": "2026-12-18",
+      "event_time": "5:30 PM",
+      "notes": "Wear your wildest sweater and sing seasonal favorites. Light snacks. Reservation requirements to be confirmed.",
+      "price": "$15; service charge and tax details to be confirmed",
+      "reservation_status": "unknown",
+      "asset": "images/ugly-sweater-2026-12-18.webp",
+      "display_from": "2026-11-18",
+      "library_file_id": "libfile_2759413340488191bfc88020dab8d2ab",
+      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+    },
+    {
+      "id": "new-years-eve-2026-12-31",
+      "title": "New Year’s Eve with Mike Zaitchik",
+      "event_date": "2026-12-31",
+      "event_time": "5:30 PM",
+      "notes": "Mike Zaitchik at the keyboard. Price and reservation requirements to be confirmed.",
+      "reservation_status": "unknown",
+      "asset": "images/new-years-eve-2026-12-31.webp",
+      "display_from": "2026-12-01",
+      "library_file_id": "libfile_80ef9619dfd88191960af6b9a75644b4",
+      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+    }
+  ],
+  "unconfirmed": [
+    "Thanksgiving and Annual Holiday Dinner prices, menus and RSVP deadlines",
+    "Reservation requirements for Holiday Spectacular talk, Menorah Lighting, Holiday Trivia, Ugly Sweater and New Year’s Eve",
+    "Service charge and tax details for $40 Holiday Trivia and $15 Ugly Sweater"
+  ]
+}
