@@ -200,6 +200,12 @@ footer a:hover {
     @media(max-width:960px){.event-flyers{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px;margin-left:auto;margin-right:auto}.event-flyer-art{height:420px}}
     @media(max-width:560px){.hero{min-height:0;padding-top:28px}.event-flyers{grid-template-columns:1fr;max-width:350px;gap:28px;margin-bottom:38px}.event-flyer-art{height:auto;aspect-ratio:2/3}}
 
+.tc-status-badge{display:inline-block;padding:5px 11px;border:1px solid;border-radius:999px;font:600 14px/1.5 Arial,sans-serif;vertical-align:middle;max-width:100%;box-sizing:border-box}
+.tc-status-pending{background:#fff0bc;color:#654700;border-color:#bc9028}
+.tc-status-received{background:#dceeff;color:#164776;border-color:#6f9dca}
+.tc-status-confirmed{background:#dcefdc;color:#20582d;border-color:#73a77b}
+.tc-status-declined{background:#f8dfdd;color:#852a25;border-color:#c2817d}
+.tc-status-cancelled{background:#e6e8ec;color:#454d59;border-color:#949ca8}
 </style>
 <link rel="stylesheet" href="https://thamesclub1869.com/club-navigation.css?v=20261008"><script defer src="https://thamesclub1869.com/club-navigation.js?v=20261014-public"></script><link rel="canonical" href="https://thamesclub1869.com/events.html">
 </head>
@@ -209,10 +215,10 @@ footer a:hover {
   <header class="hero">
     <div class="wrap">
       <aside id="concert-talk-date-change" style="margin-bottom:24px;padding:20px 24px;border:1px solid var(--gold2);background:var(--cream);color:var(--navy)" aria-label="Concert talk date change"><strong>Date change — Shadows &amp; Spirits Concert Talk</strong><p>The talk has moved from Wednesday, October 21 to <strong>Thursday, October 22, 2026, at 2 p.m.</strong> at The Thames Club.</p></aside>
-      <div id="event-flyer-hint" style="font-size:16px;line-height:1.6;color:var(--cream);border:1px solid rgba(201,169,110,.55);padding:18px 22px;margin-bottom:24px">
+      <div id="event-flyer-hint" style="font-size:16px;line-height:1.6;color:#182839;background:#f4edd8;border:1px solid #c9a96e;border-left:5px solid #c9a96e;border-radius:6px;padding:18px 22px;margin-bottom:24px">
         <p style="margin:0 0 10px"><strong>To request a reservation, click an event flyer.</strong> Complete the form with your total number attending, including yourself, and any guest, meal or dietary details.</p>
         <p style="margin:0 0 10px">Click <strong>Send request</strong> to save it and open a prepared email to Jennifer. <strong>Then press Send in your email app to deliver it.</strong></p>
-        <p style="margin:0">Once saved, the event will show, for example, <strong>“Your request for 2 — Pending.”</strong> Return using the same browser, or use your private status link, to check for <strong>Received</strong> or <strong>Confirmed</strong>. Pending does not mean the email was sent or the reservation confirmed. Events that do not require reservations are marked in the form.</p>
+        <p style="margin:0">Once saved, the event will show, for example, <span class="tc-status-badge tc-status-pending">Your request for 2 — Pending</span> Return using the same browser, or use your private status link, to check for <span class="tc-status-badge tc-status-received">Received</span> or <span class="tc-status-badge tc-status-confirmed">Confirmed</span>. Pending does not mean the email was sent or the reservation confirmed. Events that do not require reservations are marked in the form.</p>
       </div>
       <section class="event-flyers" aria-label="Club event flyers">
         <figure class="event-flyer">
@@ -442,7 +448,7 @@ footer a:hover {
 
     loadEvents();
   </script>
-<script defer src="reservation-tracking.js?v=20261020-1"></script>
+<script defer src="reservation-tracking.js?v=20261020-2"></script>
 <script defer src="reservation-request.js?v=20261020-5"></script>
 </body>
 </html>
