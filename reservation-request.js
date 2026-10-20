@@ -58,20 +58,69 @@
     const instructions=[data.notes,data.reservation_instructions,data.reservation_contact,figure.querySelector('.event-flyer-art img')?.alt,figure.querySelector('figcaption')?.textContent,...Array.from(figure.querySelectorAll('a[href^="mailto:"]'),a=>a.href)].filter(Boolean).join('\n');
     return {title,date,cc:notifyDonna(instructions)?DONNA:'',time:data.event_time||fixed.time||'Time to be confirmed',price:data.price||fixed.price||'Price to be confirmed',deadline:data.reserve_by||fixed.deadline||'',notes:data.notes||fixed.notes||'',location:data.location||fixed.location||'The Thames Club · 290 State Street, New London',noReservation:data.reservations_required===false||fixed.noReservation||false,meals:Array.isArray(data.meal_choices)?data.meal_choices:fixed.meals||[],image:figure.querySelector('.event-flyer-art')?.href};
   }
-  function open(figure,trigger){
-    event=metadata(figure);lastTrigger=trigger;form.reset();savedGuests=[];$('#tc-attendees').replaceChildren();reference='TC-'+crypto.randomUUID().slice(0,8).toUpperCase();
+  function open(figure,trigger,preset=null){
+    event=preset||metadata(figure);lastTrigger=trigger;form.reset();savedGuests=[];$('#tc-attendees').replaceChildren();reference='TC-'+crypto.randomUUID().slice(0,8).toUpperCase();
     $('#tc-event-title').textContent=event.title;
     $('#tc-routing').textContent='Your request goes to Jennifer at '+GM+(event.cc?', with a copy to Donna Richmond at '+event.cc: '')+'.';
     $('#tc-event-summary').textContent=[niceDate(event.date),event.time,event.location,event.price].join(' · ');
-    $('#tc-full-flyer').href=event.image;$('#tc-event-notes').textContent=event.notes;
-    $('#tc-event-policy').textContent=event.noReservation?'No reservations are required for this event. You may use this form to send Jennifer an attendance note or question.':event.deadline&&today()>event.deadline?'The advertised reservation deadline has passed. You may ask Jennifer about availability; late requests are not guaranteed.':event.deadline?'Please request by '+niceDate(event.deadline)+'.':'Jennifer will review your request and confirm availability.';
-    $('#tc-terms').textContent=event.noReservation?'I understand this is an attendance note or inquiry.':'I understand this is a reservation request, subject to confirmation. Late cancellations and no-shows will be charged.';
-    $('#tc-payment-label').hidden=event.noReservation;form.elements.payment.required=!event.noReservation;
+    $('#tc-full-flyer').hidden=!event.image;if(event.image)$('#tc-full-flyer').href=event.image;$('#tc-event-notes').textContent=event.notes;
+    $('#tc-event-policy').textContent=event.reservationStatus==='unknown'?'Reservation requirements have not yet been confirmed. Use this form to ask Jennifer about the event.':event.noReservation?'No reservations are required for this event. You may use this form to send Jennifer an attendance note or question.':event.deadline&&today()>event.deadline?'The advertised reservation deadline has passed. You may ask Jennifer about availability; late requests are not guaranteed.':event.deadline?'Please request by '+niceDate(event.deadline)+'.':'Jennifer will review your request and confirm availability.';
+    $('#tc-terms').textContent=event.noReservation||event.reservationStatus==='unknown'?'I understand this is an attendance note or inquiry.':'I understand this is a reservation request, subject to confirmation. Late cancellations and no-shows will be charged.';
+    $('#tc-payment-label').hidden=event.noReservation||event.reservationStatus==='unknown';form.elements.payment.required=!event.noReservation&&event.reservationStatus!=='unknown';
     form.hidden=false;$('#tc-prepared').hidden=true;$('#tc-errors').hidden=true;refreshAttendees();dialog.showModal();document.body.classList.add('tc-modal-open');form.elements.member.focus();
   }
   document.addEventListener('click', e=>{const link=e.target.closest('.event-flyer-art');if(!link||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;const figure=link.closest('.event-flyer');if(!figure||figure.hidden)return;e.preventDefault();open(figure,link);});
+
+  // Stable email links contain an event identifier only, never member details.
+  const emailEvents = {
+    'first-friday-2026-11-06': {title:'First Friday Dinner & Concert by Candlelight — Christopher Faison',date:'2026-11-06',time:'5:30 PM',price:'$75++ per person',deadline:'2026-10-30',notes:'Sounds Familiar. Menu details to follow.'},
+    'wells-watercraft-tour-2026-11-13': {title:'Wells Watercraft Hall Tour & Cocktails',date:'2026-11-13',time:'3 PM',location:'Mystic Seaport Museum; cocktails afterward at La Plage',notes:'Reserve with Donna Richmond at donnarichmond5@gmail.com.',image:'images/wells-watercraft-tour-2026-11-13.png'},
+    'paris-to-pathos-talk-2026-11-18': {title:'Paris to Pathos — Concert Talk',date:'2026-11-18',time:'2 PM',noReservation:true,notes:'Members and nonmembers welcome; no reservations required. Cash bar and complimentary snacks. The separate concert is November 21.',image:'images/paris-to-pathos-talk-2026-11-18.png'},
+    'thanksgiving-2026-11-19': {title:'Thanksgiving Dinner & Game of Chance',date:'2026-11-19',time:'5:30 PM',notes:'Tables of players rolling dice before a traditional Thanksgiving dinner.'},
+    'holiday-spectacular-talk-2026-12-02': {title:'Holiday Spectacular — ECSO Concert Talk',date:'2026-12-02',notes:'Talk time to be confirmed. Preview of the separate December 5 concert at 3 PM at the Garde Arts Center.',reservationStatus:'unknown'},
+    'holiday-dinner-2026-12-05': {title:'Annual Holiday Dinner with Mike Zaitchik',date:'2026-12-05',time:'5:30 PM',notes:'All-faiths winter-season dinner with music by Mike Zaitchik.'},
+    'menorah-lighting-2026-12-10': {title:'Menorah Lighting',date:'2026-12-10',time:'6 PM',reservationStatus:'unknown'},
+    'holiday-trivia-2026-12-11': {title:'Holiday Theme Trivia Night',date:'2026-12-11',time:'5:30 PM',reservationStatus:'unknown'},
+    'ugly-sweater-2026-12-18': {title:'Ugly Sweater & Carol-oke Night',date:'2026-12-18',time:'5:30 PM',reservationStatus:'unknown'},
+    'new-years-eve-2026-12-31': {title:"New Year's Eve with Mike Zaitchik",date:'2026-12-31',time:'5:30 PM',notes:'Mike Zaitchik at the keyboard.',reservationStatus:'unknown'}
+  };
+  let emailOpened=false;
+  function eventKey(figure){
+    let data={};try{data=JSON.parse(figure.dataset.reservation||'{}');}catch{}
+    if(data.id)return data.id;
+    try{return new URL(figure.querySelector('.event-flyer-art').href).pathname.split('/').pop().replace(/\.[^.]+$/,'');}catch{return '';}
+  }
+  function emailTarget(key){
+    if(!/^[a-z0-9-]{1,120}$/.test(key||''))return null;
+    const figures=Array.from(document.querySelectorAll('.event-flyer'));
+    let figure=figures.find(f=>eventKey(f)===key);
+    const preset=emailEvents[key];
+    // The current published flyer takes priority over the email fallback details.
+    if(!figure&&preset){
+      const matches=figures.filter(f=>metadata(f).date===preset.date);
+      if(matches.length===1)figure=matches[0];
+    }
+    if(figure)return {figure,event:metadata(figure)};
+    if(!preset)return null;
+    return {figure:null,event:{time:'Time to be confirmed',price:'Price to be confirmed',location:'The Thames Club · 290 State Street, New London',deadline:'',notes:'',meals:[],noReservation:false,...preset,cc:notifyDonna(preset.notes||'')?DONNA:''}};
+  }
+  function openFromEmail(){
+    if(emailOpened)return;
+    const key=new URLSearchParams(location.search).get('request');
+    if(!key)return;
+    const target=emailTarget(key);
+    if(!target)return;
+    emailOpened=true;
+    const date=target.event.date,first=new Date(date+'T12:00:00Z');first.setUTCDate(first.getUTCDate()-30);
+    if(today()>date||today()<first.toISOString().slice(0,10)){
+      const note=document.createElement('p');note.className='tc-alert';note.textContent=today()>date?'This event has passed. Please contact the Club about any outstanding request.':'This event’s request form opens 30 days before the event. Please contact the Club with questions.';
+      document.querySelector('.hero .wrap')?.prepend(note);return;
+    }
+    open(target.figure,target.figure?.querySelector('.event-flyer-art')||document.querySelector('h1'),target.event);
+  }
+
   function enhance(){const hint=document.getElementById('event-flyer-hint');if(hint)hint.textContent='Select a flyer for event details and a request form. A full-size flyer link is included.';document.querySelectorAll('.event-flyer-art').forEach(a=>{a.setAttribute('aria-haspopup','dialog');a.setAttribute('aria-label','Open event details and request form');});}
-  enhance();const gallery=document.querySelector('.event-flyers');if(gallery)new MutationObserver(enhance).observe(gallery,{childList:true});
+  enhance();openFromEmail();const gallery=document.querySelector('.event-flyers');if(gallery)new MutationObserver(()=>{enhance();openFromEmail();}).observe(gallery,{childList:true});
   form.addEventListener('submit',e=>{
     e.preventDefault();refreshAttendees();
     if(!form.checkValidity()){$('#tc-errors').hidden=false;$('#tc-errors').textContent='Please complete the required fields marked * and correct any highlighted items. Your entries have been kept.';form.reportValidity();return;}
@@ -79,9 +128,9 @@
     if(!member||!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(email)){$('#tc-errors').hidden=false;$('#tc-errors').textContent='Please enter your name and a valid email address.';return;}
     const party=Number(form.elements.party.value);
     const ack=new URL(SITE+'/reservation-receipt.html');ack.hash=new URLSearchParams({email,name:member,event:event.title,date:event.date,time:event.time,party:String(party),ref:reference}).toString();
-    const subject=(event.noReservation?'Event inquiry':'Reservation request')+' — '+event.title+' — '+reference;
+    const subject=(event.noReservation||event.reservationStatus==='unknown'?'Event inquiry':'Reservation request')+' — '+event.title+' — '+reference;
     const guestLines=attendees().map((a,i)=>`${i===0?'Member / first attendee':`Guest ${i}`}: ${i===0?member:a.name||'Information pending'}\nMeal: ${a.meal}\nDietary needs: ${a.diets.length?a.diets.join(', '):'None reported'}${a.diets.includes('Other')?' — '+a.other:''}`).join('\n\n');
-    const body=`Dear Jennifer,\n\n${event.noReservation?'Please note my attendance / inquiry for:':'Please review my reservation request for:'}\n${event.title}\n${niceDate(event.date)} at ${event.time}\n${event.location}\nPrice: ${event.price}\n${event.notes}\n\nReference: ${reference}\nMember to be charged / requester: ${member}\nReply email: ${email}\nPhone: ${line(form.elements.phone.value)||'Not provided'}\nTotal attending: ${party}\n\n${guestLines}\n\nSeating / other requests: ${form.elements.requests.value.trim()||'None'}\nPlanned payment: ${event.noReservation?'Not applicable':form.elements.payment.value}\n\n${event.noReservation?'No reservation is required for this event.':'I understand this is a request, subject to confirmation. Late cancellations and no-shows will be charged.'}\n\nJENNIFER — ACKNOWLEDGE RECEIPT\nOpen the link below, then use the acknowledgment button to prepare your reply and press Send in Gmail. This acknowledges receipt only, not a confirmed booking.\n${ack.href}\n\nThank you,\n${member}`;
+    const body=`Dear Jennifer,\n\n${event.noReservation||event.reservationStatus==='unknown'?'Please note my attendance / inquiry for:':'Please review my reservation request for:'}\n${event.title}\n${niceDate(event.date)} at ${event.time}\n${event.location}\nPrice: ${event.price}\n${event.notes}\n\nReference: ${reference}\nMember to be charged / requester: ${member}\nReply email: ${email}\nPhone: ${line(form.elements.phone.value)||'Not provided'}\nTotal attending: ${party}\n\n${guestLines}\n\nSeating / other requests: ${form.elements.requests.value.trim()||'None'}\nPlanned payment: ${event.noReservation||event.reservationStatus==='unknown'?'Not applicable':form.elements.payment.value}\n\n${event.reservationStatus==='unknown'?'Please advise whether a reservation is needed.':event.noReservation?'No reservation is required for this event.':'I understand this is a request, subject to confirmation. Late cancellations and no-shows will be charged.'}\n\nJENNIFER — ACKNOWLEDGE RECEIPT\nOpen the link below, then use the acknowledgment button to prepare your reply and press Send in Gmail. This acknowledges receipt only, not a confirmed booking.\n${ack.href}\n\nThank you,\n${member}`;
     draft={subject,body};$('#tc-email-copy').value='To: '+GM+(event.cc?'\nCc: '+event.cc:'')+'\nSubject: '+subject+'\n\n'+body;
     const gmail=new URL('https://mail.google.com/mail/');gmail.search=new URLSearchParams({view:'cm',fs:'1',to:GM,...(event.cc?{cc:event.cc}:{}),su:subject,body}).toString();$('#tc-gmail').href=gmail.href;
     form.hidden=true;$('#tc-prepared').hidden=false;$('#tc-copy-status').textContent='';
