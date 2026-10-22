@@ -1,14 +1,6 @@
 [
   {
     "audience": "public",
-    "title": "Dining Room Reserved for Private Event (Young Lawyers Section of CT",
-    "date": "2026-10-21",
-    "displayDate": "Wednesday, October 21, 2026",
-    "time": "5:30 PM",
-    "description": ""
-  },
-  {
-    "audience": "public",
     "title": "Concert Talk with Eastern CT Symphony Orchestra",
     "date": "2026-10-22",
     "displayDate": "Thursday, October 22, 2026",
@@ -125,6 +117,14 @@
     "date": "2026-11-19",
     "displayDate": "Thursday, November 19, 2026",
     "time": "5:30 PM",
+    "description": ""
+  },
+  {
+    "audience": "public",
+    "title": "CT Storytellers Private Event",
+    "date": "2026-11-21",
+    "displayDate": "Saturday, November 21, 2026",
+    "time": "1:00 PM",
     "description": ""
   }
 ]
