@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -166,8 +166,27 @@ footer.site-shell-footer .site-shell-foot-copy a:hover {
   <div class="w">
     <span class="eyebrow">The Thames Club · New London</span>
     <h1>Dining</h1>
-    <p class="deck">Lunches on Wednesday are house made and served 12 to 2 pm. For other meals and gatherings, see the Events page.</p>
+    <p class="deck">Lunches on Wednesday are house made and served 12 to 2 pm. Reserve Thursday bowling-night dinners below. For other meals and gatherings, see the Events page.</p>
   </div>
+</section>
+
+
+<section class="sc" id="thursday-dinner" aria-labelledby="thursday-dinner-title" style="padding:48px 0;border-bottom:1px solid #a6894a">
+ <div class="w">
+  <span class="sec-label-d">Bowlers and non-bowlers welcome</span>
+  <h2 class="serif-dk" id="thursday-dinner-title">Thursday Dinner at the Club</h2>
+  <p class="prose-dk">Join us for dinner on Thursday bowling nights. All members and their guests are welcome—you don’t have to bowl!</p>
+  <p class="prose-dk" style="margin-top:12px">Choose your dinner date, then tell Jennifer who is coming, your meal and dietary needs, and any seating requests. Dinner reservations are separate from bowling.</p>
+  <div style="max-width:640px;margin-top:24px;font:16px/1.6 Arial,sans-serif">
+   <label for="thursday-date">Dinner date *</label>
+   <select id="thursday-date" disabled style="display:block;width:100%;padding:12px;margin:8px 0 16px;font:16px Arial,sans-serif;color:#182839;background:white;border:1px solid #a6894a"><option>Loading Thursday bowling nights…</option></select>
+   <p id="thursday-details" style="margin-bottom:16px">Menu, price, serving time, and reservation/cancellation deadlines are awaiting confirmation from Jennifer. Your reservation will be confirmed by email.</p>
+   <button id="thursday-reserve" class="bn-button" type="button" disabled style="border:1px solid #a6894a;cursor:pointer">Reserve Thursday Dinner</button>
+   <p id="thursday-status" role="status" style="margin-top:12px"></p>
+   <p style="margin-top:12px">After completing the form, press Send in your email app to deliver your request to Jennifer.</p>
+   <noscript><p>Please enable JavaScript to use the form, or call the Club at <a href="tel:9592642733">(959) 264-2733</a>.</p></noscript>
+  </div>
+ </div>
 </section>
 
 <section class="sc">
@@ -241,6 +260,9 @@ footer.site-shell-footer .site-shell-foot-copy a:hover {
 <script>
 (function(){var h=document.getElementById('hamburger'),m=document.getElementById('nav-mobile');if(h&&m){h.addEventListener('click',function(){h.classList.toggle('open');m.classList.toggle('open')});}document.querySelectorAll('.nav-dd').forEach(function(dd){var trigger=dd.querySelector('.nav-dd-trigger'),menu=dd.querySelector('.nav-dd-menu');if(!trigger||!menu)return;trigger.addEventListener('click',function(e){e.stopPropagation();var isOpen=menu.style.display==='block';document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});menu.style.display=isOpen?'none':'block';});});document.addEventListener('click',function(){document.querySelectorAll('.nav-dd-menu').forEach(function(m){m.style.display='none';});});})();
 </script>
+<script defer src="reservation-tracking.js?v=20261022-dinner"></script>
+<script defer src="reservation-request.js?v=20261022-dinner"></script>
+<script defer src="thursday-dinner.js?v=20261022-dinner"></script>
 </body>
 </html>
 
