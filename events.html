@@ -190,7 +190,7 @@ footer a:hover {
     .hero > .wrap{width:100%}
     .event-flyers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0 0 48px;align-items:start}
     .event-flyer{min-width:0;margin:0}
-    .event-flyer[hidden],.event-flyers[hidden],#event-flyer-hint[hidden]{display:none!important}
+    [data-event-change][hidden],.event-flyer[hidden],.event-flyers[hidden],#event-flyer-hint[hidden]{display:none!important}
     .event-flyer-art{height:350px;display:flex;align-items:center;justify-content:center;padding:7px;border:1px solid rgba(201,169,110,.65);background:rgba(244,237,216,.035);box-shadow:0 8px 24px rgba(0,0,0,.2)}
     .event-flyer-art:hover{border-color:var(--cream)}
     .event-flyer-art:focus-visible{outline:3px solid var(--gold2);outline-offset:4px}
@@ -313,6 +313,16 @@ footer a:hover {
                 today < startDate || today > endDate;
               gallery.appendChild(flyer);
               if (!flyer.hidden) visible++;
+            });
+            // Standing rule: change notices expire with their event, in Club local time.
+            // Post notices with data-event-change="YYYY-MM-DD" (the current event date)
+            // and hidden; use data-end-date only for an event spanning multiple days.
+            document.querySelectorAll('[data-event-change]').forEach(notice => {
+              const date = notice.dataset.eventChange;
+              const matchingFlyer = flyers.find(flyer => eventDate(flyer) === date);
+              const endDate = matchingFlyer?.dataset.endDate || notice.dataset.endDate || date;
+              notice.hidden = !validDate(date) || !validDate(endDate) || today > endDate ||
+                (matchingFlyer ? matchingFlyer.hidden : today < new Date(Date.parse(date + 'T12:00:00Z') - 30 * 86400000).toISOString().slice(0, 10));
             });
             gallery.hidden = visible === 0;
             hint.hidden = visible === 0;
