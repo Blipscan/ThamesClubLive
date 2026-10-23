@@ -10,13 +10,13 @@
  if(valid(cap)){saved=saved.filter(x=>x.id!==cap.id).concat(cap).slice(-100);history.replaceState(null,'',location.pathname+location.search);persist();}
  function persist(){try{localStorage.setItem(STORAGE,JSON.stringify(saved));return true;}catch{return false;}}
  let rows=[],busy=false;
- const labels={pending:'Pending',received:'Received',confirmed:'Confirmed',declined:'Declined',cancelled:'Cancelled'};
+ const labels={pending:'Awaiting email / receipt',received:'Received',confirmed:'Confirmed',declined:'Declined',cancelled:'Cancelled'};
  function badge(r){const el=document.createElement('span');el.className='tc-status-badge tc-status-'+r.status;el.textContent=label(r);return el;}
  function label(r){return (r.kind==='inquiry'?'Your inquiry for ':r.status==='confirmed'?'Your reservation for ':'Your request for ')+r.party+' — '+labels[r.status];}
  function privateLink(v){const u=new URL('https://thamesclub1869.com/events.html');u.hash=new URLSearchParams({request:v.id,key:v.token}).toString();return u.href;}
  async function api(path,body){const response=await fetch(API+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),cache:'no-store',signal:AbortSignal.timeout(15000)});let data;try{data=await response.json();}catch{throw Error('Request tracking is unavailable. Your entries have been kept.');}if(!response.ok)throw Error(data.error||'Please try again.');return data;}
  const panel=document.createElement('section');panel.id='tc-my-requests';panel.setAttribute('aria-label','Your private requests');panel.style.cssText='border:1px solid #c9a96e;padding:20px;margin:20px 0;color:inherit';
- const title=document.createElement('h2');title.textContent='Your requests';const note=document.createElement('p');note.textContent='Private to this browser and anyone with your private link. Pending means saved; Jennifer has not yet acknowledged the email. Status updates when you return or refresh.';
+ const title=document.createElement('h2');title.textContent='Your requests';const note=document.createElement('p');note.textContent='Private to this browser and anyone with your private link. Awaiting email / receipt means the reference is saved; email delivery is not verified. Send the prepared email to Jennifer. Status updates when you return or refresh.';
  const feedback=document.createElement('p');feedback.setAttribute('role','status');
  const entries=document.createElement('div');const refresh=document.createElement('button');refresh.textContent='Refresh status';refresh.onclick=()=>poll();const forget=document.createElement('button');forget.textContent='Hide requests on this device';forget.style.marginLeft='12px';forget.onclick=()=>{saved=[];rows=[];persist();render();};
  panel.append(title,note,feedback,entries,refresh,forget);const gallery=document.querySelector('.event-flyers');if(gallery)gallery.after(panel);else document.querySelector('#thursday-dinner .w')?.append(panel);
