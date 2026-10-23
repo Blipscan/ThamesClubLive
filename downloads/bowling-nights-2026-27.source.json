@@ -1,7 +1,7 @@
 {
   "generator_version": 1,
-  "schedule_sha256": "21af8611dc5622608c6213c282ac881d48ca3c27ee5a0cf8345e2b2bfc337ca4",
-  "updated": "October 11, 2026 09:34 AM ET",
+  "schedule_sha256": "5393400f10abff04b3440d4ba34de879d7a8ea2f8df401f3bd1e6bd114abbdf7",
+  "updated": "October 23, 2026 03:55 PM ET",
   "match_count": 60,
   "bowling_nights": 60,
   "source": "https://duckpin-manager-production.up.railway.app/api/data"
