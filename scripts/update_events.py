@@ -1,4 +1,4 @@
-﻿import urllib.request, json, re
+import urllib.request, json, re
 from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 
@@ -11,12 +11,12 @@ limit = today + timedelta(days=30)
 raw = urllib.request.urlopen(ICS_URL).read().decode("utf-8", errors="replace")
 events = []
 
-for block in raw.split("BEGIN:VEVENT")[1:]:
+for block in re.sub(r'\r?\n[ \t]', '', raw).split("BEGIN:VEVENT")[1:]:
     title = re.search(r"SUMMARY:(.*)", block)
     start = re.search(r"DTSTART(?:;[^:]*)?:(.*)", block)
     desc = re.search(r"DESCRIPTION:(.*)", block)
 
-    if not title or not start:
+    if not title or not start or not re.match(r"^\[PUBLIC\]\s+", title.group(1), re.I) or re.search(r"^STATUS:CANCELLED\s*$", block, re.M):
         continue
 
 
@@ -33,11 +33,12 @@ for block in raw.split("BEGIN:VEVENT")[1:]:
     if today <= dt.date() <= limit:
         events.append({
             "audience": "public",
+            "public_approved": True,
             "title": re.sub(r"^\[PUBLIC\]\s*", "", title.group(1), flags=re.I).replace("\\,", ",").strip(),
             "date": dt.strftime("%Y-%m-%d"),
             "displayDate": dt.strftime("%A, %B %d, %Y").replace(" 0", " "),
             "time": dt.strftime("%I:%M %p").lstrip("0"),
-            "description": desc.group(1).replace("\\n", "\n").replace("\\,", ",").strip() if desc else ""
+            "description": ""
         })
 
 events.sort(key=lambda e: (e["date"], e["time"]))
