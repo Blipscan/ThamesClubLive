@@ -1,6 +1,9 @@
 ﻿name: Update Events from Google Calendar
 
 on:
+  push:
+    branches: [main]
+    paths: ['scripts/update_events.py']
   schedule:
     - cron: "0 */2 * * *"
   workflow_dispatch:
