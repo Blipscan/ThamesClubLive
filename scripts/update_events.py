@@ -16,7 +16,7 @@ for block in re.sub(r'\r?\n[ \t]', '', raw).split("BEGIN:VEVENT")[1:]:
     start = re.search(r"DTSTART(?:;[^:]*)?:(.*)", block)
     desc = re.search(r"DESCRIPTION:(.*)", block)
 
-    if not title or not start or not re.match(r"^\[PUBLIC\]\s+", title.group(1), re.I) or re.search(r"^STATUS:CANCELLED\s*$", block, re.M):
+    if not title or not start or re.search(r"^STATUS:CANCELLED\s*$", block, re.M):
         continue
 
 
