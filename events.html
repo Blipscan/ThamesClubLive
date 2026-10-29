@@ -347,6 +347,16 @@ footer a:hover {
               const incoming = document.createDocumentFragment();
               for (const flyer of data.flyers) {
                 if (!/^[a-z0-9-]+$/.test(flyer.id) || !/^\d{4}-\d{2}-\d{2}$/.test(flyer.event_date)) continue;
+                // The staff feed can include events already represented by curated posters.
+                const curatedId = flyer.id === 'christopher-faison-2026-11-06'
+                  ? 'first-friday-2026-11-06' : flyer.id;
+                const alreadyCurated = Array.from(gallery.querySelectorAll('.event-flyer:not([data-feed])')).some(item => {
+                  try {
+                    const details = JSON.parse(item.dataset.reservation || '{}');
+                    return details.id === curatedId && details.event_date === flyer.event_date;
+                  } catch { return false; }
+                });
+                if (alreadyCurated) continue;
                 const imageUrl = new URL(flyer.image_url);
                 if (imageUrl.origin !== 'https://duckpin-manager-production.up.railway.app' || !imageUrl.pathname.startsWith('/api/event-flyers/')) continue;
                 const figure = document.createElement('figure');
