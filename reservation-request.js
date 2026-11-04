@@ -134,13 +134,13 @@
     const submit=form.querySelector('button[type=submit]');submit.disabled=true;submit.textContent='Saving request…';
     const controls=[...form.querySelectorAll('input,select,textarea')];controls.forEach(c=>c.disabled=true);
     let tracking;
-    try{if(!capability||!window.TCRequestTracking)throw Error('Request tracking has not loaded. Please refresh the page before sending.');tracking=await window.TCRequestTracking.save(event,party,capability,{member,email,phone:line(form.elements.phone.value),attendees:attendees().map((a,i)=>({...a,name:i===0?member:a.name})),requests:form.elements.requests.value.trim(),payment:form.elements.payment.value,terms:$('#tc-terms').textContent,policyAccepted:form.elements.terms.checked});}
+    try{if(!capability||!window.TCRequestTracking)throw Error('Request tracking has not loaded. Please refresh the page before sending.');tracking=await window.TCRequestTracking.save(event,party,capability,{member,email,time:event.time,location:event.location,phone:line(form.elements.phone.value),attendees:attendees().map((a,i)=>({...a,name:i===0?member:a.name})),requests:form.elements.requests.value.trim(),payment:form.elements.payment.value,terms:$('#tc-terms').textContent,policyAccepted:form.elements.terms.checked});}
     catch(error){$('#tc-errors').hidden=false;$('#tc-errors').textContent=error.message||'Could not save the request. Your entries have been kept.';return;}
     finally{controls.forEach(c=>c.disabled=false);submit.disabled=false;submit.textContent='Submit request';}
     $('#tc-private-link').href=tracking.link;$('#tc-private-note').textContent=tracking.remembered?'Status is saved for this browser. Keep the private link if you want to check on another device. Do not share it.':'This browser cannot remember your request. Save the private link below to check its status later.';
 
     const delivery=tracking.request.email_delivery;
-    $('#tc-delivery').textContent=delivery==='accepted'?'Your request has been saved and its notification accepted by the mail server. Jennifer has not confirmed your booking yet. Reference: '+reference:'Your request is saved, but email delivery is not confirmed. Please call the Club at (959) 264-2733 with reference '+reference+'. Please do not submit again.';
+    $('#tc-delivery').textContent=delivery==='accepted'?'Your request has been sent to Jennifer, with a copy to your email as a receipt. Your reservation is awaiting Jennifer’s confirmation. Reference: '+reference:'Your request is saved, but email delivery is not confirmed. Please call the Club at (959) 264-2733 with reference '+reference+'. Please do not submit again.';
     form.hidden=true;$('#tc-prepared').hidden=false;
   });
 })();
