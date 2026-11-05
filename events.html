@@ -216,8 +216,8 @@ footer a:hover {
     <div class="wrap">
       <div id="event-flyer-hint" style="font-size:16px;line-height:1.6;color:#182839;background:#f4edd8;border:1px solid #c9a96e;border-left:5px solid #c9a96e;border-radius:6px;padding:18px 22px;margin-bottom:24px">
         <p style="margin:0 0 10px"><strong>To request a reservation, click an event flyer.</strong> Enter the total attending, including yourself, and each attendee’s name, meal choice and dietary needs.</p>
-        <p style="margin:0 0 10px">Select <strong>Submit request</strong>. Your request is saved and sent directly to Jennifer—there is no need to open your email app. Check the acknowledgement for delivery status and keep your private status link.</p>
-        <p style="margin:0">Your request will show <span class="tc-status-badge tc-status-pending">Awaiting review</span> until Jennifer updates it to <span class="tc-status-badge tc-status-received">Received</span> or <span class="tc-status-badge tc-status-confirmed">Confirmed</span>. <strong>Your booking is confirmed only after Jennifer confirms it.</strong> Return in the same browser or use your private link to check status. Events that do not require reservations are marked in the form.</p>
+        <p style="margin:0 0 10px">Select <strong>Submit request</strong>. Your request is saved and sent directly to Jennifer (Donna Richmond for the November 13 museum tour)—there is no need to open your email app. Check the acknowledgement for delivery status and keep your private status link.</p>
+        <p style="margin:0">Your request will show <span class="tc-status-badge tc-status-pending">Awaiting review</span> until the event organizer updates it to <span class="tc-status-badge tc-status-received">Received</span> or <span class="tc-status-badge tc-status-confirmed">Confirmed</span>. <strong>Your booking is confirmed only after the event organizer confirms it.</strong> Return in the same browser or use your private link to check status. Events that do not require reservations are marked in the form.</p>
       </div>
       <aside style="padding:20px 24px;margin-bottom:24px;background:#f4edd8;color:#182839;border:1px solid #c9a96e"><strong>Thursday Dinner at the Club</strong><p style="margin:8px 0 12px">All members and their guests are welcome—you don’t have to bowl.</p><a href="dining.html#upcoming-dining" style="display:inline-block;padding:12px 18px;background:#0c1c2e;color:#f4edd8;border:1px solid #c9a96e">See menus &amp; reserve Thursday Dinner</a></aside>
 <aside data-dining-end="2026-11-29" style="padding:20px 24px;margin-bottom:24px;border:1px solid #c9a96e"><strong>Thanksgiving Recess</strong><p>The Club will be closed November 26–29.</p></aside>
@@ -244,7 +244,7 @@ footer a:hover {
           <a class="event-flyer-art" href="https://duckpin-manager-production.up.railway.app/members/flyers/witching-2026-10-30.svg?v=gold20261025" target="_blank" rel="noopener noreferrer" aria-label="Read full-size flyer (opens in a new tab)"><img src="https://duckpin-manager-production.up.railway.app/members/flyers/witching-2026-10-30.svg?v=gold20261025" alt="Witching, Bitching and Warlocks monthly luncheon, October 30, 2026 at 11:30 AM. $40++; reserve by October 23. Menu coming soon." decoding="async"></a>
           <figcaption><time datetime="2026-10-30">October 30</time>Witching, Bitching &amp; Warlocks</figcaption>
         </figure>
-        <figure class="event-flyer" data-approval="approved">
+        <figure class="event-flyer" data-approval="approved" data-reservation="{&quot;id&quot;:&quot;wells-watercraft-tour-2026-11-13&quot;}">
           <a class="event-flyer-art" href="images/wells-watercraft-tour-2026-11-13-gold.webp?v=gold20261025" target="_blank" rel="noopener noreferrer" aria-label="Read the full Wells Watercraft Hall tour flyer (opens in a new tab)"><img src="images/wells-watercraft-tour-2026-11-13-gold.webp?v=gold20261025" alt="Wells Watercraft Hall Tour at Mystic Seaport Museum, Friday November 13, 2026 at 3 PM, followed by cocktails at La Plage. Reserve with Donna Richmond at donnarichmond5@gmail.com." decoding="async"></a>
           <figcaption><time datetime="2026-11-13">Friday, November 13 · 3 PM</time>Wells Watercraft Hall Tour &amp; Cocktails<br><a href="mailto:donnarichmond5@gmail.com">Reserve with Donna Richmond</a></figcaption>
         </figure>
@@ -404,7 +404,7 @@ footer a:hover {
     loadEvents();
   </script>
 <script defer src="reservation-tracking.js?v=20261024-submit1"></script>
-<script defer src="reservation-request.js?v=20261025-gold"></script>
+<script defer src="reservation-request.js?v=20261105-museum"></script>
 <script>(()=>{const refresh=()=>{const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const today=['year','month','day'].map(k=>parts.find(p=>p.type===k).value).join('-');document.querySelectorAll('[data-dining-end]').forEach(n=>n.hidden=n.dataset.diningEnd<today)};refresh();setInterval(refresh,60000)})();</script>
 </body>
 </html>
