@@ -133,5 +133,23 @@
     "displayDate": "Saturday, December 5, 2026",
     "time": "5:30 PM",
     "description": ""
+  },
+  {
+    "audience": "public",
+    "public_approved": true,
+    "title": "Reserved for ECSO Meeting",
+    "date": "2026-12-10",
+    "displayDate": "Thursday, December 10, 2026",
+    "time": "1:00 PM",
+    "description": ""
+  },
+  {
+    "audience": "public",
+    "public_approved": true,
+    "title": "Hanukkah Menorah Lighting",
+    "date": "2026-12-10",
+    "displayDate": "Thursday, December 10, 2026",
+    "time": "6:00 PM",
+    "description": ""
   }
 ]
