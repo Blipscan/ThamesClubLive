@@ -101,6 +101,15 @@
   {
     "audience": "public",
     "public_approved": true,
+    "title": "Club reserved Private Christmas Party",
+    "date": "2026-12-04",
+    "displayDate": "Friday, December 4, 2026",
+    "time": "2:00 PM",
+    "description": ""
+  },
+  {
+    "audience": "public",
+    "public_approved": true,
     "title": "Club Holiday Dinner",
     "date": "2026-12-05",
     "displayDate": "Saturday, December 5, 2026",
