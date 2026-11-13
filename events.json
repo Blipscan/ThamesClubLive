@@ -2,24 +2,6 @@
   {
     "audience": "public",
     "public_approved": true,
-    "title": "Bowling",
-    "date": "2026-11-12",
-    "displayDate": "Thursday, November 12, 2026",
-    "time": "12:30 PM",
-    "description": ""
-  },
-  {
-    "audience": "public",
-    "public_approved": true,
-    "title": "Dining Room Reserved Private Event (Masso-Flores)",
-    "date": "2026-11-12",
-    "displayDate": "Thursday, November 12, 2026",
-    "time": "7:00 PM",
-    "description": ""
-  },
-  {
-    "audience": "public",
-    "public_approved": true,
     "title": "Concert Talk with Eastern CT Symphony Orchestra",
     "date": "2026-11-18",
     "displayDate": "Wednesday, November 18, 2026",
@@ -150,6 +132,15 @@
     "date": "2026-12-11",
     "displayDate": "Friday, December 11, 2026",
     "time": "5:30 PM",
+    "description": ""
+  },
+  {
+    "audience": "public",
+    "public_approved": true,
+    "title": "CT Storytellers Story Jams",
+    "date": "2026-12-13",
+    "displayDate": "Sunday, December 13, 2026",
+    "time": "1:00 PM",
     "description": ""
   }
 ]
