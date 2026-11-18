@@ -151,5 +151,23 @@
     "displayDate": "Sunday, December 13, 2026",
     "time": "1:00 PM",
     "description": ""
+  },
+  {
+    "audience": "public",
+    "public_approved": true,
+    "title": "Pub Reserved for Private Member Event",
+    "date": "2026-12-18",
+    "displayDate": "Friday, December 18, 2026",
+    "time": "5:00 PM",
+    "description": ""
+  },
+  {
+    "audience": "public",
+    "public_approved": true,
+    "title": "Ugly Sweater & Carol-oke with appetizers",
+    "date": "2026-12-18",
+    "displayDate": "Friday, December 18, 2026",
+    "time": "5:30 PM",
+    "description": ""
   }
 ]
