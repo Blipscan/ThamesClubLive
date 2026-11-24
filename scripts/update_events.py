@@ -30,11 +30,16 @@ for block in re.sub(r'\r?\n[ \t]', '', raw).split("BEGIN:VEVENT")[1:]:
     except Exception:
         continue
 
+    event_title = re.sub(r"^\[PUBLIC\]\s*", "", title.group(1), flags=re.I).replace("\\,", ",").strip()
+    # The Club confirmed 6 p.m. for this occurrence after the calendar was entered.
+    if event_title == "Hanukkah Menorah Lighting" and dt.date().isoformat() == "2026-12-09":
+        dt = dt.replace(hour=18, minute=0, second=0)
+
     if today <= dt.date() <= limit:
         events.append({
             "audience": "public",
             "public_approved": True,
-            "title": re.sub(r"^\[PUBLIC\]\s*", "", title.group(1), flags=re.I).replace("\\,", ",").strip(),
+            "title": event_title,
             "date": dt.strftime("%Y-%m-%d"),
             "displayDate": dt.strftime("%A, %B %d, %Y").replace(" 0", " "),
             "time": dt.strftime("%I:%M %p").lstrip("0"),
