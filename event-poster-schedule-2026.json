@@ -43,14 +43,16 @@
     {
       "id": "menorah-lighting-2026-12-10",
       "title": "Menorah Lighting",
-      "event_date": "2026-12-10",
+      "event_date": "2026-12-09",
       "event_time": "6 PM",
       "notes": "Cash bar and complimentary light refreshments. Reservation requirements to be confirmed.",
       "reservation_status": "unknown",
-      "asset": "images/menorah-lighting-2026-12-10.webp",
-      "display_from": "2026-11-10",
-      "library_file_id": "libfile_1550621818f4819183bcd404ddbc8c5b",
-      "source": "Approved October 19 poster; details cross-checked with GM calendar in Gmail 1a13fca7bf3507f3"
+      "asset": "images/menorah-lighting-2026-12-09.webp",
+      "display_from": "2026-11-09",
+      "library_file_id": null,
+      "source": "October 19 approved poster, with the December 9 at 6 PM correction confirmed by Bill November 24, 2026",
+      "announcement_date": "2026-11-26",
+      "reminder_date": "2026-12-03"
     },
     {
       "id": "holiday-trivia-2026-12-11",
